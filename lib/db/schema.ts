@@ -1,6 +1,7 @@
 import {
   boolean,
   index,
+  integer,
   jsonb,
   pgTable,
   serial,
@@ -15,6 +16,104 @@ import {
  * `userId` (the Neon Auth user uuid, stored as text) for per-user scoping. No
  * foreign keys by design — scoping is enforced in queries via getUserId().
  */
+
+// ── Pipeline data tables ────────────────────────────────────────────────
+
+export const states = pgTable("states", {
+  code: text("code").primaryKey(),
+  name: text("name").notNull(),
+  score: integer("score").notNull(),
+  subscores: jsonb("subscores"),
+  level: text("level", {
+    enum: ["No Notice", "Low Regulation", "Moderate", "High"],
+  }).notNull(),
+  esaActive: boolean("esa_active").default(false),
+  esaName: text("esa_name"),
+  esaMaxAward: text("esa_max_award"),
+  esaEligibility: text("esa_eligibility"),
+  esaDocumentation: jsonb("esa_documentation"),
+  esaDeadline: text("esa_deadline"),
+  updatedAt: timestamp("updated_at").defaultNow(),
+})
+
+export const bills = pgTable(
+  "bills",
+  {
+    id: text("id").primaryKey(),
+    stateCode: text("state_code")
+      .notNull()
+      .references(() => states.code, { onDelete: "cascade" }),
+    number: text("number").notNull(),
+    title: text("title").notNull(),
+    date: timestamp("date").notNull(),
+    statusStep: integer("status_step").notNull(),
+    impact: text("impact", {
+      enum: ["increase", "decrease", "neutral"],
+    }).notNull(),
+    impactSummary: text("impact_summary"),
+    delta: text("delta"),
+    actionRequired: text("action_required", {
+      enum: ["call", "donate", "email", "share", "none"],
+    }),
+    esaRelated: boolean("esa_related").default(false),
+    analysis: jsonb("analysis"),
+    legiscanBillId: integer("legiscan_bill_id"),
+    createdAt: timestamp("created_at").defaultNow(),
+    updatedAt: timestamp("updated_at").defaultNow(),
+  },
+  (t) => ({
+    stateIdx: index("idx_bills_state").on(t.stateCode),
+    legiscanIdx: index("idx_bills_legiscan").on(t.legiscanBillId),
+  }),
+)
+
+export const billFullText = pgTable("bill_full_text", {
+  billId: text("bill_id")
+    .primaryKey()
+    .references(() => bills.id, { onDelete: "cascade" }),
+  fullText: text("full_text").notNull(),
+  textUrl: text("text_url"),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+})
+
+export const pipelineMetadata = pgTable("pipeline_metadata", {
+  key: text("key").primaryKey(),
+  value: text("value").notNull(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+})
+
+export const dlq = pgTable("dlq", {
+  id: serial("id").primaryKey(),
+  source: text("source").notNull(),
+  rawPayload: jsonb("raw_payload").notNull(),
+  errorMessage: text("error_message").notNull(),
+  firstSeenAt: timestamp("first_seen_at").defaultNow(),
+  lastAttemptedAt: timestamp("last_attempted_at"),
+  archived: boolean("archived").default(false),
+  resolvedAt: timestamp("resolved_at"),
+  createdAt: timestamp("created_at").defaultNow(),
+})
+
+export const syncLog = pgTable(
+  "sync_log",
+  {
+    id: serial("id").primaryKey(),
+    fetchKey: text("fetch_key").notNull().unique(),
+    status: text("status").notNull(),
+    errors: text("errors"),
+    createdAt: timestamp("created_at").defaultNow(),
+  },
+  (t) => ({
+    fetchKeyIdx: unique("idx_sync_log_fetch_key").on(t.fetchKey),
+  }),
+)
+
+export const webhookEvents = pgTable("webhook_events", {
+  id: serial("id").primaryKey(),
+  eventId: text("event_id").notNull().unique(),
+  receivedAt: timestamp("received_at").defaultNow(),
+})
 
 // Bills a user is tracking. billId references the (mock/Python-backed) bill id.
 export const watchlist = pgTable(
