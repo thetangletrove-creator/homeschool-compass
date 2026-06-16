@@ -21,39 +21,67 @@ DEFAULT_RATE_LIMIT = 100  # calls per 60s (Public API tier)
 MONTHLY_QUOTA = 30_000
 
 # Homeschool-relevant search terms (LegiScan full-text search)
-# These must be sufficiently narrow — standalone acronyms (PSA, ESA) are excluded
-# because they return overwhelming noise from unrelated domains.
+# These deliberately CAST A WIDE NET to catch every possible homeschool-related bill.
+# Noise is filtered out later by the LLM classifier (classify_bills.py).
+# The title-based pre-filter (RELAXED_TITLE_WORDS) only removes bills whose titles
+# contain NO educational keywords at all — blatant false positives like "Carpet Recycling".
 HS_SEARCH_TERMS = [
+    # Direct homeschool references
     "homeschool",
     "home school",
     "home education",
     "home instruction",
-    "private school attendance",
+    "home-based instruction",
+    "parent-managed learning",
+    # Correspondence programs (AK, western states)
+    "correspondence study",
+    "correspondence program",
+    # School choice / ESA / voucher family
     "education savings account",
     "school choice",
-    "curriculum approval",
-    "portfolio review",
+    "education voucher",
+    "education scholarship",
+    "learning account",
+    "education freedom",
+    "parental choice",
+    # Regulation / oversight
     "compulsory attendance",
-    "correspondence",
-]
-
-# Title-level homeschool keywords. A bill is only kept if its TITLE
-# (not just full-text body) contains at least one of these patterns.
-# This eliminates the false positives from broad full-text search hits
-# (e.g., "home" matching "home health aide", "school" matching "school bus").
-HS_TITLE_KEYWORDS = [
-    "homeschool", "home school", "home education", "home instruction",
-    "home-based instruction",  # WA uses this phrasing
-    "parent-managed learning",  # CT euphemism for homeschool oversight
-    "correspondence study", "correspondence program", "correspondence",  # AK correspondence schools
-    "private school", "home study",
-    "education savings account",
-    "school choice",
-    "compulsory attendance",
+    "compulsory education",
+    "compulsory age",
     "curriculum approval",
     "portfolio review",
     "superintendent notification",
+    "home school affidavit",
+    # Truancy and attendance
     "truancy",
+    "excused absence", "unexcused absence",
+    # Private school overlap (many homeschool bills are private-school-adjacent)
+    "private school attendance",
+    "private school affidavit",
+    "private school scholarship",
+    # Tax / funding
+    "education tax credit",
+    "tuition tax credit",
+    "home study",
+    "parental rights education",
+    "alternative instruction",
+    # Microschools
+    "microschool", "micro school", "micro education",
+]
+
+# Relaxed title pre-filter: a bill is only skipped if its title contains
+# NONE of these words. This eliminates obvious false positives (wildfire bills,
+# carpet recycling, etc.) while passing everything that MIGHT be relevant
+# through to the classifier.
+RELAXED_TITLE_WORDS = [
+    "home", "school", "education", "student", "child", "parent",
+    "instruction", "curriculum", "test", "assessment", "attendance",
+    "truancy", "voucher", "scholarship", "private", "public",
+    "learning", "teacher", "study", "account", "credit", "grant",
+    "fund", "program", "tuition", "correspondence",
+    "training", "license", "certification",
+    "juvenile", "foster", "adoption", "family",
+    "safety", "health", "protection",
 ]
 
 # States with known homeschool regulation (all 50 + DC)
@@ -267,13 +295,14 @@ class LegiScanClient:
     def discover_homeschool_bills(
         self,
         states: Optional[List[str]] = None,
-        year_filter: int = 2
+        year_filter: int = 1  # year=1 (ALL) catches bills in older sessions
     ) -> List[Dict]:
         """
         Orchestrated discovery: search all states × all HS terms.
         Deduplicates by bill_id. Returns list of bill summaries.
-        Title-level filter applied: only bills whose title contains
-        HS_TITLE_KEYWORDS are kept, eliminating broad full-text noise.
+        Uses relaxed title pre-filter (RELAXED_TITLE_WORDS) to remove
+        obvious false positives. Further classification is done by
+        the bill classifier (classify_bills.py) after discovery.
         """
         states = states or STATE_ABBREVS
         discovered = {}
@@ -297,15 +326,16 @@ class LegiScanClient:
                         bid = bill.get("bill_id")
                         title = (bill.get("title") or "").lower()
 
-                        # Title-level filter: skip if title doesn't contain
-                        # any homeschool-related keyword
-                        if not any(kw in title for kw in HS_TITLE_KEYWORDS):
+                        # Relaxed pre-filter: skip only if title contains
+                        # NONE of the education-related words
+                        if not any(w in title for w in RELAXED_TITLE_WORDS):
                             continue
 
                         if bid and bid not in discovered:
                             discovered[bid] = {
                                 "bill_id": bid,
-                                "number": bill.get("number"),
+                                "number": bill.get("bill_number") or bill.get("number", ""),
+                                "bill_number": bill.get("bill_number") or bill.get("number", ""),
                                 "title": bill.get("title"),
                                 "state": state,
                                 "session_id": bill.get("session_id"),

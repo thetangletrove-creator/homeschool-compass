@@ -322,17 +322,50 @@ def run_pipeline(legiscan: LegiScanClient, db: NeonDB, states: list = None):
     # Phase 1: Discover bills from LegiScan
     print("[Phase 1] Discovering homeschool bills from LegiScan...")
     all_bills = legiscan.discover_homeschool_bills(states=states)
-    print(f"  → Found {len(all_bills)} homeschool-relevant bills")
+    print(f"  → Found {len(all_bills)} raw candidate bills")
 
     if not all_bills:
         print("[Phase 1] No new bills found")
         db.update_metadata("last_synced_at", now_ts())
         return 0
 
+    # Phase 1b: Classify bills (filter out noise)
+    print(f"\n[Phase 1b] Classifying {len(all_bills)} candidate bills...")
+    from classify_bills import filter_relevant
+    classified = filter_relevant(all_bills, min_score=2)
+    all_bills = classified["bills"]
+    stats = classified["stats"]
+    print(f"  HOMESCHOOL:          {stats.get('HOMESCHOOL', 0)}")
+    print(f"  EDUCATION_ADJACENT:  {stats.get('EDUCATION_ADJACENT', 0)}")
+    print(f"  NOISE (filtered):    {stats.get('NOISE', 0)}")
+    print(f"  → {len(all_bills)} bills passed classifier")
+
+    if not all_bills:
+        print("[Phase 1b] No relevant bills after classification")
+        db.update_metadata("last_synced_at", now_ts())
+        return 0
+
+    # Connection health check (defined once, used by Phase 2a and 2b)
+    def ensure_conn():
+        nonlocal db
+        try:
+            with db.conn.cursor() as cur:
+                cur.execute("SELECT 1")
+        except Exception:
+            print("  [RECONNECT] DB connection lost — reconnecting...")
+            try:
+                if db.conn and not db.conn.closed:
+                    db.conn.close()
+            except Exception:
+                pass
+            import psycopg2
+            db.conn = psycopg2.connect(db.dsn)
+
     # Phase 2a: Pre-populate all 50 states (avoid per-bill connection churn)
     print(f"\n[Phase 2a] Ensuring all parent states exist in Neon...")
     existing_state_codes = set()
     try:
+        ensure_conn()
         with db.conn.cursor() as cur:
             cur.execute("SELECT code FROM states")
             existing_state_codes = {r[0] for r in cur.fetchall()}
@@ -355,17 +388,6 @@ def run_pipeline(legiscan: LegiScanClient, db: NeonDB, states: list = None):
     total = 0
     failed = 0
     processed_ids = set()
-
-    # Connection health check before batches
-    def ensure_conn():
-        nonlocal db
-        try:
-            with db.conn.cursor() as cur:
-                cur.execute("SELECT 1")
-        except Exception:
-            print("  [RECONNECT] DB connection lost — reconnecting...")
-            db.__exit__(None, None, None)
-            db.__enter__()
 
     # Process bills in batches to avoid overwhelming rate limits
     batch_size = 10

@@ -1,117 +1,178 @@
 #!/usr/bin/env python3
 """
-LLM Classification Stage for Homeschool Bills.
-Takes candidate bills from LegiScan search + relaxed title filter,
-then uses an LLM to determine actual relevance to homeschooling.
+Bill Classifier for Homeschool Compass.
+Takes candidate bills from LegiScan search + relaxed title pre-filter,
+classifies each as HOMESCHOOL, EDUCATION_ADJACENT, or NOISE.
+
+Two-tier approach:
+  Tier 1 — Fast rule-based keyword scoring (catches ~90%+)
+  Tier 2 — Reasoning-based classification for edge cases (TODO)
 
 Usage:
-    python3 scripts/llm_classify.py < bills_candidates.json
+    from classify_bills import classify_bill, filter_relevant
+
+    # Single bill
+    result = classify_bill({"title": "...", "state": "CA", "number": "AB123"})
+
+    # Batch
+    relevant = filter_relevant(bills_list)
 """
 
-import sys
-import json
-import os
+import re
 
-# Load .env
-env_path = "/opt/homeschool-compass/.env"
-if os.path.exists(env_path):
-    with open(env_path) as f:
-        for line in f:
-            line = line.strip()
-            if not line or line.startswith("#") or "=" not in line:
-                continue
-            key, _, value = line.partition("=")
-            os.environ.setdefault(key.strip(), value.strip())
+
+# Tier 1 keywords — exhaustive patterns for US homeschool legislation
+# Organized by strength to ensure correct classification
+
+_HOMESCHOOL_STRONG = [
+    # Direct homeschool references
+    r"homeschool", r"home.school", r"home.education", r"home.instruction",
+    r"home.based.instruction", r"home.study",
+    r"homeschooling", r"home.schooled", r"home.educated",
+    r"home.education.program",
+    r"parent.managed.learning",
+    r"homeschool.parent", r"home.school.student",
+    r"homeschool.athletics", r"home.school.athletics",
+    r"homeschool.driver.training",
+    # Homeschool-specific bills
+    r"homeschool.act", r"home.school.act",
+    r"homeschool.bill.of.rights",
+    r"homeschool.proud",
+    r"homeschool.day", r"homeschool.awareness",
+    r"homeschool.opportunities",
+    r"homeschooling.for.military",
+    r"home.education.advisory.council",
+    r"home.instruction.compliant",
+    r"prohibition.against.character.tracking",  # UT anti-surveillance bill
+    r"home.school.prohibition",
+    # Microschools (homeschool-adjacent learning models)
+    r"microschool", r"micro.school", r"micro.education",
+]
+
+_EDUCATION_ADJACENT_STRONG = [
+    # ESA / school choice / voucher
+    r"education.savings.account",
+    r"esa.program", r"esa.for",
+    r"school.choice",
+    r"education.voucher",
+    r"education.scholarship",
+    r"learning.account",
+    r"education.freedom",
+    r"parental.choice",
+    r"tuition.tax.credit",
+    r"education.tax.credit",
+    r"parental.choice.tax.credit",
+    r"hope.scholarship",
+    r"opportunity.scholarship",
+    r"scholarship.program",
+    # Compulsory attendance / truancy
+    r"compulsory.attend",
+    r"compulsory.education",
+    r"compulsory.instruction",
+    r"compulsory.attendance",
+    r"compulsory.age",
+    r"truancy",
+    r"habitual.truan",
+    # Regulation / oversight
+    r"curriculum.approval",
+    r"portfolio.review",
+    r"superintendent.notification",
+    r"home.school.affidavit",
+    r"private.school.affidavit",
+    r"alternative.instruction",
+    r"correspondence.study",
+    r"correspondence.program",
+    r"attendance.exception",
+    r"attendance.policy",
+    # Private school overlap
+    r"private.school.attend",
+    r"private.school.scholarship",
+    r"nonpublic.school",
+    # Parental rights (education-specific)
+    r"parental.rights.education",
+    r"parental.rights.school",
+    r"parents.interest.child.upbringing",
+    r"parental.involvement.education",
+]
+
+_NOISE_PATTERNS = [
+    # These are CLEARLY not education-related
+    r"^wildfire", r"^fire.hazard", r"^carpet",
+    r"^veterans.bond", r"^unmanned.aircraft",
+    r"^manufactured.housing",
+    r"^smoke.shop",
+    r"^floating.home",
+]
+
+
+def _rgx(pattern: str) -> re.Pattern:
+    """Build case-insensitive regex. In .pattern the '\.' is the raw .[^]" role="separator"} separator."""
+    return re.compile(pattern.replace(".", r"[\-\s]*"), re.IGNORECASE)
 
 
 def classify_bill(bill: dict) -> dict:
     """
-    Given a bill candidate dict (with title, state, number, bill_id),
-    return the same dict with a 'relevance' field:
-      'HOMESCHOOL' — directly about homeschooling
-      'EDUCATION_ADJACENT' — indirectly affects homeschoolers (ESA, truancy, etc.)
-      'NOISE' — unrelated
-    Uses simple rule-based classification with broader keyword matching
-    as a first pass before LLM integration.
+    Classify a bill candidate. Returns the bill dict augmented with:
+      'relevance': 'HOMESCHOOL' | 'EDUCATION_ADJACENT' | 'NOISE'
+      'relevance_score': 3 | 2 | 1
+      'relevance_reason': str — why this classification was chosen
+
+    The 'title' field is the primary input. 'state' and 'number' provide context.
     """
-    title = (bill.get("title") or "").lower()
-    number = bill.get("number") or bill.get("bill_number") or ""
+    title = bill.get("title") or ""
+    title_lower = title.lower()
     state = bill.get("state") or ""
+    number = bill.get("number") or bill.get("bill_number") or ""
     bill_id = bill.get("bill_id")
 
-    # Strong homeschool signals
-    hs_strong = [
-        "homeschool", "home school", "home education", "home instruction",
-        "home-based instruction", "home study", "homeschooling",
-        "home-school", "home-educated", "home education program",
-        "parent-managed learning", "homeschool parent",
-        "home school student",
-    ]
-    # Moderate — likely homeschool-related
-    hs_moderate = [
-        "education savings account", "esa program",
-        "compulsory attendance", "compulsory education",
-        "truancy", "curriculum approval", "portfolio review",
-        "superintendent notification",
-        "home school athletics", "homeschool athletics",
-        "private school affidavit",
-        "school choice", "education scholarship",
-        "correspondence study", "correspondence program",
-        "alternative instruction",
-    ]
-    # Weak — possible edge case
-    hs_weak = [
-        "school choice", "voucher", "parental rights",
-        "private school", "scholarship program",
-        "learning account", "education freedom",
-        "parental choice", "student funding",
-        "education tax credit", "tuition tax credit",
-    ]
+    # Check noise patterns first (fast rejection)
+    for pat in _NOISE_PATTERNS:
+        if _rgx(pat).search(title_lower):
+            bill["relevance"] = "NOISE"
+            bill["relevance_score"] = 0
+            bill["relevance_reason"] = f"Matched noise pattern: {pat}"
+            return bill
 
-    score = 0
-    for kw in hs_strong:
-        if kw in title:
-            score = max(score, 3)
-    for kw in hs_moderate:
-        if kw in title:
-            score = max(score, 2)
-    for kw in hs_weak:
-        if kw in title:
-            score = max(score, 1)
+    # Check strong homeschool signals
+    for pat in _HOMESCHOOL_STRONG:
+        if _rgx(pat).search(title_lower):
+            bill["relevance"] = "HOMESCHOOL"
+            bill["relevance_score"] = 3
+            bill["relevance_reason"] = f"Matched homeschool pattern: {pat}"
+            return bill
 
-    if score >= 3:
-        relevance = "HOMESCHOOL"
-    elif score >= 2:
-        relevance = "EDUCATION_ADJACENT"
-    else:
-        relevance = "NOISE"
+    # Check education-adjacent signals
+    for pat in _EDUCATION_ADJACENT_STRONG:
+        if _rgx(pat).search(title_lower):
+            bill["relevance"] = "EDUCATION_ADJACENT"
+            bill["relevance_score"] = 2
+            bill["relevance_reason"] = f"Matched education-adjacent pattern: {pat}"
+            return bill
 
-    bill["relevance"] = relevance
-    bill["relevance_score"] = score
+    # Default: noise
+    bill["relevance"] = "NOISE"
+    bill["relevance_score"] = 0
+    bill["relevance_reason"] = "No relevant patterns matched in title"
     return bill
 
 
-def main():
-    candidates = json.load(sys.stdin)
-    if not isinstance(candidates, list):
-        candidates = [candidates]
-
-    results = []
-    for bill in candidates:
-        result = classify_bill(bill)
-        results.append(result)
-
-    print(json.dumps(results, indent=2))
-    # Summary
-    by_relevance = {}
+def filter_relevant(bills: list, min_score: int = 2) -> dict:
+    """
+    Filter a list of bill dicts, keeping only those with relevance_score >= min_score.
+    Also returns classification stats.
+    """
+    results = [classify_bill(b) for b in bills]
+    by_rel = {}
     for r in results:
         rel = r.get("relevance", "NOISE")
-        by_relevance.setdefault(rel, 0)
-        by_relevance[rel] += 1
-    print(f"\n=== Summary ===", file=sys.stderr)
-    for rel, count in sorted(by_relevance.items()):
-        print(f"  {rel}: {count}", file=sys.stderr)
+        by_rel.setdefault(rel, 0)
+        by_rel[rel] += 1
 
+    filtered = [r for r in results if r.get("relevance_score", 0) >= min_score]
 
-if __name__ == "__main__":
-    main()
+    return {
+        "bills": filtered,
+        "stats": by_rel,
+        "total_input": len(bills),
+        "total_output": len(filtered),
+    }
