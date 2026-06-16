@@ -12,27 +12,41 @@ import { NextRequest, NextResponse } from 'next/server'
  * When auth is unconfigured (missing env vars), the proxy is a
  * no-op — all routes are accessible as if no auth exists.
  */
+/** Public routes that don't require authentication. */
+const PUBLIC_ROUTES = [
+  '/',
+  '/about',
+  '/pricing',
+  '/scorecard',
+  '/esa',
+  '/sign-in',
+  '/sign-up',
+  '/api/auth/',
+  '/api/webhooks/',
+  '/api/revalidate',
+  '/api/bff/',
+]
+
+/** Dynamic route prefixes that are public. */
+const PUBLIC_PREFIXES = ['/bill/', '/state/']
+
+/**
+ * Returns true when the path is public and should skip auth middleware.
+ */
+function isPublicPath(pathname: string): boolean {
+  return (
+    PUBLIC_ROUTES.some((r) => pathname === r || pathname.startsWith(r)) ||
+    PUBLIC_PREFIXES.some((p) => pathname.startsWith(p)) ||
+    pathname.startsWith('/_next') ||
+    pathname.startsWith('/favicon')
+  )
+}
+
 export async function proxy(request: NextRequest) {
-  // Skip auth routes themselves — the API handler manages auth state
-  if (request.nextUrl.pathname.startsWith('/api/auth/')) {
-    return NextResponse.next()
-  }
+  const { pathname } = request.nextUrl
 
-  // Skip sign-in and sign-up pages (the redirect target)
-  if (
-    request.nextUrl.pathname.startsWith('/sign-in') ||
-    request.nextUrl.pathname.startsWith('/sign-up')
-  ) {
-    return NextResponse.next()
-  }
-
-  // Skip static assets
-  if (
-    request.nextUrl.pathname.startsWith('/_next') ||
-    request.nextUrl.pathname.startsWith('/favicon') ||
-    request.nextUrl.pathname === '/' ||
-    request.nextUrl.pathname.startsWith('/about')
-  ) {
+  // Public routes pass through
+  if (isPublicPath(pathname)) {
     return NextResponse.next()
   }
 
@@ -42,7 +56,7 @@ export async function proxy(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // Use the built-in middleware handler for route protection + session refresh
+  // Everything else (dashboard, account, api/me, api/checkout, api/portal) requires auth
   return auth.middleware({ loginUrl: '/sign-in' })(request)
 }
 
