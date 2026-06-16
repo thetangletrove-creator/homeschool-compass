@@ -65,10 +65,11 @@ export function SiteNav() {
         </div>
 
         <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" aria-label="Open menu">
-              <Menu className="h-5 w-5" />
-            </Button>
+          <SheetTrigger
+            aria-label="Open menu"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md text-foreground hover:bg-cream md:hidden"
+          >
+            <Menu className="h-5 w-5" />
           </SheetTrigger>
           <SheetContent side="right" className="w-[280px] bg-cream p-0">
             <div className="border-b border-border p-6">
