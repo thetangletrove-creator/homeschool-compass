@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run tests/",
+    "test:watch": "vitest",
+    "test:integration": "vitest run tests/db-integration.test.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",
@@ -30,6 +33,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.0",
+    "@testing-library/jest-dom": "^6.9.1",
     "@types/node": "^24",
     "@types/pg": "^8.20.0",
     "@types/react": "^19",
@@ -37,6 +41,7 @@
     "drizzle-kit": "^0.31.10",
     "postcss": "^8.5",
     "tailwindcss": "^4.2.0",
-    "typescript": "5.7.3"
+    "typescript": "5.7.3",
+    "vitest": "^4.1.9"
   }
 }
