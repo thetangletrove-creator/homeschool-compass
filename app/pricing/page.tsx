@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/site/site-footer"
 import { PricingSection } from "@/components/site/pricing-section"
 
 export const metadata: Metadata = {
-  title: "Pricing — Tangle Trove",
+  title: "Pricing — Homeschool Compass",
   description:
     "Free scorecard access or full regulation tracking with real-time alerts and ESA compliance tools.",
 }
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "Is this legal advice?",
-    a: "No. Tangle Trove provides regulatory intelligence and source citations. It is not a substitute for an attorney. Consult counsel for guidance specific to your situation.",
+    a: "No. Homeschool Compass provides regulatory intelligence and source citations. It is not a substitute for an attorney. Consult counsel for guidance specific to your situation.",
   },
 ]
 

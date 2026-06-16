@@ -19,9 +19,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { code } = await params
   const state = getState(code)
-  if (!state) return { title: "State not found — Tangle Trove" }
+  if (!state) return { title: "State not found — Homeschool Compass" }
   return {
-    title: `${state.name} Homeschool Regulations — Tangle Trove`,
+    title: `${state.name} Homeschool Regulations — Homeschool Compass`,
     description: state.summary,
   }
 }

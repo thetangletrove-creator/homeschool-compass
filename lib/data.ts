@@ -1,4 +1,4 @@
-// Mock regulatory intelligence data for Tangle Trove Regulation Tracker.
+// Mock regulatory intelligence data for Homeschool Compass Regulation Tracker.
 // All data is illustrative and for demonstration only.
 
 export type RegulationLevel =

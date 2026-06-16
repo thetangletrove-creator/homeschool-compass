@@ -5,7 +5,7 @@ import { ScorecardGrid } from "@/components/scorecard/scorecard-grid"
 import { states } from "@/lib/data"
 
 export const metadata: Metadata = {
-  title: "2026 Homeschool Freedom Scorecard — Tangle Trove",
+  title: "2026 Homeschool Freedom Scorecard — Homeschool Compass",
   description:
     "Rankings for all 50 states on regulation burden, testing mandates, curriculum freedom, and teacher qualification requirements.",
 }

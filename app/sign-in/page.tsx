@@ -7,7 +7,7 @@ import { AuthForm } from "@/components/auth/auth-form"
 export const dynamic = "force-dynamic"
 
 export const metadata = {
-  title: "Sign In — Tangle Trove",
+  title: "Sign In — Homeschool Compass",
 }
 
 export default async function SignInPage() {

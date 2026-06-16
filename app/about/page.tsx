@@ -5,7 +5,7 @@ import { SiteNav } from "@/components/site/site-nav"
 import { SiteFooter } from "@/components/site/site-footer"
 
 export const metadata: Metadata = {
-  title: "About — Tangle Trove",
+  title: "About — Homeschool Compass",
   description:
     "Why we built a regulatory intelligence platform for homeschool families, our methodology, and our data sources.",
 }
@@ -138,7 +138,7 @@ export default function AboutPage() {
             </section>
 
             <p className="text-xs leading-relaxed text-[var(--meta)]">
-              Tangle Trove provides regulatory intelligence and is not a
+              Homeschool Compass provides regulatory intelligence and is not a
               substitute for legal advice. Consult an attorney for guidance
               specific to your situation.
             </p>

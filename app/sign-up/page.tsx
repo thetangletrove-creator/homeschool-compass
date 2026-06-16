@@ -7,7 +7,7 @@ import { AuthForm } from "@/components/auth/auth-form"
 export const dynamic = "force-dynamic"
 
 export const metadata = {
-  title: "Start Tracking — Tangle Trove",
+  title: "Start Tracking — Homeschool Compass",
 }
 
 export default async function SignUpPage() {

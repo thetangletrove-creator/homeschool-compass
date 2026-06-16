@@ -40,7 +40,7 @@ export function SiteFooter() {
             <div className="flex items-center gap-2.5">
               <LogoMark className="h-7 w-7 text-cream" />
               <span className="font-heading text-base font-semibold tracking-tight">
-                Tangle Trove
+                Homeschool Compass
               </span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/70">
@@ -75,7 +75,7 @@ export function SiteFooter() {
             This is not legal advice. Consult an attorney for your situation.
           </p>
           <p className="mt-2 text-sm text-cream/50">
-            © 2026 The Tangle Trove. Built with legislative data from LegiScan
+            © 2026 The Homeschool Compass. Built with legislative data from LegiScan
             and OpenStates.
           </p>
         </div>

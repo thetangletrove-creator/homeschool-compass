@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/site/site-footer"
 import { states } from "@/lib/data"
 
 export const metadata: Metadata = {
-  title: "ESA Compliance Guide — Tangle Trove",
+  title: "ESA Compliance Guide — Homeschool Compass",
   description:
     "Education Savings Account programs by state: award amounts, eligibility, required documentation, and deadlines.",
 }

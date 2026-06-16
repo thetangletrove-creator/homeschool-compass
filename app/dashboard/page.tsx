@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/site/site-footer"
 import { BillFeed } from "@/components/dashboard/bill-feed"
 
 export const metadata: Metadata = {
-  title: "Bill Dashboard — Tangle Trove",
+  title: "Bill Dashboard — Homeschool Compass",
   description:
     "Track and filter homeschool legislation across all 50 states in real time.",
 }

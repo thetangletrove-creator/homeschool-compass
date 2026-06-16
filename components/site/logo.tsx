@@ -31,7 +31,7 @@ export function Logo({ className }: { className?: string }) {
       <LogoMark className="h-7 w-7" />
       <div className="flex flex-col leading-none">
         <span className="font-heading text-base font-semibold tracking-tight text-navy">
-          Tangle Trove
+          Homeschool Compass
         </span>
         <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-meta">
           Regulation Tracker

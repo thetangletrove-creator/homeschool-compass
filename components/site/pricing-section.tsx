@@ -111,7 +111,7 @@ export function PricingSection() {
           </span>
         </div>
         <p className="mt-6 text-sm text-cream/50">
-          This is not legal advice. Tangle Trove provides regulatory tracking, not
+          This is not legal advice. Homeschool Compass provides regulatory tracking, not
           attorney representation.
         </p>
       </div>
