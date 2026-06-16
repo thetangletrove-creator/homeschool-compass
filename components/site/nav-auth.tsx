@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { useSession, signOut } from "@/lib/auth-client"
 import { Button, buttonVariants } from "@/components/ui/button"
-import { LogOut, LayoutDashboard } from "lucide-react"
+import { LogOut, LayoutDashboard, Settings } from "lucide-react"
 
 export function NavAuth({ onNavigate }: { onNavigate?: () => void }) {
   const { data, isPending } = useSession()
@@ -39,6 +39,14 @@ export function NavAuth({ onNavigate }: { onNavigate?: () => void }) {
         >
           <LayoutDashboard className="h-4 w-4" />
           Dashboard
+        </Link>
+        <Link
+          href="/settings"
+          onClick={onNavigate}
+          className={buttonVariants({ variant: "ghost", className: "gap-2 text-sm font-medium text-foreground hover:bg-secondary" })}
+        >
+          <Settings className="h-4 w-4" />
+          Settings
         </Link>
         <div className="hidden items-center gap-2 lg:flex">
           <span
