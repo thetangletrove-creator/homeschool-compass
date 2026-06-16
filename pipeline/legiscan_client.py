@@ -21,13 +21,39 @@ DEFAULT_RATE_LIMIT = 100  # calls per 60s (Public API tier)
 MONTHLY_QUOTA = 30_000
 
 # Homeschool-relevant search terms (LegiScan full-text search)
+# These must be sufficiently narrow — standalone acronyms (PSA, ESA) are excluded
+# because they return overwhelming noise from unrelated domains.
 HS_SEARCH_TERMS = [
+    "homeschool",
+    "home school",
+    "home education",
+    "home instruction",
+    "private school attendance",
+    "education savings account",
+    "school choice",
+    "curriculum approval",
+    "portfolio review",
+    "compulsory attendance",
+    "correspondence",
+]
+
+# Title-level homeschool keywords. A bill is only kept if its TITLE
+# (not just full-text body) contains at least one of these patterns.
+# This eliminates the false positives from broad full-text search hits
+# (e.g., "home" matching "home health aide", "school" matching "school bus").
+HS_TITLE_KEYWORDS = [
     "homeschool", "home school", "home education", "home instruction",
-    "private school affidavit", "PSA", "education savings account", "ESA",
-    "school choice", "voucher", "education scholarship", "parental rights",
-    "curriculum approval", "achievement test", "standardized test homeschool",
-    "portfolio review", "superintendent notification homeschool",
-    "compulsory attendance", "truancy homeschool"
+    "home-based instruction",  # WA uses this phrasing
+    "parent-managed learning",  # CT euphemism for homeschool oversight
+    "correspondence study", "correspondence program", "correspondence",  # AK correspondence schools
+    "private school", "home study",
+    "education savings account",
+    "school choice",
+    "compulsory attendance",
+    "curriculum approval",
+    "portfolio review",
+    "superintendent notification",
+    "truancy",
 ]
 
 # States with known homeschool regulation (all 50 + DC)
@@ -246,6 +272,8 @@ class LegiScanClient:
         """
         Orchestrated discovery: search all states × all HS terms.
         Deduplicates by bill_id. Returns list of bill summaries.
+        Title-level filter applied: only bills whose title contains
+        HS_TITLE_KEYWORDS are kept, eliminating broad full-text noise.
         """
         states = states or STATE_ABBREVS
         discovered = {}
@@ -253,13 +281,27 @@ class LegiScanClient:
         for state in states:
             for term in HS_SEARCH_TERMS:
                 try:
-                    # Use searchRaw for efficiency (2000 results/page)
-                    resp = self.search_raw(term, state=state, year=year_filter)
+                    # Use full search (not raw) — includes bill titles/numbers
+                    # for title-level filtering. 50 results/page is sufficient
+                    # for homeschool-relevant bills.
+                    resp = self.search(term, state=state, year=year_filter)
                     searchresult = resp.get("searchresult", {})
-                    results = searchresult.get("results", []) if isinstance(searchresult, dict) else []
+                    # Results are under string-numbered keys (not "results" array)
+                    results = []
+                    if isinstance(searchresult, dict):
+                        for k in sorted(searchresult.keys()):
+                            if k != "summary" and isinstance(searchresult[k], dict):
+                                results.append(searchresult[k])
 
                     for bill in results:
                         bid = bill.get("bill_id")
+                        title = (bill.get("title") or "").lower()
+
+                        # Title-level filter: skip if title doesn't contain
+                        # any homeschool-related keyword
+                        if not any(kw in title for kw in HS_TITLE_KEYWORDS):
+                            continue
+
                         if bid and bid not in discovered:
                             discovered[bid] = {
                                 "bill_id": bid,
