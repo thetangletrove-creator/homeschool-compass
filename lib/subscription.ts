@@ -1,6 +1,6 @@
 import "server-only"
 import { getUserId } from "@/lib/auth"
-import { db } from "@/lib/db"
+import { db } from "@/lib/db/index"
 import { subscriptions } from "@/lib/db/schema"
 import { eq } from "drizzle-orm"
 

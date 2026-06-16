@@ -1,5 +1,5 @@
 import { getSession } from "@/lib/auth"
-import { db } from "@/lib/db"
+import { db } from "@/lib/db/index"
 import { watchlist, subscriptions } from "@/lib/db/schema"
 import { eq, sql } from "drizzle-orm"
 

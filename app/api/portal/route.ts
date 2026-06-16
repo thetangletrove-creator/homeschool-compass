@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { getUserId } from "@/lib/auth"
-import { db } from "@/lib/db"
+import { db } from "@/lib/db/index"
 import { subscriptions } from "@/lib/db/schema"
 import { eq } from "drizzle-orm"
 
@@ -26,8 +26,8 @@ function getStripe(): Stripe {
   const key = process.env.STRIPE_SECRET_KEY
   if (!key) throw new Error("STRIPE_SECRET_KEY is not set")
   stripe = new Stripe(key, {
-    apiVersion: "2025-06-16.acacia" as Stripe.LatestApiVersion,
-  })
+    apiVersion: "2025-06-16.acacia",
+  } as any)
   return stripe
 }
 

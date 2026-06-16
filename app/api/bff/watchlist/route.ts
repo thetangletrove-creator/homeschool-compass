@@ -1,6 +1,6 @@
 import { timingSafeEqual } from "crypto"
 import { sql, eq } from "drizzle-orm"
-import { db } from "@/lib/db"
+import { db } from "@/lib/db/index"
 import { watchlist } from "@/lib/db/schema"
 
 /**

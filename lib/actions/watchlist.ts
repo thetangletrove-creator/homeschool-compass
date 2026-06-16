@@ -2,7 +2,7 @@
 
 import { and, eq, sql } from "drizzle-orm"
 import { getUserId } from "@/lib/auth"
-import { db } from "@/lib/db"
+import { db } from "@/lib/db/index"
 import { watchlist, bills } from "@/lib/db/schema"
 
 /**
@@ -87,6 +87,6 @@ export async function getWatchlistCount(): Promise<{ count: number; billIds: str
 
   return {
     count: rows.length,
-    billIds: rows.map((r) => r.billId),
+    billIds: rows.map((r: { billId: any }) => r.billId),
   }
 }

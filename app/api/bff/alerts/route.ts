@@ -1,5 +1,5 @@
 import { timingSafeEqual } from "crypto"
-import { db } from "@/lib/db"
+import { db } from "@/lib/db/index"
 import { alertPreferences } from "@/lib/db/schema"
 
 /**

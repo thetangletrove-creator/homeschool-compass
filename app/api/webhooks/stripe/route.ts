@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { db } from "@/lib/db"
+import { db } from "@/lib/db/index"
 import { subscriptions, webhookEvents } from "@/lib/db/schema"
 import { eq, sql } from "drizzle-orm"
 import Stripe from "stripe"
@@ -24,8 +24,8 @@ let stripe: Stripe | null = null
 function getStripe(): Stripe {
   if (stripe) return stripe
   stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-    apiVersion: "2025-06-16.acacia" as Stripe.LatestApiVersion,
-  })
+    apiVersion: "2025-06-16.acacia",
+  } as any)
   return stripe
 }
 
@@ -147,8 +147,8 @@ async function handleSubscriptionUpdated(sub: Stripe.Subscription) {
     .set({
       status: sub.status,
       plan: plan ?? null,
-      currentPeriodEnd: sub.current_period_end
-        ? new Date(sub.current_period_end * 1000)
+      currentPeriodEnd: (sub as any).current_period_end
+        ? new Date((sub as any).current_period_end * 1000)
         : undefined,
       cancelAtPeriodEnd: sub.cancel_at_period_end,
       updatedAt: sql`NOW()`,
@@ -172,8 +172,8 @@ async function handleSubscriptionDeleted(sub: Stripe.Subscription) {
 
 async function handleInvoicePaid(invoice: Stripe.Invoice) {
   // Subscription renewed — set status to active
-  if (!invoice.subscription) return
-  const sub = await getStripe().subscriptions.retrieve(invoice.subscription as string)
+  if (!(invoice as any).subscription) return
+  const sub = await getStripe().subscriptions.retrieve((invoice as any).subscription as string)
   const userId = sub.metadata.userId
   if (!userId) return
 
@@ -181,8 +181,8 @@ async function handleInvoicePaid(invoice: Stripe.Invoice) {
     .update(subscriptions)
     .set({
       status: "active",
-      currentPeriodEnd: sub.current_period_end
-        ? new Date(sub.current_period_end * 1000)
+      currentPeriodEnd: (sub as any).current_period_end
+        ? new Date((sub as any).current_period_end * 1000)
         : undefined,
       updatedAt: sql`NOW()`,
     })
