@@ -48,20 +48,8 @@ export function SiteNav() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <Button
-            variant="ghost"
-            asChild
-            className="text-sm font-medium text-foreground hover:bg-secondary"
-          >
-            <Link href="/dashboard">Sign In</Link>
-          </Button>
-          <Button
-            asChild
-            className="rounded-md bg-navy text-sm font-medium text-primary-foreground hover:bg-navy/90"
-          >
-            <Link href="/pricing">Start Tracking</Link>
-          </Button>
+        <div className="hidden items-center md:flex">
+          <NavAuth />
         </div>
 
         <Sheet open={open} onOpenChange={setOpen}>
