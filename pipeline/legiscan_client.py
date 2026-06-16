@@ -44,10 +44,26 @@ HS_SEARCH_TERMS = [
     "learning account",
     "education freedom",
     "parental choice",
+    # Specific school choice programs (high-signal, program-specific)
+    "family empowerment scholarship",
+    "education opportunity account",
+    "scholarship granting organization",
+    "backpack funding",
+    "opportunity scholarship",
+    "empowerment scholarship",
+    # Charter school crossover (homeschoolers use charters as umbrella/enrollment)
+    "charter school enrollment",
+    "charter school attendance",
+    # Part-time enrollment / open enrollment
+    "part-time enrollment",
+    "part time enrollment",
+    "course enrollment",
+    "open enrollment",
     # Regulation / oversight
     "compulsory attendance",
     "compulsory education",
     "compulsory age",
+    "compulsory school age",
     "curriculum approval",
     "portfolio review",
     "superintendent notification",
@@ -67,6 +83,14 @@ HS_SEARCH_TERMS = [
     "alternative instruction",
     # Microschools
     "microschool", "micro school", "micro education",
+    # Alternative credentials / diploma recognition
+    "alternative credential",
+    "blended learning",
+    "virtual charter",
+    # School funding crossover (follows-the-child, education funding bills)
+    "education funding",
+    "school funding formula",
+    "student based funding",
 ]
 
 # Relaxed title pre-filter: a bill is only skipped if its title contains
@@ -82,6 +106,10 @@ RELAXED_TITLE_WORDS = [
     "training", "license", "certification",
     "juvenile", "foster", "adoption", "family",
     "safety", "health", "protection",
+    # Crossover terms
+    "charter", "enrollment", "enroll", "empowerment",
+    "opportunity", "blended", "virtual", "labor",
+    "minor", "permit", "certificate",
 ]
 
 # States with known homeschool regulation (all 50 + DC)

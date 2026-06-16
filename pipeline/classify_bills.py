@@ -65,12 +65,27 @@ _EDUCATION_ADJACENT_STRONG = [
     r"hope.scholarship",
     r"opportunity.scholarship",
     r"scholarship.program",
+    # Specific school choice programs
+    r"family.empowerment.scholarship",
+    r"education.opportunity.account",
+    r"scholarship.granting.organization",
+    r"backpack.funding",
+    r"empowerment.scholarship",
+    # Charter school crossover (homeschoolers use charters as umbrella/enrollment)
+    r"charter.school.enroll",
+    r"charter.school.attend",
+    # Part-time enrollment / open enrollment
+    r"part.time.enroll",
+    r"part.time.attend",
+    r"course.enroll",
+    r"open.enroll",
     # Compulsory attendance / truancy
     r"compulsory.attend",
     r"compulsory.education",
     r"compulsory.instruction",
     r"compulsory.attendance",
     r"compulsory.age",
+    r"compulsory.school.age",
     r"truancy",
     r"habitual.truan",
     # Regulation / oversight
@@ -93,6 +108,18 @@ _EDUCATION_ADJACENT_STRONG = [
     r"parental.rights.school",
     r"parents.interest.child.upbringing",
     r"parental.involvement.education",
+    # Alternative credentials / blended learning
+    r"alternative.credential",
+    r"blended.learning",
+    r"virtual.charter",
+    # Education funding crossover
+    r"education.funding",
+    r"student.based.funding",
+    r"school.funding.formula",
+    # Child labor / work permit (affects home-educated teens)
+    r"child.labor",
+    r"minor.work.permit",
+    r"minor.employment.certif",
 ]
 
 _NOISE_PATTERNS = [
