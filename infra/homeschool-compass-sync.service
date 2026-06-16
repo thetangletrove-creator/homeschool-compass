@@ -1,0 +1,12 @@
+[Unit]
+Description=Homeschool Compass Sync Pipeline
+Documentation=https://github.com/wowthisiseasytoremember-stack/homeschool-regulation-tracker
+
+[Service]
+Type=oneshot
+EnvironmentFile=/opt/homeschool-compass/.env
+ExecStart=/opt/homeschool-compass/scripts/sync-pipeline.sh
+TimeoutStartSec=30min
+User=ichabod
+Group=ichabod
+# systemd ensures only one instance runs at a time via Type=oneshot

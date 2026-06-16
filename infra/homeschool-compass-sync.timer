@@ -1,0 +1,15 @@
+[Unit]
+Description=Homeschool Compass Sync Schedule
+Documentation=https://github.com/wowthisiseasytoremember-stack/homeschool-regulation-tracker
+
+[Timer]
+# Every 4 hours during session hours (6am-10pm UTC = 6am-6pm ET, 3am-3pm PT)
+# Runs at :00 past the hour
+OnCalendar=*-*-* 06,10,14,18,22:00:00
+# systemd skips the next trigger if the previous run is still active
+# No custom lock file needed
+Persistent=true
+RandomizedDelaySec=120
+
+[Install]
+WantedBy=timers.target
