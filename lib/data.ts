@@ -1,92 +1,49 @@
-// Mock regulatory intelligence data for Homeschool Compass Regulation Tracker.
-// All data is illustrative and for demonstration only.
+// ── Types (moved to lib/types.ts — imported for local use, re-exported for consumers) ──
+import type {
+  RegulationLevel,
+  Grade,
+  Subscores,
+  Requirement,
+  EsaProgram,
+  LegalCase,
+  StateData,
+  BillStatus,
+  Bill,
+  Impact,
+  DbQueries,
+} from "./types"
+export type {
+  RegulationLevel,
+  Grade,
+  Subscores,
+  Requirement,
+  EsaProgram,
+  LegalCase,
+  StateData,
+  BillStatus,
+  Bill,
+  Impact,
+  DbQueries,
+} from "./types"
 
-export type RegulationLevel =
-  | "No Notice"
-  | "Low Regulation"
-  | "Moderate"
-  | "High"
+// ── Re-exported DB layer (new async interface) ──────────────────────────
+export { getDb, initLiveDb } from "./db"
 
-export type Grade = "A" | "B" | "C" | "D" | "F"
+// ═══════════════════════════════════════════════════════════════════════════
+// Legacy sync mock data — preserved for backward compatibility.
+//
+// Existing pages and components import from "@/lib/data" and expect
+// synchronous data arrays and functions. These still work unchanged.
+//
+// NEW code should use the async interface:
+//   import { getDb } from "@/lib/data"
+//   const db = await getDb()
+//   const states = await db.getStates()
+//
+// When all consumers have migrated, this file becomes a thin re-export.
+// ═══════════════════════════════════════════════════════════════════════════
 
-export type Subscores = {
-  reporting: number
-  testing: number
-  curriculum: number
-  teacher: number
-}
-
-export type Requirement = {
-  name: string
-  deadline: string
-  citation: string
-  formUrl: string
-  status: "compliant" | "pending" | "not-applicable"
-}
-
-export type EsaProgram = {
-  active: boolean
-  name?: string
-  maxAward?: string
-  eligibility?: string
-  documentation?: string[]
-  deadline?: string
-}
-
-export type LegalCase = {
-  name: string
-  citation: string
-  date: string
-  impact: string
-}
-
-export type StateData = {
-  code: string
-  name: string
-  grade: Grade
-  score: number
-  level: RegulationLevel
-  subscores: Subscores
-  summary: string
-  requirements: Requirement[]
-  esa: EsaProgram
-  precedents: LegalCase[]
-}
-
-export type BillStatus =
-  | "Introduced"
-  | "In Committee"
-  | "Passed Chamber"
-  | "Other Chamber"
-  | "Governor"
-  | "Enacted"
-
-export const BILL_STEPS: BillStatus[] = [
-  "Introduced",
-  "In Committee",
-  "Passed Chamber",
-  "Other Chamber",
-  "Governor",
-  "Enacted",
-]
-
-export type Impact = "increase" | "decrease" | "neutral"
-
-export type Bill = {
-  id: string
-  stateCode: string
-  number: string
-  title: string
-  date: string
-  statusStep: number // index into BILL_STEPS
-  impact: Impact
-  impactSummary: string
-  delta: string
-  actionRequired: string
-  esaRelated: boolean
-  fullText: string
-  analysis: string[]
-}
+// ── Mock state data ────────────────────────────────────────────────────
 
 function gradeFromScore(score: number): Grade {
   if (score >= 85) return "A"
@@ -111,7 +68,15 @@ export const GRADE_COLORS: Record<Grade, string> = {
   F: "#dc2626",
 }
 
-// Higher score = more freedom / less regulatory burden.
+export const BILL_STEPS: BillStatus[] = [
+  "Introduced",
+  "In Committee",
+  "Passed Chamber",
+  "Other Chamber",
+  "Governor",
+  "Enacted",
+]
+
 const rawStates: Array<{
   code: string
   name: string
@@ -247,6 +212,8 @@ export const states: StateData[] = rawStates
 export function getState(code: string): StateData | undefined {
   return states.find((s) => s.code.toLowerCase() === code.toLowerCase())
 }
+
+// ── Mock bill data ──────────────────────────────────────────────────────
 
 export const bills: Bill[] = [
   {
