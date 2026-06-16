@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import type { Bill } from "@/lib/data"
 import { cn } from "@/lib/utils"
 
@@ -77,12 +77,12 @@ export function AlertCard({
       </dl>
 
       <div className="mt-4 flex flex-wrap gap-2">
-        <Button
-          asChild
-          className="rounded-md bg-navy text-sm text-primary-foreground hover:bg-navy/90"
+        <Link
+          href={`/bill/${bill.id}`}
+          className={buttonVariants({ className: "rounded-md bg-navy text-sm text-primary-foreground hover:bg-navy/90" })}
         >
-          <Link href={`/bill/${bill.id}`}>Read Full Analysis</Link>
-        </Button>
+          Read Full Analysis
+        </Link>
         <Button
           variant="outline"
           className="rounded-md border-border text-sm text-foreground hover:bg-secondary"

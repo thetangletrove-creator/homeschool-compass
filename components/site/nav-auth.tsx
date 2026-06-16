@@ -4,7 +4,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { useSession, signOut } from "@/lib/auth-client"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { LogOut, LayoutDashboard } from "lucide-react"
 
 export function NavAuth({ onNavigate }: { onNavigate?: () => void }) {
@@ -32,16 +32,14 @@ export function NavAuth({ onNavigate }: { onNavigate?: () => void }) {
   if (user) {
     return (
       <div className="flex items-center gap-3">
-        <Button
-          asChild
-          variant="ghost"
-          className="gap-2 text-sm font-medium text-foreground hover:bg-secondary"
+        <Link
+          href="/dashboard"
+          onClick={onNavigate}
+          className={buttonVariants({ variant: "ghost", className: "gap-2 text-sm font-medium text-foreground hover:bg-secondary" })}
         >
-          <Link href="/dashboard" onClick={onNavigate}>
-            <LayoutDashboard className="h-4 w-4" />
-            Dashboard
-          </Link>
-        </Button>
+          <LayoutDashboard className="h-4 w-4" />
+          Dashboard
+        </Link>
         <div className="hidden items-center gap-2 lg:flex">
           <span
             className="flex h-8 w-8 items-center justify-center rounded-full bg-navy text-xs font-semibold text-primary-foreground"
@@ -65,23 +63,20 @@ export function NavAuth({ onNavigate }: { onNavigate?: () => void }) {
 
   return (
     <div className="flex items-center gap-3">
-      <Button
-        variant="ghost"
-        asChild
-        className="text-sm font-medium text-foreground hover:bg-secondary"
+      <Link
+        href="/sign-in"
+        onClick={onNavigate}
+        className={buttonVariants({ variant: "ghost", className: "text-sm font-medium text-foreground hover:bg-secondary" })}
       >
-        <Link href="/sign-in" onClick={onNavigate}>
-          Sign In
-        </Link>
-      </Button>
-      <Button
-        asChild
-        className="rounded-md bg-navy text-sm font-medium text-primary-foreground hover:bg-navy/90"
+        Sign In
+      </Link>
+      <Link
+        href="/sign-up"
+        onClick={onNavigate}
+        className={buttonVariants({ className: "rounded-md bg-navy text-sm font-medium text-primary-foreground hover:bg-navy/90" })}
       >
-        <Link href="/sign-up" onClick={onNavigate}>
-          Start Tracking
-        </Link>
-      </Button>
+        Start Tracking
+      </Link>
     </div>
   )
 }

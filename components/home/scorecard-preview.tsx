@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { StateCard } from "@/components/site/state-card"
 import { states } from "@/lib/data"
 
@@ -32,15 +32,13 @@ export function ScorecardPreview() {
         </div>
 
         <div className="mt-10">
-          <Button
-            asChild
-            className="h-11 rounded-md bg-navy px-6 text-sm font-medium text-primary-foreground hover:bg-navy/90"
+          <Link
+            href="/scorecard"
+            className={buttonVariants({ className: "h-11 rounded-md bg-navy px-6 text-sm font-medium text-primary-foreground hover:bg-navy/90" })}
           >
-            <Link href="/scorecard">
-              View Full Scorecard
-              <ArrowRight className="ml-1.5 h-4 w-4" />
-            </Link>
-          </Button>
+            View Full Scorecard
+            <ArrowRight className="ml-1.5 h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

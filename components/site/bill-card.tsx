@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Share2 } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { StatusTimeline } from "./status-timeline"
 import { ImpactBadge, StateBadge } from "./badges"
 import type { Bill } from "@/lib/data"
@@ -62,13 +62,12 @@ export function BillCard({
       </div>
 
       <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-border pt-4">
-        <Button
-          asChild
-          variant="ghost"
-          className="h-9 px-3 text-sm text-action hover:bg-secondary"
+        <Link
+          href={`/bill/${bill.id}`}
+          className={buttonVariants({ variant: "ghost", className: "h-9 px-3 text-sm text-action hover:bg-secondary" })}
         >
-          <Link href={`/bill/${bill.id}`}>View Full Text</Link>
-        </Button>
+          View Full Text
+        </Link>
         <Button
           variant="outline"
           className="h-9 rounded-md border-border px-3 text-sm text-foreground hover:bg-secondary"

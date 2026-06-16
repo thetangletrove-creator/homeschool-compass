@@ -289,20 +289,19 @@ export function BillFeed() {
             />
           </div>
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-            <SheetTrigger asChild className="lg:hidden">
-              <Button
-                variant="outline"
-                className="h-11 rounded-md border-border text-foreground"
-              >
-                <SlidersHorizontal className="mr-2 h-4 w-4" />
-                Filters
-                {activeCount > 0 && (
-                  <span className="ml-2 rounded-full bg-navy px-1.5 text-xs text-primary-foreground">
-                    {activeCount}
-                  </span>
-                )}
-              </Button>
-            </SheetTrigger>
+            <Button
+              variant="outline"
+              className="lg:hidden h-11 rounded-md border-border text-foreground"
+              onClick={() => setMobileOpen(true)}
+            >
+              <SlidersHorizontal className="mr-2 h-4 w-4" />
+              Filters
+              {activeCount > 0 && (
+                <span className="ml-2 rounded-full bg-navy px-1.5 text-xs text-primary-foreground">
+                  {activeCount}
+                </span>
+              )}
+            </Button>
             <SheetContent side="right" className="w-[300px] overflow-y-auto bg-background">
               <SheetTitle className="mb-4 font-heading text-lg text-navy">
                 Filters

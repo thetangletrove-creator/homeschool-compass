@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { AlertCard } from "@/components/site/alert-card"
 import { getBill } from "@/lib/data"
 
@@ -23,22 +23,19 @@ export function Hero() {
             into law.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Button
-              asChild
-              className="h-12 rounded-md bg-navy px-8 text-base font-medium text-primary-foreground hover:bg-navy/90"
+            <Link
+              href="/pricing"
+              className={buttonVariants({ className: "h-12 rounded-md bg-navy px-8 text-base font-medium text-primary-foreground hover:bg-navy/90" })}
             >
-              <Link href="/pricing">Start Free Tracking</Link>
-            </Button>
-            <Button
-              asChild
-              variant="ghost"
-              className="h-12 px-3 text-base font-medium text-action hover:bg-secondary"
+              Start Free Tracking
+            </Link>
+            <Link
+              href="/scorecard"
+              className={buttonVariants({ variant: "ghost", className: "h-12 px-3 text-base font-medium text-action hover:bg-secondary" })}
             >
-              <Link href="/scorecard">
-                See the Scorecard
-                <ArrowRight className="ml-1.5 h-4 w-4" />
-              </Link>
-            </Button>
+              See the Scorecard
+              <ArrowRight className="ml-1.5 h-4 w-4" />
+            </Link>
           </div>
         </div>
 

@@ -6,8 +6,9 @@ import { useState } from "react"
 import { Menu } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Logo } from "./logo"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { NavAuth } from "./nav-auth"
 
 const NAV_LINKS = [
   { href: "/dashboard", label: "Dashboard" },
@@ -24,7 +25,7 @@ export function SiteNav() {
   return (
     <header className="sticky top-0 z-50 h-16 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="mx-auto flex h-full max-w-[1280px] items-center justify-between px-4 md:px-6">
-        <Link href="/" aria-label="Tangle Trove home">
+        <Link href="/" aria-label="Homeschool Compass home">
           <Logo />
         </Link>
 
@@ -75,14 +76,13 @@ export function SiteNav() {
                 </Link>
               ))}
               <div className="mt-4 flex flex-col gap-2 px-3">
-                <Button
-                  asChild
-                  className="w-full rounded-md bg-navy text-primary-foreground hover:bg-navy/90"
+                <Link
+                  href="/pricing"
+                  onClick={() => setOpen(false)}
+                  className={buttonVariants({ className: "w-full rounded-md bg-navy text-primary-foreground hover:bg-navy/90" })}
                 >
-                  <Link href="/pricing" onClick={() => setOpen(false)}>
-                    Start Tracking
-                  </Link>
-                </Button>
+                  Start Tracking
+                </Link>
               </div>
             </nav>
             <SheetTitle className="sr-only">Navigation menu</SheetTitle>

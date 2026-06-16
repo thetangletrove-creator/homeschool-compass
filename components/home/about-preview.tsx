@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { ArrowRight, ShieldCheck } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 
 const BLOCKS = [
   {
@@ -48,16 +48,13 @@ export function AboutPreview() {
             and documented data sources — because anonymous tools have no place in
             legal compliance.
           </p>
-          <Button
-            asChild
-            variant="ghost"
-            className="shrink-0 text-action hover:bg-cream"
+          <Link
+            href="/about"
+            className={buttonVariants({ variant: "ghost", className: "shrink-0 text-action hover:bg-cream" })}
           >
-            <Link href="/about">
-              Meet the team
-              <ArrowRight className="ml-1.5 h-4 w-4" />
-            </Link>
-          </Button>
+            Meet the team
+            <ArrowRight className="ml-1.5 h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
