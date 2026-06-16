@@ -329,8 +329,26 @@ def run_pipeline(legiscan: LegiScanClient, db: NeonDB, states: list = None):
         db.update_metadata("last_synced_at", now_ts())
         return 0
 
-    # Phase 2: Fetch full bill details and upsert
-    print(f"\n[Phase 2] Fetching full details and upserting to Neon...")
+    # Phase 2a: Pre-populate all 50 states (avoid per-bill connection churn)
+    print(f"\n[Phase 2a] Ensuring all parent states exist in Neon...")
+    existing_state_codes = set()
+    try:
+        with db.conn.cursor() as cur:
+            cur.execute("SELECT code FROM states")
+            existing_state_codes = {r[0] for r in cur.fetchall()}
+    except Exception:
+        pass  # Connection may be fresh; proceed optimistically
+    for b in all_bills:
+        sc = (b.get("state") or b.get("state_code", "")).upper()
+        if sc and sc not in existing_state_codes:
+            try:
+                db.upsert_state(sc)
+                existing_state_codes.add(sc)
+            except Exception as e:
+                print(f"  ⚠️  Could not pre-insert state {sc}: {e}")
+
+    # Phase 2b: Fetch full bill details and upsert
+    print(f"\n[Phase 2b] Fetching full details and upserting to Neon...")
     bill_ids = list(set(b.get("bill_id") or b.get("bill_number", "") for b in all_bills))
     print(f"  → {len(bill_ids)} unique bills to process")
 
@@ -338,9 +356,21 @@ def run_pipeline(legiscan: LegiScanClient, db: NeonDB, states: list = None):
     failed = 0
     processed_ids = set()
 
+    # Connection health check before batches
+    def ensure_conn():
+        nonlocal db
+        try:
+            with db.conn.cursor() as cur:
+                cur.execute("SELECT 1")
+        except Exception:
+            print("  [RECONNECT] DB connection lost — reconnecting...")
+            db.__exit__(None, None, None)
+            db.__enter__()
+
     # Process bills in batches to avoid overwhelming rate limits
     batch_size = 10
     for i in range(0, len(all_bills), batch_size):
+        ensure_conn()
         batch = all_bills[i:i + batch_size]
 
         for bill in batch:

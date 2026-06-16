@@ -22,7 +22,11 @@ import type { DbQueries, StateData, Bill, RegulationLevel, Grade, Impact, Subsco
 // ── Live data helpers ────────────────────────────────────────────────────
 
 function isLive(): boolean {
-  return process.env.USE_LIVE_DATA === "true" && process.env.VERCEL_ENV !== "preview"
+  // Production: live data. Preview: mock data (unless forced).
+  // Local dev with USE_LIVE_DATA=true: live data.
+  if (process.env.USE_LIVE_DATA !== "true") return false
+  if (process.env.VERCEL_ENV === "preview") return false
+  return true
 }
 
 let liveDbSingleton: DbQueries | null = null
