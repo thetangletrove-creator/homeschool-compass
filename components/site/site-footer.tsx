@@ -15,10 +15,10 @@ const COLUMNS = [
   {
     title: "Resources",
     links: [
-      { label: "Methodology", href: "/about" },
-      { label: "Data Sources", href: "/about" },
-      { label: "HSLDA Partnership", href: "/about" },
-      { label: "Blog", href: "#" },
+      { label: "Methodology", href: "/methodology" },
+      { label: "Scorecard (Free →)", href: "/scorecard" },
+      { label: "Accuracy Guarantee", href: "/about" },
+      { label: "Data Sources", href: "/methodology" },
     ],
   },
   {
@@ -71,13 +71,26 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 border-t border-cream/15 pt-6">
-          <p className="text-sm text-cream/60">
-            This is not legal advice. Consult an attorney for your situation.
-          </p>
-          <p className="mt-2 text-sm text-cream/50">
-            © 2026 The Homeschool Compass. Built with legislative data from LegiScan
-            and OpenStates.
-          </p>
+          <div className="flex flex-col gap-2 text-sm">
+            <p className="text-cream/80">
+              <span className="font-medium">Not sure where to start?</span>{' '}
+              <Link href="/scorecard" className="text-action underline underline-offset-4 hover:no-underline">
+                See Your State's Grade →
+              </Link>
+            </p>
+            <p className="mt-1 text-xs text-cream/50">
+              ⭐ Accuracy Guaranteed  ·  50 States Tracked  ·  Real-Time Alerts  ·  SSL Secured
+            </p>
+          </div>
+          <div className="mt-4">
+            <p className="text-sm text-cream/60">
+              This is not legal advice. Consult an attorney for your situation.
+            </p>
+            <p className="mt-2 text-sm text-cream/50">
+              © 2026 The Homeschool Compass. Built with legislative data from LegiScan
+              and OpenStates.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
