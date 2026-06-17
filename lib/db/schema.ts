@@ -83,6 +83,10 @@ export const billFullText = pgTable("bill_full_text", {
     .references(() => bills.id, { onDelete: "cascade" }),
   fullText: text("full_text").notNull(),
   textUrl: text("text_url"),
+  fetchStatus: text("fetch_status").default("pending"),
+  fetchAttempts: integer("fetch_attempts").default(0),
+  lastFetchAt: timestamp("last_fetch_at"),
+  errorMessage: text("error_message"),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
 })
