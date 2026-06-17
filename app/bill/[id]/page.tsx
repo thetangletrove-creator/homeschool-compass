@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, ExternalLink, Plus, Share2, AlertTriangle, ShieldCheck, TrendingUp, TrendingDown } from "lucide-react"
+import { ArrowLeft, ExternalLink, Plus, Share2, AlertTriangle, ShieldCheck, TrendingUp } from "lucide-react"
 import { SiteNav } from "@/components/site/site-nav"
 import { SiteFooter } from "@/components/site/site-footer"
 import { StatusTimeline } from "@/components/site/status-timeline"

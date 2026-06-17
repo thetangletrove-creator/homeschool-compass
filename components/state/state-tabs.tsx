@@ -56,7 +56,7 @@ export function StateTabs({
   const [activeTab, setActiveTab] = useState("overview")
   const [impactFilter, setImpactFilter] = useState<Impact | "all">("all")
 
-  const handleMetricClick = useCallback((key: string) => {
+  const handleMetricClick = useCallback((_key: string) => {
     setActiveTab("bills")
   }, [])
 
@@ -65,7 +65,6 @@ export function StateTabs({
     : stateBills.filter(b => b.impact === impactFilter)
 
   const increaseCount = stateBills.filter(b => b.impact === "increase").length
-  const decreaseCount = stateBills.filter(b => b.impact === "decrease").length
 
   return (
     <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">

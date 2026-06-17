@@ -27,7 +27,7 @@ function getStripe(): Stripe {
   if (!key) throw new Error("STRIPE_SECRET_KEY is not set")
   stripe = new Stripe(key, {
     apiVersion: "2025-06-16.acacia",
-  } as any)
+  } as unknown as Stripe.StripeConfig)
   return stripe
 }
 

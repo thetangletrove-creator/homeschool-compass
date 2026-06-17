@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { redirect } from "next/navigation"
 import Link from "next/link"
-import { TrendingUp, TrendingDown, AlertTriangle, ShieldCheck } from "lucide-react"
+import { TrendingUp, TrendingDown, ShieldCheck } from "lucide-react"
 import { getSession } from "@/lib/auth"
 import { getWatchlist } from "@/lib/actions/watchlist"
 import { getAlertPreferences } from "@/lib/actions/alerts"
@@ -10,8 +10,6 @@ import { SiteFooter } from "@/components/site/site-footer"
 import { BillCard } from "@/components/site/bill-card"
 import { ActionChecklist, type ChecklistItem } from "@/components/site/action-checklist"
 import type { Bill } from "@/lib/data"
-import { cn } from "@/lib/utils"
-
 export const dynamic = "force-dynamic"
 export const metadata: Metadata = {
   title: "Dashboard — Homeschool Compass",

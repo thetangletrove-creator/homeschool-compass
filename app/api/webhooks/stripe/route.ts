@@ -25,7 +25,7 @@ function getStripe(): Stripe {
   if (stripe) return stripe
   stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
     apiVersion: "2025-06-16.acacia",
-  } as any)
+  } as unknown as Stripe.StripeConfig)
   return stripe
 }
 
@@ -147,8 +147,8 @@ async function handleSubscriptionUpdated(sub: Stripe.Subscription) {
     .set({
       status: sub.status,
       plan: plan ?? null,
-      currentPeriodEnd: (sub as any).current_period_end
-        ? new Date((sub as any).current_period_end * 1000)
+      currentPeriodEnd: (sub as unknown as Record<string, unknown>).current_period_end
+        ? new Date(((sub as unknown as Record<string, unknown>).current_period_end as number) * 1000)
         : undefined,
       cancelAtPeriodEnd: sub.cancel_at_period_end,
       updatedAt: sql`NOW()`,
@@ -172,8 +172,8 @@ async function handleSubscriptionDeleted(sub: Stripe.Subscription) {
 
 async function handleInvoicePaid(invoice: Stripe.Invoice) {
   // Subscription renewed — set status to active
-  if (!(invoice as any).subscription) return
-  const sub = await getStripe().subscriptions.retrieve((invoice as any).subscription as string)
+  if (!(invoice as unknown as Record<string, unknown>).subscription) return
+  const sub = await getStripe().subscriptions.retrieve((invoice as unknown as Record<string, unknown>).subscription as string)
   const userId = sub.metadata.userId
   if (!userId) return
 
@@ -181,8 +181,8 @@ async function handleInvoicePaid(invoice: Stripe.Invoice) {
     .update(subscriptions)
     .set({
       status: "active",
-      currentPeriodEnd: (sub as any).current_period_end
-        ? new Date((sub as any).current_period_end * 1000)
+      currentPeriodEnd: (sub as unknown as Record<string, unknown>).current_period_end
+        ? new Date(((sub as unknown as Record<string, unknown>).current_period_end as number) * 1000)
         : undefined,
       updatedAt: sql`NOW()`,
     })

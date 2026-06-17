@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { Check, Loader2, BadgeCheck, Search, Bell, ListChecks, TrendingUp, MousePointerClick } from "lucide-react"
+import { Check, Loader2, BadgeCheck, Bell, TrendingUp, MousePointerClick } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const FREE_FEATURES = [

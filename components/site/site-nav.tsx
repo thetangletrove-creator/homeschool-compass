@@ -6,7 +6,7 @@ import { useState } from "react"
 import { Menu } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Logo } from "./logo"
-import { Button, buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { NavAuth } from "./nav-auth"
 

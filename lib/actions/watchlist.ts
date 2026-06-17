@@ -87,6 +87,6 @@ export async function getWatchlistCount(): Promise<{ count: number; billIds: str
 
   return {
     count: rows.length,
-    billIds: rows.map((r: { billId: any }) => r.billId),
+    billIds: rows.map((r: { billId: unknown }) => r.billId as string),
   }
 }

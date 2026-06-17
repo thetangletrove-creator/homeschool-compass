@@ -10,7 +10,6 @@ import type {
   BillStatus,
   Bill,
   Impact,
-  DbQueries,
 } from "./types"
 export type {
   RegulationLevel,
@@ -23,7 +22,6 @@ export type {
   BillStatus,
   Bill,
   Impact,
-  DbQueries,
 } from "./types"
 
 // ── Re-exported DB layer (new async interface) ──────────────────────────

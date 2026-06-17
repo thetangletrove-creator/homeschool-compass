@@ -66,14 +66,6 @@ const CATEGORIES = [
   },
 ]
 
-function gradeFromScore(score: number): string {
-  if (score >= 90) return "A"
-  if (score >= 80) return "B"
-  if (score >= 70) return "C"
-  if (score >= 60) return "D"
-  return "F"
-}
-
 export default function MethodologyPage() {
   return (
     <div className="flex min-h-screen flex-col">

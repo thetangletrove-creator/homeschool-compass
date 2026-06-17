@@ -6,8 +6,7 @@
  * that wraps the original synchronous arrays in Promise-based accessors.
  */
 
-import type { DbQueries, EsaProgram, Grade, Impact, Requirement, Subscores, RegulationLevel } from "./types"
-import { BILL_STEPS } from "./data"
+import type { DbQueries, EsaProgram, Grade, Requirement, Subscores, RegulationLevel } from "./types"
 import type { Bill, StateData } from "./types"
 
 function gradeFromScore(score: number): Grade {

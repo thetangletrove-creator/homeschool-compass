@@ -2,7 +2,6 @@
 
 import type React from "react"
 import { useState, useTransition } from "react"
-import type { StateData } from "@/lib/types"
 import { updateAlertPreferences } from "@/lib/actions/alerts"
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"

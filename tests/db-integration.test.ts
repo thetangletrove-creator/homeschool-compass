@@ -18,8 +18,8 @@ const DATABASE_URL = process.env.DATABASE_URL_UNPOOLED
 const describeIf = DATABASE_URL ? describe : describe.skip
 
 describeIf('Neon DB Integration — Drizzle Queries', () => {
-  let db: any
-  let schema: any
+  let db: unknown
+  let schema: unknown
 
   beforeAll(async () => {
     const { Pool } = await import('pg')
