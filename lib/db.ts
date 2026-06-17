@@ -85,7 +85,19 @@ function rowToBill(row: {
   actionRequired: string | null
   esaRelated: boolean | null
   analysis: unknown
+  impactConfidence?: number | null
+  analyzedAt?: Date | string | null
+  analysisVersion?: string | null
 }): Bill {
+  const analysis_raw = row.analysis
+  let analysis_points: string[] = []
+  if (analysis_raw && typeof analysis_raw === 'object') {
+    const obj = analysis_raw as Record<string, unknown>
+    if (Array.isArray(obj.analysis_points)) {
+      analysis_points = obj.analysis_points as string[]
+    }
+  }
+
   return {
     id: row.id,
     stateCode: row.stateCode,
@@ -99,7 +111,12 @@ function rowToBill(row: {
     actionRequired: row.actionRequired ?? "",
     esaRelated: row.esaRelated ?? false,
     fullText: "",
-    analysis: Array.isArray(row.analysis) ? (row.analysis as string[]) : [],
+    analysis: analysis_points,
+    impactConfidence: row.impactConfidence ?? undefined,
+    analyzedAt: row.analyzedAt instanceof Date
+      ? row.analyzedAt.toISOString()
+      : (row.analyzedAt ?? undefined),
+    analysisVersion: row.analysisVersion ?? undefined,
   }
 }
 

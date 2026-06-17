@@ -79,6 +79,9 @@ export type Bill = {
   esaRelated: boolean
   fullText: string
   analysis: string[]
+  impactConfidence?: number
+  analyzedAt?: string
+  analysisVersion?: string
 }
 
 export type Impact = "increase" | "decrease" | "neutral"
