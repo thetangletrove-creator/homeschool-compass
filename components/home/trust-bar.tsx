@@ -3,9 +3,9 @@ import { Map, Bell, CheckCircle, FileText, DollarSign } from "lucide-react"
 const SIGNALS = [
   { label: "50 States Monitored", Icon: Map },
   { label: "Real-Time Legislative Alerts", Icon: Bell },
-  { label: "HSLDA-Aligned Categorization", Icon: CheckCircle },
-  { label: "30,000+ Bills Analyzed", Icon: FileText },
-  { label: "ESA Compliance Tracking", Icon: DollarSign },
+  { label: "Based on HSLDA Standards", Icon: CheckCircle },
+  { label: "30,000+ Bills Tracked", Icon: FileText },
+  { label: "ESA Program Monitoring", Icon: DollarSign },
 ]
 
 export function TrustBar() {
@@ -20,6 +20,11 @@ export function TrustBar() {
             </span>
           </div>
         ))}
+      </div>
+      <div className="mx-auto max-w-[1280px] px-4 pb-4 md:px-6">
+        <p className="text-center text-xs text-muted-foreground/60">
+          Data sourced from LegiScan, OpenStates, and state DOE records
+        </p>
       </div>
     </section>
   )

@@ -2,23 +2,34 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { Check, Loader2 } from "lucide-react"
+import { Check, Loader2, BadgeCheck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const FREE_FEATURES = [
-  "Full scorecard rankings",
-  "Bill search and filtering",
-  "Public bill summaries",
-  "Weekly digest email",
+  "Full 50-state scorecard with grades A–F",
+  "State summary pages (freedom score + 4 sub-scores)",
+  "3 detailed state compliance guides per month",
+  "Bill search (title + status only)",
+  "Weekly regulation digest email",
 ]
 
 const PAID_FEATURES = [
   "Everything in Scorecard, plus:",
-  "Instant bill alerts (SMS, email, webhook)",
-  "Detailed compliance checklists per state",
+  "Unlimited state compliance guides (all 50 states)",
+  "Instant bill alerts (email, SMS, webhook)",
+  "Personalized compliance checklist with deadlines",
   "ESA program tracking and deadline reminders",
   "Historical bill archive",
-  "API access (B2B tier)",
+  "14-day free trial — no credit card required",
+]
+
+const ESA_FEATURES = [
+  "Everything in Regulation Tracker, plus:",
+  "Multi-state tracking (up to 3 states)",
+  "SMS alerts for urgent bills (up to 5/month)",
+  "Webhook/API access",
+  "Priority email support (24-hour response)",
+  "Annual deadline reminder + personalized checklist",
 ]
 
 export function PricingSection() {
@@ -55,7 +66,7 @@ export function PricingSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {/* Free */}
           <div className="flex flex-col rounded-lg border border-cream/15 bg-white/[0.03] p-8">
             <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
@@ -65,8 +76,8 @@ export function PricingSection() {
               Free Forever
             </p>
             <p className="mt-3 leading-relaxed text-cream/70">
-              Browse the 50-state scorecard, read bill summaries, and see basic
-              status updates.
+              Browse the 50-state scorecard, read state summaries, and see basic
+              bill status.
             </p>
             <ul className="mt-6 flex flex-1 flex-col gap-3">
               {FREE_FEATURES.map((f) => (
@@ -79,14 +90,20 @@ export function PricingSection() {
             <Button
               variant="outline"
               className="mt-8 w-full rounded-md border-cream/40 bg-transparent text-cream hover:bg-cream/10 hover:text-cream"
-              onClick={() => handleCheckout("tracker")}
+              onClick={() => router.push("/sign-up")}
             >
-              Get Free Access
+              Get Started Free
             </Button>
           </div>
 
-          {/* Paid */}
-          <div className="flex flex-col rounded-lg border border-safe/40 bg-white/[0.05] p-8 ring-1 ring-safe/30">
+          {/* Paid — Most Popular */}
+          <div className="relative flex flex-col rounded-lg border border-safe/40 bg-white/[0.05] p-8 ring-2 ring-safe/30">
+            {/* Most Popular badge */}
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full bg-safe px-4 py-1 text-xs font-semibold text-navy shadow-sm">
+              <BadgeCheck className="h-3.5 w-3.5" />
+              Most Popular
+            </span>
+
             <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
               Regulation Tracker
             </span>
@@ -94,7 +111,7 @@ export function PricingSection() {
               $29<span className="text-lg font-normal text-cream/60">/year</span>
             </p>
             <p className="mt-1 text-sm text-cream/60">
-              or $99/year for ESA Compliance
+              $2.42/month, billed annually
             </p>
             <p className="mt-3 leading-relaxed text-cream/70">
               Real-time alerts, detailed analysis, and compliance checklists
@@ -127,33 +144,109 @@ export function PricingSection() {
               {loading === "tracker" ? (
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
               ) : null}
-              Start Tracking — $29/year
+              Start Free Trial
             </Button>
+            <p className="mt-3 text-center text-xs text-cream/60">
+              14-day free trial. No credit card required.
+            </p>
+          </div>
+
+          {/* ESA — Full Protection */}
+          <div className="flex flex-col rounded-lg border border-cream/15 bg-white/[0.03] p-8">
+            <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
+              Full Protection
+            </span>
+            <p className="mt-3 font-heading text-3xl font-semibold">
+              $99<span className="text-lg font-normal text-cream/60">/year</span>
+            </p>
+            <p className="mt-1 text-sm text-cream/60">
+              Everything in Tracker, plus multi-state &amp; SMS
+            </p>
+            <p className="mt-3 leading-relaxed text-cream/70">
+              For families managing ESA compliance, multiple states, or needing
+              SMS alerts and priority support.
+            </p>
+            <ul className="mt-6 flex flex-1 flex-col gap-3">
+              {ESA_FEATURES.map((f, i) => (
+                <li
+                  key={f}
+                  className="flex items-start gap-2.5 text-sm"
+                >
+                  {i === 0 ? (
+                    <span className="text-sm font-medium text-cream/90">
+                      {f}
+                    </span>
+                  ) : (
+                    <>
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-safe" />
+                      <span className="text-cream/90">{f}</span>
+                    </>
+                  )}
+                </li>
+              ))}
+            </ul>
             <Button
               variant="outline"
-              className="mt-3 w-full rounded-md border-safe/40 bg-transparent text-safe hover:bg-safe/10"
+              className="mt-8 w-full rounded-md border-safe/40 bg-transparent text-safe hover:bg-safe/10"
               onClick={() => handleCheckout("esa")}
               disabled={loading === "esa"}
             >
               {loading === "esa" ? (
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
               ) : null}
-              ESA Compliance — $99/year
+              Try ESA Free for 14 Days
             </Button>
             <p className="mt-3 text-center text-xs text-cream/60">
-              14-day free trial. Cancel anytime.
+              14-day free trial. No credit card required.
             </p>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-start gap-3 border-t border-cream/15 pt-8 text-sm text-cream/60 md:flex-row md:items-center md:gap-8">
-          <span>Used by 2,400+ homeschool families</span>
-          <span>Trusted by umbrella schools in 12 states</span>
-          <span className="md:ml-auto text-cream/40">
-            Stripe · Apple Pay · Google Pay
-          </span>
+        {/* Trust signals footer */}
+        <div className="mt-10 space-y-3 border-t border-cream/15 pt-8 text-sm text-cream/60">
+          <div className="flex flex-col items-start gap-2 md:flex-row md:items-center md:gap-8">
+            <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
+              Payments
+            </span>
+            <span>Stripe · Apple Pay · Google Pay · 256-bit SSL Encryption</span>
+          </div>
+          <div className="flex flex-col items-start gap-2 md:flex-row md:items-center md:gap-8">
+            <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
+              Data Sources
+            </span>
+            <span>LegiScan · OpenStates · State DOE Records</span>
+          </div>
+          <div className="flex flex-col items-start gap-2 md:flex-row md:items-center md:gap-8">
+            <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
+              Framework
+            </span>
+            <span>Aligned with HSLDA State Law Categories</span>
+          </div>
+          <div className="flex flex-col items-start gap-2 md:flex-row md:items-center md:gap-8">
+            <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
+              Guarantee
+            </span>
+            <span>Miss a bill? Your next year is free.</span>
+          </div>
         </div>
-        <p className="mt-6 text-sm text-cream/50">
+
+        {/* FAQ micro-copy */}
+        <div className="mt-8 grid gap-4 border-t border-cream/10 pt-8 text-sm text-cream/60 md:grid-cols-3">
+          <div>
+            <p className="font-medium text-cream/80">What happens after my free trial?</p>
+            <p className="mt-1">Converts to $29/year auto-renew. Cancel anytime before the trial ends — no charge.</p>
+          </div>
+          <div>
+            <p className="font-medium text-cream/80">Can I switch tiers later?</p>
+            <p className="mt-1">Yes — upgrade or downgrade anytime. Changes take effect at the next billing cycle.</p>
+          </div>
+          <div>
+            <p className="font-medium text-cream/80">Is this legal advice?</p>
+            <p className="mt-1">No. We provide regulatory tracking, not attorney representation. Consult a lawyer for your situation.</p>
+          </div>
+        </div>
+
+        <p className="mt-8 text-sm text-cream/50">
           This is not legal advice. Homeschool Compass provides regulatory tracking, not
           attorney representation.
         </p>

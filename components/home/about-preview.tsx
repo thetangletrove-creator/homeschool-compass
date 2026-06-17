@@ -9,11 +9,11 @@ const BLOCKS = [
   },
   {
     title: "Our Approach",
-    body: "We process 30,000+ API queries monthly across LegiScan and OpenStates, with change-hash detection for incremental sync and Gemini-assisted analysis categorized against the HSLDA framework.",
+    body: "We monitor legislative data from LegiScan and OpenStates, tracking bills that affect homeschoolers across all 50 states. Each bill is categorized against the HSLDA framework for consistency.",
   },
   {
-    title: "The Accuracy Guarantee",
-    body: "If we miss a bill that affects your state, your next year is free. We hold our compliance tracking to the same standard the IRS holds your taxes.",
+    title: "Data Sources",
+    body: "LegiScan — real-time legislative tracking · OpenStates — open government data · State DOE websites — primary source verification · HSLDA framework — standardized categorization",
   },
 ]
 
@@ -25,7 +25,12 @@ export function AboutPreview() {
           Why We Built This
         </h2>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        {/* Who This Is For — callout */}
+        <div className="mt-6 rounded-lg border border-navy/10 bg-navy/[0.03] px-5 py-4 text-sm leading-relaxed text-muted-foreground">
+          <span className="font-semibold text-navy">For homeschool parents, co-op leaders, and umbrella school administrators</span> who need to know — not guess — what their state requires. Not a legal substitute. Always consult a qualified attorney for specific legal advice.
+        </div>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
           {BLOCKS.map((block) => (
             <div
               key={block.title}
@@ -39,6 +44,27 @@ export function AboutPreview() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Accuracy Guarantee callout */}
+        <div className="mt-6 rounded-lg border border-safe/30 bg-safe/[0.06] px-5 py-4">
+          <p className="text-sm leading-relaxed font-semibold text-navy">
+            ⭐ Our Accuracy Guarantee
+          </p>
+          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+            If we miss a bill that affects your state, your next year is free.
+            We hold our compliance tracking to the same standard we&apos;d want for
+            our own families.
+          </p>
+        </div>
+
+        <div className="mt-6">
+          <Link
+            href="/methodology"
+            className="text-sm font-medium text-action underline-offset-4 hover:underline"
+          >
+            Methodology: How We Score States →
+          </Link>
         </div>
 
         <div className="mt-8 flex flex-col items-start gap-4 rounded-lg border border-navy/10 bg-navy/[0.03] p-6 sm:flex-row sm:items-center">
