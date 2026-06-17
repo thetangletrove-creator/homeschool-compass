@@ -107,7 +107,7 @@ export function SettingsForm({ prefs }: { prefs: Prefs }) {
           States to monitor
         </legend>
         <p className="mb-4 text-sm text-muted-foreground">
-          We'll alert you when bills are introduced or advance in these states.
+          We&rsquo;ll alert you when bills are introduced or advance in these states.
           Leave empty to monitor all states.
         </p>
         <div className="flex flex-wrap gap-2">

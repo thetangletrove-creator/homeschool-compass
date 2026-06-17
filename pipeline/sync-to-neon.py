@@ -46,9 +46,12 @@ if not os.environ.get("DATABASE_URL_ADMIN") and os.path.exists(_ENV_PATH):
             key, _, value = line.partition("=")
             os.environ.setdefault(key.strip(), value.strip())
 
-# Add local dir to path so legiscan_client can be imported
+# Add local dir to path so legiscan_client and services can be imported
 SCRIPT_DIR = Path(__file__).parent
 sys.path.insert(0, str(SCRIPT_DIR))
+SERVICES_DIR = str(SCRIPT_DIR.parent / "services")
+if SERVICES_DIR not in sys.path:
+    sys.path.insert(0, SERVICES_DIR)
 
 from legiscan_client import LegiScanClient
 
@@ -192,11 +195,10 @@ class NeonDB:
         our_id = make_bill_id(state_code, bill_number)
         status_step = legiscan_status_to_step(status)
 
-        # Determine impact (default: neutral for new bills)
-        # TODO: Use Gemini analysis for accurate impact classification
-        impact = "neutral"
-        impact_summary = title[:200] if title else ""
-        delta = ""
+        # Impact fields are NOT set here — they're preserved across syncs
+        # and updated by the Gemini classifier (classify_bills.py).
+        # analysis_version IS NULL = pending classification; this preserves
+        # any existing analysis on re-sync.
 
         try:
             if self.dry_run:
@@ -214,13 +216,12 @@ class NeonDB:
                         title = EXCLUDED.title,
                         date = EXCLUDED.date,
                         status_step = EXCLUDED.status_step,
-                        impact_summary = EXCLUDED.impact_summary,
                         updated_at = NOW()
                 """, (
                     our_id, state_code, bill_number, title,
                     status_date or datetime.now().date(),
-                    status_step, impact, impact_summary,
-                    delta, False,
+                    status_step, "neutral", title[:200] if title else "", "",
+                    False,
                     json.dumps({"description": description, "legiscan_status": status}),
                     bill_id,
                 ))
@@ -425,7 +426,21 @@ def run_pipeline(legiscan: LegiScanClient, db: NeonDB, states: list = None):
             else:
                 failed += 1
 
-    # Phase 3: Summary and metadata
+    # Phase 3: Gemini analysis on newly inserted bills
+    if total > 0:
+        print(f"\n[Phase 3] Running Gemini classification on new bills...")
+        try:
+            from classify_bills import BillPipeline
+            gemini = BillPipeline(dsn=db.dsn)
+            batch_result = gemini.process_batch(batch_size=min(50, total))
+            print(f"  → Analyzed: {batch_result['analyzed']}, "
+                  f"Failed: {batch_result['failed']}, "
+                  f"Skipped: {batch_result['skipped']}")
+        except Exception as e:
+            print(f"  ⚠️  Gemini classification failed: {e}")
+            print(f"  → Bills will be analyzed on next classify_bills run")
+
+    # Phase 4: Summary and metadata
     print(f"\n{'='*60}")
     print(f"  SYNC COMPLETE")
     print(f"  Processed: {total} bills")

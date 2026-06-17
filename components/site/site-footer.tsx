@@ -75,7 +75,7 @@ export function SiteFooter() {
             <p className="text-cream/80">
               <span className="font-medium">Not sure where to start?</span>{' '}
               <Link href="/scorecard" className="text-action underline underline-offset-4 hover:no-underline">
-                See Your State's Grade →
+                See Your State&rsquo;s Grade →
               </Link>
             </p>
             <p className="mt-1 text-xs text-cream/50">

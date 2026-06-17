@@ -30,7 +30,7 @@ export function Hero() {
               href="/scorecard"
               className={buttonVariants({ className: "h-12 rounded-md bg-navy px-8 text-base font-medium text-primary-foreground hover:bg-navy/90" })}
             >
-              See Your State's Grade →
+              See Your State&rsquo;s Grade →
             </Link>
             <Link
               href="/pricing"

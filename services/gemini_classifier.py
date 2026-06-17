@@ -17,8 +17,8 @@ Usage:
                                      description="Adds portfolio review...")
     # => { "impact": "increase", "impact_confidence": 0.92, ... }
 
-    # Batch
-    results = classifier.batch_analyze([{"title":..., "state":..., "description":...}])
+    # Batch (single call, up to 50 bills)
+    results = classifier.batch_analyze_multi([{...}, ...])
 """
 
 import os
@@ -84,10 +84,9 @@ class GeminiBillClassifier:
 
     # ── Core Analysis ────────────────────────────────────────────────
 
-    def _call_gemini(self, prompt_text: str) -> Optional[Dict]:
-        """Call Gemini via proxy with retry logic."""
+    def _call_gemini(self, prompt_text: str, max_tokens: int = 1024) -> Optional[str]:
+        """Call Gemini via proxy with retry logic. Returns raw response text."""
         for attempt in range(self.retries):
-            content = ""
             try:
                 response = self.client.chat.completions.create(
                     model=self.model,
@@ -96,7 +95,7 @@ class GeminiBillClassifier:
                         {"role": "user", "content": prompt_text},
                     ],
                     temperature=0.1,
-                    max_tokens=1024,
+                    max_tokens=max_tokens,
                 )
 
                 content = response.choices[0].message.content
@@ -106,32 +105,25 @@ class GeminiBillClassifier:
                 # Clean markdown fences if present
                 cleaned = content.strip()
                 if cleaned.startswith("```"):
-                    # Strip the opening fence (```json or ```)
                     cleaned = cleaned.split("\n", 1)[-1] if "\n" in cleaned else cleaned[3:]
                 if cleaned.endswith("```"):
                     cleaned = cleaned[:-3].strip()
 
-                return json.loads(cleaned)
-
-            except (json.JSONDecodeError, ValueError) as e:
-                attempt_msg = f"  ⚠️  JSON parse error (attempt {attempt+1}/{self.retries}): {e}"
-                if attempt < self.retries - 1:
-                    try:
-                        attempt_msg += f" — got: {content[:80]}..."
-                    except:
-                        pass
-                    attempt_msg += ", retrying..."
-                print(attempt_msg)
-                time.sleep(1 * (attempt + 1))
+                return cleaned
 
             except Exception as e:
+                err_str = str(e)
+                is_rate_limit = "429" in err_str or "RESOURCE_EXHAUSTED" in err_str
+                wait_time = 5 * (attempt + 1) if is_rate_limit else 2 * (attempt + 1)
                 attempt_msg = f"  ⚠️  Gemini call failed (attempt {attempt+1}/{self.retries}): {e}"
                 if attempt < self.retries - 1:
-                    attempt_msg += ", retrying..."
-                print(attempt_msg)
-                time.sleep(2 * (attempt + 1))
+                    attempt_msg += f", retrying in {wait_time}s..."
+                    print(attempt_msg)
+                    time.sleep(wait_time)
+                else:
+                    print(attempt_msg)
 
-        print("  ✗ All retries exhausted, returning fallback neutral")
+        print("  ✗ All retries exhausted")
         return None
 
     def analyze_bill(
@@ -141,18 +133,7 @@ class GeminiBillClassifier:
         description: str = "",
         deep_analysis: bool = True,
     ) -> Dict[str, Any]:
-        """
-        Classify a single bill.
-
-        Args:
-            title: Bill title
-            state: State code (e.g. "CA", "TX")
-            description: Bill description or summary text
-            deep_analysis: If True, full Tier 1 + Tier 2. If False, Tier 1 only.
-
-        Returns:
-            Dict with impact, confidence, esa_related, plus deep analysis fields.
-        """
+        """Classify a single bill."""
         bill_text = title
         if state:
             bill_text += f" ({state})"
@@ -168,12 +149,107 @@ class GeminiBillClassifier:
 
 {bill_text}"""
 
-        result = self._call_gemini(prompt)
-
-        if result is None:
+        raw = self._call_gemini(prompt, max_tokens=1024)
+        if raw is None:
             return self._fallback_result()
 
-        return self._validate_result(result)
+        try:
+            result = json.loads(raw)
+            return self._validate_result(result)
+        except (json.JSONDecodeError, ValueError) as e:
+            print(f"    ✗ JSON parse error: {e}")
+            return self._fallback_result()
+
+    def batch_analyze_multi(
+        self,
+        bills: List[Dict[str, str]],
+        deep_analysis: bool = True,
+    ) -> List[Dict[str, Any]]:
+        """
+        Analyze multiple bills in a SINGLE Gemini call.
+        Much more efficient than batch_analyze (1 call vs N calls).
+
+        Args:
+            bills: List of dicts with keys 'id', 'title', 'state_code', 'description'
+            deep_analysis: Whether to request deep (Tier 2) analysis
+
+        Returns:
+            List of result dicts with '_index' key for matching back to bills
+        """
+        if not bills:
+            return []
+
+        # Build a numbered list for the prompt
+        lines = []
+        for i, bill in enumerate(bills):
+            state = bill.get("state_code", bill.get("state", ""))
+            title = bill.get("title", "")
+            desc = bill.get("description", "")
+            db_id = bill.get("id", f"bill_{i}")
+            line = f'{i}. [ID: {db_id}] "{title}" ({state})'
+            if desc:
+                line += f" — {desc[:300]}"
+            lines.append(line)
+
+        bill_list = "\n".join(lines)
+
+        analysis_type = "full deep analysis" if deep_analysis else "basic classification"
+        prompt = f"""Analyze the following {len(bills)} bills for homeschool impact. Return a JSON ARRAY of results, one per bill, in the same order as listed.
+
+For each bill, provide {analysis_type} including: impact (increase|decrease|neutral), impact_confidence (0.0-1.0), esa_related (bool), esa_confidence (0.0-1.0), impact_summary, delta, action_required, analysis_points (array of strings), key_provisions (array), effective_date, and target_audience.
+
+IMPORTANT: Return a JSON array. Each element in the array must include a "bill_id" field matching the bill's [ID: ...] tag.
+
+BILLS TO ANALYZE:
+{bill_list}"""
+
+        raw = self._call_gemini(prompt, max_tokens=16384)
+        if raw is None:
+            print(f"  ✗ Multi-batch Gemini call failed entirely, using fallback for {len(bills)} bills")
+            return [self._fallback_result() for _ in bills]
+
+        try:
+            # Try parsing as array first
+            results = json.loads(raw)
+            if not isinstance(results, list):
+                # Maybe it's wrapped in an object
+                if isinstance(results, dict):
+                    for key in ("results", "bills", "analyses", "data"):
+                        if key in results and isinstance(results[key], list):
+                            results = results[key]
+                            break
+                    else:
+                        raise ValueError(f"Unexpected response shape: {type(results)}")
+
+            # Validate and match results
+            validated = []
+            used_ids = set()
+
+            # Build lookup by bill_id if results have bill_id
+            by_id = {}
+            for r in results:
+                bid = r.get("bill_id", "")
+                if bid:
+                    by_id[bid] = r
+
+            for i, bill in enumerate(bills):
+                db_id = bill.get("id", f"bill_{i}")
+                # Try matching by bill_id first, then by position
+                result = by_id.get(db_id)
+                if result is None and i < len(results):
+                    result = results[i]
+                if result is not None and isinstance(result, dict):
+                    validated.append(self._validate_result(result))
+                else:
+                    print(f"    ✗ Missing result for bill {db_id}, using fallback")
+                    validated.append(self._fallback_result())
+
+            return validated
+
+        except (json.JSONDecodeError, ValueError) as e:
+            print(f"    ✗ Multi-batch JSON parse error: {e}")
+            print(f"    Response preview: {raw[:200]}...")
+            return [self._fallback_result() for _ in bills]
 
     def batch_analyze(
         self,
@@ -181,14 +257,8 @@ class GeminiBillClassifier:
         deep_analysis: bool = True,
     ) -> List[Dict[str, Any]]:
         """
-        Analyze multiple bills sequentially with rate limiting.
-
-        Args:
-            bills: List of dicts with keys 'title', 'state', 'description'
-            deep_analysis: Whether to request deep (Tier 2) analysis
-
-        Returns:
-            List of result dicts
+        Legacy: Analyze multiple bills sequentially with rate limiting.
+        Use batch_analyze_multi for single-call multi-bill analysis.
         """
         results = []
         for i, bill in enumerate(bills):
@@ -263,23 +333,12 @@ if __name__ == "__main__":
     parser.add_argument("--state", type=str, default="", help="State code")
     parser.add_argument("--description", type=str, default="", help="Bill description")
     parser.add_argument("--quick", action="store_true", help="Tier 1 only")
-    parser.add_argument("--test", action="store_true", help="Run test cases")
 
     args = parser.parse_args()
 
     classifier = GeminiBillClassifier()
 
-    if args.test:
-        test_bills = [
-            {"title": "Adds Annual Portfolio Review Requirement", "state": "CA", "description": "Requires annual portfolio review conducted by a credentialed teacher for each homeschooled pupil."},
-            {"title": "Establishes Universal Education Savings Accounts", "state": "TX", "description": "Creates universal ESA available to all K-12 students including home educators."},
-            {"title": "Clarifies Notice of Intent Filing Window", "state": "CO", "description": "Clarifies the timeframe for filing notice of intent with local school district."},
-        ]
-        results = classifier.batch_analyze(test_bills, deep_analysis=not args.quick)
-        for i, r in enumerate(results):
-            print(f"\n--- Result {i+1} ---")
-            print(json.dumps(r, indent=2))
-    else:
+    if args.title:
         result = classifier.analyze_bill(
             title=args.title,
             state=args.state,
@@ -287,3 +346,13 @@ if __name__ == "__main__":
             deep_analysis=not args.quick,
         )
         print(json.dumps(result, indent=2))
+    else:
+        # Demo: test with sample bills
+        test_bills = [
+            {"id": "1", "title": "Adds Annual Portfolio Review Requirement", "state_code": "CA", "description": "Requires annual portfolio review conducted by a credentialed teacher for each homeschooled pupil."},
+            {"id": "2", "title": "Establishes Universal Education Savings Accounts", "state_code": "TX", "description": "Creates universal ESA available to all K-12 students including home educators."},
+        ]
+        results = classifier.batch_analyze_multi(test_bills)
+        for r in results:
+            print(json.dumps(r, indent=2))
+            print("---")
