@@ -1,10 +1,11 @@
 "use client"
 
+import { useState, useCallback } from "react"
 import Link from "next/link"
-import { CheckCircle2, Clock, MinusCircle, ExternalLink } from "lucide-react"
+import { CheckCircle2, Clock, MinusCircle, ExternalLink, ArrowUpRight, ArrowDownRight } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { BillCard } from "@/components/site/bill-card"
-import type { Bill, StateData } from "@/lib/data"
+import type { Bill, StateData, Impact } from "@/lib/data"
 import { cn } from "@/lib/utils"
 
 const METRICS: Array<{ key: keyof StateData["subscores"]; label: string; desc: string }> = [
@@ -26,6 +27,25 @@ function barColor(score: number) {
   return "var(--reg-up)"
 }
 
+function chipColor(level: string) {
+  if (level === "safe") return "bg-safe/10 text-safe border-safe/20"
+  if (level === "amber") return "bg-amber/10 text-amber border-amber/20"
+  if (level === "red") return "bg-red-50 text-red-700 border-red-200"
+  return "bg-muted text-muted-foreground border-border"
+}
+
+function subscoreLevel(score: number): { label: string; tone: string } {
+  if (score >= 80) return { label: "Low Restriction", tone: "safe" }
+  if (score >= 60) return { label: "Moderate", tone: "amber" }
+  return { label: "High Restriction", tone: "red" }
+}
+
+const IMPACT_FILTERS: Array<{ value: Impact | "all"; label: string; icon: React.ReactNode }> = [
+  { value: "all", label: "All Bills", icon: null },
+  { value: "increase", label: "Increases Regulation", icon: <ArrowUpRight className="h-3.5 w-3.5 text-reg-up" /> },
+  { value: "decrease", label: "Decreases Regulation", icon: <ArrowDownRight className="h-3.5 w-3.5 text-safe" /> },
+]
+
 export function StateTabs({
   state,
   stateBills,
@@ -33,12 +53,26 @@ export function StateTabs({
   state: StateData
   stateBills: Bill[]
 }) {
+  const [activeTab, setActiveTab] = useState("overview")
+  const [impactFilter, setImpactFilter] = useState<Impact | "all">("all")
+
+  const handleMetricClick = useCallback((key: string) => {
+    setActiveTab("bills")
+  }, [])
+
+  const filteredBills = impactFilter === "all"
+    ? stateBills
+    : stateBills.filter(b => b.impact === impactFilter)
+
+  const increaseCount = stateBills.filter(b => b.impact === "increase").length
+  const decreaseCount = stateBills.filter(b => b.impact === "decrease").length
+
   return (
-    <Tabs defaultValue="overview" className="w-full">
+    <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
       <TabsList className="mb-8 flex h-auto w-full flex-wrap justify-start gap-1 rounded-lg border border-border bg-card p-1">
         {[
           ["overview", "Overview"],
-          ["bills", "Current Bills"],
+          ["bills", `Bills (${stateBills.length})`],
           ["requirements", "Requirements"],
           ["esa", "ESA Program"],
           ["legal", "Legal Precedent"],
@@ -55,32 +89,75 @@ export function StateTabs({
 
       {/* Overview */}
       <TabsContent value="overview">
+        {/* Restriction level chips */}
+        <div className="mb-6 flex flex-wrap gap-2">
+          {METRICS.map((m) => {
+            const score = state.subscores[m.key]
+            const level = subscoreLevel(score)
+            return (
+              <button
+                key={m.key}
+                onClick={() => handleMetricClick(m.key)}
+                className={cn(
+                  "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all hover:shadow-sm",
+                  chipColor(level.tone),
+                  "cursor-pointer"
+                )}
+              >
+                {m.label}: {level.label}
+                <ArrowUpRight className="h-3 w-3 opacity-60" />
+              </button>
+            )
+          })}
+        </div>
+
         <div className="grid gap-4 sm:grid-cols-2">
           {METRICS.map((m) => {
             const score = state.subscores[m.key]
+            const level = subscoreLevel(score)
             return (
-              <div
+              <button
                 key={m.key}
-                className="rounded-lg border border-border bg-card p-5"
+                onClick={() => handleMetricClick(m.key)}
+                className={cn(
+                  "group rounded-lg border border-border bg-card p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)]",
+                  "cursor-pointer"
+                )}
               >
                 <div className="flex items-center justify-between">
-                  <h3 className="font-heading text-base font-semibold text-navy">
+                  <h3 className="font-heading text-base font-semibold text-navy group-hover:text-action">
                     {m.label}
                   </h3>
                   <span className="font-mono text-lg font-bold text-navy">
                     {score}
+                    <span className="ml-1.5 text-xs font-normal text-meta">/100</span>
                   </span>
                 </div>
                 <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-secondary">
                   <div
-                    className="h-full rounded-full"
+                    className="h-full rounded-full transition-all group-hover:opacity-80"
                     style={{ width: `${score}%`, backgroundColor: barColor(score) }}
                   />
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {m.desc}
+                <div className="mt-2 flex items-center justify-between">
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {m.desc}
+                  </p>
+                  <span
+                    className={cn(
+                      "ml-2 shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider",
+                      level.tone === "red" && "bg-red-50 text-red-700",
+                      level.tone === "amber" && "bg-amber/10 text-amber",
+                      level.tone === "safe" && "bg-safe/10 text-safe",
+                    )}
+                  >
+                    {level.label}
+                  </span>
+                </div>
+                <p className="mt-2 text-xs text-action opacity-0 transition-opacity group-hover:opacity-100">
+                  Click to see relevant bills →
                 </p>
-              </div>
+              </button>
             )
           })}
         </div>
@@ -89,11 +166,64 @@ export function StateTabs({
       {/* Current Bills */}
       <TabsContent value="bills">
         {stateBills.length > 0 ? (
-          <div className="flex flex-col gap-4">
-            {stateBills.map((bill) => (
-              <BillCard key={bill.id} bill={bill} />
-            ))}
-          </div>
+          <>
+            {/* Impact filter chips */}
+            <div className="mb-4 flex flex-wrap gap-2">
+              {IMPACT_FILTERS.map((f) => {
+                const count = f.value === "all"
+                  ? stateBills.length
+                  : stateBills.filter(b => b.impact === f.value).length
+                return (
+                  <button
+                    key={f.value}
+                    onClick={() => setImpactFilter(f.value)}
+                    className={cn(
+                      "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all",
+                      impactFilter === f.value
+                        ? "border-navy bg-navy text-primary-foreground"
+                        : "border-border bg-card text-muted-foreground hover:border-slate-300 hover:text-foreground"
+                    )}
+                  >
+                    {f.icon}
+                    {f.label}
+                    <span className={cn(
+                      "ml-0.5 rounded-full px-1.5 text-[10px]",
+                      impactFilter === f.value ? "bg-white/20" : "bg-muted"
+                    )}>
+                      {count}
+                    </span>
+                  </button>
+                )
+              })}
+            </div>
+
+            {increaseCount > 0 && (
+              <div className="mb-3 flex items-center gap-2 rounded-lg bg-amber/5 border border-amber/20 px-4 py-2 text-sm text-amber">
+                <ArrowUpRight className="h-4 w-4 shrink-0" />
+                <span>
+                  {increaseCount} bill{increaseCount !== 1 ? "s" : ""} {increaseCount !== 1 ? "are" : "is"} increasing regulation —{" "}
+                  <span className="font-medium">requires attention</span>
+                </span>
+              </div>
+            )}
+
+            {filteredBills.length > 0 ? (
+              <div className="flex flex-col gap-4">
+                {filteredBills.map((bill) => (
+                  <BillCard key={bill.id} bill={bill} />
+                ))}
+              </div>
+            ) : (
+              <div className="rounded-lg border border-dashed border-border bg-card py-16 text-center">
+                <p className="font-heading text-lg font-semibold text-navy">
+                  No {impactFilter !== "all" ? `${impactFilter} ` : ""}bills for {state.name}
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Try a different filter or check back after the next LegiScan sync.
+                </p>
+              </div>
+            )}
+          </>
         ) : (
           <div className="rounded-lg border border-dashed border-border bg-card py-16 text-center">
             <p className="font-heading text-lg font-semibold text-navy">

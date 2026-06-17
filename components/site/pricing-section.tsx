@@ -2,24 +2,25 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { Check, Loader2, BadgeCheck } from "lucide-react"
+import { Check, Loader2, BadgeCheck, Search, Bell, ListChecks, TrendingUp, MousePointerClick } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const FREE_FEATURES = [
   "Full 50-state scorecard with grades A–F",
-  "State summary pages (freedom score + 4 sub-scores)",
-  "3 detailed state compliance guides per month",
-  "Bill search (title + status only)",
+  "State pages with restriction chips and clickable drill-down",
+  "Bill search (title + status + impact)",
   "Weekly regulation digest email",
+  "3 detailed state compliance guides per month",
 ]
 
 const PAID_FEATURES = [
   "Everything in Scorecard, plus:",
-  "Unlimited state compliance guides (all 50 states)",
-  "Instant bill alerts (email, SMS, webhook)",
-  "Personalized compliance checklist with deadlines",
-  "ESA program tracking and deadline reminders",
-  "Historical bill archive",
+  "Clickable investigation board — drill from state restrictions to specific bills",
+  "AI-powered bill analysis: plain-English summaries with impact scoring",
+  "Real-time alerts when new bills affect your state (email + SMS + webhook)",
+  "Personalized compliance checklist with deadlines built from bill analysis",
+  "ESA program tracking: eligibility, awards, and filing deadlines",
+  "Full bill archive with status updates and historical data",
   "14-day free trial — no credit card required",
 ]
 
@@ -27,9 +28,9 @@ const ESA_FEATURES = [
   "Everything in Regulation Tracker, plus:",
   "Multi-state tracking (up to 3 states)",
   "SMS alerts for urgent bills (up to 5/month)",
-  "Webhook/API access",
+  "Webhook/API access for custom integrations",
   "Priority email support (24-hour response)",
-  "Annual deadline reminder + personalized checklist",
+  "Annual deadline reminder + personalized compliance checklist",
 ]
 
 export function PricingSection() {
@@ -61,12 +62,26 @@ export function PricingSection() {
             Choose Your Level of Protection
           </h2>
           <p className="mt-3 text-lg leading-relaxed text-cream/70">
-            Start free with the scorecard. Upgrade when you need real-time alerts
-            and state-specific compliance.
+            Start free with the scorecard. Upgrade when you need real-time alerts,
+            bill analysis, and state-specific compliance tools.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        {/* Value comparison bar */}
+        <div className="mt-8 flex flex-wrap justify-center gap-4 rounded-lg border border-cream/15 bg-white/[0.03] px-6 py-4">
+          <div className="flex items-center gap-2 text-sm text-cream/70">
+            <Check className="h-4 w-4 text-safe" />
+            HSLDA member?{" "}
+            <span className="text-cream/90">$150/yr for legal defense + free public bill tracker</span>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-cream/80">
+            <BadgeCheck className="h-4 w-4 text-amber" />
+            Homeschool Compass:{" "}
+            <span className="font-medium text-cream">$29/yr for dedicated AI-powered bill tracking + compliance</span>
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {/* Free */}
           <div className="flex flex-col rounded-lg border border-cream/15 bg-white/[0.03] p-8">
             <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
@@ -76,8 +91,8 @@ export function PricingSection() {
               Free Forever
             </p>
             <p className="mt-3 leading-relaxed text-cream/70">
-              Browse the 50-state scorecard, read state summaries, and see basic
-              bill status.
+              Browse the 50-state scorecard, drill into state restriction details,
+              and see bill impact summaries.
             </p>
             <ul className="mt-6 flex flex-1 flex-col gap-3">
               {FREE_FEATURES.map((f) => (
@@ -98,7 +113,6 @@ export function PricingSection() {
 
           {/* Paid — Most Popular */}
           <div className="relative flex flex-col rounded-lg border border-safe/40 bg-white/[0.05] p-8 ring-2 ring-safe/30">
-            {/* Most Popular badge */}
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full bg-safe px-4 py-1 text-xs font-semibold text-navy shadow-sm">
               <BadgeCheck className="h-3.5 w-3.5" />
               Most Popular
@@ -111,12 +125,30 @@ export function PricingSection() {
               $29<span className="text-lg font-normal text-cream/60">/year</span>
             </p>
             <p className="mt-1 text-sm text-cream/60">
-              $2.42/month, billed annually
+              $2.42/month, billed annually —{" "}
+              <span className="text-safe">84% less than HSLDA basic</span>
             </p>
             <p className="mt-3 leading-relaxed text-cream/70">
-              Real-time alerts, detailed analysis, and compliance checklists
-              tailored to your state.
+              Turn awareness into action. Click any restriction, see every bill
+              creating it, understand what it means, and know what to do next.
             </p>
+
+            {/* Visual cue — what you get */}
+            <div className="mt-5 grid grid-cols-3 gap-2 rounded-lg bg-white/[0.04] p-3">
+              <div className="flex flex-col items-center gap-1 text-center">
+                <MousePointerClick className="h-5 w-5 text-safe" />
+                <span className="text-[10px] leading-tight text-cream/60">Clickable drill-down</span>
+              </div>
+              <div className="flex flex-col items-center gap-1 text-center">
+                <TrendingUp className="h-5 w-5 text-amber" />
+                <span className="text-[10px] leading-tight text-cream/60">AI impact scoring</span>
+              </div>
+              <div className="flex flex-col items-center gap-1 text-center">
+                <Bell className="h-5 w-5 text-safe" />
+                <span className="text-[10px] leading-tight text-cream/60">Real-time alerts</span>
+              </div>
+            </div>
+
             <ul className="mt-6 flex flex-1 flex-col gap-3">
               {PAID_FEATURES.map((f, i) => (
                 <li
@@ -163,8 +195,8 @@ export function PricingSection() {
               Everything in Tracker, plus multi-state &amp; SMS
             </p>
             <p className="mt-3 leading-relaxed text-cream/70">
-              For families managing ESA compliance, multiple states, or needing
-              SMS alerts and priority support.
+              For families managing ESA compliance, tracking bills across multiple
+              states, or needing SMS alerts and priority support.
             </p>
             <ul className="mt-6 flex flex-1 flex-col gap-3">
               {ESA_FEATURES.map((f, i) => (
@@ -214,19 +246,19 @@ export function PricingSection() {
             <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
               Data Sources
             </span>
-            <span>LegiScan · OpenStates · State DOE Records</span>
+            <span>LegiScan · Gemini AI Analysis · State DOE Records</span>
           </div>
           <div className="flex flex-col items-start gap-2 md:flex-row md:items-center md:gap-8">
             <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
               Framework
             </span>
-            <span>Aligned with HSLDA State Law Categories</span>
+            <span>AI-powered impact analysis · Aligned with HSLDA State Law Categories</span>
           </div>
           <div className="flex flex-col items-start gap-2 md:flex-row md:items-center md:gap-8">
             <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
               Guarantee
             </span>
-            <span>Miss a bill? Your next year is free.</span>
+            <span>Miss a bill affecting your state? Your next year is free.</span>
           </div>
         </div>
 

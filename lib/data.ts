@@ -480,7 +480,7 @@ export const IMPACT_META: Record<
 export const TRUST_SIGNALS = [
   { label: "50 States Monitored", icon: "Map" },
   { label: "Real-Time Legislative Alerts", icon: "Bell" },
-  { label: "HSLDA-Aligned Categorization", icon: "CheckCircle" },
-  { label: "30,000+ Bills Analyzed", icon: "FileText" },
+  { label: "AI-Powered Impact Analysis", icon: "Sparkles" },
+  { label: "3,845+ Bills Analyzed", icon: "FileText" },
   { label: "ESA Compliance Tracking", icon: "DollarSign" },
 ] as const

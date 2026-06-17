@@ -1,12 +1,13 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, ArrowUpRight, ArrowDownRight } from "lucide-react"
 import { SiteNav } from "@/components/site/site-nav"
 import { SiteFooter } from "@/components/site/site-footer"
 import { StateTabs } from "@/components/state/state-tabs"
 import { GradeBadge } from "@/components/site/badges"
 import { getState, billsForState, states } from "@/lib/data"
+import { cn } from "@/lib/utils"
 
 export function generateStaticParams() {
   return states.map((s) => ({ code: s.code.toLowerCase() }))
@@ -33,6 +34,12 @@ const LEVEL_COLOR: Record<string, string> = {
   High: "var(--reg-up)",
 }
 
+function restrictionChip(level: string): { label: string; tone: string } {
+  if (level === "No Notice" || level === "Low Regulation") return { label: "Low Restriction", tone: "safe" }
+  if (level === "Moderate") return { label: "Moderate Restriction", tone: "amber" }
+  return { label: "High Restriction", tone: "red" }
+}
+
 export default async function StatePage({
   params,
 }: {
@@ -43,6 +50,9 @@ export default async function StatePage({
   if (!state) notFound()
 
   const stateBills = billsForState(state.code)
+  const increaseCount = stateBills.filter(b => b.impact === "increase").length
+  const decreaseCount = stateBills.filter(b => b.impact === "decrease").length
+  const esaBillCount = stateBills.filter(b => b.esaRelated).length
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -93,6 +103,49 @@ export default async function StatePage({
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground">
               {state.summary}
             </p>
+
+            {/* Restriction chips + bill counts */}
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              {(() => {
+                const chip = restrictionChip(state.level)
+                return (
+                  <span className={cn(
+                    "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium",
+                    chip.tone === "safe" && "border-safe/30 bg-safe/10 text-safe",
+                    chip.tone === "amber" && "border-amber/30 bg-amber/10 text-amber",
+                    chip.tone === "red" && "border-red-200 bg-red-50 text-red-700",
+                  )}>
+                    {chip.label}
+                  </span>
+                )
+              })()}
+
+              {increaseCount > 0 && (
+                <Link
+                  href={`#bills`}
+                  className="inline-flex items-center gap-1 rounded-full border border-reg-up/20 bg-reg-up/5 px-3 py-1 text-xs font-medium text-reg-up transition-all hover:border-reg-up/40 hover:bg-reg-up/10"
+                >
+                  <ArrowUpRight className="h-3 w-3" />
+                  {increaseCount} bill{increaseCount !== 1 ? "s" : ""} increasing regulation
+                </Link>
+              )}
+
+              {decreaseCount > 0 && (
+                <Link
+                  href={`#bills`}
+                  className="inline-flex items-center gap-1 rounded-full border border-safe/20 bg-safe/5 px-3 py-1 text-xs font-medium text-safe transition-all hover:border-safe/40 hover:bg-safe/10"
+                >
+                  <ArrowDownRight className="h-3 w-3" />
+                  {decreaseCount} bill{decreaseCount !== 1 ? "s" : ""} decreasing regulation
+                </Link>
+              )}
+
+              {esaBillCount > 0 && (
+                <span className="inline-flex items-center gap-1 rounded-full border border-navy/20 bg-navy/5 px-3 py-1 text-xs font-medium text-navy">
+                  {esaBillCount} ESA-related bill{esaBillCount !== 1 ? "s" : ""}
+                </span>
+              )}
+            </div>
           </div>
         </section>
 
