@@ -13,7 +13,7 @@ import { NavAuth } from "./nav-auth"
 const NAV_LINKS = [
   { href: "/dashboard", label: "Dashboard" },
   { href: "/scorecard", label: "Scorecard" },
-  { href: "/dashboard", label: "Alerts" },
+  { href: "/dashboard/provider", label: "Invoices" },
   { href: "/compliance-kit", label: "Compliance Kit" },
   { href: "/esa", label: "ESA Guide" },
   { href: "/about", label: "About" },

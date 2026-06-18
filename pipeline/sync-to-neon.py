@@ -138,11 +138,11 @@ class NeonDB:
     def __enter__(self):
         if not self.dry_run:
             self.conn = psycopg2.connect(self.dsn)
+            self.conn.autocommit = True
         return self
 
     def __exit__(self, *args):
-        if self.conn:
-            self.conn.commit()
+        if self.conn and not self.conn.closed:
             self.conn.close()
 
     def upsert_state(self, state_code: str):
@@ -361,6 +361,7 @@ def run_pipeline(legiscan: LegiScanClient, db: NeonDB, states: list = None):
                 pass
             import psycopg2
             db.conn = psycopg2.connect(db.dsn)
+            db.conn.autocommit = True
 
     # Phase 2a: Pre-populate all 50 states (avoid per-bill connection churn)
     print(f"\n[Phase 2a] Ensuring all parent states exist in Neon...")
