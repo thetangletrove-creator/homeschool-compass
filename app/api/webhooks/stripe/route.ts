@@ -24,8 +24,8 @@ let stripe: Stripe | null = null
 function getStripe(): Stripe {
   if (stripe) return stripe
   stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-    apiVersion: "2025-06-16.acacia",
-  } as unknown as Stripe.StripeConfig)
+    apiVersion: "2026-05-27.dahlia",
+  })
   return stripe
 }
 

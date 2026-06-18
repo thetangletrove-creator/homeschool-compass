@@ -40,7 +40,6 @@ interface Props {
 
 export function KitDownloadClient({
   state,
-  code,
   grade,
   avgConf,
   bills: allBills,
@@ -49,7 +48,6 @@ export function KitDownloadClient({
   enactedBills,
   esaBills,
   increaseBills,
-  decreaseBills,
 }: Props) {
   const printRef = useRef<HTMLDivElement>(null)
   const stateName = state.name
