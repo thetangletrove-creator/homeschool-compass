@@ -20,22 +20,81 @@ import {
 
 // ── Pipeline data tables ────────────────────────────────────────────────
 
-export const states = pgTable("states", {
-  code: text("code").primaryKey(),
-  name: text("name").notNull(),
-  score: integer("score").notNull(),
-  subscores: jsonb("subscores"),
-  level: text("level", {
-    enum: ["No Notice", "Low Regulation", "Moderate", "High"],
-  }).notNull(),
-  esaActive: boolean("esa_active").default(false),
-  esaName: text("esa_name"),
-  esaMaxAward: text("esa_max_award"),
-  esaEligibility: text("esa_eligibility"),
-  esaDocumentation: jsonb("esa_documentation"),
-  esaDeadline: text("esa_deadline"),
-  updatedAt: timestamp("updated_at").defaultNow(),
-})
+// Type helpers for JSONB columns on the states table
+export type EsaProgram = {
+  name: string
+  status: "active" | "pending_launch" | "capped" | "blocked" | "paused" | "defunct"
+  portal_url: string | null
+  application_url: string | null
+  platform: string | null
+  max_award: string | null
+  eligibility: string | null
+  deadline: string | null
+  documents_required: string[]
+  forms: {
+    name: string
+    url: string | null
+    type: "PDF" | "web_portal" | "form"
+    access: "public" | "login_required" | "unknown"
+  }[]
+  deadlines: {
+    label?: string
+    type: "application_window" | "report" | "renewal" | "other"
+    due: string | null
+    open: string | null
+    close: string | null
+    frequency: string | null
+    period_start: string | null
+    period_end: string | null
+    note: string | null
+  }[]
+}
+
+export type ComplianceForms = {
+  notification_url: string | null
+  notification_form_url: string | null
+  assessment_rules: string | null
+  assessment_form_url: string | null
+  immunization_rules: string | null
+  instruction_days: string | null
+  recordkeeping: string | null
+  other_forms: {
+    name: string
+    url: string | null
+    type: "PDF" | "web_portal" | "form"
+    access: "public" | "login_required" | "unknown"
+  }[]
+}
+
+export const states = pgTable(
+  "states",
+  {
+    code: text("code").primaryKey(),
+    name: text("name").notNull(),
+    score: integer("score").notNull(),
+    subscores: jsonb("subscores"),
+    level: text("level", {
+      enum: ["No Notice", "Low Regulation", "Moderate", "High"],
+    }).notNull(),
+    esaActive: boolean("esa_active").default(false),
+    esaName: text("esa_name"),
+    esaMaxAward: text("esa_max_award"),
+    esaEligibility: text("esa_eligibility"),
+    esaDocumentation: jsonb("esa_documentation"),
+    esaDeadline: text("esa_deadline"),
+    // Phase 3: Structured program data with multi-program support
+    esaPrograms: jsonb("esa_programs").$type<EsaProgram[]>(),
+    // Phase 3: Generic compliance forms/links for ALL states (ESA and non-ESA)
+    complianceForms: jsonb("compliance_forms").$type<ComplianceForms>(),
+    // Phase 3: URL freshness tracking for the quarterly re-check cron
+    esaUrlsVerifiedAt: timestamp("esa_urls_verified_at"),
+    updatedAt: timestamp("updated_at").defaultNow(),
+  },
+  (t) => ({
+    esaProgramsIdx: index("idx_states_esa_programs").on(t.esaPrograms),
+    complianceFormsIdx: index("idx_states_compliance_forms").on(t.complianceForms),
+  }),
+)
 
 export const bills = pgTable(
   "bills",
@@ -102,7 +161,7 @@ export const dlq = pgTable("dlq", {
   source: text("source").notNull(),
   rawPayload: jsonb("raw_payload").notNull(),
   errorMessage: text("error_message").notNull(),
-  firstSeenAt: timestamp("first_seen_at").defaultNow(),
+  firstSeenAt: timestamp("first_seen_at"),
   lastAttemptedAt: timestamp("last_attempted_at"),
   archived: boolean("archived").default(false),
   resolvedAt: timestamp("resolved_at"),
