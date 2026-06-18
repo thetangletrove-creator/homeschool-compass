@@ -3,12 +3,14 @@ import {
   index,
   integer,
   jsonb,
+  numeric,
   pgTable,
   real,
   serial,
   text,
   timestamp,
   unique,
+  uuid,
 } from "drizzle-orm/pg-core"
 
 /**
@@ -249,3 +251,89 @@ export const subscriptions = pgTable(
 export type Watchlist = typeof watchlist.$inferSelect
 export type AlertPreferences = typeof alertPreferences.$inferSelect
 export type Subscription = typeof subscriptions.$inferSelect
+
+// ── Provider Portal Tables ────────────────────────────────────────────────
+// Lightweight index for independent providers (tutors, therapists, music teachers).
+// Created on first magic-link use — no signup required.
+export const providers = pgTable("providers", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  legalName: text("legal_name").notNull(),
+  businessName: text("business_name"),
+  address: text("address").notNull(),
+  email: text("email").notNull(),
+  phone: text("phone").notNull(),
+  credentials: text("credentials").notNull(), // "State Teaching Cert #XXXXX" or degree
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow(),
+})
+
+// Magic links let parents invite providers to submit an invoice.
+// Single-use, expiring. Encrypted metadata: parentId, studentName, stateCode.
+export const invoiceMagicLinks = pgTable("invoice_magic_links", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  token: text("token").notNull().unique(), // URL-safe random token
+  parentId: text("parent_id").notNull(), // Neon Auth user ID
+  studentName: text("student_name").notNull(),
+  stateCode: text("state_code").notNull(),
+  used: boolean("used").notNull().default(false),
+  expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+})
+
+export type InvoiceStatus = "draft" | "submitted" | "paid"
+export type PaymentMethod = "credit_card" | "check" | "ach" | "portal_direct" | "other"
+
+// Invoice record: provider submits via magic link, parent sees in their dashboard.
+export const providerInvoices = pgTable("provider_invoices", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  invoiceNumber: text("invoice_number").notNull().unique(), // e.g. "HC-98231"
+  magicLinkId: uuid("magic_link_id").references(() => invoiceMagicLinks.id),
+  providerId: uuid("provider_id").references(() => providers.id),
+  parentId: text("parent_id").notNull(),
+  studentName: text("student_name").notNull(),
+  stateCode: text("state_code").notNull(),
+  // Status
+  status: text("status", { enum: ["draft", "submitted", "paid"] })
+    .$type<InvoiceStatus>()
+    .notNull()
+    .default("submitted"),
+  // Payment
+  totalDue: numeric("total_due", { precision: 10, scale: 2 }).notNull(),
+  paymentMethod: text("payment_method").$type<PaymentMethod>(),
+  parentAlreadyPaid: boolean("parent_already_paid").notNull().default(false),
+  paymentLastFour: text("payment_last_four"), // Last 4 digits of card
+  isPaidInFull: boolean("is_paid_in_full").notNull().default(false),
+  // Provider info snapshot (so historical invoices stay accurate)
+  providerName: text("provider_name").notNull(),
+  providerAddress: text("provider_address").notNull(),
+  providerCredentials: text("provider_credentials").notNull(),
+  // ZK encryption: RSA-OAEP+AES-GCM hybrid encrypted blob of sensitive
+  // provider fields (credentials, phone, email). Server never sees plaintext.
+  // EncryptedPayload JSON: { encryptedKey, iv, tag, ciphertext }
+  encryptedProfile: text("encrypted_profile"),
+  // Timestamps
+  submittedAt: timestamp("submitted_at", { withTimezone: true }).defaultNow(),
+  paidAt: timestamp("paid_at", { withTimezone: true }),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow(),
+})
+
+// Individual tutoring sessions line items.
+export const invoiceLineItems = pgTable("invoice_line_items", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  invoiceId: uuid("invoice_id")
+    .notNull()
+    .references(() => providerInvoices.id, { onDelete: "cascade" }),
+  serviceDate: text("service_date").notNull(), // "2026-06-15"
+  startTime: text("start_time").notNull(), // "04:00 PM"
+  endTime: text("end_time").notNull(), // "05:00 PM"
+  subject: text("subject").notNull(), // "Algebra II Instruction"
+  hourlyRate: numeric("hourly_rate", { precision: 10, scale: 2 }).notNull(),
+  amount: numeric("amount", { precision: 10, scale: 2 }).notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+})
+
+export type Provider = typeof providers.$inferSelect
+export type InvoiceMagicLink = typeof invoiceMagicLinks.$inferSelect
+export type ProviderInvoice = typeof providerInvoices.$inferSelect
+export type InvoiceLineItem = typeof invoiceLineItems.$inferSelect

@@ -15,6 +15,20 @@
       "when": 1781773721103,
       "tag": "0001_add_esa_programs_and_compliance",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1781813680805,
+      "tag": "0002_flashy_spyke",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1781980000000,
+      "tag": "0003_zk_encryption",
+      "breakpoints": true
     }
   ]
 }
