@@ -200,7 +200,7 @@ class LegiScanClient:
         payload = json.dumps({"op": op, **params}, sort_keys=True)
         return hashlib.sha256(payload.encode()).hexdigest()
 
-    def _get_cached(self, cache_key: str, max_age_minutes: int = 60) -> Optional[Dict]:
+    def _get_cached(self, cache_key: str, max_age_minutes: int = 1440) -> Optional[Dict]:
         """Retrieve cached response if not expired."""
         with sqlite3.connect(self.cache_path) as conn:
             row = conn.execute(
@@ -212,7 +212,7 @@ class LegiScanClient:
                 return json.loads(row[0])
         return None
 
-    def _set_cached(self, cache_key: str, data: Dict, ttl_minutes: int = 60):
+    def _set_cached(self, cache_key: str, data: Dict, ttl_minutes: int = 1440):
         """Store response in cache with TTL."""
         with sqlite3.connect(self.cache_path) as conn:
             conn.execute(
