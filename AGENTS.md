@@ -31,8 +31,8 @@
 - **Phase 2 enrichment:** All 3,845 bills enriched with impact, ESA, analysis (avg confidence 0.831)
 - **Phase 7 hardening:** CSP fix, dead code removal, ESLint 0 warnings, bill text infrastructure
 - **Phase B1 — ESA programs populated:** 20 ESA states populated via `populate-esa-resources.py` (AZ:1, FL:3, OH:2, rest:1). Platforms: Odyssey (6), ClassWallet (10), custom (4). Commit `5a927f0`.
+- **Phase B3 — Compliance forms enriched:** All 51 states + DC populated with real notification URLs, assessment rules, instruction days, recordkeeping requirements, and form links from research directory (`data/reference/compliance-forms-directory.json`). 51/51 have notification form URLs. Rollback saved at `drizzle/rollback-b3-compliance.sql`.
 - **Phase B4 — ESA portal directory enrichment:** All 19 active ESA states enriched with real portal URLs, application URLs, platform assignments, deadlines, and funding amounts from research directory (`data/reference/esa-portal-directory.json`). Removed OH/OK (false-positive vouchers/tax-credits), added MS/MT (missing ESA states). 0 null portals/app URLs remaining. Rollback saved at `drizzle/rollback-b4-enrichment.sql`.
-- **Phase B1 — Compliance forms populated:** All 52 states populated with compliance_forms JSONB (notification, assessment, immunization, instruction days, recordkeeping). 31 non-ESA states get basic "see state DOE" placeholders.
 - **Phase D1 — Compliance pack multi-program:** Reads esa_programs JSONB instead of flat columns. Renders all programs per state with platform badge, deadline card, application link. Commit `1baf721`.
 - **Rollback saved:** `drizzle/rollback-esa-population.sql` — `psql "$URL" -f` reverts all 3 columns to NULL.
 - **Pipeline fixes:** psycopg2 autocommit + closed guard ✅, cache TTL 60m→1440m (24h) ✅
@@ -69,7 +69,9 @@
 | esa_programs portal URLs | **19/19** ✅ *(0 null)* |
 | esa_programs app URLs | **19/19** ✅ *(0 null)* |
 | esa_programs platforms | **19/19** ✅ *(all populated)* |
-| compliance_forms data | **52/52** ✅ |
+| compliance_forms data | **52/52** ✅ *(all enriched with real notification/assessment URLs)* |
+| compliance_forms notification URLs | **52/52** ✅ *(0 null)* |
+| compliance_forms DOE pages | **52/52** ✅ *(all state DOE homeschool pages)* |
 | Calendar | — |
 | Last pipeline run | 2026-06-18 06:28 UTC (FAILED: connection closed — **FIXED**) |
 | ZK encryption | ✅ Active (RSA-OAEP+AES-256-GCM) |
