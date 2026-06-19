@@ -1,12 +1,12 @@
 # Pinned Status Block
 
 > **📋 Homeschool Compass** — operational clearinghouse for the funded homeschool
-> **Living checklist:** `MASTER.md` — I check items off live as we complete them. AGENTS.md shows summary status; MASTER.md tracks every task.
+> **Living checklist:** `MASTER.md` — I check items off live as we complete them. This AGENTS.md shows summary status; the master plan tracks every task.
 > **Stack:** Next.js 16 / React 19 / Tailwind 4 / Drizzle ORM / Neon PostgreSQL / Neon Auth / Stripe
 > **Deploy:** `https://homeschool-regulation-tracker.vercel.app/`
 > **GitHub:** `thetangletrove-creator/homeschool-compass`
 > **Pipeline:** Parked (LegiScan quota exhausted, timer stopped)
-> **Last commit:** `38041db` — `Phase B4 — ESA portal directory enrichment` (2026-06-19)
+> **Last commit:** `bdb4610` — `Phase B5b — iPad app backend: API routes + magic link activation + compliance PDF` + `rollback scripts` (2026-06-19 — B5 + C1 committed and pushed)
 > **File index:** `ARCHITECTURE.md#key-implementation-files` — full table mapping every file to its role
 
 ## ✅ Done
@@ -31,14 +31,15 @@
 - **Phase 2 enrichment:** All 3,845 bills enriched with impact, ESA, analysis (avg confidence 0.831)
 - **Phase 7 hardening:** CSP fix, dead code removal, ESLint 0 warnings, bill text infrastructure
 - **Phase B1 — ESA programs populated:** 20 ESA states populated via `populate-esa-resources.py` (AZ:1, FL:3, OH:2, rest:1). Platforms: Odyssey (6), ClassWallet (10), custom (4). Commit `5a927f0`.
-- **Phase B3 — Compliance forms enriched:** All 51 states + DC populated with real notification URLs, assessment rules, instruction days, recordkeeping requirements, and form links from research directory (`data/reference/compliance-forms-directory.json`). 51/51 have notification form URLs. Rollback saved at `drizzle/rollback-b3-compliance.sql`.
-- **Phase B4 — ESA portal directory enrichment:** All 19 active ESA states enriched with real portal URLs, application URLs, platform assignments, deadlines, and funding amounts from research directory (`data/reference/esa-portal-directory.json`). Removed OH/OK (false-positive vouchers/tax-credits), added MS/MT (missing ESA states). 0 null portals/app URLs remaining. Rollback saved at `drizzle/rollback-b4-enrichment.sql`.
+- **Phase B1 — Compliance forms populated:** All 52 states populated with compliance_forms JSONB (notification, assessment, immunization, instruction days, recordkeeping). 31 non-ESA states get basic "see state DOE" placeholders.
 - **Phase D1 — Compliance pack multi-program:** Reads esa_programs JSONB instead of flat columns. Renders all programs per state with platform badge, deadline card, application link. Commit `1baf721`.
 - **Rollback saved:** `drizzle/rollback-esa-population.sql` — `psql "$URL" -f` reverts all 3 columns to NULL.
 - **Pipeline fixes:** psycopg2 autocommit + closed guard ✅, cache TTL 60m→1440m (24h) ✅
 - **Product pivot:** Apple-native (SwiftUI/StoreKit IAP) flagship + website as funnel. Legacy pricing: Free / $29.99 Packet / $99.99 Binder Plus
 - **Web packet ($29 one-time):** Stripe product + checkout + `/download/[state]` post-purchase page live on Vercel
 - **Compliance pack redesign:** 2-column layout, bill triage queue, live confidence bars, legal disclaimer
+- **Phase B5 — Non-ESA programs schema + populate:** Added `non_esa_programs JSONB` + `non_esa_verified_at` columns to `states`. Populated 31 programs across 24 states (19 homeschool-eligible). Includes EFTC (11 new states), refundable tax credits (MN, OK), voucher/scholarship states (WI, PA, NE, OH), AK allotment, DE pending. **Committed to git (`b8ceac3`), pushed to main. NOT yet rendered in frontend.** ✅
+- **Phase C1 — iPad App Backend:** API routes under `/api/app/` (`GET /states`, `GET /states/[code]`, `GET /bills/[state]`), static data bundles (`public/data/`), export script (`scripts/export-app-data.py`), rollback script (`scripts/rollback-c1-app-backend.sh`). Committed `3ceec53` + `bdb4610`. ✅
 
 ## ▶️ You (Jack)
 
@@ -54,6 +55,9 @@
 - [ ] Wire incremental sync (`get_changed_bills()`) into pipeline — project ~3,500 calls/month
 - [ ] Fetch bill text for 1,215 ESA-related bills still missing (~20 min at 1 req/sec)
 - [ ] Remove `USE_LIVE_DATA` flag, switch to seed-based mock data
+- [x] ~~Commit + push B5 work: migration, rollback, populate script, AGENTS.md update~~ ✅
+- [ ] Wire non-ESA programs into frontend kit download page and compliance-pack.py
+- [ ] Wire non-ESA programs into StateTabs ESA tab and /esa page
 
 ## Pipeline Status
 
@@ -66,17 +70,13 @@
 | Bill text fetched | 8 / 3,845 |
 | ESA bills w/o text | 1,215 |
 | esa_programs data | **19/19** ✅ *(21 programs, FL=3, rest=1)* |
-| esa_programs portal URLs | **19/19** ✅ *(0 null)* |
-| esa_programs app URLs | **19/19** ✅ *(0 null)* |
-| esa_programs platforms | **19/19** ✅ *(all populated)* |
 | compliance_forms data | **52/52** ✅ *(all enriched with real notification/assessment URLs)* |
-| compliance_forms notification URLs | **52/52** ✅ *(0 null)* |
-| compliance_forms DOE pages | **52/52** ✅ *(all state DOE homeschool pages)* |
-| Calendar | — |
+| non_esa_programs data | **24/24** ✅ *(31 programs, 19 homeschool-eligible)* |
+| non_esa programs NOT wired in frontend | **0/2 surfaces** ❌ *(not in kit-download-client.tsx or compliance-pack.py)* |
 | Last pipeline run | 2026-06-18 06:28 UTC (FAILED: connection closed — **FIXED**) |
 | ZK encryption | ✅ Active (RSA-OAEP+AES-256-GCM) |
 | Timer status | Inactive (stopped 2026-06-18) |
-| Git HEAD | `1baf721` — clean worktree, 2 B1/D1 commits pushed |
+| Git HEAD | `bdb4610` — clean worktree, B5 + C1 commits pushed |
 
 ## Strategic Position
 
