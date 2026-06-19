@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { Check, Loader2, BadgeCheck, Bell, TrendingUp, MousePointerClick, ShieldCheck } from "lucide-react"
+import { Check, Loader2, BadgeCheck, ShieldCheck, FileText, Layers, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const FREE_FEATURES = [
@@ -13,46 +13,28 @@ const FREE_FEATURES = [
   "3 detailed state compliance guides per month",
 ]
 
-const PAID_FEATURES = [
+const PACKET_FEATURES = [
   "Everything in Scorecard, plus:",
-  "Clickable investigation board — drill from state restrictions to specific bills",
-  "AI-powered bill analysis: plain-English summaries with impact scoring",
-  "Real-time alerts when new bills affect your state (email + SMS + webhook)",
-  "Personalized compliance checklist with deadlines built from bill analysis",
-  "ESA program tracking: eligibility, awards, and filing deadlines",
-  "Full bill archive with status updates and historical data",
-  "14-day free trial — no credit card required",
+  "Your state's complete compliance pack — ready to print or email",
+  "All portal links, application URLs, and deadlines in one place",
+  "AI-powered ESA award tracking with real program amounts",
+  "Bill triage queue: enacted changes, watch items, archive",
+  "Action checklist with deadlines built from live bill analysis",
+  "Confidence-scored impact analysis for every tracked bill",
+  "Download as PDF — share with your co-op or lawyer",
 ]
 
-const ESA_FEATURES = [
-  "Everything in Regulation Tracker, plus:",
-  "Multi-state tracking (up to 3 states)",
-  "SMS alerts for urgent bills (up to 5/month)",
-  "Webhook/API access for custom integrations",
+const BINDER_FEATURES = [
+  "Everything in State Packet, plus:",
+  "Multi-state coverage (up to 3 states)",
+  "SMS+email urgent alerts when bills affect your state",
+  "Full binder with all portal forms, receipts, and checklists",
+  "Annual deadline calendar synced to your state's cycle",
   "Priority email support (24-hour response)",
-  "Annual deadline reminder + personalized compliance checklist",
 ]
 
 export function PricingSection() {
   const router = useRouter()
-  const [loading, setLoading] = useState<string | null>(null)
-
-  async function handleCheckout(plan: "tracker" | "esa") {
-    setLoading(plan)
-    try {
-      const res = await fetch("/api/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plan }),
-      })
-      const data = await res.json()
-      if (data.url) {
-        window.location.href = data.url
-      }
-    } finally {
-      setLoading(null)
-    }
-  }
 
   return (
     <section className="bg-navy py-20 text-cream md:py-24">
@@ -62,8 +44,8 @@ export function PricingSection() {
             Protect Your Family&rsquo;s ESA Funding
           </h2>
           <p className="mt-3 text-lg leading-relaxed text-cream/70">
-            Less than one dinner out per month to protect thousands in state funding.
-            Start free. Upgrade when you need alerts and compliance tools.
+            Know what&rsquo;s coming before it hits your state. From a single
+            state packet to a full compliance binder.
           </p>
         </div>
 
@@ -78,7 +60,7 @@ export function PricingSection() {
           <div className="flex items-center gap-2 text-sm">
             <BadgeCheck className="h-5 w-5 shrink-0 text-safe" />
             <span className="text-cream/80">
-              Homeschool Compass: <span className="font-semibold text-cream">$29/yr</span> for dedicated AI-powered tracking &mdash;{" "}
+              Homeschool Compass: <span className="font-semibold text-cream">a one-time $29</span> for a dedicated packet &mdash;{" "}
               <span className="text-safe">81% less</span>
             </span>
           </div>
@@ -114,46 +96,46 @@ export function PricingSection() {
             </Button>
           </div>
 
-          {/* Paid — Most Popular */}
+          {/* State Packet — Most Popular */}
           <div className="relative flex flex-col rounded-lg border border-safe/40 bg-white/[0.05] p-8 ring-2 ring-safe/30">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full bg-safe px-4 py-1 text-xs font-semibold text-navy shadow-sm">
               <BadgeCheck className="h-3.5 w-3.5" />
-              Biggest ROI
+              Best Value
             </span>
 
             <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
-              Regulation Tracker
+              State Packet
             </span>
             <p className="mt-3 font-heading text-3xl font-semibold">
-              $29<span className="text-lg font-normal text-cream/60">/year</span>
+              $29<span className="text-lg font-normal text-cream/60"> one-time</span>
             </p>
             <p className="mt-1 text-sm text-cream/60">
-              <span className="font-medium text-cream">$2.42/month</span> &mdash; less than one coffee shop visit &mdash;{" "}
-              <span className="text-safe">to protect thousands in ESA funding</span>
+              <span className="font-medium text-cream">One state</span> &mdash; print-ready compliance pack with all portals, forms, and deadlines
             </p>
             <p className="mt-3 leading-relaxed text-cream/70">
-              Turn awareness into action. Click any restriction, see every bill
-              creating it, understand what it means, and know what to do next.
+              Your state&rsquo;s complete picture: live ESA programs, applicable
+              bills, portal links, and a personalized action checklist. No
+              subscription — buy once, own it.
             </p>
 
             {/* Visual cue — what you get */}
             <div className="mt-5 grid grid-cols-3 gap-2 rounded-lg bg-white/[0.04] p-3">
               <div className="flex flex-col items-center gap-1 text-center">
-                <MousePointerClick className="h-5 w-5 text-safe" />
-                <span className="text-[10px] leading-tight text-cream/60">Clickable drill-down</span>
+                <FileText className="h-5 w-5 text-safe" />
+                <span className="text-[10px] leading-tight text-cream/60">Print-ready pack</span>
               </div>
               <div className="flex flex-col items-center gap-1 text-center">
-                <TrendingUp className="h-5 w-5 text-amber" />
-                <span className="text-[10px] leading-tight text-cream/60">AI impact scoring</span>
+                <Layers className="h-5 w-5 text-amber" />
+                <span className="text-[10px] leading-tight text-cream/60">Portals + forms</span>
               </div>
               <div className="flex flex-col items-center gap-1 text-center">
-                <Bell className="h-5 w-5 text-safe" />
-                <span className="text-[10px] leading-tight text-cream/60">Real-time alerts</span>
+                <Sparkles className="h-5 w-5 text-safe" />
+                <span className="text-[10px] leading-tight text-cream/60">AI-powered track</span>
               </div>
             </div>
 
             <ul className="mt-6 flex flex-1 flex-col gap-3">
-              {PAID_FEATURES.map((f, i) => (
+              {PACKET_FEATURES.map((f, i) => (
                 <li
                   key={f}
                   className="flex items-start gap-2.5 text-sm"
@@ -173,36 +155,33 @@ export function PricingSection() {
             </ul>
             <Button
               className="mt-8 w-full rounded-md bg-safe font-medium text-navy hover:bg-safe/90"
-              onClick={() => handleCheckout("tracker")}
-              disabled={loading === "tracker"}
+              onClick={() => router.push("/compliance-kit")}
             >
-              {loading === "tracker" ? (
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              ) : null}
-              Start Free Trial
+              Get Your State Packet
             </Button>
             <p className="mt-3 text-center text-xs text-cream/60">
-              14-day free trial. No credit card required.
+              One-time purchase. Download as PDF immediately.
             </p>
           </div>
 
-          {/* ESA — Full Protection */}
+          {/* Binder Plus */}
           <div className="flex flex-col rounded-lg border border-cream/15 bg-white/[0.03] p-8">
             <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
-              Full Protection
+              Binder Plus
             </span>
             <p className="mt-3 font-heading text-3xl font-semibold">
               $99<span className="text-lg font-normal text-cream/60">/year</span>
             </p>
             <p className="mt-1 text-sm text-cream/60">
-              Everything in Tracker, plus multi-state &amp; SMS
+              Everything in Packet, plus multi-state &amp; alerts
             </p>
             <p className="mt-3 leading-relaxed text-cream/70">
-              For families managing ESA compliance, tracking bills across multiple
-              states, or needing SMS alerts and priority support.
+              For families managing compliance across multiple states or
+              programs: full binder of every document, receipt template, and
+              deadline — with alerts when anything changes.
             </p>
             <ul className="mt-6 flex flex-1 flex-col gap-3">
-              {ESA_FEATURES.map((f, i) => (
+              {BINDER_FEATURES.map((f, i) => (
                 <li
                   key={f}
                   className="flex items-start gap-2.5 text-sm"
@@ -223,16 +202,12 @@ export function PricingSection() {
             <Button
               variant="outline"
               className="mt-8 w-full rounded-md border-safe/40 bg-transparent text-safe hover:bg-safe/10"
-              onClick={() => handleCheckout("esa")}
-              disabled={loading === "esa"}
+              disabled
             >
-              {loading === "esa" ? (
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              ) : null}
-              Try ESA Free for 14 Days
+              Coming Soon
             </Button>
             <p className="mt-3 text-center text-xs text-cream/60">
-              14-day free trial. No credit card required.
+              Available via iPad app. Email notifications coming Q3 2026.
             </p>
           </div>
         </div>
@@ -268,12 +243,12 @@ export function PricingSection() {
         {/* FAQ micro-copy */}
         <div className="mt-8 grid gap-4 border-t border-cream/10 pt-8 text-sm text-cream/60 md:grid-cols-3">
           <div>
-            <p className="font-medium text-cream/80">What happens after my free trial?</p>
-            <p className="mt-1">Converts to $29/year auto-renew. Cancel anytime before the trial ends — no charge.</p>
+            <p className="font-medium text-cream/80">How does the State Packet work?</p>
+            <p className="mt-1">Pick your state, pay $29 once, and instantly download a print-ready compliance pack. No ongoing commitment.</p>
           </div>
           <div>
-            <p className="font-medium text-cream/80">Can I switch tiers later?</p>
-            <p className="mt-1">Yes — upgrade or downgrade anytime. Changes take effect at the next billing cycle.</p>
+            <p className="font-medium text-cream/80">What about the iPad app?</p>
+            <p className="mt-1">Available on iPad with Apple StoreKit IAP — $29.99 per state or $99.99/year Binder Plus. Same data, native experience.</p>
           </div>
           <div>
             <p className="font-medium text-cream/80">Is this legal advice?</p>
