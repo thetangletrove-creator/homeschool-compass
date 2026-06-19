@@ -56,8 +56,8 @@
 - [ ] Fetch bill text for 1,215 ESA-related bills still missing (~20 min at 1 req/sec)
 - [ ] Remove `USE_LIVE_DATA` flag, switch to seed-based mock data
 - [x] ~~Commit + push B5 work: migration, rollback, populate script, AGENTS.md update~~ ✅
-- [ ] Wire non-ESA programs into frontend kit download page and compliance-pack.py
-- [ ] Wire non-ESA programs into StateTabs ESA tab and /esa page
+- [x] Wire non-ESA programs into frontend kit download page and compliance-pack.py ✅
+- [x] Wire non-ESA programs into StateTabs ESA tab and /esa page ✅
 
 ## Pipeline Status
 
@@ -72,7 +72,7 @@
 | esa_programs data | **19/19** ✅ *(21 programs, FL=3, rest=1)* |
 | compliance_forms data | **52/52** ✅ *(all enriched with real notification/assessment URLs)* |
 | non_esa_programs data | **24/24** ✅ *(31 programs, 19 homeschool-eligible)* |
-| non_esa programs NOT wired in frontend | **0/2 surfaces** ❌ *(not in kit-download-client.tsx or compliance-pack.py)* |
+| non_esa programs wired in frontend | **2/2 surfaces** ✅ *(kit-download-client.tsx + /esa page + StateTabs)* |
 | Last pipeline run | 2026-06-18 06:28 UTC (FAILED: connection closed — **FIXED**) |
 | ZK encryption | ✅ Active (RSA-OAEP+AES-256-GCM) |
 | Timer status | Inactive (stopped 2026-06-18) |

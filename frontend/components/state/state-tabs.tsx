@@ -494,6 +494,68 @@ export function StateTabs({
             </p>
           </div>
         )}
+        {/* ── Non-ESA funding programs ── */}
+        {state.nonEsaPrograms.length > 0 && (
+          <div className="mt-6 rounded-xl border border-violet-200 bg-violet-50 p-5">
+            <div className="flex items-center gap-2">
+              <span className="inline-flex items-center rounded-full bg-violet-600 px-2.5 py-0.5 text-xs font-medium text-white">
+                Alternative Funding
+              </span>
+              <span className="text-xs text-violet-700">
+                {state.nonEsaPrograms.length} program{state.nonEsaPrograms.length > 1 ? "s" : ""} available
+              </span>
+            </div>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              {state.nonEsaPrograms.map((prog, i) => (
+                <div key={i} className="rounded-xl border border-violet-200 bg-white p-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <p className="text-sm font-bold text-violet-900">{prog.name}</p>
+                      <p className="text-xs font-medium text-violet-600 uppercase tracking-wide">
+                        {prog.program_type.replace(/_/g, " ")}
+                      </p>
+                    </div>
+                    {prog.homeschool_eligible && (
+                      <span className="shrink-0 inline-flex items-center rounded-full bg-violet-100 px-2 py-0.5 text-[10px] font-medium text-violet-700">
+                        Homeschool OK
+                      </span>
+                    )}
+                  </div>
+                  {prog.amount && (
+                    <p className="mt-2 text-lg font-bold text-violet-800">{prog.amount}</p>
+                  )}
+                  {prog.short_description && (
+                    <p className="mt-1 text-xs text-muted-foreground">{prog.short_description}</p>
+                  )}
+                  {(prog.application_method || prog.application_window) && (
+                    <div className="mt-2 flex flex-wrap gap-2 text-[11px] text-muted-foreground">
+                      {prog.application_method && (
+                        <span className="inline-flex items-center rounded-full bg-violet-100 px-2 py-0.5 font-medium text-violet-600">
+                          {prog.application_method}
+                        </span>
+                      )}
+                      {prog.application_window && (
+                        <span className="inline-flex items-center rounded-full bg-amber-100 px-2 py-0.5 font-medium text-amber-600">
+                          {prog.application_window}
+                        </span>
+                      )}
+                    </div>
+                  )}
+                  {prog.url && (
+                    <a
+                      href={prog.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-violet-600 hover:text-violet-800"
+                    >
+                      Learn more →
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </TabsContent>
 
       {/* Legal */}

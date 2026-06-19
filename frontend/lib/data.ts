@@ -185,6 +185,57 @@ function buildPrecedents(name: string): LegalCase[] {
   ]
 }
 
+/** Small set of mock non-ESA programs for UI-testing states w/o ESA. */
+import type { NonEsaProgram } from "./db/schema"
+
+const MOCK_NON_ESA: Record<string, NonEsaProgram[]> = {
+  MN: [{
+    name: "K-12 Education Tax Credit",
+    program_type: "refundable_tax_credit",
+    amount: "$1,500 per child",
+    short_description: "Refundable tax credit for educational expenses including curriculum, tutoring, and instructional materials.",
+    url: "https://www.revenue.state.mn.us/k-12-education-credit",
+    application_url: "https://www.revenue.state.mn.us/k-12-education-credit",
+    homeschool_eligible: true,
+    application_method: "Tax filing",
+    application_window: "Tax season (Jan–Apr)",
+    income_cap: "Up to $75,000 AGI",
+    stacks_with: "Other state education tax benefits",
+    notes: "Refundable — get money back even if credit exceeds tax liability",
+    status: "active",
+  }],
+  PA: [{
+    name: "Educational Improvement Tax Credit (EITC)",
+    program_type: "scholarship",
+    amount: "Up to $10,000",
+    short_description: "Corporate tax-credit funded scholarships for K-12 educational expenses including homeschooling materials.",
+    url: "https://www.education.pa.gov/K-12/EITC/Pages/default.aspx",
+    application_url: null,
+    homeschool_eligible: true,
+    application_method: "Apply through approved Scholarship Organization",
+    application_window: "Varies by SO — typically spring",
+    income_cap: "Up to $97,446 household income",
+    stacks_with: null,
+    notes: "Apply through a participating Scholarship Organization (SO), not directly to the state",
+    status: "active",
+  }],
+  CO: [{
+    name: "Choice Scholarship Program Pilot",
+    program_type: "voucher",
+    amount: "Varies by district",
+    short_description: "Local school district voucher pilots for private school and homeschool educational expenses.",
+    url: "https://www.cde.state.co.us/choice",
+    application_url: null,
+    homeschool_eligible: true,
+    application_method: "Apply through participating district",
+    application_window: "Varies by district",
+    income_cap: null,
+    stacks_with: null,
+    notes: null,
+    status: "active",
+  }],
+}
+
 export const states: StateData[] = rawStates
   .map((s) => {
     const level = levelFromScore(s.score)
@@ -217,7 +268,7 @@ export const states: StateData[] = rawStates
             deadlines: [],
           }]
         : [],
-      nonEsaPrograms: [],
+      nonEsaPrograms: MOCK_NON_ESA[s.code] ?? [],
       complianceForms: {
         notification_url: null,
         notification_form_url: null,

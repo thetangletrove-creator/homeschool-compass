@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function EsaPage() {
   const active = states.filter((s) => s.esa.active || s.esaPrograms.length > 0)
   const inactive = states.filter((s) => !s.esa.active && s.esaPrograms.length === 0)
+  const altFunding = states.filter((s) => s.nonEsaPrograms.length > 0)
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -205,6 +206,85 @@ export default function EsaPage() {
               </Link>
             ))}
           </div>
+
+          {/* ── Alternative Funding (non-ESA) ── */}
+          {altFunding.length > 0 && (
+            <>
+              <h2 className="mt-16 text-2xl font-semibold tracking-tight text-[var(--navy)]">
+                Alternative Funding Programs
+              </h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                These states don't offer an ESA, but have other funding programs that can help with homeschooling costs.
+              </p>
+              <div className="mt-8 grid gap-6 md:grid-cols-2">
+                {altFunding.map((s) => (
+                  <article
+                    key={s.code}
+                    className="rounded-lg border border-violet-200 bg-violet-50 p-6"
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <div>
+                        <span className="font-mono text-lg font-bold text-violet-900">
+                          {s.code}
+                        </span>
+                        <span className="ml-2 text-sm text-violet-700">
+                          {s.name}
+                        </span>
+                      </div>
+                      <span className="rounded-full bg-violet-600/10 px-3 py-1 font-mono text-xs uppercase tracking-wide text-violet-700">
+                        {s.nonEsaPrograms.length} program{s.nonEsaPrograms.length > 1 ? "s" : ""}
+                      </span>
+                    </div>
+                    {s.nonEsaPrograms.map((prog, i) => (
+                      <div key={i} className="mt-4 rounded-xl border border-violet-200 bg-white p-4">
+                        <div className="flex items-start justify-between gap-2">
+                          <p className="text-sm font-bold text-violet-900">{prog.name}</p>
+                          {prog.homeschool_eligible && (
+                            <span className="shrink-0 inline-flex items-center rounded-full bg-violet-100 px-2 py-0.5 text-[10px] font-medium text-violet-700">
+                              Homeschool OK
+                            </span>
+                          )}
+                        </div>
+                        <p className="mt-1 text-xs font-medium text-violet-600 uppercase tracking-wide">
+                          {prog.program_type.replace(/_/g, " ")}
+                        </p>
+                        {prog.amount && (
+                          <p className="mt-2 text-lg font-bold text-violet-800">{prog.amount}</p>
+                        )}
+                        {prog.short_description && (
+                          <p className="mt-1 text-xs text-muted-foreground">{prog.short_description}</p>
+                        )}
+                        {(prog.application_method || prog.application_window) && (
+                          <div className="mt-2 flex flex-wrap gap-2 text-[11px] text-muted-foreground">
+                            {prog.application_method && (
+                              <span className="inline-flex items-center rounded-full bg-violet-100 px-2 py-0.5 font-medium text-violet-600">
+                                {prog.application_method}
+                              </span>
+                            )}
+                            {prog.application_window && (
+                              <span className="inline-flex items-center rounded-full bg-amber-100 px-2 py-0.5 font-medium text-amber-600">
+                                {prog.application_window}
+                              </span>
+                            )}
+                          </div>
+                        )}
+                        {prog.url && (
+                          <a
+                            href={prog.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-violet-600 hover:text-violet-800"
+                          >
+                            Learn more →
+                          </a>
+                        )}
+                      </div>
+                    ))}
+                  </article>
+                ))}
+              </div>
+            </>
+          )}
 
           <p className="mt-12 text-xs leading-relaxed text-[var(--meta)]">
             Program details are illustrative. ESA rules change frequently —
