@@ -312,18 +312,75 @@ def revalidate_frontend(domain: str, secret: str) -> bool:
 
 # ── Main Pipeline ──────────────────────────────────────────────────────
 
-def run_pipeline(legiscan: LegiScanClient, db: NeonDB, states: list = None):
+def run_pipeline(legiscan: LegiScanClient, db: NeonDB, states: list = None, incremental: bool = False):
     """Run the full sync pipeline."""
     print(f"\n{'='*60}")
     print(f"  HOMESCHOOL COMPASS — SYNC PIPELINE")
     print(f"  Started: {now_ts()}")
+    print(f"  Mode:    {'Incremental (delta)' if incremental else 'Full discovery'}")
     print(f"  Dry-run: {db.dry_run}")
     print(f"{'='*60}\n")
 
+    # Connection health check (defined early, used by all phases)
+    def ensure_conn():
+        nonlocal db
+        try:
+            with db.conn.cursor() as cur:
+                cur.execute("SELECT 1")
+        except Exception:
+            print("  [RECONNECT] DB connection lost — reconnecting...")
+            try:
+                if db.conn and not db.conn.closed:
+                    db.conn.close()
+            except Exception:
+                pass
+            import psycopg2
+            db.conn = psycopg2.connect(db.dsn)
+            db.conn.autocommit = True
+
     # Phase 1: Discover bills from LegiScan
-    print("[Phase 1] Discovering homeschool bills from LegiScan...")
-    all_bills = legiscan.discover_homeschool_bills(states=states)
-    print(f"  → Found {len(all_bills)} raw candidate bills")
+    if incremental:
+        print("[Phase 1] Checking for changed bills (incremental sync)...")
+        ensure_conn()
+        stored_session = None
+        try:
+            cur = db.conn.cursor()
+            cur.execute("SELECT value FROM pipeline_metadata WHERE key = 'current_session_id'")
+            row = cur.fetchone()
+            if row:
+                stored_session = int(row[0])
+        except Exception:
+            pass
+
+        if stored_session:
+            print(f"  → Using stored session_id={stored_session}")
+            changed_ids = legiscan.get_changed_bills(stored_session)
+            print(f"  → {len(changed_ids)} changed bill(s) found")
+
+            if not changed_ids:
+                print("[Phase 1] No changed bills — nothing to sync")
+                db.update_metadata("last_synced_at", now_ts())
+                return 0
+
+            # Fetch full details for changed bills (legiscan.get_bill is cached)
+            all_bills = []
+            for bid in changed_ids:
+                try:
+                    full = legiscan.get_bill(bid)
+                    bill_data = full.get("bill", full)
+                    if bill_data:
+                        all_bills.append(bill_data)
+                except Exception as e:
+                    print(f"  ⚠️  Failed to fetch changed bill {bid}: {e}")
+            print(f"  → Fetched {len(all_bills)} changed bills from LegiScan")
+        else:
+            print("  [Phase 1] No stored session_id — falling back to full discovery")
+            all_bills = legiscan.discover_homeschool_bills(states=states)
+            print(f"  → Found {len(all_bills)} raw candidate bills")
+    else:
+        print("[Phase 1] Discovering homeschool bills from LegiScan...")
+        all_bills = legiscan.discover_homeschool_bills(states=states)
+        print(f"  → Found {len(all_bills)} raw candidate bills")
 
     if not all_bills:
         print("[Phase 1] No new bills found")
@@ -345,23 +402,6 @@ def run_pipeline(legiscan: LegiScanClient, db: NeonDB, states: list = None):
         print("[Phase 1b] No relevant bills after classification")
         db.update_metadata("last_synced_at", now_ts())
         return 0
-
-    # Connection health check (defined once, used by Phase 2a and 2b)
-    def ensure_conn():
-        nonlocal db
-        try:
-            with db.conn.cursor() as cur:
-                cur.execute("SELECT 1")
-        except Exception:
-            print("  [RECONNECT] DB connection lost — reconnecting...")
-            try:
-                if db.conn and not db.conn.closed:
-                    db.conn.close()
-            except Exception:
-                pass
-            import psycopg2
-            db.conn = psycopg2.connect(db.dsn)
-            db.conn.autocommit = True
 
     # Phase 2a: Pre-populate all 50 states (avoid per-bill connection churn)
     print(f"\n[Phase 2a] Ensuring all parent states exist in Neon...")
@@ -448,6 +488,18 @@ def run_pipeline(legiscan: LegiScanClient, db: NeonDB, states: list = None):
     print(f"  Failed:    {failed} bills")
     print(f"{'='*60}")
 
+    # Save session_id for future incremental syncs
+    if not incremental and all_bills:
+        session_hits = set()
+        for b in all_bills:
+            sid = b.get("session_id")
+            if sid:
+                session_hits.add(sid)
+        if session_hits:
+            best_sid = max(session_hits)
+            db.update_metadata("current_session_id", str(best_sid))
+            print(f"  → Stored session_id={best_sid} for incremental sync")
+
     # Check failure threshold
     total_attempted = total + failed
     if total_attempted > 0:
@@ -475,6 +527,7 @@ def main():
     parser = argparse.ArgumentParser(description="Homeschool Compass Neon Sync Pipeline")
     parser.add_argument("--dry-run", action="store_true", help="Print actions without writing to DB")
     parser.add_argument("--states", type=str, help="Comma-separated list of state codes (default: all)")
+    parser.add_argument("--incremental", action="store_true", help="Use get_changed_bills() delta sync instead of full discovery")
     args = parser.parse_args()
 
     # Validate environment
@@ -499,7 +552,7 @@ def main():
 
     # Initialize DB
     with NeonDB(DATABASE_URL, dry_run=args.dry_run) as db:
-        exit_code = run_pipeline(legiscan, db, states=state_filter)
+        exit_code = run_pipeline(legiscan, db, states=state_filter, incremental=args.incremental)
 
     return exit_code
 

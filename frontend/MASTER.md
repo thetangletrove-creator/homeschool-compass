@@ -1,12 +1,12 @@
 # Homeschool Compass — Master Checklist
 
-> **Last updated:** 2026-06-19 (session: design + esa_programs recovery)
+> **Last updated:** 2026-06-19 (session: multi-program split + pipeline incremental wiring)
 > **Source of truth:** This file. I check items off live as we complete them.
 > **Stack:** Next.js 16 / React 19 / Tailwind 4 / Drizzle ORM / Neon / Stripe
 > **Deploy:** `https://homeschool-regulation-tracker.vercel.app/`
 > **GitHub:** `thetangletrove-creator/homeschool-compass` (main)
-> **Pipeline:** Parked (LegiScan quota exhausted, timer stopped)
-> **Last commit:** `bdb4610` — clean worktree
+> **Pipeline:** Parked (LegiScan quota exhausted, timer stopped; incremental sync wired)
+> **Last commit:** `aa467b5` — clean worktree
 
 ---
 
@@ -17,9 +17,13 @@
   - 19 states populated ✅, OH/OK cleared ✅, MS/MT added ✅
   - 0 null portal URLs, 0 null app URLs, 0 null platforms
   - ⚠️ Known: FL has 1 program (should be 3 — needs multi-program pass)
-- [ ] **P0.2** — Build multi-program support for FL (3 programs), AZ (3), add TN/WV special variants
+- [x] **P0.2** — Build multi-program support for FL (3 programs), AZ (3), add TN/WV special variants
+  - FL: PEP / FES-UA / FTC ✅ — 3 programs with distinct portals, platforms, awards
+  - AZ: K-8 / 9-12 / Disabilities ✅ — 3 grade/disability-tier programs
+  - Both mock files (data.ts + mock-data.ts) updated in sync
+  - `tsc --noEmit` ✓, 54 tests pass ✓, pushed to main → Vercel auto-deploy
 - [ ] **P0.3** — Verify compliance_forms data quality (52 states populated, fill DOE URL gaps)
-- [ ] **P0.4** — Update mock data (data.ts + mock-data.ts) with real esa_programs data
+- [x] **P0.4** — Update mock data (data.ts + mock-data.ts) with real esa_programs data (done as part of P0.2)
 - [x] **P0.5** — Write this MASTER.md 🎯
 
 ---
@@ -59,7 +63,9 @@
 *Gated on LegiScan quota reset*
 
 - [ ] **A1** — Resume timer: `sudo systemctl start homeschool-compass-sync.timer`
-- [ ] **A2** — Wire incremental sync: `get_changed_bills()` in `run_pipeline()`
+- [x] **A2** — Wire incremental sync: `get_changed_bills()` in `run_pipeline()`
+  - `sync-to-neon.py` accepts `--incremental` flag for delta polling
+  - Session ID auto-saved after full discovery → reused for incremental runs
   - 5/6 daily runs = delta poll, 1 run/week = full discovery
   - Projected: ~3,500 calls/month (under 30k quota)
 - [ ] **A3** — Fetch bill text for 1,215 ESA-related bills
@@ -116,7 +122,7 @@
 ## 🔲 P6 — Data Quality
 
 - [ ] **B3** — Set `esa_urls_verified_at` for all states + quarterly re-check cron
-- [ ] **B6** — Multi-program enrichment pass (FL 3→1, AZ 3→1)
+- [x] **B6** — Multi-program enrichment pass (FL 1→3, AZ 1→3, total 21 programs)
 - [ ] Fix empty state row in DB (null code/name, score=50)
 - [ ] Fix OH/OK `esa_active=true` but no programs (should be false)
 - [ ] Wire `text-to-speech` column to Compliance Kit summary
@@ -131,8 +137,8 @@
 | ESA-related bills | **1,223** | ✅ |
 | Bill text fetched | 8 / 3,845 | ❌ 0 downloaded |
 | States with ESA | **19** | ✅ |
-| esa_programs populated | **19 states / 19 programs** | ✅ (after B4 re-run) |
-| Multi-program states (FL=3, AZ=3) | **FL=1, AZ=1** | ⚠️ Needs multi-program pass |
+| esa_programs populated | **19 states / 21 programs** | ✅ (FL=3, rest=1; total 21) |
+| Multi-program states (FL=3, AZ=3) | **FL=3, AZ=3** | ✅ (multi-program pass complete) |
 | compliance_forms | **52/52** | ✅ (basic, needs deeper fill) |
 | non_esa_programs | **24 states / 31 programs** | ✅ |
 | esa_programs null portal URLs | **0** | ✅ |
@@ -140,7 +146,7 @@
 | esa_programs null platforms | **0** | ✅ |
 | Avg impact confidence | **0.831** | ✅ |
 | Pipeline timer | **Inactive** | ⏸ Quota exhaustion |
-| Git HEAD | **bdb4610** | Clean |
+| Git HEAD | **aa467b5** | Clean — multi-program split + pipeline wiring |
 
 ---
 
@@ -153,6 +159,8 @@
 | Provider portal + ZK encryption | Jun 17-19 | Encrypted invoices as differentiator |
 | esa_programs recovered via B4 re-run | Jun 19 | 19 states populated, OH/OK cleared, MS/MT added |
 | MASTER.md as single checklist | Jun 19 | This file — checked off live |
+| Multi-program split (FL=3, AZ=3) | Jun 19 | 21 programs total, distinct portals/platforms/awards per program |
+| Pipeline incremental sync wired | Jun 19 | `--incremental` flag in sync-to-neon.py, session ID auto-saved |
 
 ---
 
