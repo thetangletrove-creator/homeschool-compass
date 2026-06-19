@@ -1,7 +1,7 @@
 ---
 title: STATE
 state: active
-last_active: 2026-06-20
+last_active: 2026-06-19
 ---
 # homeschool-compass — Project State
 
