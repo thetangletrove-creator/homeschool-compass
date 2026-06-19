@@ -111,9 +111,6 @@
   --sidebar-border: #e2e8f0;
   --sidebar-ring: #2563eb;
 
-  /* Logo */
-  --logo-compass: #f5f0e8;
-  --logo-center: #f5f0e8;
 }
 
 /* Smooth theme toggle transition — applied only during user interaction, not on page load */
@@ -177,9 +174,6 @@ html.theme-transition *::after {
   --sidebar-border: oklch(1 0 0 / 8%);
   --sidebar-ring: oklch(0.55 0.15 260);
 
-  /* Logo — compass points invert for dark background */
-  --logo-compass: oklch(0.90 0.01 80);
-  --logo-center: oklch(0.90 0.01 80);
 }
 
 @layer base {

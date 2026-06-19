@@ -8,34 +8,23 @@ export function LogoMark({ className }: { className?: string }) {
       className={cn("text-navy dark:text-foreground", className)}
       aria-hidden="true"
     >
-      {/* Shield body */}
-      <path
-        d="M16 1.5L4 6.5V15c0 9 6.5 14.5 12 16.5 5.5-2 12-7.5 12-16.5V6.5L16 1.5z"
-        fill="currentColor"
-      />
-      {/* Compass rose — cardinal points inside shield */}
-      {/* North point (always action blue) */}
-      <path
-        d="M16 8.5L18.5 14H13.5L16 8.5z"
-        fill="var(--action)"
-      />
+      {/* Outer ring */}
+      <circle cx="16" cy="16" r="13.5" stroke="currentColor" strokeWidth="1.5" />
+
+      {/* North point — action blue, always the standout */}
+      <path d="M16,3.5 L20,14 L12,14 Z" fill="var(--action)" />
+
       {/* South point */}
-      <path
-        d="M16 23.5L13.5 18H18.5L16 23.5z"
-        fill="var(--logo-compass)"
-      />
+      <path d="M16,28.5 L20,18 L12,18 Z" fill="currentColor" />
+
       {/* East point */}
-      <path
-        d="M23.5 16L18 13.5V18.5L23.5 16z"
-        fill="var(--logo-compass)"
-      />
+      <path d="M28.5,16 L18,12 L18,20 Z" fill="currentColor" />
+
       {/* West point */}
-      <path
-        d="M8.5 16L14 13.5V18.5L8.5 16z"
-        fill="var(--logo-compass)"
-      />
-      {/* Center dot */}
-      <circle cx="16" cy="16" r="1.5" fill="var(--logo-center)" />
+      <path d="M3.5,16 L14,12 L14,20 Z" fill="currentColor" />
+
+      {/* Center anchor */}
+      <circle cx="16" cy="16" r="1.5" stroke="currentColor" strokeWidth="1" fill="none" />
     </svg>
   )
 }
@@ -45,7 +34,7 @@ export function Logo({ className }: { className?: string }) {
     <div className={cn("flex items-center gap-2.5", className)}>
       <LogoMark className="h-7 w-7" />
       <div className="flex flex-col leading-none">
-        <span className="font-heading text-base font-semibold tracking-tight text-navy">
+        <span className="font-heading text-base font-semibold tracking-tight text-navy dark:text-foreground">
           Homeschool Compass
         </span>
         <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-meta">
