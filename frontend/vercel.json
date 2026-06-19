@@ -1,0 +1,8 @@
+{
+  "env": {
+    "ENABLE_STRIPE": "true",
+    "REVALIDATE_RATE_LIMIT": "5"
+  },
+  "buildCommand": "pnpm build",
+  "installCommand": "pnpm install --frozen-lockfile"
+}

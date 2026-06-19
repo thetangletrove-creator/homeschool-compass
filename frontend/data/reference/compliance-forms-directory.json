@@ -1,0 +1,2566 @@
+[
+  {
+    "state": "AK",
+    "name": "Alaska",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Withdrawal letter only if leaving public school",
+        "form_type": "one-time",
+        "form_url": "https://hslda.org/legal/alaska",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before withdrawal",
+        "access_level": "member/public mixed",
+        "filing_method": "parent letter to school",
+        "notes": "No state homeschool NOI for independent homeschool."
+      }
+    ],
+    "notification_required": false,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none except certified tutor/private school options",
+    "days_of_instruction": null,
+    "subjects_required": [],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://education.alaska.gov/",
+    "state_legal_reference": "Alaska Stat. §14.30.010(b)",
+    "notes": "Independent homeschooling has effectively no notice/testing; public correspondence programs are different and can have enrollment paperwork.",
+    "source_urls": [
+      "https://hslda.org/legal/alaska",
+      "https://education.alaska.gov/",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/alaska",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "AL",
+    "name": "Alabama",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Private school/church school enrollment or notice forms",
+        "form_type": "annual/option-dependent",
+        "form_url": "https://www.alabamaachieves.org/families-students/homeschool/",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "At enrollment / local process",
+        "access_level": "public",
+        "filing_method": "private school/church school/local process",
+        "notes": "HSLDA state forms are member-only; official process depends on option."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none except private-tutor option",
+    "days_of_instruction": 180,
+    "subjects_required": [],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.alabamaachieves.org/families-students/homeschool/",
+    "state_legal_reference": "Ala. Code compulsory attendance/private school provisions",
+    "notes": "Multiple legal options; church/private school enrollment and attendance reporting can matter. Treat form workflow as option-dependent.",
+    "source_urls": [
+      "https://hslda.org/legal/alabama",
+      "https://www.alabamaachieves.org/families-students/homeschool/",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/alabama",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "AR",
+    "name": "Arkansas",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Notice of Intent to Home School",
+        "form_type": "annual",
+        "form_url": "https://dese.ade.arkansas.gov/Offices/learning-services/home-school",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "August 15 annually or 14 days after withdrawal/start",
+        "access_level": "public",
+        "filing_method": "online or paper to local superintendent/DESE",
+        "notes": "Arkansas has an online NOI process."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://dese.ade.arkansas.gov/Offices/learning-services/home-school",
+    "state_legal_reference": "Ark. Code Ann. §6-15-503",
+    "notes": "Annual NOI is core requirement; EFA participation is separate from homeschool NOI compliance.",
+    "source_urls": [
+      "https://hslda.org/legal/arkansas",
+      "https://dese.ade.arkansas.gov/Offices/learning-services/home-school",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/arkansas",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "AZ",
+    "name": "Arizona",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Affidavit of Intent to Homeschool",
+        "form_type": "one-time/per-child",
+        "form_url": "county superintendent forms; example source https://afhe.org/az-law-and-affidavit/",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Within 30 days of beginning homeschool / child turning 6",
+        "access_level": "public",
+        "filing_method": "PDF/mail/in-person by county",
+        "notes": "County-level forms vary; notarization required."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [
+      "reading",
+      "grammar",
+      "mathematics",
+      "social studies",
+      "science"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.azed.gov/",
+    "state_legal_reference": "A.R.S. §15-802; ESA statutes A.R.S. §§15-2401-2406",
+    "notes": "File notarized affidavit with county superintendent within 30 days of beginning home instruction; birth certificate copy commonly required.",
+    "source_urls": [
+      "https://hslda.org/legal/arizona",
+      "https://www.azed.gov/",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/arizona",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "CA",
+    "name": "California",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Private School Affidavit",
+        "form_type": "annual",
+        "form_url": "https://www3.cde.ca.gov/psa",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "October 1-15 annually; new schools after Oct 15 file when starting",
+        "access_level": "public",
+        "filing_method": "online",
+        "notes": "Direct online CDE affidavit; not a PDF."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "capable of teaching in English under private-school option",
+    "days_of_instruction": 175,
+    "subjects_required": [
+      "English",
+      "mathematics",
+      "social sciences",
+      "science",
+      "fine arts",
+      "health",
+      "physical education"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.cde.ca.gov/sp/ps/homeschool.asp",
+    "state_legal_reference": "Cal. Educ. Code §§33190, 48222, 51210, 51220",
+    "notes": "Private School Affidavit is the common independent homeschool route; keep private school records, attendance, courses of study, faculty info.",
+    "source_urls": [
+      "https://hslda.org/legal/california",
+      "https://www.cde.ca.gov/sp/ps/homeschool.asp",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/california",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "CO",
+    "name": "Colorado",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Notice of Intent",
+        "form_type": "annual",
+        "form_url": "https://www.cde.state.co.us/choice/homeschool",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "14 days before beginning and annually thereafter",
+        "access_level": "public",
+        "filing_method": "letter/PDF to district",
+        "notes": "Testing/evaluation forms often district/HSLDA-specific."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": true,
+      "grades": "3,5,7,9,11",
+      "accepted_tests": [
+        "nationally standardized achievement test",
+        "qualified evaluator assessment"
+      ],
+      "scoring_threshold": "Above 13th percentile or evaluation showing sufficient progress"
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none except independent school option",
+    "days_of_instruction": 172,
+    "subjects_required": [
+      "communication skills",
+      "reading",
+      "writing",
+      "speaking",
+      "mathematics",
+      "history",
+      "civics",
+      "literature",
+      "science",
+      "U.S. Constitution"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.cde.state.co.us/choice/homeschool",
+    "state_legal_reference": "Colo. Rev. Stat. §22-33-104.5",
+    "notes": "Keep attendance, test/evaluation results, immunization/exemption records; umbrella/private school option changes filing.",
+    "source_urls": [
+      "https://hslda.org/legal/colorado",
+      "https://www.cde.state.co.us/choice/homeschool",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/colorado",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "CT",
+    "name": "Connecticut",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Notice of Intent / portfolio review form",
+        "form_type": "optional/local",
+        "form_url": "https://portal.ct.gov/sde/homeschooling/homeschooling-in-connecticut",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Local/district guideline timing",
+        "access_level": "public",
+        "filing_method": "district form if used",
+        "notes": "Often treated as guideline rather than statutory requirement; flag for legal QA."
+      }
+    ],
+    "notification_required": false,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://portal.ct.gov/sde/homeschooling/homeschooling-in-connecticut",
+    "state_legal_reference": "Conn. Gen. Stat. §10-184; nonbinding state guidelines",
+    "notes": "Connecticut has local guideline forms, but legal notice status is contested/low-regulation; do not hard-require unless district/official source confirms.",
+    "source_urls": [
+      "https://hslda.org/legal/connecticut",
+      "https://portal.ct.gov/sde/homeschooling/homeschooling-in-connecticut",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/connecticut",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "DC",
+    "name": "District of Columbia",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Home Schooling Notification Form",
+        "form_type": "annual",
+        "form_url": "https://osse.dc.gov/service/home-schooling",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "August 15 annually or 15 days before beginning",
+        "access_level": "public",
+        "filing_method": "online/PDF to OSSE",
+        "notes": "Teacher qualification applies."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "high school diploma/GED or waiver",
+    "days_of_instruction": null,
+    "subjects_required": [
+      "reading",
+      "language arts",
+      "mathematics",
+      "science",
+      "social studies"
+    ],
+    "portfolio_review": true,
+    "portfolio_review_url": "https://osse.dc.gov/service/home-schooling",
+    "state_doe_homeschool_page": "https://osse.dc.gov/service/home-schooling",
+    "state_legal_reference": "5-A DCMR Chapter 52",
+    "notes": "Annual OSSE notification; maintain portfolio; OSSE may inspect portfolio with notice.",
+    "source_urls": [
+      "https://hslda.org/legal/district-of-columbia",
+      "https://osse.dc.gov/service/home-schooling",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/district-of-columbia",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "DE",
+    "name": "Delaware",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Delaware Nonpublic/Homeschool Enrollment and Attendance Reporting",
+        "form_type": "annual",
+        "form_url": "https://www.doe.k12.de.us/domain/163",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Enrollment report early school year; attendance report end of year per DOE",
+        "access_level": "public",
+        "filing_method": "online DOE nonpublic school system",
+        "notes": "Access may require DOE account."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.doe.k12.de.us/domain/163",
+    "state_legal_reference": "Del. Code Title 14 homeschool/nonpublic school reporting",
+    "notes": "Register homeschool/nonpublic school and report enrollment/attendance; Delaware DOE portal workflow matters.",
+    "source_urls": [
+      "https://hslda.org/legal/delaware",
+      "https://www.doe.k12.de.us/domain/163",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/delaware",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "FL",
+    "name": "Florida",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Notice of Intent to Establish Home Education Program",
+        "form_type": "one-time/per-child",
+        "form_url": "https://www.fldoe.org/schools/school-choice/other-school-choice-options/home-edu/",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Within 30 days of beginning",
+        "access_level": "public",
+        "filing_method": "letter/PDF to county superintendent",
+        "notes": "File termination notice when ending."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": true,
+      "grades": "annual evaluation, not fixed grade standardized testing",
+      "accepted_tests": [
+        "nationally normed test",
+        "state assessment",
+        "certified teacher portfolio evaluation",
+        "psychological evaluation",
+        "other mutually agreed assessment"
+      ],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [],
+    "portfolio_review": true,
+    "portfolio_review_url": "https://www.fldoe.org/schools/school-choice/other-school-choice-options/home-edu/",
+    "state_doe_homeschool_page": "https://www.fldoe.org/schools/school-choice/other-school-choice-options/home-edu/",
+    "state_legal_reference": "Fla. Stat. §1002.41",
+    "notes": "NOI is one-time to county; annual evaluation due on anniversary; keep portfolio/samples/log of educational activities.",
+    "source_urls": [
+      "https://hslda.org/legal/florida",
+      "https://www.fldoe.org/schools/school-choice/other-school-choice-options/home-edu/",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/florida",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "GA",
+    "name": "Georgia",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Declaration of Intent to Utilize a Home Study Program",
+        "form_type": "annual",
+        "form_url": "https://www.gadoe.org/Curriculum-Instruction-and-Assessment/Pages/Home-Schools.aspx",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "By September 1 annually or within 30 days of establishing",
+        "access_level": "public",
+        "filing_method": "online GaDOE or mail",
+        "notes": "Keep copy; annual progress report retained by parent."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": true,
+      "grades": "At least every 3 years beginning grade 3",
+      "accepted_tests": [
+        "nationally standardized test"
+      ],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "parent/high school diploma or GED",
+    "days_of_instruction": 180,
+    "subjects_required": [
+      "reading",
+      "language arts",
+      "mathematics",
+      "social studies",
+      "science"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.gadoe.org/Curriculum-Instruction-and-Assessment/Pages/Home-Schools.aspx",
+    "state_legal_reference": "O.C.G.A. §20-2-690",
+    "notes": "Declaration annually; attendance no longer submitted but must provide 180 days/4.5 hours; annual progress report retained.",
+    "source_urls": [
+      "https://hslda.org/legal/georgia",
+      "https://www.gadoe.org/Curriculum-Instruction-and-Assessment/Pages/Home-Schools.aspx",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/georgia",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "HI",
+    "name": "Hawaii",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Form 4140 / Notice of Intent",
+        "form_type": "one-time",
+        "form_url": "https://www.hawaiipublicschools.org/TeachingAndLearning/StudentLearning/Pages/Homeschooling.aspx",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before homeschooling / upon withdrawal",
+        "access_level": "public",
+        "filing_method": "Form 4140 or letter to local principal",
+        "notes": "Annual progress report required separately."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": true,
+      "grades": "3,5,8,10",
+      "accepted_tests": [
+        "nationally normed standardized achievement test",
+        "statewide testing",
+        "written evaluation"
+      ],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": true,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [
+      "reading",
+      "language arts",
+      "mathematics",
+      "science",
+      "social studies"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.hawaiipublicschools.org/TeachingAndLearning/StudentLearning/Pages/Homeschooling.aspx",
+    "state_legal_reference": "Hawaii Admin. Rules §8-12",
+    "notes": "NOI can be Form 4140 or letter; annual progress report required.",
+    "source_urls": [
+      "https://hslda.org/legal/hawaii",
+      "https://www.hawaiipublicschools.org/TeachingAndLearning/StudentLearning/Pages/Homeschooling.aspx",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/hawaii",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "IA",
+    "name": "Iowa",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Competent Private Instruction Form A",
+        "form_type": "option-dependent",
+        "form_url": "https://educate.iowa.gov/pk-12/educational-choice/private-instruction",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "If using CPI/dual enrollment: district deadline, usually early school year",
+        "access_level": "public",
+        "filing_method": "PDF/district submission",
+        "notes": "Independent Private Instruction generally has no NOI."
+      }
+    ],
+    "notification_required": false,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": 148,
+    "subjects_required": [],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://educate.iowa.gov/pk-12/educational-choice/private-instruction",
+    "state_legal_reference": "Iowa Code §§299A; 299.4",
+    "notes": "Multiple private instruction options; no report required for Independent Private Instruction, CPI reporting if selected/dual enrollment.",
+    "source_urls": [
+      "https://hslda.org/legal/iowa",
+      "https://educate.iowa.gov/pk-12/educational-choice/private-instruction",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/iowa",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "ID",
+    "name": "Idaho",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Withdrawal letter only if leaving public school",
+        "form_type": "one-time",
+        "form_url": "https://hslda.org/legal/idaho",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before withdrawal",
+        "access_level": "public",
+        "filing_method": "parent letter",
+        "notes": "No state homeschool form."
+      }
+    ],
+    "notification_required": false,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [
+      "subjects commonly and usually taught in public schools"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.sde.idaho.gov/school-choice/home-school/",
+    "state_legal_reference": "Idaho Code §33-202",
+    "notes": "No NOI/test; teach comparable subjects. Keep records for defensibility.",
+    "source_urls": [
+      "https://hslda.org/legal/idaho",
+      "https://www.sde.idaho.gov/school-choice/home-school/",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/idaho",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "IL",
+    "name": "Illinois",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Withdrawal letter / optional private school registration",
+        "form_type": "optional",
+        "form_url": "https://www.isbe.net/Pages/Homeschool.aspx",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before withdrawal if enrolled",
+        "access_level": "public",
+        "filing_method": "parent letter; optional ISBE registration",
+        "notes": "No state NOI required."
+      }
+    ],
+    "notification_required": false,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [
+      "language arts",
+      "mathematics",
+      "biological and physical sciences",
+      "social sciences",
+      "fine arts",
+      "physical development and health"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.isbe.net/Pages/Homeschool.aspx",
+    "state_legal_reference": "105 ILCS 5/26-1",
+    "notes": "Homeschools operate as private schools; instruction in English in required branches.",
+    "source_urls": [
+      "https://hslda.org/legal/illinois",
+      "https://www.isbe.net/Pages/Homeschool.aspx",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/illinois",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "IN",
+    "name": "Indiana",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Withdrawal letter / homeschool enrollment report if requested",
+        "form_type": "one-time/optional",
+        "form_url": "https://www.in.gov/doe/students/indiana-choice-scholarship-program/homeschool-information/",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before withdrawal",
+        "access_level": "public",
+        "filing_method": "parent/school process",
+        "notes": "State no longer requires routine homeschool registration."
+      }
+    ],
+    "notification_required": false,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": 180,
+    "subjects_required": [],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.in.gov/doe/students/indiana-choice-scholarship-program/homeschool-information/",
+    "state_legal_reference": "Ind. Code §20-33-2-8",
+    "notes": "No state NOI, but attendance records required and must be available on request.",
+    "source_urls": [
+      "https://hslda.org/legal/indiana",
+      "https://www.in.gov/doe/students/indiana-choice-scholarship-program/homeschool-information/",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/indiana",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "KS",
+    "name": "Kansas",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Non-Accredited Private School Registration",
+        "form_type": "one-time",
+        "form_url": "https://www.ksde.org/Agency/Division-of-Learning-Services/Teacher-Licensure-TL/Non-Accredited-Private-Schools",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before operating private school",
+        "access_level": "public",
+        "filing_method": "online KSDE registration",
+        "notes": "Not annual unless school info changes."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "competent instructor",
+    "days_of_instruction": 186,
+    "subjects_required": [],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.ksde.org/Agency/Division-of-Learning-Services/Teacher-Licensure-TL/Non-Accredited-Private-Schools",
+    "state_legal_reference": "Kan. Stat. Ann. §72-4345 et seq.",
+    "notes": "Register as nonaccredited private school once; keep attendance/school records.",
+    "source_urls": [
+      "https://hslda.org/legal/kansas",
+      "https://www.ksde.org/Agency/Division-of-Learning-Services/Teacher-Licensure-TL/Non-Accredited-Private-Schools",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/kansas",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "KY",
+    "name": "Kentucky",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Letter of Intent / Notice to Superintendent",
+        "form_type": "annual",
+        "form_url": "https://www.education.ky.gov/federal/fed/Pages/Home-School.aspx",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Within first two weeks of school year",
+        "access_level": "public",
+        "filing_method": "letter/mail/email to local superintendent",
+        "notes": "Include names, ages, residence."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "parent as private teacher",
+    "days_of_instruction": 170,
+    "subjects_required": [
+      "reading",
+      "writing",
+      "spelling",
+      "grammar",
+      "history",
+      "mathematics",
+      "science",
+      "civics"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.education.ky.gov/federal/fed/Pages/Home-School.aspx",
+    "state_legal_reference": "Ky. Rev. Stat. §§159.030, 159.040",
+    "notes": "Annual letter to local superintendent; maintain attendance and scholarship reports.",
+    "source_urls": [
+      "https://hslda.org/legal/kentucky",
+      "https://www.education.ky.gov/federal/fed/Pages/Home-School.aspx",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/kentucky",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "LA",
+    "name": "Louisiana",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Home Study Application / Renewal",
+        "form_type": "annual",
+        "form_url": "https://www.louisianabelieves.com/schools/home-study",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Within 15 days of beginning; annually by approval anniversary",
+        "access_level": "public",
+        "filing_method": "online/mail to LDOE",
+        "notes": "Requires evidence of sustained curriculum/progress on renewal."
+      },
+      {
+        "form_name": "Nonpublic School Not Seeking State Approval enrollment report",
+        "form_type": "annual",
+        "form_url": "https://www.louisianabelieves.com/schools/home-study",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Within 30 days of start",
+        "access_level": "public",
+        "filing_method": "online/mail",
+        "notes": "Less approval-oriented route."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": true,
+      "grades": "Home Study renewal evidence annually",
+      "accepted_tests": [
+        "standardized test",
+        "portfolio/progress evidence",
+        "certified teacher statement"
+      ],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": true,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": 180,
+    "subjects_required": [
+      "reading",
+      "language arts",
+      "mathematics",
+      "science",
+      "social studies"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.louisianabelieves.com/schools/home-study",
+    "state_legal_reference": "La. Rev. Stat. §§17:236, 17:221",
+    "notes": "Two main routes: BESE-approved Home Study or Nonpublic School Not Seeking State Approval. LA GATOR is separate.",
+    "source_urls": [
+      "https://hslda.org/legal/louisiana",
+      "https://www.louisianabelieves.com/schools/home-study",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/louisiana",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "MA",
+    "name": "Massachusetts",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Home Education Plan / Approval Request",
+        "form_type": "annual",
+        "form_url": "https://www.doe.mass.edu/lawsregs/advisory/homeschooling.html",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before beginning and annually per district",
+        "access_level": "public",
+        "filing_method": "district submission",
+        "notes": "District-specific forms and requirements vary."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": true,
+      "grades": "local approval-dependent",
+      "accepted_tests": [
+        "standardized test",
+        "progress report",
+        "dated work samples",
+        "other local assessment"
+      ],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": true,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": 180,
+    "subjects_required": [
+      "reading",
+      "language arts",
+      "mathematics",
+      "science",
+      "social studies"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.doe.mass.edu/lawsregs/advisory/homeschooling.html",
+    "state_legal_reference": "Care and Protection of Charles; Mass. Gen. Laws ch. 76 §1",
+    "notes": "Requires prior approval by local district; requirements vary by district, which is the whole tiny bureaucratic goblin here.",
+    "source_urls": [
+      "https://hslda.org/legal/massachusetts",
+      "https://www.doe.mass.edu/lawsregs/advisory/homeschooling.html",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/massachusetts",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "MD",
+    "name": "Maryland",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Home Schooling Notification Form",
+        "form_type": "one-time/per-child",
+        "form_url": "https://marylandpublicschools.org/about/Pages/DSFSS/SSSP/HomeInstruct/index.aspx",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "15 days before beginning",
+        "access_level": "public",
+        "filing_method": "PDF/online/local superintendent",
+        "notes": "Portfolio review can be 2-3 times per year unless using umbrella."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [
+      "reading",
+      "language arts",
+      "mathematics",
+      "science",
+      "social studies"
+    ],
+    "portfolio_review": true,
+    "portfolio_review_url": "https://marylandpublicschools.org/about/Pages/DSFSS/SSSP/HomeInstruct/index.aspx",
+    "state_doe_homeschool_page": "https://marylandpublicschools.org/about/Pages/DSFSS/SSSP/HomeInstruct/index.aspx",
+    "state_legal_reference": "COMAR 13A.10.01",
+    "notes": "File notice 15 days before; choose county portfolio reviews or umbrella/satellite supervision.",
+    "source_urls": [
+      "https://hslda.org/legal/maryland",
+      "https://marylandpublicschools.org/about/Pages/DSFSS/SSSP/HomeInstruct/index.aspx",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/maryland",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "ME",
+    "name": "Maine",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Notice of Intent / Subsequent Year Letter",
+        "form_type": "annual",
+        "form_url": "https://www.maine.gov/doe/schools/schoolops/homeinstruction",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Initial within 10 days; subsequent by September 1",
+        "access_level": "public",
+        "filing_method": "PDF/email/mail to DOE and local superintendent",
+        "notes": "Assessment results accompany annual filing."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": true,
+      "grades": "annual",
+      "accepted_tests": [
+        "standardized test",
+        "portfolio review by certified teacher",
+        "local superintendent review",
+        "other approved assessment"
+      ],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": 175,
+    "subjects_required": [
+      "English/language arts",
+      "mathematics",
+      "science",
+      "social studies",
+      "physical education",
+      "health education",
+      "library skills",
+      "fine arts",
+      "Maine studies",
+      "computer proficiency"
+    ],
+    "portfolio_review": true,
+    "portfolio_review_url": "https://www.maine.gov/doe/schools/schoolops/homeinstruction",
+    "state_doe_homeschool_page": "https://www.maine.gov/doe/schools/schoolops/homeinstruction",
+    "state_legal_reference": "20-A M.R.S. §5001-A",
+    "notes": "Initial notice within 10 days; annual subsequent letter by Sept 1; annual assessment must be submitted.",
+    "source_urls": [
+      "https://hslda.org/legal/maine",
+      "https://www.maine.gov/doe/schools/schoolops/homeinstruction",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/maine",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "MI",
+    "name": "Michigan",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Withdrawal letter only if leaving public school",
+        "form_type": "one-time",
+        "form_url": "https://www.michigan.gov/mde/services/flexible-learning/options/nonpublic-home-schools",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before withdrawal",
+        "access_level": "public",
+        "filing_method": "parent letter",
+        "notes": "No routine state homeschool registration."
+      }
+    ],
+    "notification_required": false,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none for homeschool option; nonpublic school teacher qualification rules differ",
+    "days_of_instruction": 180,
+    "subjects_required": [
+      "reading",
+      "spelling",
+      "mathematics",
+      "science",
+      "history",
+      "civics",
+      "literature",
+      "writing",
+      "English grammar"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.michigan.gov/mde/services/flexible-learning/options/nonpublic-home-schools",
+    "state_legal_reference": "Mich. Comp. Laws §380.1561",
+    "notes": "No notice/testing for homeschool option; special education services may require nonpublic registration.",
+    "source_urls": [
+      "https://hslda.org/legal/michigan",
+      "https://www.michigan.gov/mde/services/flexible-learning/options/nonpublic-home-schools",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/michigan",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "MN",
+    "name": "Minnesota",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Initial Registration / Letter of Intent and annual report",
+        "form_type": "annual",
+        "form_url": "https://education.mn.gov/MDE/fam/nphs/home/",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "October 1 annually / within 15 days of withdrawal",
+        "access_level": "public",
+        "filing_method": "PDF/mail to superintendent",
+        "notes": "Include instructor qualification and immunization info."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": true,
+      "grades": "annual ages 7-17",
+      "accepted_tests": [
+        "nationally normed standardized test"
+      ],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "parent or instructor must meet statutory qualification or additional reporting/testing applies",
+    "days_of_instruction": null,
+    "subjects_required": [
+      "reading",
+      "writing",
+      "literature",
+      "fine arts",
+      "mathematics",
+      "science",
+      "history",
+      "geography",
+      "economics",
+      "government",
+      "citizenship",
+      "health",
+      "physical education"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://education.mn.gov/MDE/fam/nphs/home/",
+    "state_legal_reference": "Minn. Stat. §§120A.22, 120A.24",
+    "notes": "Annual reporting, immunization info, and nationally normed test requirement.",
+    "source_urls": [
+      "https://hslda.org/legal/minnesota",
+      "https://education.mn.gov/MDE/fam/nphs/home/",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/minnesota",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "MO",
+    "name": "Missouri",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "No state filing form; optional withdrawal letter",
+        "form_type": "one-time/optional",
+        "form_url": "https://dese.mo.gov/quality-schools/home-schooling",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before withdrawal if enrolled",
+        "access_level": "public",
+        "filing_method": "parent letter",
+        "notes": "Keep plan book/diary, portfolio, evaluations as records."
+      }
+    ],
+    "notification_required": false,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [
+      "reading",
+      "mathematics",
+      "social studies",
+      "language arts",
+      "science"
+    ],
+    "portfolio_review": true,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://dese.mo.gov/quality-schools/home-schooling",
+    "state_legal_reference": "Mo. Rev. Stat. §167.031",
+    "notes": "No NOI, but records are mandatory: 1,000 instructional hours, 600 core, 400 at regular homeschool location.",
+    "source_urls": [
+      "https://hslda.org/legal/missouri",
+      "https://dese.mo.gov/quality-schools/home-schooling",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/missouri",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "MS",
+    "name": "Mississippi",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Certificate of Enrollment",
+        "form_type": "annual",
+        "form_url": "https://www.mdek12.org/OCSA/HS",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "By September 15 annually",
+        "access_level": "public",
+        "filing_method": "school attendance officer form/process",
+        "notes": "County school attendance officer handles filing."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.mdek12.org/OCSA/HS",
+    "state_legal_reference": "Miss. Code §37-13-91",
+    "notes": "Certificate of Enrollment is the central compliance form.",
+    "source_urls": [
+      "https://hslda.org/legal/mississippi",
+      "https://www.mdek12.org/OCSA/HS",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/mississippi",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "MT",
+    "name": "Montana",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Notice of Intent to Homeschool",
+        "form_type": "annual",
+        "form_url": "https://opi.mt.gov/Families-Students/Parent-Resources/Home-School",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Annually at start of school year",
+        "access_level": "public",
+        "filing_method": "letter/PDF to county superintendent",
+        "notes": "County form may vary."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [
+      "reading",
+      "language arts",
+      "mathematics",
+      "science",
+      "social studies"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://opi.mt.gov/Families-Students/Parent-Resources/Home-School",
+    "state_legal_reference": "Mont. Code Ann. §20-5-109",
+    "notes": "Notify county superintendent annually; maintain attendance and immunization records; meet hours.",
+    "source_urls": [
+      "https://hslda.org/legal/montana",
+      "https://opi.mt.gov/Families-Students/Parent-Resources/Home-School",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/montana",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "NC",
+    "name": "North Carolina",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Notice of Intent to Operate a Home School",
+        "form_type": "one-time",
+        "form_url": "https://www.doa.nc.gov/divisions/non-public-education/home-schools",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before opening homeschool",
+        "access_level": "public",
+        "filing_method": "online DNPE portal",
+        "notes": "Need school name, chief administrator, diploma evidence."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": true,
+      "grades": "annual",
+      "accepted_tests": [
+        "nationally standardized achievement test"
+      ],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "high school diploma or equivalent",
+    "days_of_instruction": null,
+    "subjects_required": [],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.doa.nc.gov/divisions/non-public-education/home-schools",
+    "state_legal_reference": "N.C. Gen. Stat. §115C-563 et seq.",
+    "notes": "One-time notice through DNPE; annual standardized test and attendance/immunization records retained.",
+    "source_urls": [
+      "https://hslda.org/legal/north-carolina",
+      "https://www.doa.nc.gov/divisions/non-public-education/home-schools",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/north-carolina",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "ND",
+    "name": "North Dakota",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Statement of Intent to Home Educate",
+        "form_type": "annual",
+        "form_url": "https://www.nd.gov/dpi/familiescommunity/home-education",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "At least 14 days before beginning / annually",
+        "access_level": "public",
+        "filing_method": "PDF/mail to district superintendent",
+        "notes": "Attach child info and qualification evidence if needed."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": true,
+      "grades": "4,6,8,10",
+      "accepted_tests": [
+        "standardized achievement test"
+      ],
+      "scoring_threshold": "Below 30th percentile may trigger remediation rules"
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "high school diploma/GED or monitored instruction exceptions",
+    "days_of_instruction": 175,
+    "subjects_required": [
+      "reading",
+      "language arts",
+      "mathematics",
+      "science",
+      "social studies"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.nd.gov/dpi/familiescommunity/home-education",
+    "state_legal_reference": "N.D. Cent. Code ch. 15.1-23",
+    "notes": "Annual statement of intent; parent qualification/monitoring rules matter.",
+    "source_urls": [
+      "https://hslda.org/legal/north-dakota",
+      "https://www.nd.gov/dpi/familiescommunity/home-education",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/north-dakota",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "NE",
+    "name": "Nebraska",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Rule 13 Exempt School Statement / Parent Representative Forms",
+        "form_type": "annual",
+        "form_url": "https://www.education.ne.gov/fos/exempt-schools/",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Typically by July 15 for continuing schools; 30 days before start for new",
+        "access_level": "public",
+        "filing_method": "online NDE Exempt School system",
+        "notes": "Requires parent representative statements and instructional calendar/info."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": true,
+    "teacher_qualification_required": "parent representatives",
+    "days_of_instruction": null,
+    "subjects_required": [
+      "reading",
+      "language arts",
+      "mathematics",
+      "science",
+      "social studies"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.education.ne.gov/fos/exempt-schools/",
+    "state_legal_reference": "Neb. Rev. Stat. §§79-1601 et seq.",
+    "notes": "Exempt school filing through Nebraska Department of Education; annual filing dates matter.",
+    "source_urls": [
+      "https://hslda.org/legal/nebraska",
+      "https://www.education.ne.gov/fos/exempt-schools/",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/nebraska",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "NH",
+    "name": "New Hampshire",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Home Education Notification",
+        "form_type": "one-time",
+        "form_url": "https://www.education.nh.gov/pathways-education/home-education",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Within 5 business days of beginning",
+        "access_level": "public",
+        "filing_method": "letter/PDF to participating agency/superintendent",
+        "notes": "Annual evaluation required/retained."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": true,
+      "grades": "annual",
+      "accepted_tests": [
+        "national student achievement test",
+        "state assessment",
+        "certified teacher evaluation",
+        "other agreed method"
+      ],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": 180,
+    "subjects_required": [
+      "science",
+      "mathematics",
+      "language",
+      "government",
+      "history",
+      "health",
+      "reading",
+      "writing",
+      "spelling",
+      "history of U.S. and NH constitutions",
+      "art",
+      "music"
+    ],
+    "portfolio_review": true,
+    "portfolio_review_url": "https://www.education.nh.gov/pathways-education/home-education",
+    "state_doe_homeschool_page": "https://www.education.nh.gov/pathways-education/home-education",
+    "state_legal_reference": "N.H. Rev. Stat. §193-A",
+    "notes": "Initial notification; keep portfolio and annual evaluation, but normally retain evaluation unless requested/participating program requires.",
+    "source_urls": [
+      "https://hslda.org/legal/new-hampshire",
+      "https://www.education.nh.gov/pathways-education/home-education",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/new-hampshire",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "NJ",
+    "name": "New Jersey",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Withdrawal letter only if leaving public school",
+        "form_type": "one-time",
+        "form_url": "https://www.nj.gov/education/genfo/faq/faq_homeschool.htm",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before withdrawal",
+        "access_level": "public",
+        "filing_method": "parent letter",
+        "notes": "No state homeschool form."
+      }
+    ],
+    "notification_required": false,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [
+      "academically equivalent instruction"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.nj.gov/education/genfo/faq/faq_homeschool.htm",
+    "state_legal_reference": "N.J. Stat. Ann. §18A:38-25",
+    "notes": "No NOI/testing; provide equivalent instruction. Withdrawal letter recommended if leaving school.",
+    "source_urls": [
+      "https://hslda.org/legal/new-jersey",
+      "https://www.nj.gov/education/genfo/faq/faq_homeschool.htm",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/new-jersey",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "NM",
+    "name": "New Mexico",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Home School Notification",
+        "form_type": "annual",
+        "form_url": "https://webnew.ped.state.nm.us/bureaus/options-parents-families/home-schools/",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "By August 1 annually / within 30 days of establishing",
+        "access_level": "public",
+        "filing_method": "online PED portal",
+        "notes": "Parent must have high school diploma/GED."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "high school diploma or GED",
+    "days_of_instruction": 180,
+    "subjects_required": [
+      "reading",
+      "language arts",
+      "mathematics",
+      "social studies",
+      "science"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://webnew.ped.state.nm.us/bureaus/options-parents-families/home-schools/",
+    "state_legal_reference": "N.M. Stat. §22-1-2.1",
+    "notes": "Annual online notification by Aug 1; maintain immunization records.",
+    "source_urls": [
+      "https://hslda.org/legal/new-mexico",
+      "https://webnew.ped.state.nm.us/bureaus/options-parents-families/home-schools/",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/new-mexico",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "NV",
+    "name": "Nevada",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Notice of Intent to Homeschool + Educational Plan",
+        "form_type": "one-time/per-child",
+        "form_url": "https://doe.nv.gov/Private_Schools/Home_Schooling/",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Within 10 days of withdrawal/start",
+        "access_level": "public",
+        "filing_method": "PDF/mail to district superintendent",
+        "notes": "Educational plan required."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": true,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [
+      "English",
+      "mathematics",
+      "science",
+      "social studies"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://doe.nv.gov/Private_Schools/Home_Schooling/",
+    "state_legal_reference": "Nev. Rev. Stat. §392.070",
+    "notes": "One-time NOI and education plan filed with district; no approval/testing.",
+    "source_urls": [
+      "https://hslda.org/legal/nevada",
+      "https://doe.nv.gov/Private_Schools/Home_Schooling/",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/nevada",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "NY",
+    "name": "New York",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Letter/Notice of Intent",
+        "form_type": "annual",
+        "form_url": "https://www.nysed.gov/nonpublic-schools/home-instruction",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "July 1 or within 14 days of beginning",
+        "access_level": "public",
+        "filing_method": "district/NYC portal or letter",
+        "notes": "District must respond with regs/IHIP form."
+      },
+      {
+        "form_name": "Individualized Home Instruction Plan (IHIP)",
+        "form_type": "annual",
+        "form_url": "https://www.nysed.gov/nonpublic-schools/home-instruction",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "August 15 or 4 weeks after district sends IHIP form",
+        "access_level": "public",
+        "filing_method": "district/NYC portal or PDF",
+        "notes": "Most confusing NY form."
+      },
+      {
+        "form_name": "Quarterly Reports",
+        "form_type": "quarterly",
+        "form_url": "https://www.nysed.gov/nonpublic-schools/home-instruction",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Dates listed in IHIP; four evenly spaced reports",
+        "access_level": "public",
+        "filing_method": "district/NYC portal or PDF",
+        "notes": "Must include hours/material covered/progress."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": true,
+      "grades": "Annual assessment; standardized tests grades 4,6,8 and every other year grades 9-12",
+      "accepted_tests": [
+        "standardized achievement test",
+        "written narrative evaluation where allowed"
+      ],
+      "scoring_threshold": "Composite score above 33rd percentile or one academic year of growth"
+    },
+    "curriculum_notification": true,
+    "teacher_qualification_required": "competent instructor",
+    "days_of_instruction": 180,
+    "subjects_required": [
+      "English",
+      "mathematics",
+      "science",
+      "social studies",
+      "health",
+      "physical education",
+      "music",
+      "visual arts",
+      "patriotism/citizenship",
+      "traffic safety",
+      "fire safety",
+      "drug/alcohol/tobacco abuse prevention"
+    ],
+    "portfolio_review": true,
+    "portfolio_review_url": "https://www.nysed.gov/nonpublic-schools/home-instruction",
+    "state_doe_homeschool_page": "https://www.nysed.gov/nonpublic-schools/home-instruction",
+    "state_legal_reference": "8 NYCRR §100.10",
+    "notes": "High-complexity state: NOI, IHIP, quarterly reports, annual assessment; NYC has its own Central Office workflow.",
+    "source_urls": [
+      "https://hslda.org/legal/new-york",
+      "https://www.nysed.gov/nonpublic-schools/home-instruction",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/new-york",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "OH",
+    "name": "Ohio",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Home Education Exemption Notice",
+        "form_type": "annual",
+        "form_url": "https://education.ohio.gov/Topics/Ohio-Education-Options/Home-Schooling",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "August 30 annually or within 5 calendar days after starting/moving/withdrawing",
+        "access_level": "public",
+        "filing_method": "letter/PDF to resident district superintendent",
+        "notes": "Do not add old assessment requirement unless local source is stale."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [
+      "English language arts",
+      "mathematics",
+      "science",
+      "history",
+      "government",
+      "social studies"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://education.ohio.gov/Topics/Ohio-Education-Options/Home-Schooling",
+    "state_legal_reference": "Ohio Rev. Code §3321.042; OAC home education rules",
+    "notes": "Ohio simplified home education. Annual exemption notice by Aug 30 or within 5 days of starting/moving/withdrawal; assessment no longer required under current summary.",
+    "source_urls": [
+      "https://hslda.org/legal/ohio",
+      "https://education.ohio.gov/Topics/Ohio-Education-Options/Home-Schooling",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/ohio",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "OK",
+    "name": "Oklahoma",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Withdrawal letter only if leaving public school",
+        "form_type": "one-time",
+        "form_url": "https://sde.ok.gov/home-school",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before withdrawal",
+        "access_level": "public",
+        "filing_method": "parent letter",
+        "notes": "No state homeschool form."
+      }
+    ],
+    "notification_required": false,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": 180,
+    "subjects_required": [],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://sde.ok.gov/home-school",
+    "state_legal_reference": "Okla. Const. art. XIII §4",
+    "notes": "No notice/testing. 180 days is the constitutional/public-school benchmark commonly cited.",
+    "source_urls": [
+      "https://hslda.org/legal/oklahoma",
+      "https://sde.ok.gov/home-school",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/oklahoma",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "OR",
+    "name": "Oregon",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Notice of Intent to Homeschool",
+        "form_type": "one-time/per-child",
+        "form_url": "https://www.oregon.gov/ode/learning-options/HomeSchool/Pages/default.aspx",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Within 10 days of withdrawal/start or moving into ESD",
+        "access_level": "public",
+        "filing_method": "ESD form/email/mail",
+        "notes": "File with local Education Service District."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": true,
+      "grades": "3,5,8,10",
+      "accepted_tests": [
+        "approved standardized achievement test"
+      ],
+      "scoring_threshold": "Below 15th percentile triggers additional testing/remediation rules"
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.oregon.gov/ode/learning-options/HomeSchool/Pages/default.aspx",
+    "state_legal_reference": "Or. Rev. Stat. §339.035; OAR 581-021-0026",
+    "notes": "Notify ESD once; testing at grade bands.",
+    "source_urls": [
+      "https://hslda.org/legal/oregon",
+      "https://www.oregon.gov/ode/learning-options/HomeSchool/Pages/default.aspx",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/oregon",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "PA",
+    "name": "Pennsylvania",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Home Education Affidavit / Unsworn Declaration",
+        "form_type": "annual",
+        "form_url": "https://www.pa.gov/agencies/education/programs-and-services/schools/academic-programs/home-education-and-private-tutoring.html",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "By August 1 annually",
+        "access_level": "public",
+        "filing_method": "PDF/mail/email to superintendent",
+        "notes": "Objectives and medical/immunization evidence addressed."
+      },
+      {
+        "form_name": "Evaluator Certification / Portfolio Review",
+        "form_type": "annual",
+        "form_url": "https://www.pa.gov/agencies/education/programs-and-services/schools/academic-programs/home-education-and-private-tutoring.html",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "By June 30 annually",
+        "access_level": "public",
+        "filing_method": "evaluation letter to superintendent",
+        "notes": "Portfolio retained/available for evaluator."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": true,
+      "grades": "3,5,8",
+      "accepted_tests": [
+        "nationally normed standardized achievement test",
+        "statewide test"
+      ],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": true,
+    "teacher_qualification_required": "parent HS diploma/GED or equivalent",
+    "days_of_instruction": 180,
+    "subjects_required": [
+      "English",
+      "spelling",
+      "reading",
+      "writing",
+      "arithmetic",
+      "geography",
+      "history of U.S. and PA",
+      "civics",
+      "safety/fire prevention",
+      "health",
+      "physical education",
+      "music",
+      "art",
+      "science"
+    ],
+    "portfolio_review": true,
+    "portfolio_review_url": "https://www.pa.gov/agencies/education/programs-and-services/schools/academic-programs/home-education-and-private-tutoring.html",
+    "state_doe_homeschool_page": "https://www.pa.gov/agencies/education/programs-and-services/schools/academic-programs/home-education-and-private-tutoring.html",
+    "state_legal_reference": "24 P.S. §13-1327.1",
+    "notes": "Affidavit/unsworn declaration, objectives, portfolio, evaluator certification by June 30. High paperwork state.",
+    "source_urls": [
+      "https://hslda.org/legal/pennsylvania",
+      "https://www.pa.gov/agencies/education/programs-and-services/schools/academic-programs/home-education-and-private-tutoring.html",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/pennsylvania",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "RI",
+    "name": "Rhode Island",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Home Instruction Approval Request / Letter of Intent",
+        "form_type": "annual",
+        "form_url": "https://ride.ri.gov/students-families/education-programs/home-schooling",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before school year / district deadline",
+        "access_level": "public",
+        "filing_method": "local district/school committee",
+        "notes": "Approval and reporting vary by district."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": true,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": 180,
+    "subjects_required": [
+      "reading",
+      "writing",
+      "geography",
+      "arithmetic",
+      "history of U.S. and Rhode Island",
+      "principles of American government",
+      "health",
+      "physical education"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://ride.ri.gov/students-families/education-programs/home-schooling",
+    "state_legal_reference": "R.I. Gen. Laws §16-19-2",
+    "notes": "Local school committee approval; district forms vary heavily.",
+    "source_urls": [
+      "https://hslda.org/legal/rhode-island",
+      "https://ride.ri.gov/students-families/education-programs/home-schooling",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/rhode-island",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "SC",
+    "name": "South Carolina",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "District homeschool application / association membership forms",
+        "form_type": "annual/option-dependent",
+        "form_url": "https://ed.sc.gov/districts-schools/school-choice/home-schooling/",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before school year / association deadline",
+        "access_level": "public",
+        "filing_method": "district or association portal/PDF",
+        "notes": "Choose option carefully; third-option associations have separate forms."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "parent high school diploma/GED",
+    "days_of_instruction": 180,
+    "subjects_required": [
+      "reading",
+      "writing",
+      "mathematics",
+      "science",
+      "social studies",
+      "composition",
+      "literature"
+    ],
+    "portfolio_review": true,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://ed.sc.gov/districts-schools/school-choice/home-schooling/",
+    "state_legal_reference": "S.C. Code §§59-65-40, 59-65-45, 59-65-47",
+    "notes": "Three options: district board, SCAIHS, or third-option association. Records required under association options.",
+    "source_urls": [
+      "https://hslda.org/legal/south-carolina",
+      "https://ed.sc.gov/districts-schools/school-choice/home-schooling/",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/south-carolina",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "SD",
+    "name": "South Dakota",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Alternative Instruction Notification",
+        "form_type": "annual/one-time depending current DOE process",
+        "form_url": "https://doe.sd.gov/oatq/altinstruction.aspx",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before beginning / DOE process",
+        "access_level": "public",
+        "filing_method": "online DOE/district form",
+        "notes": "Verify current annual vs one-time handling."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [
+      "language arts",
+      "mathematics"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://doe.sd.gov/oatq/altinstruction.aspx",
+    "state_legal_reference": "S.D. Codified Laws §13-27-3",
+    "notes": "Alternative instruction notification; testing requirement removed under recent reforms.",
+    "source_urls": [
+      "https://hslda.org/legal/south-dakota",
+      "https://doe.sd.gov/oatq/altinstruction.aspx",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/south-dakota",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "TN",
+    "name": "Tennessee",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Intent to Home School / Independent Home School Application",
+        "form_type": "annual",
+        "form_url": "https://www.tn.gov/education/families/school-options/home-schooling.html",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before school year, typically by August 1",
+        "access_level": "public",
+        "filing_method": "district/DOE form",
+        "notes": "Attendance reporting required for independent homeschool."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": true,
+      "grades": "5,7,9 for independent home school",
+      "accepted_tests": [
+        "same state board approved standardized tests used by public schools"
+      ],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "high school diploma/GED for independent homeschool parent-teacher",
+    "days_of_instruction": 180,
+    "subjects_required": [
+      "reading",
+      "language arts",
+      "mathematics",
+      "science",
+      "social studies"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.tn.gov/education/families/school-options/home-schooling.html",
+    "state_legal_reference": "Tenn. Code Ann. §49-6-3050",
+    "notes": "Independent homeschool has annual notice, attendance, testing; church-related/umbrella routes differ.",
+    "source_urls": [
+      "https://hslda.org/legal/tennessee",
+      "https://www.tn.gov/education/families/school-options/home-schooling.html",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/tennessee",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "TX",
+    "name": "Texas",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Withdrawal letter only if leaving public school",
+        "form_type": "one-time",
+        "form_url": "https://tea.texas.gov/texas-schools/general-information/finding-a-school-for-your-child/home-schooling",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before withdrawal",
+        "access_level": "public",
+        "filing_method": "parent letter/email",
+        "notes": "No state homeschool form."
+      }
+    ],
+    "notification_required": false,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [
+      "reading",
+      "spelling",
+      "grammar",
+      "mathematics",
+      "good citizenship"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://tea.texas.gov/texas-schools/general-information/finding-a-school-for-your-child/home-schooling",
+    "state_legal_reference": "Texas Education Code / Leeper decision",
+    "notes": "No notice/testing. Curriculum must be bona fide and visual.",
+    "source_urls": [
+      "https://hslda.org/legal/texas",
+      "https://tea.texas.gov/texas-schools/general-information/finding-a-school-for-your-child/home-schooling",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/texas",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "UT",
+    "name": "Utah",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Homeschool Affidavit / Certificate of Exemption",
+        "form_type": "one-time",
+        "form_url": "https://schools.utah.gov/curr/home-school",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Before beginning / upon withdrawal",
+        "access_level": "public",
+        "filing_method": "district form/letter",
+        "notes": "District issues certificate of exemption."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://schools.utah.gov/curr/home-school",
+    "state_legal_reference": "Utah Code §53G-6-204",
+    "notes": "One-time affidavit/excusal with local school board; no subjects/days/testing.",
+    "source_urls": [
+      "https://hslda.org/legal/utah",
+      "https://schools.utah.gov/curr/home-school",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/utah",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "VA",
+    "name": "Virginia",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Notice of Intent to Provide Home Instruction",
+        "form_type": "annual",
+        "form_url": "https://www.doe.virginia.gov/parents-students/for-parents/home-instruction",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "By August 15 or immediately upon moving/starting",
+        "access_level": "public",
+        "filing_method": "letter/PDF to division superintendent",
+        "notes": "Evidence of progress due by August 1."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": true,
+      "grades": "annual evidence of progress",
+      "accepted_tests": [
+        "nationally normed standardized achievement test",
+        "evaluation/assessment by qualified person"
+      ],
+      "scoring_threshold": "Composite score at/above 4th stanine / equivalent progress evidence"
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "option-dependent: parent qualifications or curriculum/teacher/tutor option",
+    "days_of_instruction": 180,
+    "subjects_required": [],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://www.doe.virginia.gov/parents-students/for-parents/home-instruction",
+    "state_legal_reference": "Va. Code §22.1-254.1",
+    "notes": "Notice by Aug 15; evidence of progress by Aug 1; religious exemption/certified tutor routes differ.",
+    "source_urls": [
+      "https://hslda.org/legal/virginia",
+      "https://www.doe.virginia.gov/parents-students/for-parents/home-instruction",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/virginia",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "VT",
+    "name": "Vermont",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Home Study Enrollment Notice + Minimum Course of Study",
+        "form_type": "annual",
+        "form_url": "https://education.vermont.gov/vermont-schools/school-operations/home-study",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Generally by August 1 / before beginning",
+        "access_level": "public",
+        "filing_method": "AOE online/PDF",
+        "notes": "Year-end assessment required."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": true,
+      "grades": "annual",
+      "accepted_tests": [
+        "portfolio review",
+        "standardized test",
+        "teacher assessment",
+        "other approved assessment"
+      ],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": true,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": 175,
+    "subjects_required": [
+      "reading",
+      "language arts",
+      "mathematics",
+      "science",
+      "social studies"
+    ],
+    "portfolio_review": true,
+    "portfolio_review_url": "https://education.vermont.gov/vermont-schools/school-operations/home-study",
+    "state_doe_homeschool_page": "https://education.vermont.gov/vermont-schools/school-operations/home-study",
+    "state_legal_reference": "16 V.S.A. §166b",
+    "notes": "Annual enrollment notice, minimum course of study, and year-end assessment.",
+    "source_urls": [
+      "https://hslda.org/legal/vermont",
+      "https://education.vermont.gov/vermont-schools/school-operations/home-study",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/vermont",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "WA",
+    "name": "Washington",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "Declaration of Intent to Provide Home-Based Instruction",
+        "form_type": "annual",
+        "form_url": "https://ospi.k12.wa.us/student-success/support-programs/home-based-instruction",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "By September 15 annually or within two weeks of start",
+        "access_level": "public",
+        "filing_method": "district form/letter",
+        "notes": "Keep test/evaluation records."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": true,
+      "grades": "annual",
+      "accepted_tests": [
+        "standardized achievement test",
+        "assessment by certificated person"
+      ],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "parent must satisfy one statutory qualification path",
+    "days_of_instruction": 180,
+    "subjects_required": [
+      "occupational education",
+      "science",
+      "mathematics",
+      "language",
+      "social studies",
+      "history",
+      "health",
+      "reading",
+      "writing",
+      "spelling",
+      "art",
+      "music appreciation"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://ospi.k12.wa.us/student-success/support-programs/home-based-instruction",
+    "state_legal_reference": "RCW 28A.225.010; RCW 28A.200",
+    "notes": "Annual declaration by Sept 15; parent qualification required; test/evaluation annually and retain results.",
+    "source_urls": [
+      "https://hslda.org/legal/washington",
+      "https://ospi.k12.wa.us/student-success/support-programs/home-based-instruction",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/washington",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "WI",
+    "name": "Wisconsin",
+    "has_esa": false,
+    "compliance_forms": [
+      {
+        "form_name": "PI-1206 Homeschool Enrollment Report",
+        "form_type": "annual",
+        "form_url": "https://dpi.wi.gov/sms/home-based",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "By October 15 annually",
+        "access_level": "public",
+        "filing_method": "online DPI form",
+        "notes": "No approval/testing, but filing is mandatory."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": 875,
+    "subjects_required": [
+      "reading",
+      "language arts",
+      "mathematics",
+      "social studies",
+      "science",
+      "health"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://dpi.wi.gov/sms/home-based",
+    "state_legal_reference": "Wis. Stat. §115.001(3g); §118.165",
+    "notes": "Annual PI-1206 online report by Oct 15; 875 hours; sequentially progressive curriculum.",
+    "source_urls": [
+      "https://hslda.org/legal/wisconsin",
+      "https://dpi.wi.gov/sms/home-based",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/wisconsin",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "WV",
+    "name": "West Virginia",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Notice of Intent to Homeschool",
+        "form_type": "one-time/per-child",
+        "form_url": "https://wvde.us/homeschool/",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "On or before beginning homeschool",
+        "access_level": "public",
+        "filing_method": "letter/form to county superintendent",
+        "notes": "Assessment results at benchmark grades retained/submitted per law/current guidance."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": true,
+    "testing_required": {
+      "required": true,
+      "grades": "3,5,8,11",
+      "accepted_tests": [
+        "nationally normed standardized achievement test",
+        "public school testing where available",
+        "portfolio review by certified teacher",
+        "alternative academic assessment"
+      ],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": false,
+    "teacher_qualification_required": "high school diploma or equivalent",
+    "days_of_instruction": 180,
+    "subjects_required": [],
+    "portfolio_review": true,
+    "portfolio_review_url": "https://wvde.us/homeschool/",
+    "state_doe_homeschool_page": "https://wvde.us/homeschool/",
+    "state_legal_reference": "W. Va. Code §18-8-1; Hope Scholarship W. Va. Code ch. 18-31",
+    "notes": "NOI with assurance; assessments at grades 3,5,8,11. Hope Scholarship has its own academic reporting rules.",
+    "source_urls": [
+      "https://hslda.org/legal/west-virginia",
+      "https://wvde.us/homeschool/",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/west-virginia",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  },
+  {
+    "state": "WY",
+    "name": "Wyoming",
+    "has_esa": true,
+    "compliance_forms": [
+      {
+        "form_name": "Curriculum submission / homeschool notification",
+        "form_type": "annual",
+        "form_url": "https://edu.wyoming.gov/parents/home-school/",
+        "grade_levels_required": "compulsory school age",
+        "due_date": "Annually before school year / local district timing",
+        "access_level": "public",
+        "filing_method": "letter/PDF to local board",
+        "notes": "Wyoming requires curriculum submission, not approval testing."
+      }
+    ],
+    "notification_required": true,
+    "attendance_records_required": false,
+    "testing_required": {
+      "required": false,
+      "grades": null,
+      "accepted_tests": [],
+      "scoring_threshold": null
+    },
+    "curriculum_notification": true,
+    "teacher_qualification_required": "none",
+    "days_of_instruction": null,
+    "subjects_required": [
+      "reading",
+      "writing",
+      "mathematics",
+      "civics",
+      "history",
+      "literature",
+      "science"
+    ],
+    "portfolio_review": false,
+    "portfolio_review_url": null,
+    "state_doe_homeschool_page": "https://edu.wyoming.gov/parents/home-school/",
+    "state_legal_reference": "Wyo. Stat. §21-4-102",
+    "notes": "Submit curriculum showing basic academic educational program to local board annually.",
+    "source_urls": [
+      "https://hslda.org/legal/wyoming",
+      "https://edu.wyoming.gov/parents/home-school/",
+      "https://hslda.org/legal"
+    ],
+    "cross_reference_notes": {
+      "hslda_url": "https://hslda.org/legal/wyoming",
+      "a2z_status": "A2ZHomeschooling state pages were not consistently retrievable/indexed during this pass; use official + HSLDA fields as primary, then manually QA A2Z/forum pages in next pass."
+    }
+  }
+]

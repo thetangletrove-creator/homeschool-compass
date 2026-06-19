@@ -1,0 +1,12 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+*.db
+*.db-journal
+legiscan_cache.db
+
+# OS files
+.DS_Store
