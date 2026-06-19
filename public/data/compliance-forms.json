@@ -1,0 +1,938 @@
+[
+  {
+    "state": "",
+    "name": "",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "AK",
+    "name": "Alaska",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "AL",
+    "name": "Alabama",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "AR",
+    "name": "Arkansas",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "AZ",
+    "name": "Arizona",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "CA",
+    "name": "California",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "CO",
+    "name": "Colorado",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "CT",
+    "name": "Connecticut",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "DC",
+    "name": "District of Columbia",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "DE",
+    "name": "Delaware",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "FL",
+    "name": "Florida",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "GA",
+    "name": "Georgia",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "HI",
+    "name": "Hawaii",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "IA",
+    "name": "Iowa",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "ID",
+    "name": "Idaho",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "IL",
+    "name": "Illinois",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "IN",
+    "name": "Indiana",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "KS",
+    "name": "Kansas",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "KY",
+    "name": "Kentucky",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "LA",
+    "name": "Louisiana",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "MA",
+    "name": "Massachusetts",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "MD",
+    "name": "Maryland",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "ME",
+    "name": "Maine",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "MI",
+    "name": "Michigan",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "MN",
+    "name": "Minnesota",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "MO",
+    "name": "Missouri",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "MS",
+    "name": "Mississippi",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "MT",
+    "name": "Montana",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "NC",
+    "name": "North Carolina",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "ND",
+    "name": "North Dakota",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "NE",
+    "name": "Nebraska",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "NH",
+    "name": "New Hampshire",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "NJ",
+    "name": "New Jersey",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "NM",
+    "name": "New Mexico",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "NV",
+    "name": "Nevada",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "NY",
+    "name": "New York",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "OH",
+    "name": "Ohio",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "OK",
+    "name": "Oklahoma",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "OR",
+    "name": "Oregon",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "PA",
+    "name": "Pennsylvania",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "RI",
+    "name": "Rhode Island",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "SC",
+    "name": "South Carolina",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "SD",
+    "name": "South Dakota",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "TN",
+    "name": "Tennessee",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "TX",
+    "name": "Texas",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "UT",
+    "name": "Utah",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "VA",
+    "name": "Virginia",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "VT",
+    "name": "Vermont",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "WA",
+    "name": "Washington",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "WI",
+    "name": "Wisconsin",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "WV",
+    "name": "West Virginia",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  },
+  {
+    "state": "WY",
+    "name": "Wyoming",
+    "notification": {
+      "required": true,
+      "formUrl": null
+    },
+    "assessment": {
+      "required": true,
+      "details": "See state department of education website"
+    },
+    "immunization": {
+      "required": true,
+      "details": "See state requirements"
+    },
+    "instructionDays": "See state requirements",
+    "recordkeeping": "See state requirements"
+  }
+]
