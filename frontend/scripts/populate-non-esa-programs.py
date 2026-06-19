@@ -20,7 +20,7 @@ import sys
 
 # ── Paths ──────────────────────────────────────────────────────────────────
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_JSON = "/home/ichabod/.hermes/cache/documents/doc_d4b1c5b2a287_non-esa-programs-directory.json"
+DEFAULT_JSON = "/home/ichabod/.hermes/cache/documents/doc_52518dcce812_non-esa-programs-directory.json"
 
 # Env file path
 ENV_PATH = "/opt/homeschool-compass/.env"

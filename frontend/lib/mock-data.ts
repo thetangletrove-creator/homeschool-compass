@@ -137,51 +137,519 @@ const rawStates: Array<{
 import type { NonEsaProgram } from "./db/schema"
 
 const MOCK_NON_ESA: Record<string, NonEsaProgram[]> = {
-  MN: [{
-    name: "K-12 Education Tax Credit",
-    program_type: "refundable_tax_credit",
-    amount: "$1,500 per child",
-    short_description: "Refundable tax credit for educational expenses including curriculum, tutoring, and instructional materials.",
-    url: "https://www.revenue.state.mn.us/k-12-education-credit",
-    application_url: "https://www.revenue.state.mn.us/k-12-education-credit",
-    homeschool_eligible: true,
-    application_method: "Tax filing",
-    application_window: "Tax season (Jan–Apr)",
-    income_cap: "Up to $75,000 AGI",
-    stacks_with: "Other state education tax benefits",
-    notes: "Refundable — get money back even if credit exceeds tax liability",
-    status: "active",
-  }],
-  PA: [{
-    name: "Educational Improvement Tax Credit (EITC)",
-    program_type: "scholarship",
-    amount: "Up to $10,000",
-    short_description: "Corporate tax-credit funded scholarships for K-12 educational expenses including homeschooling materials.",
-    url: "https://www.education.pa.gov/K-12/EITC/Pages/default.aspx",
-    application_url: null,
-    homeschool_eligible: true,
-    application_method: "Apply through approved Scholarship Organization",
-    application_window: "Varies by SO — typically spring",
-    income_cap: "Up to $97,446 household income",
-    stacks_with: null,
-    notes: "Apply through a participating Scholarship Organization (SO), not directly to the state",
-    status: "active",
-  }],
-  CO: [{
-    name: "Choice Scholarship Program Pilot",
-    program_type: "voucher",
-    amount: "Varies by district",
-    short_description: "Local school district voucher pilots for private school and homeschool educational expenses.",
-    url: "https://www.cde.state.co.us/choice",
-    application_url: null,
-    homeschool_eligible: true,
-    application_method: "Apply through participating district",
-    application_window: "Varies by district",
-    income_cap: null,
-    stacks_with: null,
-    notes: null,
-    status: "active",
-  }],
+  AK: [
+    {
+        "name": "Correspondence School Allotment Program (CSAP)",
+        "program_type": "allotment",
+        "amount": "$1,500-$4,500 per student (varies by district/program)",
+        "income_cap": "None",
+        "homeschool_eligible": true,
+        "url": "https://education.alaska.gov/correspondence",
+        "application_url": null,
+        "short_description": "Public school correspondence programs that fund homeschool curriculum, materials, and services. Students are technically public school enrollees learning at home.",
+        "application_method": "enroll_in_correspondence_program",
+        "application_window": "annual_enrollment",
+        "stacks_with": "Alaska Permanent Fund Dividend; Coverdell ESA (federal)",
+        "notes": "NOT true independent homeschooling. Must work with certified teacher, create learning plan, meet state standards. Allotment varies dramatically by program: IDEA=$2,700; Family Partnership=$3,953-$4,500; Frontier=$3,082; Denali PEAK=$3,200. FY24 total allotment spending: $47.2M across ~23,000 students. Private school tuition use is restricted and under litigation.",
+        "status": "active"
+    }
+  ],
+  AZ: [
+    {
+        "name": "Education Freedom Tax Credit (Federal EFTC)",
+        "program_type": "efct",
+        "amount": "Scholarship amount TBD by SGO; donor gets $1,700 federal tax credit",
+        "income_cap": "300% of area median gross income",
+        "homeschool_eligible": true,
+        "url": "https://www.azleg.gov/",
+        "application_url": null,
+        "short_description": "Arizona has existing ESA (covered separately). EFTC opt-in bills vetoed by Governor Hobbs (D).",
+        "application_method": "apply_through_SGO",
+        "application_window": "uncurrent",
+        "stacks_with": "Arizona ESA (ClassWallet)",
+        "notes": "Arizona already has robust ESA program via ClassWallet. EFTC bills (SB 1106, SB 1142, HB 4152) were all vetoed by Governor Hobbs. AZ homeschoolers already have better options through state ESA.",
+        "status": "blocked"
+    }
+  ],
+  CO: [
+    {
+        "name": "Education Freedom Tax Credit (Federal EFTC)",
+        "program_type": "efct",
+        "amount": "Scholarship amount TBD by SGO; donor gets $1,700 federal tax credit",
+        "income_cap": "300% of area median gross income",
+        "homeschool_eligible": true,
+        "url": "https://www.commonsenseinstituteus.org/colorado/research/education/the-economic-impact-from-colorados-choice-to-participate-in-the-education-freedom-tax-credit-provision-in-the-one-big-beautiful-bill-act",
+        "application_url": null,
+        "short_description": "Colorado opted into federal EFTC Jan 29, 2026. Scholarships for K-12 expenses including homeschool costs.",
+        "application_method": "apply_through_SGO",
+        "application_window": "January_2027_onward",
+        "stacks_with": "None",
+        "notes": "Colorado has no state-level ESA or voucher. EFTC is the first meaningful school choice funding for CO. Governor Polis (D) announced opt-in. Potential impact: $164M-$493M in first year depending on participation rate (5-15%). SGOs must be established and approved. Homeschoolers ARE eligible under federal EFTC rules.",
+        "status": "active"
+    }
+  ],
+  DC: [
+    {
+        "name": "DC Opportunity Scholarship Program",
+        "program_type": "voucher",
+        "amount": "$10,713-$16,070 (K-8 vs 9-12), CPI-adjusted annually",
+        "income_cap": "185% FPL initial entry; up to 300% FPL for renewal",
+        "homeschool_eligible": false,
+        "url": "https://sboe.dc.gov/page/opportunity-scholarship-program",
+        "application_url": null,
+        "short_description": "Federal voucher program for low-income DC families to attend private schools. Congressionally appropriated, not state-funded.",
+        "application_method": "online_application_through_dcpcsb",
+        "application_window": "annual_priority_period",
+        "stacks_with": "None (exclusive to private school enrollment)",
+        "notes": "NOT available to homeschoolers. Only ~1,300-1,500 students served out of 115,000+ eligible. Returning students get priority; 900+ applicants turned away annually due to $17.5M funding cap. Funds must be used at participating private school IN DC. Cannot be used for a la carte or partial enrollment.",
+        "status": "active"
+    }
+  ],
+  DE: [
+    {
+        "name": "Proposed ESA ($4,000 per student)",
+        "program_type": "pending",
+        "amount": "$4,000 per student (proposed)",
+        "income_cap": "TBD",
+        "homeschool_eligible": true,
+        "url": "https://legis.delaware.gov/",
+        "application_url": null,
+        "short_description": "ESA bill introduced but not passed as of June 2026. No active program.",
+        "application_method": "N/A",
+        "application_window": "N/A",
+        "stacks_with": "None",
+        "notes": "Delaware ESA bill was introduced but has not become law. No current program available to homeschool families. Monitor legislative session for updates.",
+        "status": "proposed"
+    }
+  ],
+  ID: [
+    {
+        "name": "Education Freedom Tax Credit (Federal EFTC)",
+        "program_type": "efct",
+        "amount": "Scholarship amount TBD by SGO; donor gets $1,700 federal tax credit",
+        "income_cap": "300% of area median gross income",
+        "homeschool_eligible": true,
+        "url": "https://www.idaho.gov/",
+        "application_url": null,
+        "short_description": "Idaho opted into federal EFTC. HB 731 (2026) requires annual opt-in and SGO approval by Dept of Education.",
+        "application_method": "apply_through_SGO",
+        "application_window": "January_2027_onward",
+        "stacks_with": "None",
+        "notes": "Idaho has no state ESA/voucher program. EFTC is the only path. HB 731 enacted March 2026 requires state to opt in annually and DOE to approve SGOs by Jan 1 each year. Applications reviewed on rolling basis. No existing SGO infrastructure — new organizations must form. Homeschoolers eligible.",
+        "status": "active"
+    }
+  ],
+  IL: [
+    {
+        "name": "Invest in Kids Act",
+        "program_type": "scholarship",
+        "amount": "Varies by SGO; partial private school tuition scholarships",
+        "income_cap": "300% FPL",
+        "homeschool_eligible": false,
+        "url": "https://www.isbe.net/Pages/Invest-in-Kids.aspx",
+        "application_url": null,
+        "short_description": "Tax-credit scholarship program. Was scheduled to sunset Jan 1, 2025. HB1342/HB2649 introduced to reenact and make permanent.",
+        "application_method": "apply_through_approved_SGO",
+        "application_window": "varies_by_SGO",
+        "stacks_with": "None",
+        "notes": "⚠️ STATUS: Sunsetted Jan 1, 2025. HB1342 introduced to reenact and make permanent. HB4194 (Democrat alternative) would lower cap to $50M. As of June 2026, status unclear — bills pending but not confirmed law. If revived, NOT available to homeschoolers (private school only).",
+        "status": "expired"
+    }
+  ],
+  KS: [
+    {
+        "name": "Education Freedom Tax Credit (Federal EFTC)",
+        "program_type": "efct",
+        "amount": "Scholarship amount TBD by SGO; donor gets $1,700 federal tax credit",
+        "income_cap": "300% of area median gross income",
+        "homeschool_eligible": true,
+        "url": "https://www.kansas.gov/",
+        "application_url": null,
+        "short_description": "Kansas opted into federal EFTC via SB 361 veto override (April 2026). No state ESA program.",
+        "application_method": "apply_through_SGO",
+        "application_window": "January_2027_onward",
+        "stacks_with": "None",
+        "notes": "Kansas has no state ESA/voucher. Governor Kelly (D) vetoed opt-in bill; legislature overrode. SB 361 requires annual participation. No existing SGO infrastructure of note. Homeschoolers eligible under federal rules.",
+        "status": "blocked"
+    }
+  ],
+  KY: [
+    {
+        "name": "Education Freedom Tax Credit (Federal EFTC)",
+        "program_type": "efct",
+        "amount": "Scholarship amount TBD by SGO; donor gets $1,700 federal tax credit",
+        "income_cap": "300% of area median gross income",
+        "homeschool_eligible": true,
+        "url": "https://whiteboardadvisors.com/kentucky-just-opted-into-education-freedom-tax-credits-without-its-governor/",
+        "application_url": null,
+        "short_description": "Kentucky opted into federal EFTC via HB 1 veto override (March 2026). Replaces struck-down EOA.",
+        "application_method": "apply_through_SGO",
+        "application_window": "January_2027_onward",
+        "stacks_with": "None",
+        "notes": "Kentucky's EOA (Education Opportunity Account) was struck down by KY Supreme Court. EFTC is the replacement path. HB 1 shifted opt-in authority to Secretary of State (litigation risk on this maneuver). Governor Beshear (D) vetoed; Republican supermajority overrode. No existing SGO infrastructure. Homeschoolers eligible.",
+        "status": "blocked"
+    }
+  ],
+  MD: [
+    {
+        "name": "BOOST Scholarship Program",
+        "program_type": "voucher",
+        "amount": "$2,000-$4,000+ depending on income and school costs",
+        "income_cap": "100% FRL (free/reduced lunch) eligibility",
+        "homeschool_eligible": false,
+        "url": "https://www.marylandpublicschools.org/programs/Pages/BOOST/index.aspx",
+        "application_url": null,
+        "short_description": "Private school scholarship for low-income families. Limited funding, competitive.",
+        "application_method": "online_application_through_MSDE",
+        "application_window": "annual",
+        "stacks_with": "None",
+        "notes": "NOT available to homeschoolers. Student must be enrolled at participating nonpublic school. Only ~2,400-3,000 students served due to $9M budget cap. Priority to prior-year recipients. Must upload 1040 tax return. Check sent to school, parent must sign. Pre-K NOT eligible.",
+        "status": "active"
+    }
+  ],
+  ME: [
+    {
+        "name": "Town Tuitioning Program",
+        "program_type": "tuitioning",
+        "amount": "Varies by town; up to ~$10,500 (K-8), higher for high school",
+        "income_cap": "None",
+        "homeschool_eligible": false,
+        "url": "https://www.maine.gov/doe/funding/town-tuitioning",
+        "application_url": null,
+        "short_description": "Towns without public schools pay tuition for students to attend public or approved private schools elsewhere.",
+        "application_method": "contact_town_school_department",
+        "application_window": "varies_by_town",
+        "stacks_with": "None",
+        "notes": "NOT available to homeschoolers in practice. Town tuitioning is for students in towns that don't operate schools. Homeschoolers generally don't qualify because they're not enrolled in the town's school system. Process is town-by-town. Some towns send all students to one school; others let parents choose. No statewide portal.",
+        "status": "active"
+    }
+  ],
+  MN: [
+    {
+        "name": "K-12 Education Subtraction",
+        "program_type": "deduction",
+        "amount": "$1,625 per child (K-6); $2,500 per child (7-12)",
+        "income_cap": "None",
+        "homeschool_eligible": true,
+        "url": "https://www.revenue.state.mn.us/k-12-education-expenses",
+        "application_url": null,
+        "short_description": "State income tax subtraction for K-12 education expenses including homeschool costs. Reduces taxable income, not a direct payment.",
+        "application_method": "state_tax_form_M1",
+        "application_window": "annual_during_filing",
+        "stacks_with": "K-12 Education Credit (same expenses cannot be used for both)",
+        "notes": "CANNOT use same expenses for both subtraction AND credit. Must choose which to apply to each expense. Homeschoolers eligible if they meet compulsory attendance reporting requirements. Qualifying expenses: tutoring by qualified instructor, textbooks, instructional materials, computer hardware/software (up to $200), transportation. Private school tuition qualifies ONLY for subtraction, NOT credit.",
+        "status": "active"
+    },
+    {
+        "name": "K-12 Education Credit",
+        "program_type": "refundable_tax_credit",
+        "amount": "75% of qualifying expenses, up to $1,000 per child (family limit for 2+ children)",
+        "income_cap": "Phase-out begins at $77,550 AGI (2026); fully phased out at $83,550 for 1-2 children; extends $3,000 per additional child",
+        "homeschool_eligible": true,
+        "url": "https://www.revenue.state.mn.us/k-12-education-tax-credit",
+        "application_url": null,
+        "short_description": "Refundable tax credit covering 75% of homeschool/private school education expenses. Pays out even if tax liability is zero.",
+        "application_method": "Schedule_M1ED_with_Form_M1",
+        "application_window": "annual_during_filing",
+        "stacks_with": "K-12 Education Subtraction (different expenses)",
+        "notes": "CRITICAL: Same expenses CANNOT be used for both credit and subtraction. Best strategy: Use expenses for credit first (up to income limits), then remaining expenses for subtraction. Private school tuition does NOT qualify for credit. Homeschoolers must file annual report with district. Computer expenses capped at $200 for credit. Average credit claimed: $249-$386. ~46,000 students participated in 2024.",
+        "status": "active"
+    }
+  ],
+  NC: [
+    {
+        "name": "Education Freedom Tax Credit (Federal EFTC)",
+        "program_type": "efct",
+        "amount": "Scholarship amount TBD by SGO; donor gets $1,700 federal tax credit",
+        "income_cap": "300% of area median gross income",
+        "homeschool_eligible": true,
+        "url": "https://www.ncleg.gov/",
+        "application_url": null,
+        "short_description": "NC legislature overrode Governor Stein's (D) veto of HB 87 to opt into EFTC (June 2026).",
+        "application_method": "apply_through_SGO",
+        "application_window": "January_2027_onward",
+        "stacks_with": "NC ESA+ / Opportunity Scholarship (state programs)",
+        "notes": "NC already has ESA+ and Opportunity Scholarship (state programs). HB 87 veto override June 3, 2026 adds federal EFTC layer. Homeschoolers eligible for EFTC scholarships in addition to existing state programs.",
+        "status": "active"
+    }
+  ],
+  ND: [
+    {
+        "name": "Education Freedom Tax Credit (Federal EFTC)",
+        "program_type": "efct",
+        "amount": "Scholarship amount TBD by SGO; donor gets $1,700 federal tax credit",
+        "income_cap": "300% of area median gross income",
+        "homeschool_eligible": true,
+        "url": "https://www.nd.gov/",
+        "application_url": null,
+        "short_description": "North Dakota opted into federal EFTC Jan 26, 2026. No state ESA or voucher program.",
+        "application_method": "apply_through_SGO",
+        "application_window": "January_2027_onward",
+        "stacks_with": "None",
+        "notes": "ND has no state-level school choice program. EFTC is the first. Governor Armstrong (R) announced opt-in. No existing SGO infrastructure. Homeschoolers eligible.",
+        "status": "active"
+    }
+  ],
+  NE: [
+    {
+        "name": "Opportunity Scholarships Act (LB 1402)",
+        "program_type": "scholarship",
+        "amount": "Up to ~$5,000 per student (state-funded scholarships)",
+        "income_cap": "Priority tiers: 185% FPL, 213% FPL, 300% FPL",
+        "homeschool_eligible": false,
+        "url": "https://www.education.ne.gov/choice/opportunity-scholarship/",
+        "application_url": null,
+        "short_description": "State-funded private school scholarship program. Replaced prior tax-credit scholarship model with direct state appropriation.",
+        "application_method": "apply_through_participating_private_school",
+        "application_window": "annual_priority_period",
+        "stacks_with": "None",
+        "notes": "⚠️ STATUS UNCLEAR. LB 1402 repealed prior Opportunity Scholarship Act and replaced with $10M/year state-funded program. However, legal challenges and potential referendum may affect operation. Program is for PRIVATE SCHOOL TUITION ONLY — homeschoolers NOT eligible. Students must be transferring from public school or entering K/1/9. Also: Nebraska opted into federal EFTC; OSN (Opportunity Scholarships of Nebraska) is the SGO for federal EFTC scholarships starting Fall 2027.",
+        "status": "pending_launch"
+    },
+    {
+        "name": "Education Freedom Tax Credit (Federal EFTC)",
+        "program_type": "efct",
+        "amount": "Scholarship amount TBD by SGO; donor gets $1,700 federal tax credit",
+        "income_cap": "300% of area median gross income",
+        "homeschool_eligible": true,
+        "url": "https://www.nebraskaopportunity.org/",
+        "application_url": null,
+        "short_description": "Federal tax-credit scholarship program. Nebraska opted in. SGOs will distribute scholarships starting 2027.",
+        "application_method": "apply_through_SGO",
+        "application_window": "anticipated_Fall_2027",
+        "stacks_with": "None",
+        "notes": "Nebraska is an EFTC opt-in state. OSN (Opportunity Scholarships of Nebraska) is the primary SGO. Scholarships expected to be available Fall 2027. Eligible students: any K-12 student eligible for public school, household income <= 300% area median income. Homeschoolers ARE eligible for EFTC scholarships (unlike state LB 1402 program). Donors cannot designate specific beneficiary.",
+        "status": "active"
+    }
+  ],
+  NV: [
+    {
+        "name": "Education Freedom Tax Credit (Federal EFTC)",
+        "program_type": "efct",
+        "amount": "Scholarship amount TBD by SGO; donor gets $1,700 federal tax credit",
+        "income_cap": "300% of area median gross income",
+        "homeschool_eligible": true,
+        "url": "https://www.nv.gov/",
+        "application_url": null,
+        "short_description": "Nevada opted into federal EFTC. Previously had Opportunity Scholarship (tax-credit) program that was defunded.",
+        "application_method": "apply_through_SGO",
+        "application_window": "January_2027_onward",
+        "stacks_with": "None",
+        "notes": "Nevada's prior Opportunity Scholarship program (tax-credit) was effectively defunded. EFTC is the new path. Governor Lombardo (R) opted in. No existing robust SGO infrastructure. Homeschoolers eligible.",
+        "status": "expired"
+    }
+  ],
+  NY: [
+    {
+        "name": "Education Freedom Tax Credit (Federal EFTC)",
+        "program_type": "efct",
+        "amount": "Scholarship amount TBD by SGO; donor gets $1,700 federal tax credit",
+        "income_cap": "300% of area median gross income",
+        "homeschool_eligible": true,
+        "url": "https://www.ny.gov/",
+        "application_url": null,
+        "short_description": "New York Governor Hochul announced intent to opt into federal EFTC May 2026. Waiting for Treasury regulations before formalizing.",
+        "application_method": "apply_through_SGO",
+        "application_window": "January_2027_onward (pending formal opt-in)",
+        "stacks_with": "None",
+        "notes": "NY has no state ESA/voucher. Hochul (D) announced intent May 7, 2026 but waiting for Treasury guidance before formal opt-in. No existing SGO infrastructure. If NY opts in, would be one of the largest markets. Homeschoolers eligible under federal rules.",
+        "status": "active"
+    }
+  ],
+  OH: [
+    {
+        "name": "EdChoice Expansion Scholarship",
+        "program_type": "voucher",
+        "amount": "$6,166 (K-8); $8,408 (9-12) base; sliding scale by income",
+        "income_cap": "450% FPL for max award; prorated above; min $650",
+        "homeschool_eligible": false,
+        "url": "https://education.ohio.gov/Topics/Ohio-Education-Options/Scholarships",
+        "application_url": null,
+        "short_description": "Income-based private school voucher. Universal eligibility but award amount varies by income.",
+        "application_method": "apply_through_participating_private_school",
+        "application_window": "February_1_-_June_30",
+        "stacks_with": "None",
+        "notes": "NOT available to homeschoolers. Student must be enrolled full-time at participating private school. Income verification via online system. Application submitted BY the school on family's behalf. Year-round window but priority Feb 1-May 1.",
+        "status": "active"
+    },
+    {
+        "name": "Jon Peterson Special Needs Scholarship",
+        "program_type": "voucher",
+        "amount": "$9,585-$32,445 depending on disability category",
+        "income_cap": "None",
+        "homeschool_eligible": true,
+        "url": "https://education.ohio.gov/Topics/Other-Resources/Scholarships/Jon-Peterson-Special-Needs-Scholarship",
+        "application_url": null,
+        "short_description": "Special-needs voucher for students with IEP. Can be used for private school tuition OR services (including by homeschool families).",
+        "application_method": "register_with_participating_provider",
+        "application_window": "annual",
+        "stacks_with": "None (exclusive to JPSN program)",
+        "notes": "HOMESCHOOLERS ELIGIBLE but with restrictions. Student must have IEP from district of residence. Funds can pay for services. As of July 1, 2025, home-educated students lose eligibility after turning 18. ~8,680 participating.",
+        "status": "active"
+    }
+  ],
+  OK: [
+    {
+        "name": "Parental Choice Tax Credit",
+        "program_type": "refundable_tax_credit",
+        "amount": "$1,000 per homeschool student; $5,000-$7,500 per private school student",
+        "income_cap": "Priority for <$150K AGI; credit amount tiers by income",
+        "homeschool_eligible": true,
+        "url": "https://oklahoma.gov/tax/individuals/parental-choice-tax-credit.html",
+        "application_url": null,
+        "short_description": "Refundable tax credit for homeschool and private school expenses. Homeschoolers get flat $1,000 per student.",
+        "application_method": "Oklahoma_Tax_Commission_online_application",
+        "application_window": "March_16_-_June_15_for_upcoming_year",
+        "stacks_with": "Oklahoma Equal Opportunity Education Scholarships (TCS); Lindsey Nicole Henry Scholarships",
+        "notes": "HOMESCHOOL CREDIT: $1,000 per student, capped at $5M total annually. Refundable = paid even if no tax liability. Application opens March 16 for following school year. HB 3705 increased total cap to $275M for 2026-27. ~2,376 homeschool households claimed $3.3M in 2024.",
+        "status": "active"
+    }
+  ],
+  PA: [
+    {
+        "name": "Educational Improvement Tax Credit (EITC)",
+        "program_type": "scholarship",
+        "amount": "Varies by SGO; average ~$2,613; max $8,500 (non-special-ed), $15,000 (special-ed)",
+        "income_cap": "$116,055 + $20,428 per dependent (2025-26)",
+        "homeschool_eligible": false,
+        "url": "https://www.education.pa.gov/Teachers%20-%20Administrations/Opportunity%20Scholarship%20Tax%20Credit/Pages/EITC.aspx",
+        "application_url": null,
+        "short_description": "Tax-credit scholarship funded by business donations. Scholarships for private K-12 school tuition.",
+        "application_method": "apply_through_SGO_or_participating_school",
+        "application_window": "varies_by_SGO",
+        "stacks_with": "OSTC (if eligible for both)",
+        "notes": "NOT available to homeschoolers. Student must attend participating private school. Total program cap ~$590M. ~66,000-101,000 students served. Federal EFTC will also operate in PA starting 2027.",
+        "status": "pending_launch"
+    },
+    {
+        "name": "Opportunity Scholarship Tax Credit (OSTC)",
+        "program_type": "scholarship",
+        "amount": "Varies by SGO; same caps as EITC",
+        "income_cap": "$116,055 + $20,428 per dependent (2025-26)",
+        "homeschool_eligible": false,
+        "url": "https://www.education.pa.gov/Teachers%20-%20Administrations/Opportunity%20Scholarship%20Tax%20Credit/Pages/OSTC.aspx",
+        "application_url": null,
+        "short_description": "Tax-credit scholarship for students in low-achieving school zones. Same structure as EITC but targeted geographically.",
+        "application_method": "apply_through_SGO_or_participating_school",
+        "application_window": "varies_by_SGO",
+        "stacks_with": "EITC (if eligible for both)",
+        "notes": "NOT available to homeschoolers. Student must reside in attendance boundary of bottom-15% public school AND attend participating private school. Total cap $50M. ~101,000 students served across EITC+OSTC.",
+        "status": "active"
+    }
+  ],
+  SD: [
+    {
+        "name": "Partners in Education Tax Credit Program",
+        "program_type": "scholarship",
+        "amount": "Up to ~$5,000 (100% of state per-pupil share as of SB 84)",
+        "income_cap": "200% FRL (raised from 150% by SB 84, 2026)",
+        "homeschool_eligible": false,
+        "url": "https://sdpartnersinedu.org/",
+        "application_url": null,
+        "short_description": "State tax-credit scholarship funded by insurance company donations. 100% state premium tax credit.",
+        "application_method": "apply_through_SD_Partners_in_Education_SGO",
+        "application_window": "annual",
+        "stacks_with": "Federal EFTC (starting 2027)",
+        "notes": "NOT available to homeschoolers. Insurance companies donate; get 100% state premium tax credit. SB 84 raised income cap to 200% FRL. SD also opted into federal EFTC.",
+        "status": "active"
+    }
+  ],
+  VA: [
+    {
+        "name": "Education Improvement Scholarships Tax Credit (EISTC)",
+        "program_type": "scholarship",
+        "amount": "Varies by SGO; average ~$2,141; capped at state per-pupil spending",
+        "income_cap": "300% FPL (or 400% FPL for special needs)",
+        "homeschool_eligible": false,
+        "url": "https://www.doe.virginia.gov/parents-students/student-services/virginia-education-improvement-scholarship-tax-credit",
+        "application_url": null,
+        "short_description": "Tax-credit scholarship for low/middle-income students to attend private K-12. 65% state tax credit to donors.",
+        "application_method": "apply_through_approved_SGO",
+        "application_window": "varies_by_SGO",
+        "stacks_with": "Federal EFTC (starting 2027)",
+        "notes": "NOT available to homeschoolers. Student must attend participating private school. 36 approved SGOs. Program cap $25M/year. ~5,820 students (2023-24).",
+        "status": "pending_launch"
+    }
+  ],
+  VT: [
+    {
+        "name": "Town Tuitioning Program",
+        "program_type": "tuitioning",
+        "amount": "Varies; ~$16,488 average (2022-23)",
+        "income_cap": "None",
+        "homeschool_eligible": false,
+        "url": "https://www.edchoice.org/school-choice/programs/vermont-town-tuitioning-program/",
+        "application_url": null,
+        "short_description": "America's oldest school choice program. Towns without public schools pay tuition at public or approved private schools.",
+        "application_method": "town_based_process",
+        "application_window": "varies_by_town",
+        "stacks_with": "None",
+        "notes": "NOT available to homeschoolers. Student must live in 'tuitioning town'. Act 73 added restrictions. Liberty Justice Center filed lawsuit March 2026 challenging Act 73.",
+        "status": "active"
+    }
+  ],
+  WI: [
+    {
+        "name": "Wisconsin Parental Choice Program (WPCP) - Statewide",
+        "program_type": "voucher",
+        "amount": "$10,877 (K-8); $13,371 (9-12) for 2025-26",
+        "income_cap": "220% FPL (minus $7,000 if married)",
+        "homeschool_eligible": true,
+        "url": "https://dpi.wi.gov/sms/choice-programs",
+        "application_url": null,
+        "short_description": "Statewide private school voucher. Homeschool students ARE eligible if they were homeschooled the prior year.",
+        "application_method": "DPI_online_parent_application",
+        "application_window": "February_2-20_annual",
+        "stacks_with": "None (must enroll full-time in participating private school)",
+        "notes": "HOMESCHOOLERS ELIGIBLE as prior-year attendance option. Must have been homeschooled in previous year OR entering K/1/9. Must reside outside Milwaukee and Racine Unified. ~23,417 participating (2025-26).",
+        "status": "active"
+    },
+    {
+        "name": "Milwaukee Parental Choice Program (MPCP)",
+        "program_type": "voucher",
+        "amount": "Same as WPCP amounts",
+        "income_cap": "300% FPL (minus $7,000 if married)",
+        "homeschool_eligible": true,
+        "url": "https://dpi.wi.gov/sms/choice-programs",
+        "application_url": null,
+        "short_description": "Nation's largest voucher program. Homeschool students in Milwaukee eligible.",
+        "application_method": "DPI_online_parent_application",
+        "application_window": "February_2-20_annual",
+        "stacks_with": "None",
+        "notes": "Same eligibility rules as WPCP but for Milwaukee residents. Higher income cap (300% FPL).",
+        "status": "active"
+    },
+    {
+        "name": "Special Needs Scholarship Program (SNSP)",
+        "program_type": "voucher",
+        "amount": "Up to ~$16,000 depending on disability and services",
+        "income_cap": "None",
+        "homeschool_eligible": false,
+        "url": "https://dpi.wi.gov/sms/special-needs",
+        "application_url": null,
+        "short_description": "Voucher for students with disabilities to attend participating private schools.",
+        "application_method": "apply_through_participating_private_school",
+        "application_window": "annual",
+        "stacks_with": "None",
+        "notes": "NOT available to homeschoolers. Student must have IEP or 504 plan.",
+        "status": "active"
+    },
+    {
+        "name": "Education Freedom Tax Credit (Federal EFTC)",
+        "program_type": "efct",
+        "amount": "Scholarship amount TBD by SGO; donor gets $1,700 federal tax credit",
+        "income_cap": "300% of area median gross income",
+        "homeschool_eligible": true,
+        "url": "https://www.wisconsin.gov/",
+        "application_url": null,
+        "short_description": "Wisconsin legislature passed AB 602 to opt into EFTC but Governor Evers (D) vetoed. Status uncertain.",
+        "application_method": "apply_through_SGO",
+        "application_window": "uncertain",
+        "stacks_with": "WPCP/MPCP/SNSP (state programs)",
+        "notes": "AB 602 was vetoed by Governor Evers March 30, 2026. Legislature did not override. Wisconsin is NOT currently opted into EFTC.",
+        "status": "blocked"
+    }
+  ],
 }
 
 export function getMockDb(): DbQueries {

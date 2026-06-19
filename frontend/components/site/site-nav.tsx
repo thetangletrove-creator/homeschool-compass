@@ -16,6 +16,7 @@ const NAV_LINKS = [
   { href: "/dashboard/provider", label: "Invoices" },
   { href: "/compliance-kit", label: "Compliance Kit" },
   { href: "/esa", label: "ESA Guide" },
+  { href: "/funding-directory", label: "Funding" },
   { href: "/about", label: "About" },
 ]
 
