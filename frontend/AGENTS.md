@@ -39,7 +39,8 @@
 - **Product pivot:** Apple-native (SwiftUI/StoreKit IAP) flagship + website as funnel. Legacy pricing: Free / $29.99 Packet / $99.99 Binder Plus
 - **Web packet ($29 one-time):** Stripe product + checkout + `/download/[state]` post-purchase page live on Vercel
 - **Compliance pack redesign:** 2-column layout, bill triage queue, live confidence bars, legal disclaimer
-- **Design Phase — Impeccable critique + 7 improvements deployed (2026-06-19):** PRODUCT.md (brand positioning), hero reframe (fear-driven), pricing value reframe, "Why We Built This" layout diversity, breadcrumbs, ESA filter/sort, state picker, dark mode, tooltips, copy refinement, app preview, footer hardening, compass+shield logo mark, DESIGN.md (token extraction). `generator: 'v0.app'` removed. ✅
+- **Design Phase — Impeccable critique + 7 improvements deployed (2026-06-19):** PRODUCT.md (brand positioning), hero reframe (fear-driven), pricing value reframe, "Why We Built This" layout diversity, breadcrumbs, ESA filter/sort, state picker, dark mode (system), tooltips, copy refinement, app preview, footer hardening, DESIGN.md (token extraction). `generator: 'v0.app'` removed. ✅
+- **Logo redesign + dark mode toggle (2026-06-19):** Replaced shield+compass hybrid with pure compass mark (thin ring, 4 points, open center, adaptive dark/light). Enhanced dark mode from system-preference only to user toggle (localStorage persistence + Moon/Sun icons in SiteNav). Brand-informed dark palette — deep navy-based (oklch 0.125 0.025 262) instead of generic gray. Smooth CSS transition on toggle. Logo direction: compass is the concept, not literal execution — shield removed. ✅
 
 ## ▶️ You (Jack)
 
