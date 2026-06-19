@@ -52,6 +52,33 @@ export type EsaProgram = {
   }[]
 }
 
+// Phase B5: Non-ESA funding programs (tax credits, vouchers, scholarships, allotments, EFTC)
+export type NonEsaProgram = {
+  name: string
+  program_type:
+    | "allotment"
+    | "deduction"
+    | "refundable_tax_credit"
+    | "non_refundable_tax_credit"
+    | "voucher"
+    | "scholarship"
+    | "tuitioning"
+    | "efct"
+    | "pending"
+    | "other"
+  amount: string | null
+  income_cap: string | null
+  homeschool_eligible: boolean
+  url: string | null
+  application_url: string | null
+  short_description: string | null
+  application_method: string | null
+  application_window: string | null
+  stacks_with: string | null
+  notes: string | null
+  status: "active" | "pending_launch" | "capped" | "expired" | "proposed" | "blocked" | "defunct"
+}
+
 export type ComplianceForms = {
   notification_url: string | null
   notification_form_url: string | null
@@ -90,11 +117,16 @@ export const states = pgTable(
     complianceForms: jsonb("compliance_forms").$type<ComplianceForms>(),
     // Phase 3: URL freshness tracking for the quarterly re-check cron
     esaUrlsVerifiedAt: timestamp("esa_urls_verified_at"),
+    // Phase B5: Non-ESA funding programs (tax credits, vouchers, scholarships, allotments, EFTC)
+    nonEsaPrograms: jsonb("non_esa_programs").$type<NonEsaProgram[]>(),
+    // Phase B5: Freshness tracking for non-ESA program data
+    nonEsaVerifiedAt: timestamp("non_esa_verified_at"),
     updatedAt: timestamp("updated_at").defaultNow(),
   },
   (t) => ({
     esaProgramsIdx: index("idx_states_esa_programs").on(t.esaPrograms),
     complianceFormsIdx: index("idx_states_compliance_forms").on(t.complianceForms),
+    nonEsaProgramsIdx: index("idx_states_non_esa_programs").on(t.nonEsaPrograms),
   }),
 )
 
