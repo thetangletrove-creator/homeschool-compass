@@ -1,6 +1,7 @@
 # Pinned Status Block
 
 > **📋 Homeschool Compass** — operational clearinghouse for the funded homeschool
+> **Living checklist:** `MASTER.md` — I check items off live as we complete them. AGENTS.md shows summary status; MASTER.md tracks every task.
 > **Stack:** Next.js 16 / React 19 / Tailwind 4 / Drizzle ORM / Neon PostgreSQL / Neon Auth / Stripe
 > **Deploy:** `https://homeschool-regulation-tracker.vercel.app/`
 > **GitHub:** `thetangletrove-creator/homeschool-compass`
