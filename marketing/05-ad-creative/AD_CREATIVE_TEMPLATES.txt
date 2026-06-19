@@ -1,0 +1,248 @@
+================================================================================
+FACEBOOK AD CREATIVE TEMPLATES
+Agent: Create 3-5 ad variants/week. Test headlines, body copy, images.
+================================================================================
+
+---
+AD FORMATS TO TEST ---
+
+Format 1: Single Image (Static)
+Best for: Brand awareness, scorecard traffic
+Image: State grade card (Canva template from PINTEREST_SPECS.txt)
+Headline: 40 characters max
+Body: 125 characters max (above fold) + more below
+CTA: "Learn More" or "Sign Up"
+
+Format 2: Carousel (Multi-card)
+Best for: State comparison, feature showcase
+Cards: 2-5
+Each card: Image + headline + description + link
+Example: "Swipe to see your state's grade"
+
+Format 3: Video (15-30 seconds)
+Best for: Engagement, retargeting
+Script: See VIDEO_SCRIPTS.txt below
+Thumbnail: State grade card or homeschool room photo
+
+Format 4: Lead Gen Ad (Native Facebook form)
+Best for: Email capture, no website needed
+Form: Name, email, state, "What's your biggest compliance worry?"
+
+---
+
+HEADLINE TEMPLATES (Test these against each other)
+--------------------------------------------------------------------------------
+
+H1: [State] Homeschool Requirements 2026
+H2: Is [State] Homeschool-Friendly? (Grade: [A-F])
+H3: Know [State]'s Homeschool Laws Before They Change
+H4: [State] Homeschool Score: [X]/100
+H5: Don't Miss [State]'s Filing Deadline
+H6: [State] Homeschool: What You Need to File
+H7: Free [State] Homeschool Checklist
+H8: Track Homeschool Bills in [State]
+H9: [State] ESA Program: Do You Qualify?
+H10: Homeschool Compliance Made Simple
+
+---
+
+BODY COPY TEMPLATES (125 characters above fold, then expand)
+--------------------------------------------------------------------------------
+
+BODY A: Problem-Focused
+"Homeschool families in [State] discover regulation changes too late. Get alerts the day a bill moves. Free scorecard + $29/year for instant alerts."
+
+BODY B: Score-Focused
+"[State] scores [X]/100 on homeschool freedom (Grade [A-F]). See exactly what you need to file, when, and where. Free checklist included."
+
+BODY C: Urgency-Focused
+"A new bill in [State] could change your homeschool requirements. 47 families are already tracking it. Join them — free trial, no card required."
+
+BODY D: Comparison-Focused
+"Moving from [State A] to [State B]? [State A] = Grade [X], [State B] = Grade [Y]. See the full comparison and get your new state's checklist."
+
+BODY E: ESA-Focused
+"[State] [has/doesn't have] an ESA program. Find out if you qualify, when to apply, and what expenses are covered. Free guide."
+
+BODY F: Testimonial-Style
+"'I almost missed my PSA deadline in California. Homeschool Compass sent me a reminder 2 weeks early.' — Sarah M. Free trial."
+
+BODY G: Question-Style
+"Do you know what [State] requires you to file this year? Most families don't — until it's too late. Get your free checklist."
+
+BODY H: List-Style
+"3 things every [State] homeschool family needs to know:
+1. [Requirement 1]
+2. [Requirement 2]
+3. [Requirement 3]
+
+Get the full checklist + alerts when laws change."
+
+---
+
+CTA BUTTON OPTIONS
+--------------------------------------------------------------------------------
+"Learn More" — Best for cold traffic, awareness
+"Sign Up" — Best for warm traffic, free trial
+"Get Started" — Best for retargeting, checkout
+"Download" — Best for lead gen, checklist
+"Subscribe" — Best for email capture
+
+---
+
+IMAGE SPECIFICATIONS
+--------------------------------------------------------------------------------
+
+Image 1: State Grade Card (from Canva template)
+Size: 1200 x 628 px (Facebook feed)
+Content: State name, grade letter (huge), score, 4 mini-bars
+Background: Grade color (green/yellow/orange/red)
+Text: Max 20% of image (Facebook rule)
+
+Image 2: Checklist Preview
+Size: 1200 x 628 px
+Content: Screenshot of state checklist page, blurred slightly, with "Get the full checklist" overlay
+
+Image 3: Alert Preview
+Size: 1200 x 628 px
+Content: Mock email notification showing a bill alert
+Text: "🚨 New bill in [State]" + "You would have missed this without alerts"
+
+Image 4: Family Photo (UGC style)
+Size: 1200 x 628 px
+Content: Stock photo of parent + child at desk, laptop open, homeschool materials
+Text overlay: "Homeschooling in [State]? Know the rules."
+
+Image 5: Map Graphic
+Size: 1200 x 628 px
+Content: US map with state highlighted, grade badge, "See all 50 states"
+
+---
+
+VIDEO SCRIPTS (15-30 seconds)
+--------------------------------------------------------------------------------
+
+VIDEO A: State Score Reveal
+[0-3s] Black screen, text: "What grade does [State] get for homeschool freedom?"
+[3-6s] Grade letter animates in (A=green, B=yellow, etc.)
+[6-10s] Score number counts up: "[X]/100"
+[10-15s] Text: "See what [State] requires + get alerts when laws change"
+[15-20s] CTA: "Free scorecard at homeschool-regulation-tracker.vercel.app"
+
+VIDEO B: Problem-Solution
+[0-5s] Text: "Homeschool families in [State] miss deadlines every year"
+[5-10s] Text: "Because laws change and no one tells them"
+[10-18s] Screen recording: Website showing alert email + checklist
+[18-25s] Text: "Get alerts the day a bill moves. $29/year."
+[25-30s] CTA: "Free trial — no card required"
+
+VIDEO C: Testimonial
+[0-3s] Text: "Sarah homeschools in California"
+[3-8s] Text: "She almost missed her PSA deadline"
+[8-15s] Text: "Then she found Homeschool Compass"
+[15-22s] Screen recording: Alert email + checklist
+[22-30s] Text: "'I filed on time for the first time.' — Sarah M."
+
+---
+
+A/B TEST PLAN (Agent runs these, tracks results)
+--------------------------------------------------------------------------------
+
+Test 1: Headline
+Variant A: "[State] Homeschool Requirements 2026"
+Variant B: "Is [State] Homeschool-Friendly? (Grade: [A-F])"
+Metric: Click-through rate (CTR)
+Duration: 7 days
+Budget: $20/day per variant
+Winner: Higher CTR
+
+Test 2: Body Copy
+Variant A: Problem-focused (BODY A)
+Variant B: Score-focused (BODY B)
+Metric: Cost per click (CPC)
+Duration: 7 days
+Budget: $20/day per variant
+Winner: Lower CPC
+
+Test 3: Image
+Variant A: State grade card
+Variant B: Checklist preview
+Metric: CTR + landing page scroll depth
+Duration: 7 days
+Budget: $20/day per variant
+Winner: Higher CTR + deeper scroll
+
+Test 4: CTA Button
+Variant A: "Learn More"
+Variant B: "Sign Up"
+Metric: Landing page conversion rate
+Duration: 7 days
+Budget: $20/day per variant
+Winner: Higher conversion
+
+Test 5: Audience
+Variant A: Interest targeting (HSLDA, homeschool curriculum)
+Variant B: Lookalike 1% of website visitors
+Metric: Cost per lead (CPL)
+Duration: 14 days
+Budget: $30/day per variant
+Winner: Lower CPL
+
+---
+
+AD ACCOUNT WARMING PROTOCOL (Weeks 1-4)
+--------------------------------------------------------------------------------
+
+Week 1-2: Engagement Campaigns
+Objective: Engagement
+Budget: $10-20/day
+Audience: Broad interests (homeschooling, parenting, education)
+Creative: Helpful tips, "Did you know?" posts, scorecard graphics
+Goal: Likes, comments, shares. Build social proof.
+
+Week 3: Traffic Campaigns
+Objective: Traffic
+Budget: $20-30/day
+Audience: Engagers from Week 1-2 + 1% lookalike
+Creative: "See how your state ranks" → links to scorecard
+Goal: Website visits, pixel fires
+
+Week 4: Lead Generation
+Objective: Leads
+Budget: $30-50/day
+Audience: Website visitors + lookalikes
+Creative: "Free [State] Homeschool Compliance Checklist"
+Form: Name, email, state, compliance worry
+Goal: Email list growth
+
+Week 5+: Conversion Campaigns
+Objective: Conversions
+Budget: $50-100/day
+Audience: Warm (email list, visitors, video viewers) + lookalikes
+Creative: Testimonial-style, urgency, value
+Goal: Paid conversions
+
+---
+
+WEEKLY AD METRICS TO TRACK (Agent notes in Friday Report)
+--------------------------------------------------------------------------------
+□ Total ad spend
+□ Total impressions
+□ Total clicks
+□ CTR (click-through rate)
+□ CPC (cost per click)
+□ CPL (cost per lead, if lead gen)
+□ CPA (cost per acquisition, if conversion)
+□ ROAS (return on ad spend, if conversion)
+□ Top-performing creative (by CTR)
+□ Worst-performing creative (pause if < 0.5% CTR after 3 days)
+□ Audience performance (which interest/lookalike wins)
+
+---
+
+BUDGET ALLOCATION (Once warmed)
+--------------------------------------------------------------------------------
+60% Acquisition (prospecting + re-engagement)
+20% Retargeting (website visitors, email non-openers)
+15% Retargeting (cart abandoners, trial non-converters)
+5% Retention (past customers, upsells)

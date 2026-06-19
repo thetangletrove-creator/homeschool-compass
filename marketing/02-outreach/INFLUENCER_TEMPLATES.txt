@@ -1,0 +1,134 @@
+================================================================================
+INFLUENCER OUTREACH TEMPLATES
+Agent: Send 5 emails/week. Track in /influencer-log.txt. No more than 2 follow-ups.
+================================================================================
+
+TEMPLATE A: Initial Outreach (Homeschool Blogger)
+--------------------------------------------------------------------------------
+Subject: Free tool for [State] homeschool families — would you try it?
+
+Hi [Name],
+
+I've been reading [Blog Name] for [time period] and really appreciated your post on [specific post topic]. The way you explained [specific detail] helped me [specific outcome].
+
+I'm [Your name], and I built Homeschool Compass — a free tool that tracks homeschool regulations across all 50 states and sends alerts when laws change. I created it because I kept missing filing deadlines in my own state.
+
+Given your focus on [State] homeschool families, I thought it might be useful to your readers. Here's what it does:
+
+→ Shows your state's homeschool grade (A-F) and requirements
+→ Tracks active bills that could affect your state
+→ Sends alerts when deadlines approach or laws change
+→ Free scorecard, $29/year for alerts
+
+Would you be interested in trying it? I'm happy to give you a free premium account, and if you find it useful, I'd love to hear if you'd consider sharing it with your audience.
+
+No pressure at all — just thought it might be a good fit.
+
+Best,
+[Your name]
+[Your email]
+[Link to site]
+
+P.S. If you're open to it, I'd also love to write a guest post for [Blog Name] about "[topic idea]."
+
+---
+
+TEMPLATE B: Follow-Up (1 week later, no response)
+--------------------------------------------------------------------------------
+Subject: Re: Free tool for [State] homeschool families
+
+Hi [Name],
+
+Just following up on my email from last week about Homeschool Compass. No worries if you're not interested — I know you get a lot of pitches.
+
+If you'd like to try it, here's a direct link: [LINK with UTM code for tracking]
+
+And if guest posting is more your speed, I'd love to write about "[specific topic]" for [Blog Name].
+
+Either way, keep up the great work with the blog.
+
+Best,
+[Your name]
+
+---
+
+TEMPLATE C: Follow-Up #2 (2 weeks later, no response)
+--------------------------------------------------------------------------------
+Subject: Last follow-up — Homeschool Compass
+
+Hi [Name],
+
+This is my last follow-up — I promise not to bug you again.
+
+If Homeschool Compass isn't a fit for [Blog Name], no hard feelings. If you ever want to check it out, the link is here: [LINK]
+
+Thanks for all you do for the homeschool community.
+
+Best,
+[Your name]
+
+---
+
+TEMPLATE D: Umbrella School Outreach
+--------------------------------------------------------------------------------
+Subject: Free compliance tracking for [School Name] families
+
+Hi [Name],
+
+I'm [Your name], founder of Homeschool Compass — a tool that tracks homeschool regulations and alerts families when laws change in their state.
+
+I noticed [School Name] serves [State] homeschool families, and I thought this might be a useful resource for your community. Many umbrella schools share our state guides with their families to help them stay compliant.
+
+What we offer:
+→ Free 50-state scorecard with grades and requirements
+→ State-specific compliance checklists
+→ Bill alerts when legislation affects your state
+→ ESA program tracking (if applicable)
+
+Would you be open to sharing this with your families? I can create a custom landing page for [School Name] with your branding, or provide you with co-branded materials.
+
+No cost to you or your families for the basic version.
+
+Best,
+[Your name]
+[Your email]
+[Link to site]
+
+---
+
+TEMPLATE E: HSLDA Content Partnership
+--------------------------------------------------------------------------------
+Subject: Guest post idea: "How to Track Homeschool Legislation in Your State"
+
+Hi [HSLDA Editor],
+
+I'm [Your name], founder of Homeschool Compass — a regulatory tracking tool for homeschool families. I built it after missing a filing deadline in my own state.
+
+I'd love to contribute a guest post to the HSLDA blog about how families can stay on top of legislative changes in their state. The post would cover:
+
+→ Why homeschool legislation changes so often
+→ How to find your state's current requirements
+→ Red flags that a bill might affect homeschoolers
+→ Free tools and resources (including Homeschool Compass, with full disclosure)
+
+I'm not an attorney, so the post would focus on practical tracking and compliance tips, not legal advice.
+
+Would this be of interest? I'm happy to adjust the angle or topic to fit your editorial calendar.
+
+Best,
+[Your name]
+[Your email]
+[Link to site]
+
+---
+
+TRACKING LOG (Agent maintains this)
+--------------------------------------------------------------------------------
+Format: /influencer-log.txt
+
+[Date] | [Name] | [Blog/School] | [Template] | [Status] | [Notes]
+2026-07-01 | Sarah Johnson | HomeschoolScientist.com | A | Sent | No response
+2026-07-08 | Sarah Johnson | HomeschoolScientist.com | B | Sent | No response
+2026-07-15 | Sarah Johnson | HomeschoolScientist.com | C | Sent | Move on
+2026-07-01 | Michael Torres | Cornerstone Umbrella | D | Sent | Interested! Call scheduled
+2026-07-05 | HSLDA Editor | hslda.org | E | Sent | Requested draft

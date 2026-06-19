@@ -1,0 +1,261 @@
+================================================================================
+FRIDAY REPORT TEMPLATE
+Agent fills this out every Friday. Sends to boss. 15-min read max.
+================================================================================
+
+WEEK [X] SUMMARY — Homeschool Compass Growth
+Report Date: [YYYY-MM-DD]
+Reporting Period: [Start Date] to [End Date]
+
+================================================================================
+ORGANIC GROWTH
+================================================================================
+
+Facebook Groups:
+□ Total answers posted this week: [X]
+□ Total answers posted to date: [X]
+□ New groups joined this week: [X]
+□ Total groups joined to date: [X]
+□ Posts removed by admins this week: [X]
+□ Most responsive group: [Group Name] — [X] reactions/comments
+□ Least responsive group: [Group Name] — consider leaving
+□ Soft mentions this week: [X] out of [Y] total answers
+□ Screenshots saved in /engagement/: [X] files
+
+Pinterest:
+□ Pins created this week: [X]
+□ Total pins live to date: [X]
+□ Total impressions this week: [X]
+□ Total clicks to website this week: [X]
+□ Total saves this week: [X]
+□ Top-performing pin: [Describe] — [X] clicks
+□ Worst-performing pin: [Describe] — [X] clicks (pause if < 10 after 7 days)
+□ New boards created: [X]
+
+Blog:
+□ Posts published this week: [X]
+□ Total posts published to date: [X]
+□ Post titles: [List]
+□ Page views this week: [X]
+□ Top post: [Title] — [X] views
+□ SEO ranking changes: [Any movement?]
+
+Email List:
+□ New subscribers this week: [X]
+□ Total subscribers to date: [X]
+□ Unsubscribes this week: [X]
+□ Email open rate (weekly digest): [X]%
+□ Email click rate (weekly digest): [X]%
+□ Bounces this week: [X]
+□ Replies forwarded to boss: [X]
+
+Other Organic:
+□ Instagram posts: [X]
+□ Reddit comments: [X]
+□ Influencer outreach emails sent: [X]
+□ Influencer responses: [X]
+□ Testimonials collected: [X]
+
+================================================================================
+PAID GROWTH (Facebook Ads)
+================================================================================
+
+Ad Spend:
+□ Total spent this week: $[X]
+□ Budget vs. actual: [%] (over/under)
+
+Performance:
+□ Total impressions: [X]
+□ Total clicks: [X]
+□ CTR: [X]%
+□ CPC: $[X]
+□ Leads generated: [X]
+□ CPL: $[X]
+□ Conversions (paid signups): [X]
+□ CPA: $[X]
+□ ROAS: [X]%
+
+Campaign Breakdown:
+| Campaign | Spend | Impressions | Clicks | CTR | CPL | Status |
+|----------|-------|-------------|--------|-----|-----|--------|
+| [Name 1] | $[X] | [X] | [X] | [X]% | $[X] | [Running/Paused] |
+| [Name 2] | $[X] | [X] | [X] | [X]% | $[X] | [Running/Paused] |
+| [Name 3] | $[X] | [X] | [X] | [X]% | $[X] | [Running/Paused] |
+
+Creative Performance:
+□ Best creative: [Describe] — [X] CTR
+□ Worst creative: [Describe] — [X] CTR (paused? yes/no)
+□ New creative tested: [Describe] — [X] CTR
+
+Audience Performance:
+□ Best audience: [Describe] — [X] CPL
+□ Worst audience: [Describe] — [X] CPL
+
+Ad Account Health:
+□ Account status: [Green/Yellow/Red]
+□ Any restrictions or flags: [Yes/No + details]
+□ Pixel firing correctly: [Yes/No]
+
+================================================================================
+WEBSITE & PRODUCT
+================================================================================
+
+Traffic:
+□ Total website visitors this week: [X]
+□ Top 3 pages: 1) [URL] — [X] views, 2) [URL] — [X], 3) [URL] — [X]
+□ Traffic source breakdown: [Direct: X%, Social: X%, Organic: X%, Paid: X%, Referral: X%]
+□ Bounce rate: [X]%
+□ Average session duration: [X] min
+
+Conversions:
+□ Free signups this week: [X]
+□ Total free users to date: [X]
+□ Paid conversions this week: [X]
+□ Total paid users to date: [X]
+□ Revenue this week: $[X]
+□ Total revenue to date: $[X]
+□ Refunds/chargebacks: [X]
+
+Paywall Performance:
+□ Paywall impressions this week: [X]
+□ Trial starts from paywall: [X]
+□ Paywall → trial conversion rate: [X]%
+
+Product Issues:
+□ Any bugs or errors reported: [Yes/No + details]
+□ Any feature requests: [List]
+□ Uptime: [X]% (check Vercel dashboard)
+
+================================================================================
+A/B TESTS
+================================================================================
+
+Active Tests:
+| Test Name | Variant A | Variant B | Metric | Duration | Status | Winner |
+|-----------|-----------|-----------|--------|----------|--------|--------|
+| [Test 1] | [Describe] | [Describe] | [Metric] | [X] days | [Running/Done] | [A/B/Tie] |
+
+Completed Tests:
+| Test Name | Winner | Impact | Action Taken |
+|-----------|--------|--------|--------------|
+| [Test 1] | [A/B] | [+X% CTR] | [Implemented/Retired] |
+
+================================================================================
+ISSUES & BLOCKERS
+================================================================================
+
+[List anything that needs boss attention or decision]
+
+1. [Issue]: [Description] → [What I need from you]
+2. [Issue]: [Description] → [What I need from you]
+3. [Issue]: [Description] → [What I need from you]
+
+================================================================================
+WINS & HIGHLIGHTS
+================================================================================
+
+[Good news, milestones, positive feedback]
+
+1. [Win]: [Description]
+2. [Win]: [Description]
+3. [Win]: [Description]
+
+================================================================================
+NEXT WEEK PLAN
+================================================================================
+
+[Agent lists what they'll do next week]
+
+1. [Task]: [Description] — [Est. time]
+2. [Task]: [Description] — [Est. time]
+3. [Task]: [Description] — [Est. time]
+4. [Task]: [Description] — [Est. time]
+5. [Task]: [Description] — [Est. time]
+
+================================================================================
+BOSS ACTION ITEMS
+================================================================================
+
+[Checklist of things boss needs to do — keep this short]
+
+□ [Decision needed]: [Topic]
+□ [Review needed]: [Link or attachment]
+□ [Setup needed]: [Tool or account]
+□ [Approval needed]: [Budget or change]
+
+================================================================================
+ATTACHMENTS
+================================================================================
+
+□ Screenshot: Facebook ad dashboard
+□ Screenshot: Pinterest analytics
+□ Screenshot: Website analytics
+□ Screenshot: Email platform stats
+□ [Any other relevant files]
+
+================================================================================
+HOW TO SEND THIS REPORT
+================================================================================
+
+1. Fill out all sections above
+2. Save as PDF: "Friday_Report_YYYY-MM-DD.pdf"
+3. Attach screenshots
+4. Email to boss by Friday 6pm
+5. Subject line: "Week [X] Report — [X] signups, $[X] revenue, [X] issues"
+
+================================================================================
+EXAMPLE REPORT (Week 4)
+================================================================================
+
+WEEK 4 SUMMARY — Homeschool Compass Growth
+Report Date: 2026-07-10
+Reporting Period: 2026-07-04 to 2026-07-10
+
+ORGANIC GROWTH:
+Facebook Groups: 35 answers posted (5/day), 22 groups joined total, 0 posts removed, most responsive: "California Homeschool Network" — 12 reactions, 3 soft mentions
+Pinterest: 5 pins created, 25 total pins live, 1,240 impressions, 87 clicks, 23 saves, top pin: "California D Grade" — 34 clicks
+Blog: 1 post published: "California Homeschool Requirements 2026", 312 page views, top post: "California Homeschool Requirements" — 312 views
+Email: 23 new subscribers, 127 total, 2 unsubscribes, 34% open rate, 8% click rate, 0 bounces
+
+PAID GROWTH:
+Ad spend: $210
+Impressions: 14,200
+Clicks: 284
+CTR: 2.0%
+CPC: $0.74
+Leads: 12
+CPL: $17.50
+Conversions: 0
+CPA: N/A
+ROAS: N/A
+Campaigns: "CA Lead Gen" ($140, 2.1% CTR), "TX Lead Gen" ($70, 1.8% CTR)
+Best creative: "CA Grade D Card" — 2.4% CTR
+Worst creative: "Generic Checklist" — 0.8% CTR (paused)
+Account status: Green
+
+WEBSITE:
+Visitors: 487
+Top pages: /state/CA (156), /scorecard (98), /state/TX (67)
+Sources: Direct 45%, Social 30%, Organic 15%, Paid 10%
+Free signups: 8
+Paid conversions: 0
+Revenue: $0
+
+ISSUES:
+1. Ad CTR for "TX Lead Gen" dropped to 1.8% — need to test new creative next week
+2. No paid conversions yet — normal for Week 4, but monitoring
+
+WINS:
+1. Blog post "California Homeschool Requirements" got 312 views in 3 days
+2. Pinterest impressions doubled from last week (620 → 1,240)
+3. Email open rate up from 28% to 34% after subject line test
+
+NEXT WEEK:
+1. Test new TX ad creative (score-focused headline)
+2. Publish "Texas Homeschool Requirements" blog post
+3. Create 5 new Pinterest pins (focus on NY and PA)
+4. Continue 5 answers/day in FB groups
+5. Start influencer outreach (5 emails to homeschool bloggers)
+
+BOSS ACTION ITEMS:
+□ None this week — all clear!

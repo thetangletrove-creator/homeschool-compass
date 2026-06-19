@@ -1,0 +1,175 @@
+================================================================================
+BLOG POST OUTLINES — All 50 States + 5 Evergreen
+Agent: Pick 1 topic/week from this list. AI drafts from outline. Agent edits.
+================================================================================
+
+FORMAT FOR EVERY POST:
+- Title: [State] Homeschool Requirements [Year]: The Complete Checklist
+- Length: 1,500-2,500 words
+- Structure: Intro → 5 sections → CTA
+- End with: "Get alerts when [State] laws change — free signup"
+- Link to: /state/[XX] page
+- Update annually
+
+---
+
+EVERGREEN POSTS (Write these first — they rank for years)
+--------------------------------------------------------------------------------
+
+POST 1: "How to Homeschool Legally in Any State: A Beginner's Guide"
+Outline:
+- Intro: "Homeschooling is legal in all 50 states, but the rules are wildly different."
+- Section 1: The 4 categories of requirements (Reporting, Testing, Curriculum, Teacher)
+- Section 2: The 3 tiers of regulation (Low: ID/AK/TX, Moderate: FL/VA, High: NY/PA)
+- Section 3: How to find your state's requirements (link to scorecard)
+- Section 4: Common mistakes first-year homeschoolers make
+- Section 5: How to stay updated when laws change
+- CTA: "Find your state's grade and requirements → [scorecard link]"
+
+POST 2: "ESA vs. Homeschool: What's the Difference in Your State?"
+Outline:
+- Intro: "ESAs and homeschooling are often confused. They're not the same."
+- Section 1: What is an ESA? (Education Savings Account)
+- Section 2: What is homeschooling? (Parent-directed education)
+- Section 3: Can you use an ESA AND homeschool? (State-dependent)
+- Section 4: States with active ESA programs (list + links)
+- Section 5: How to apply for an ESA in your state
+- CTA: "Check if your state has an ESA program → [ESA page link]"
+
+POST 3: "The Homeschool Portfolio: What to Include (State by State)"
+Outline:
+- Intro: "Some states require a portfolio. Others don't. Here's the breakdown."
+- Section 1: States that require portfolios (PA, NY, FL, etc.)
+- Section 2: What goes in a portfolio (samples, attendance, subjects, assessments)
+- Section 3: States that don't require portfolios (ID, TX, AK, etc.)
+- Section 4: Digital vs. physical portfolios
+- Section 5: How to organize a portfolio that passes review
+- CTA: "Get your state's portfolio requirements → [state page link]"
+
+POST 4: "Homeschool Teacher Requirements: Do You Need a Degree?"
+Outline:
+- Intro: "The #1 question new homeschoolers ask: 'Am I qualified to teach my own kids?'"
+- Section 1: States with no teacher requirements (ID, TX, AK, etc.)
+- Section 2: States with minimal requirements (high school diploma, GED)
+- Section 3: States with stricter requirements (certified teacher for evaluations)
+- Section 4: What "qualified" actually means (you don't need to be an expert in every subject)
+- Section 5: How to handle subjects you're not comfortable teaching
+- CTA: "Check your state's teacher requirements → [state page link]"
+
+POST 5: "Moving States While Homeschooling: The Complete Transition Checklist"
+Outline:
+- Intro: "Moving is stressful. Moving while homeschooling is worse. Here's your checklist."
+- Section 1: Before you move — download records, notify current state
+- Section 2: Research your new state's requirements (link to scorecard)
+- Section 3: File in your new state within the required window
+- Section 4: Transfer curriculum and records
+- Section 5: Connect with local homeschool groups
+- CTA: "Get your new state's requirements → [state page link]"
+
+---
+
+STATE-SPECIFIC POSTS (Priority order: most populous states first)
+--------------------------------------------------------------------------------
+
+POST 6: California
+Title: California Homeschool Requirements 2026: PSA, Records, and What Actually Matters
+Keywords: california homeschool requirements, california homeschool law, PSA california, private school affidavit
+Outline:
+- Intro: "California doesn't require much — but what it does require, it enforces."
+- Section 1: The Private School Affidavit (PSA) — what it is, when to file (Oct 1-15), where to file (CDPH), what happens if you miss it
+- Section 2: Record-keeping — attendance, subjects, samples of work (no specific format required)
+- Section 3: Curriculum — no approval needed, but must teach in English, cover required subjects
+- Section 4: Testing — none required (this surprises people)
+- Section 5: Teacher qualifications — none required (this also surprises people)
+- Section 6: ESA — California has no ESA program (as of 2026)
+- Section 7: Common mistakes (filing late, not keeping records, teaching in non-English)
+- CTA: "Get California alerts → [CA state page]"
+
+POST 7: Texas
+Title: Texas Homeschool Law: Why You Don't Need to File Anything (And What You Should Do Anyway)
+Keywords: texas homeschool law, texas homeschool requirements, no notice texas homeschool
+Outline:
+- Intro: "Texas is one of the most homeschool-friendly states in the country. Here's why."
+- Section 1: No filing required — but you need a "bona fide" curriculum
+- Section 2: No testing required
+- Section 3: No teacher qualifications required
+- Section 4: No curriculum approval required
+- Section 5: What "bona fide" actually means (scope and sequence, good faith effort)
+- Section 6: What to do if questioned (keep records, have a curriculum plan)
+- Section 7: ESA — Texas has no ESA program (as of 2026)
+- CTA: "Get Texas alerts → [TX state page]"
+
+POST 8: Florida
+Title: Florida Homeschool Requirements 2026: Notice of Intent, Portfolio, and Evaluation
+Keywords: florida homeschool requirements, notice of intent florida, homeschool portfolio florida
+Outline:
+- Intro: "Florida requires a notice, a portfolio, and an annual evaluation. Here's the full breakdown."
+- Section 1: Notice of Intent — file with superintendent within 30 days of starting
+- Section 2: Portfolio — keep for 2 years, include samples, attendance, reading list
+- Section 3: Annual evaluation — 5 options (certified teacher review, standardized test, etc.)
+- Section 4: Curriculum — no approval needed, but must cover required subjects
+- Section 5: Teacher qualifications — none required for parents
+- Section 6: ESA — Florida has the Step Up For Students program (link)
+- CTA: "Get Florida alerts → [FL state page]"
+
+POST 9: New York
+Title: New York Homeschool Requirements 2026: IHIP, Quarterly Reports, and Annual Assessments
+Keywords: new york homeschool requirements, IHIP, quarterly reports homeschool, annual assessment homeschool
+Outline:
+- Intro: "New York has the strictest homeschool requirements in the country. Don't miss a deadline."
+- Section 1: IHIP (Individualized Home Instruction Plan) — submit by July 1 or within 4 weeks of starting
+- Section 2: Quarterly reports — 4 per year, must include narrative for each subject
+- Section 3: Annual assessment — standardized test OR written evaluation by certified teacher
+- Section 4: Required subjects — 11 subjects for elementary, 12 for secondary
+- Section 5: Teacher qualifications — none required for parents, but evaluator must be certified
+- Section 6: ESA — New York has no ESA program (as of 2026)
+- Section 7: Common mistakes (missing quarterly report deadline, insufficient narrative, wrong evaluator)
+- CTA: "Get New York alerts → [NY state page]"
+
+POST 10: Pennsylvania
+Title: Pennsylvania Homeschool Requirements 2026: Portfolio, Evaluation, and Testing
+Keywords: pennsylvania homeschool requirements, portfolio evaluation pennsylvania, homeschool testing PA
+Outline:
+- Intro: "Pennsylvania requires a portfolio, an annual evaluation, and standardized testing in certain grades."
+- Section 1: Affidavit — file with superintendent by August 1
+- Section 2: Required subjects — 11 for elementary, 12 for secondary
+- Section 3: Portfolio — samples, attendance, reading list, standardized test results
+- Section 4: Annual evaluation — certified teacher OR non-public school principal
+- Section 5: Standardized testing — grades 3, 5, 8 (must use nationally normed test)
+- Section 6: Teacher qualifications — none required for parents
+- Section 7: ESA — Pennsylvania has no ESA program (as of 2026)
+- CTA: "Get Pennsylvania alerts → [PA state page]"
+
+[Continue for all 50 states — same format. Priority: populous states first, then restrictive states, then permissive states.]
+
+---
+
+BLOG POST PROMPT FOR AI (Agent copies this into ChatGPT/Claude)
+--------------------------------------------------------------------------------
+
+Write a 2,000-word blog post about [State] homeschool requirements for 2026.
+
+Use this outline:
+1. Intro: Hook about [State]'s specific reputation (restrictive/permissive/moderate)
+2. Filing requirements: What, when, where, consequences of missing
+3. Record-keeping: What to keep, how long, format
+4. Curriculum: Required subjects, any restrictions, approval needed?
+5. Testing: Required? Yes/No. If yes: which tests, when, where.
+6. Teacher qualifications: Required? Yes/No. If yes: what kind.
+7. ESA programs: Available? Yes/No. If yes: brief overview.
+8. Common mistakes: 2-3 specific to [State]
+9. CTA: "Get [State] alerts when laws change → [link]"
+
+Tone: Helpful, authoritative but not legalistic. Plain English. No jargon.
+Target reader: Parent considering or currently homeschooling in [State].
+SEO keywords: [State] homeschool requirements, [State] homeschool law, [specific state terms]
+
+Include these specific facts:
+- Freedom score: [X]/100 (Grade [A-F])
+- Filing deadline: [Date]
+- Required subjects: [List or "No specific list"]
+- Testing: [Required/Not required]
+- Teacher quals: [Required/Not required]
+- ESA: [Yes/No + program name if yes]
+
+End with a clear CTA and link to the state page.

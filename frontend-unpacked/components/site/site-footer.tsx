@@ -9,23 +9,24 @@ const COLUMNS = [
       { label: "Scorecard", href: "/scorecard" },
       { label: "Alerts", href: "/dashboard" },
       { label: "ESA Guide", href: "/esa" },
+      { label: "API Docs", href: "#" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Methodology", href: "/methodology" },
-      { label: "Scorecard (Free →)", href: "/scorecard" },
-      { label: "Accuracy Guarantee", href: "/about" },
-      { label: "Data Sources", href: "/methodology" },
+      { label: "Methodology", href: "/about" },
+      { label: "Data Sources", href: "/about" },
+      { label: "HSLDA Partnership", href: "/about" },
+      { label: "Blog", href: "#" },
     ],
   },
   {
     title: "Legal",
     links: [
-      { label: "Privacy", href: "/privacy" },
-      { label: "Terms", href: "/terms" },
-      { label: "Disclaimer", href: "/disclaimer" },
+      { label: "Privacy", href: "#" },
+      { label: "Terms", href: "#" },
+      { label: "Disclaimer", href: "#" },
     ],
   },
 ]
@@ -39,7 +40,7 @@ export function SiteFooter() {
             <div className="flex items-center gap-2.5">
               <LogoMark className="h-7 w-7 text-cream" />
               <span className="font-heading text-base font-semibold tracking-tight">
-                Homeschool Compass
+                Tangle Trove
               </span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/70">
@@ -70,26 +71,13 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 border-t border-cream/15 pt-6">
-          <div className="flex flex-col gap-2 text-sm">
-            <p className="text-cream/80">
-              <span className="font-medium">Not sure where to start?</span>{' '}
-              <Link href="/scorecard" className="text-action underline underline-offset-4 hover:no-underline">
-                See Your State&rsquo;s Grade →
-              </Link>
-            </p>
-            <p className="mt-1 text-xs text-cream/50">
-              ⭐ Accuracy Guaranteed  ·  50 States Tracked  ·  Real-Time Alerts  ·  SSL Secured
-            </p>
-          </div>
-          <div className="mt-4">
-            <p className="text-sm text-cream/60">
-              This is not legal advice. Consult an attorney for your situation.
-            </p>
-            <p className="mt-2 text-sm text-cream/50">
-              © 2026 The Homeschool Compass. Built with legislative data from LegiScan
-              and OpenStates.
-            </p>
-          </div>
+          <p className="text-sm text-cream/60">
+            This is not legal advice. Consult an attorney for your situation.
+          </p>
+          <p className="mt-2 text-sm text-cream/50">
+            © 2026 The Tangle Trove. Built with legislative data from LegiScan
+            and OpenStates.
+          </p>
         </div>
       </div>
     </footer>

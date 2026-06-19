@@ -1,0 +1,128 @@
+================================================================================
+PINTEREST SPECS & TEMPLATES
+Agent: Create 5 pins/week. Batch on Monday. Schedule via Tailwind.
+================================================================================
+
+PIN DIMENSIONS (Canva templates)
+--------------------------------------------------------------------------------
+Standard Pin: 1000 x 1500 px (2:3 ratio) — BEST for reach
+Idea Pin: 1080 x 1920 px (9:16) — for video/carousel
+Carousel Pin: 1000 x 1500 px, 2-5 cards
+
+BRAND COLORS (Use these in every pin)
+--------------------------------------------------------------------------------
+Grade A (green): #10B981
+Grade B (yellow): #F59E0B
+Grade C (orange): #F97316
+Grade D/F (red): #EF4444
+CTA/Links (blue): #3B82F6
+Text/Background (slate): #1E293B
+Light background: #F1F5F9
+
+CANVA TEMPLATE STRUCTURE (Duplicate this for each state)
+--------------------------------------------------------------------------------
+Layer 1: Background color based on grade
+  A = light green (#D1FAE5)
+  B = light yellow (#FEF3C7)
+  C = light orange (#FFEDD5)
+  D/F = light red (#FEE2E2)
+
+Layer 2: State name (large, bold, top 30%)
+  Font: Montserrat Bold, 72pt
+  Color: #1E293B
+
+Layer 3: Grade letter (HUGE, center)
+  Font: Montserrat Black, 200pt
+  Color: Grade color (green/yellow/orange/red)
+  Shadow: subtle drop shadow for depth
+
+Layer 4: Score (below grade)
+  Font: Montserrat SemiBold, 48pt
+  Color: #1E293B
+  Text: "[X]/100"
+
+Layer 5: 4 mini-bars (below score)
+  Each bar: 200px wide, 12px tall, rounded
+  Colors: fill = grade color, background = #E5E7EB
+  Labels: "Reporting [X]", "Testing [X]", "Curriculum [X]", "Teacher [X]"
+  Font: Inter Regular, 14pt
+
+Layer 6: CTA button (bottom 15%)
+  Background: #3B82F6, rounded corners
+  Text: "See [State] Requirements →"
+  Font: Inter SemiBold, 18pt, white
+
+Layer 7: Logo/watermark (bottom right corner, small)
+  "Homeschool Compass" + compass icon
+  Font: Inter Regular, 12pt, #6B7280
+
+PIN DESCRIPTION TEMPLATE (Copy for every pin)
+--------------------------------------------------------------------------------
+[State] Homeschool Requirements 2026 — Free Compliance Checklist
+
+Everything you need to homeschool legally in [State]: filing deadlines, record-keeping rules, required subjects, testing mandates, and teacher qualifications. Updated for 2026.
+
+🔗 [LINK to /state/XX]
+
+#homeschool #[State]homeschool #[State]homeschoolrequirements #homeschoolrequirements #homeschoollaw #homeschoolcompliance #homeschool2026 #homeschoolmom #homeschoolfamily #homeschoollife
+
+[Add 2-3 more hashtags specific to [State] if applicable]
+
+BOARD STRUCTURE (Create these 5 boards in Tailwind)
+--------------------------------------------------------------------------------
+1. "Homeschool by State"
+   → All 50 state pins go here
+   → Description: "Homeschool requirements, laws, and compliance checklists for all 50 states."
+
+2. "ESA Programs & Homeschool Funding"
+   → Pins for states with ESAs
+   → Description: "Education Savings Account programs, grants, and funding for homeschool families."
+
+3. "Homeschool Compliance & Legal"
+   → Portfolio tips, filing guides, deadline reminders
+   → Description: "Legal requirements, compliance checklists, and filing guides for homeschool families."
+
+4. "Homeschool Free Printables"
+   → Checklists, calendars, record-keeping templates
+   → Description: "Free printables for homeschool planning, record-keeping, and compliance."
+
+5. "Homeschool Law Updates"
+   → Bill alert pins, new legislation, regulation changes
+   → Description: "Latest homeschool legislation, bill alerts, and regulation changes across the US."
+
+PIN SCHEDULE (Tailwind SmartSchedule)
+--------------------------------------------------------------------------------
+Monday: 2 pins (state guides)
+Wednesday: 2 pins (compliance tips, ESA info)
+Friday: 1 pin (bill alert or law update)
+
+Best times: 8-11pm EST (when moms are scrolling after kids are in bed)
+
+PIN TYPES TO ROTATE (Don't post the same thing every day)
+--------------------------------------------------------------------------------
+Type A: State grade pin (the Canva template above)
+Type B: "How to homeschool in [State]" — text overlay on photo of homeschool room
+Type C: Compliance checklist pin — numbered list graphic
+Type D: Bill alert pin — "🚨 New bill in [State]" with red alert styling
+Type E: ESA pin — "Does [State] have an ESA?" with yes/no answer
+Type F: Comparison pin — "[State A] vs [State B] homeschool requirements" side by side
+
+TAILWIND SETUP CHECKLIST
+--------------------------------------------------------------------------------
+□ Create business account (not personal)
+□ Claim website (homeschool-regulation-tracker.vercel.app)
+□ Enable Rich Pins (apply at Pinterest business hub)
+□ Connect all 5 boards
+□ Upload Canva brand kit (colors, fonts, logo)
+□ Set SmartSchedule for optimal times
+□ Enable Tailwind Communities (find homeschool-related communities to share pins)
+□ Set up analytics tracking (weekly impressions, clicks, saves)
+
+WEEKLY PIN METRICS TO TRACK (Agent notes in Friday Report)
+--------------------------------------------------------------------------------
+□ Total pins created this week
+□ Total impressions
+□ Total clicks to website
+□ Total saves
+□ Top-performing pin (by clicks)
+□ Worst-performing pin (pause if < 10 clicks after 7 days)

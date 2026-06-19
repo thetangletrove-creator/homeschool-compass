@@ -1,0 +1,156 @@
+================================================================================
+A/B TEST PLAN
+What to test, how to track, when to decide, what to implement
+================================================================================
+
+TEST 1: Paywall Threshold (3 vs 5 state views/month)
+--------------------------------------------------------------------------------
+Hypothesis: 3 views creates more urgency than 5
+Variant A: 3 views/month
+Variant B: 5 views/month
+Metric: Paywall → trial start rate
+Duration: 30 days
+Sample size: 200+ users per variant
+Decision rule: If difference > 20%, implement winner. If < 20%, keep testing.
+Implementation: Backend config flag, easy to switch
+
+---
+
+TEST 2: Free Trial (No-CC vs CC-Required)
+--------------------------------------------------------------------------------
+Hypothesis: No-CC gets more trials; CC-required gets better conversions
+Variant A: No credit card required
+Variant B: Credit card required
+Metric: Trial sign-ups AND trial → paid conversion
+Duration: 60 days
+Sample size: 100+ trials per variant
+Decision rule: Compare total paid conversions (sign-ups × conversion rate)
+Implementation: Stripe checkout flow modification
+
+---
+
+TEST 3: Pricing Presentation ($29/yr vs $2.42/mo)
+--------------------------------------------------------------------------------
+Hypothesis: Annual pricing feels like commitment; monthly feels accessible
+Variant A: "$29/year"
+Variant B: "$2.42/month, billed annually"
+Metric: Click-through on pricing CTA
+Duration: 14 days
+Sample size: 500+ impressions per variant
+Decision rule: Higher CTR wins
+Implementation: Copy change only
+
+---
+
+TEST 4: CTA Copy ("Get alerts" vs "Protect your homeschool")
+--------------------------------------------------------------------------------
+Hypothesis: Emotional copy converts better than functional
+Variant A: "Get alerts when laws change"
+Variant B: "Protect your homeschool from surprise regulations"
+Metric: Landing page → signup rate
+Duration: 14 days
+Sample size: 500+ visitors per variant
+Decision rule: Higher conversion rate wins
+Implementation: Copy change only
+
+---
+
+TEST 5: Landing Page Hero (Map vs Alert Preview vs Family Photo)
+--------------------------------------------------------------------------------
+Hypothesis: Visual map communicates value immediately
+Variant A: US map with color-coded grades
+Variant B: Alert notification card mockup
+Variant C: Family photo with text overlay
+Metric: Time on page + scroll depth
+Duration: 21 days
+Sample size: 300+ visitors per variant
+Decision rule: Highest scroll depth wins (indicates engagement)
+Implementation: Hero section swap
+
+---
+
+TEST 6: Email Subject Line (Specific vs. Curiosity)
+--------------------------------------------------------------------------------
+Hypothesis: Specific subject lines get higher open rates
+Variant A: "3 bills moved in [State] this week"
+Variant B: "Something changed in [State] homeschool law"
+Metric: Open rate
+Duration: 14 days
+Sample size: 200+ recipients per variant
+Decision rule: Higher open rate wins
+Implementation: Email platform A/B test
+
+---
+
+TEST 7: Ad Creative (State Grade Card vs. Checklist Preview)
+--------------------------------------------------------------------------------
+Hypothesis: Grade card stops the scroll; checklist preview promises value
+Variant A: State grade card (A-F badge, score)
+Variant B: Checklist preview screenshot
+Metric: CTR + landing page conversion
+Duration: 14 days
+Sample size: 1000+ impressions per variant
+Decision rule: Higher landing page conversion wins (not just CTR)
+Implementation: New Canva image + ad variant
+
+---
+
+TEST 8: Audience (Interest vs. Lookalike)
+--------------------------------------------------------------------------------
+Hypothesis: Lookalike audiences outperform interest targeting
+Variant A: Interest targeting (HSLDA, homeschool curriculum)
+Variant B: 1% lookalike of website visitors
+Metric: Cost per lead (CPL)
+Duration: 30 days
+Sample size: 50+ leads per variant
+Decision rule: Lower CPL wins
+Implementation: Facebook audience creation
+
+---
+
+TEST 9: Blog Post Length (1500 vs 2500 words)
+--------------------------------------------------------------------------------
+Hypothesis: Longer posts rank better but shorter posts get more shares
+Variant A: 1500-word posts
+Variant B: 2500-word posts
+Metric: Organic traffic + social shares
+Duration: 60 days
+Sample size: 4 posts per variant
+Decision rule: Higher organic traffic wins
+Implementation: Content calendar adjustment
+
+---
+
+TEST 10: Influencer Commission (30% vs 50%)
+--------------------------------------------------------------------------------
+Hypothesis: Higher commission motivates more promotion
+Variant A: 30% commission
+Variant B: 50% commission
+Metric: Influencer-driven conversions
+Duration: 90 days
+Sample size: 5+ influencers per variant
+Decision rule: Higher total revenue (conversions × commission rate)
+Implementation: Affiliate tracking link + commission structure
+
+---
+
+TEST TRACKING LOG (Agent maintains)
+--------------------------------------------------------------------------------
+Format: /ab-tests.txt
+
+[Date] | [Test Name] | [Variant A] | [Variant B] | [Metric] | [Duration] | [Winner] | [Impact] | [Implemented?]
+2026-07-01 | Paywall threshold | 3 views | 5 views | Trial rate | 30 days | TBD | TBD | No
+2026-07-01 | Pricing display | $29/yr | $2.42/mo | CTR | 14 days | TBD | TBD | No
+
+---
+
+RULES FOR TESTING
+--------------------------------------------------------------------------------
+1. Only run 1-2 tests at a time (don't muddy the data)
+2. Run each test for at least 7 days (prefer 14)
+3. Don't stop early unless one variant is clearly broken
+4. Document everything in /ab-tests.txt
+5. If a test wins, implement it immediately
+6. If a test ties, pick the simpler/cheaper option
+7. If a test loses, document why and move on
+8. Never test more than one variable at a time

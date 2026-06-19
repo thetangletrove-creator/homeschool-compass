@@ -1,0 +1,159 @@
+================================================================================
+PAYWALL MODAL COPY — 3 Views/Month Gate
+Agent: Boss implements this. Agent tests it after deployment.
+================================================================================
+
+---
+MODAL 1: First Paywall Hit (3rd state guide viewed this month) ---
+
+Headline:
+You've viewed 3 state guides this month
+
+Body:
+Free accounts include 3 detailed state compliance guides per month. You've used all 3.
+
+Upgrade to unlock:
+✅ Unlimited state guides (all 50 states)
+✅ Instant bill alerts when laws change
+✅ Personalized compliance checklist with your deadlines
+✅ ESA program tracking
+
+Price: $29/year — less than a textbook.
+
+CTA Primary:
+Start 14-Day Free Trial →
+
+CTA Secondary:
+Maybe Later (you'll get 3 more views next month)
+
+Visual:
+Lock icon + "3 of 3 used" progress indicator
+
+---
+MODAL 2: Second Paywall Hit (4th+ state guide viewed) ---
+
+Headline:
+You've reached your monthly limit
+
+Body:
+Free accounts include 3 state guides per month. Your next 3 will be available on [Date — first of next month].
+
+Or upgrade now for unlimited access:
+
+✅ Unlimited state guides
+✅ Instant bill alerts
+✅ Personalized compliance checklist
+✅ ESA tracking
+✅ Historical bill archive
+
+$29/year. 14-day free trial. No credit card required.
+
+CTA Primary:
+Start Free Trial →
+
+CTA Secondary:
+Remind Me Next Month → [Email capture: "Email me when my 3 views reset"]
+
+---
+MODAL 3: Bill Page Paywall (Free user clicks bill summary) ---
+
+Headline:
+Bill analysis available for subscribers
+
+Body:
+Free accounts show bill title and status only.
+
+Upgrade to see:
+✅ Full bill summary (what it means for homeschoolers)
+✅ Action required checklist
+✅ Timeline and status updates
+✅ Similar bills in other states
+
+This bill affects [State]. Get alerted the day it changes.
+
+CTA Primary:
+Start Free Trial →
+
+CTA Secondary:
+Back to Bill List →
+
+---
+MODAL 4: ESA Section Paywall (Free user clicks ESA tab) ---
+
+Headline:
+ESA program details available for subscribers
+
+Body:
+Free accounts show whether your state has an ESA program.
+
+Upgrade to see:
+✅ Application windows and deadlines
+✅ Eligible expenses and providers
+✅ Step-by-step application guide
+✅ Deadline reminders
+
+[State] [has/does not have] an active ESA program.
+
+CTA Primary:
+Start Free Trial →
+
+CTA Secondary:
+Back to State Guide →
+
+---
+MODAL 5: Alert Signup Paywall (Free user tries to set alerts) ---
+
+Headline:
+Bill alerts are a paid feature
+
+Body:
+Free accounts include a weekly digest email on Fridays.
+
+Upgrade to get:
+✅ Instant alerts the day a bill moves (introduced, amended, signed)
+✅ SMS alerts for urgent bills
+✅ Customizable by state and impact type
+✅ Historical alert archive
+
+Never miss a deadline again.
+
+$29/year. 14-day free trial.
+
+CTA Primary:
+Start Free Trial →
+
+CTA Secondary:
+Continue with Weekly Digest →
+
+---
+MODAL 6: Checkout Abandonment (User clicks trial but doesn't complete) ---
+
+[Email sequence, not modal — see EMAIL_DRIP_SEQUENCES.txt]
+
+Subject: You started your free trial — here's how to finish
+
+Hi [First Name],
+
+You started a free trial of Homeschool Compass but didn't complete checkout. No worries — it happens.
+
+Here's what you're missing:
+→ Unlimited state compliance guides
+→ Instant bill alerts for [State]
+→ Your personalized checklist with deadlines
+
+Finish checkout in 30 seconds:
+[LINK to checkout with plan pre-selected]
+
+Questions? Just reply to this email.
+
+— [Your name]
+
+---
+PAYWALL TECHNICAL NOTES FOR BOSS:
+--------------------------------------------------------------------------------
+1. Track views in localStorage (client-side) + database (server-side) for accuracy
+2. Reset counter on first of each month
+3. Show modal on 4th view attempt (not 3rd — let them use all 3 first)
+4. Modal should be dismissible (not hard paywall) — maintain goodwill
+5. Track paywall impressions → trial starts → paid conversions as a funnel
+6. A/B test: 3 views vs 5 views vs 1 view after you have 100+ conversions

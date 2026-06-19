@@ -1,0 +1,486 @@
+================================================================================
+HOMESCHOOL COMPASS — AUTOMATED GROWTH AGENT PLAYBOOK
+Printable Checklist | Hand to Agent | Loop-Based Execution
+================================================================================
+
+Prepared: 2026-06-16
+Scope: Organic + Paid Growth for homeschool-regulation-tracker.vercel.app
+Agent Level: Junior VA or Marketing Assistant (no marketing expertise required)
+Your Oversight: Weekly 15-min check-ins only
+
+================================================================================
+PART 1: WHAT IS AUTOMATED vs. WHAT NEEDS A HUMAN
+================================================================================
+
+FULLY AUTOMATED (Set up once, runs forever):
+□ Facebook Ad campaigns (after Week 4 warm-up)
+□ Pinterest scheduling (Tailwind)
+□ Email drip sequences (Resend/Loops)
+□ Bill alert notifications (already in product)
+□ Social post recycling (Repurpose.io or Buffer)
+□ Blog → Social cross-posting
+
+SEMI-AUTOMATED (Agent follows templates, makes selections):
+□ Facebook Group engagement (agent copies templates into relevant threads)
+□ Blog post drafting (AI writes from outline, agent edits/publishes)
+□ Influencer outreach (agent sends template emails, tracks responses)
+□ Testimonial collection (agent sends template requests)
+□ Content curation (agent picks 3 bills/week from pipeline)
+
+MANUAL (You do this, not the agent):
+□ Strategic pivots (pricing, product changes)
+□ Customer support escalations
+□ Ad creative direction (new video/photo concepts)
+□ Partnership negotiations (HSLDA, umbrella schools)
+□ Financial decisions (budget increases, new tools)
+
+================================================================================
+PART 2: THE 12-WEEK AGENT LOOP
+================================================================================
+
+WEEK 1-2: FOUNDATION (Agent sets up infrastructure)
+--------------------------------------------------------------------------------
+
+DAILY TASKS (Agent does these every day):
+□ Log into Facebook Business Manager
+  → Check if ad account is active (green dot = good, yellow = warming, red = you handle)
+  → Screenshot dashboard, save to /reports/
+
+□ Join 3 new Facebook Groups (target: 20 total by end of Week 2)
+  Search terms: "[State] homeschool", "homeschool legal", "homeschool portfolio",
+  "homeschool high school", "homeschool requirements", "Charlotte Mason [State]",
+  "Classical Conversations [State]"
+  → Request to join
+  → Read group rules (screenshot)
+  → Fill out membership questions honestly
+  → DO NOT mention product yet
+
+□ Answer 5 questions in existing groups (use TEMPLATE A below)
+  → Search group for "requirements", "filing", "deadline", "portfolio", "PSA"
+  → Pick questions you can answer factually
+  → Copy template, customize with [State] name
+  → Post
+  → Screenshot your answer, save to /engagement-log/
+
+WEEK 1-2 CHECKPOINT (End of Week 2):
+□ 20 groups joined
+□ 70 answers posted (5/day × 14 days)
+□ Engagement log folder has 70 screenshots
+□ Ad account is active and warming
+
+---
+
+WEEK 3-4: SOFT LAUNCH (Agent starts soft mentions)
+--------------------------------------------------------------------------------
+
+DAILY TASKS:
+□ Continue 5 answers/day in groups (now use TEMPLATE B — soft mention)
+  → Same search terms
+  → When question is complex (multi-step compliance), use TEMPLATE B
+  → 1 in 5 answers can include soft mention (not every answer)
+  → Track: "Mentioned product" vs "Pure value" in engagement log
+
+□ Capture emails from group membership questions
+  → When groups ask "What's your biggest homeschool challenge?"
+  → Note common themes in /themes-log.txt
+  → These become blog post topics and ad copy
+
+□ Set up Pinterest (if not done)
+  → Create business account
+  → Claim website
+  → Install Rich Pins
+  → Create 5 boards: "Homeschool by State", "Homeschool Compliance",
+    "ESA Programs", "Homeschool Free Printables", "Homeschool Law Updates"
+
+□ Create 10 Pinterest pins (use TEMPLATE C — Canva batch)
+  → 1 pin per state (pick top 10 states by population: CA, TX, FL, NY, PA, OH, GA, NC, MI, AZ)
+  → Link: homeschool-regulation-tracker.vercel.app/state/[XX]
+  → Description: TEMPLATE C
+  → Schedule via Tailwind (free trial, then $15/month)
+
+WEEK 3-4 CHECKPOINT:
+□ 140 total answers posted (70 pure value + 70 with soft mention)
+□ 10 Pinterest pins live
+□ 5 Pinterest boards created
+□ Email capture log has 50+ entries
+□ Ad account warmed (engagement campaigns running 14 days)
+
+---
+
+WEEK 5-6: CONTENT ENGINE (Agent builds recurring content)
+--------------------------------------------------------------------------------
+
+DAILY TASKS:
+□ Continue 3 answers/day in groups (reduce to maintenance mode)
+
+□ Write 1 blog post per week (use TEMPLATE D — AI-assisted)
+  → Monday: Agent picks topic from /themes-log.txt
+  → Tuesday: Agent writes outline (use TEMPLATE D)
+  → Wednesday: Run outline through AI (Claude/ChatGPT), get draft
+  → Thursday: Agent edits draft, adds state links, fact-checks
+  → Friday: Publish on site, cross-post to Facebook page, Pinterest
+
+□ Create 1 "State Spotlight" post per week
+  → Pick a state from pipeline (or any state)
+  → Write 300-word summary of that state's requirements
+  → Post to Facebook page + 3 relevant groups
+  → Pin to Pinterest
+
+□ Email list building (if Lead Gen ads running)
+  → Export leads from Facebook every Friday
+  → Add to email list (Resend/Loops/Mailchimp)
+  → Tag by state if captured
+
+WEEKLY LOOP (Every Friday, same time):
+□ Check Facebook ad dashboard → screenshot → save to /reports/
+□ Check Pinterest analytics → note top 3 pins → save to /reports/
+□ Check website analytics (Vercel or Plausible) → note top 3 pages → save to /reports/
+□ Update /themes-log.txt with new question themes from groups
+□ Send YOU a 1-page summary: "This week: X answers, Y emails, Z page views, $ ad spend"
+
+WEEK 5-6 CHECKPOINT:
+□ 2 blog posts published
+□ 2 State Spotlights posted
+□ 50+ email subscribers
+□ Facebook page has 100+ likes
+□ Ad account ready for Lead Gen (if not already)
+
+---
+
+WEEK 7-8: SCALE (Agent runs the machine)
+--------------------------------------------------------------------------------
+
+DAILY TASKS (now a maintenance loop):
+□ 3 answers/day in Facebook groups (TEMPLATE B)
+□ 1 blog post/week (TEMPLATE D)
+□ 1 State Spotlight/week
+□ 5 new Pinterest pins/week (batch create on Monday, schedule all week)
+□ Monitor ad comments → reply to questions (use TEMPLATE E)
+□ Check email list → tag new subscribers by state
+
+WEEKLY LOOP (Every Friday):
+□ Same as Week 5-6, plus:
+□ Review ad performance → pause underperforming creatives
+□ Review Pinterest pins → repin top performers to more boards
+□ Review blog analytics → double down on top-performing topics
+
+WEEK 7-8 CHECKPOINT:
+□ 4 total blog posts
+□ 4 total State Spotlights
+□ 100+ email subscribers
+□ 30+ Pinterest pins
+□ Facebook ad account running Lead Gen or Conversions
+□ First paid conversions (if any)
+
+---
+
+WEEK 9-12: OPTIMIZE (Agent fine-tunes)
+--------------------------------------------------------------------------------
+
+DAILY TASKS:
+□ Same as Week 7-8
+
+WEEKLY LOOP (Every Friday, expanded):
+□ Same as Week 7-8, plus:
+□ A/B test one thing: ad headline, pin image, email subject line, or CTA
+□ Document results in /ab-tests.txt
+□ Collect 1 testimonial request (TEMPLATE F) from active users
+□ Update /testimonials/ folder
+
+MONTHLY LOOP (End of Week 12, then every month):
+□ Full analytics report: traffic, conversions, email growth, ad spend, ROAS
+□ Content audit: which blog posts rank? Which pins drive traffic?
+□ Group audit: which groups are most responsive? Leave dead groups, join new ones.
+□ Strategic recommendation to YOU: "Do X, Y, or Z next month"
+
+================================================================================
+PART 3: TEMPLATES (Agent copies, customizes, pastes)
+================================================================================
+
+TEMPLATE A: Pure Value Answer (Week 1-2)
+--------------------------------------------------------------------------------
+Hi [Name]! In [State], here's what you need to know:
+
+• Filing: [Specific requirement — e.g., "File a Private School Affidavit with the CA DOE by Oct 1-15"]
+• Records: [What to keep — e.g., "Attendance log, subjects taught, samples of work"]
+• Testing: [Yes/No + details — e.g., "No standardized testing required in CA"]
+• Teacher qualifications: [Yes/No — e.g., "No credential required"]
+
+The best source for this is [State] DOE website: [link]
+
+Hope that helps! Feel free to ask if you need clarification on any of these.
+
+[Agent signs with personal name, NOT product name]
+
+---
+
+TEMPLATE B: Soft Mention Answer (Week 3+)
+--------------------------------------------------------------------------------
+Hi [Name]! [State] has some specific requirements that can be tricky to track:
+
+• [Requirement 1]
+• [Requirement 2]
+• [Requirement 3]
+
+I actually built a free tool that tracks this stuff by state and sends alerts when laws change — mostly because I kept missing deadlines myself 😅 Happy to share the link if you're interested.
+
+[Agent signs with personal name, includes link ONLY if asked or if group rules allow]
+
+---
+
+TEMPLATE C: Pinterest Pin Description
+--------------------------------------------------------------------------------
+[State] Homeschool Requirements 2026 — Free Compliance Checklist
+
+Everything you need to homeschool legally in [State]: filing deadlines, record-keeping rules, required subjects, testing mandates, and teacher qualifications. Updated for 2026.
+
+#homeschool #homeschool[state] #[state]homeschool #homeschoolrequirements #homeschoollaw #homeschoolcompliance #homeschool2026
+
+Link: homeschool-regulation-tracker.vercel.app/state/[XX]
+
+---
+
+TEMPLATE D: Blog Post Outline (Agent fills in, AI writes)
+--------------------------------------------------------------------------------
+TITLE: [State] Homeschool Requirements [Year]: The Complete Checklist
+
+INTRO (150 words):
+- Hook: "Homeschooling in [State]? Here's exactly what you need to do to stay compliant."
+- Mention the grade/score
+- Promise: checklist format, plain English, no legal jargon
+
+SECTION 1: Filing Requirements (300 words)
+- What to file
+- When to file
+- Where to file (link)
+- Consequences of missing deadline
+
+SECTION 2: Record-Keeping (200 words)
+- What records to keep
+- How long to keep them
+- Sample template mention (if available)
+
+SECTION 3: Curriculum & Subjects (200 words)
+- Required subjects list
+- Any restrictions on materials
+
+SECTION 4: Testing & Assessments (200 words)
+- Required? Yes/No
+- If yes: which tests, when, where
+- If no: say so clearly
+
+SECTION 5: Teacher Qualifications (150 words)
+- Credential required? Yes/No
+- If yes: what kind
+
+SECTION 6: ESA Programs (100 words)
+- Does [State] have an ESA?
+- If yes: brief overview + link to ESA page
+- If no: say so
+
+CTA:
+- "Get alerts when [State] homeschool laws change — free signup"
+- Link to /state/[XX] page
+
+---
+
+TEMPLATE E: Ad Comment Reply
+--------------------------------------------------------------------------------
+Hi [Name]! Thanks for your question. [Answer in 1-2 sentences].
+
+If you want the full checklist for [State], you can grab it free here: [link]
+
+[Agent signs with product name]
+
+---
+
+TEMPLATE F: Testimonial Request
+--------------------------------------------------------------------------------
+Subject: Quick favor — would you share your experience?
+
+Hi [Name],
+
+I noticed you've been using Homeschool Compass for [time period]. I'm trying to spread the word to more homeschool families who need help tracking their state requirements.
+
+Would you be willing to share a quick sentence about your experience? Something like:
+
+"Homeschool Compass helped me [specific outcome — e.g., 'file my PSA on time,' 'understand NY's quarterly report requirements,' 'stay on top of a new bill in my state']."
+
+No pressure at all — just thought I'd ask!
+
+Thanks,
+[Your name]
+
+P.S. If you do share, I'll feature it on our site (with your first name and state only, unless you prefer anonymous).
+
+================================================================================
+PART 4: AUTOMATION TOOLS & SETUP
+================================================================================
+
+TOOL STACK (Agent needs access to these):
+
+| Tool | Purpose | Cost | Setup Time |
+|------|---------|------|------------|
+| Facebook Business Manager | Ad account + page management | Free | 30 min |
+| Canva Pro | Pin graphics, social images | $13/month | 1 hour |
+| Tailwind | Pinterest scheduling | $15/month | 30 min |
+| Resend or Loops | Email list + drip sequences | Free tier | 1 hour |
+| Notion or Google Docs | Content calendar, logs, reports | Free | 30 min |
+| Plausible or Vercel Analytics | Website traffic | Free (Vercel) / $9 (Plausible) | 15 min |
+| Buffer or Repurpose.io | Social cross-posting | $6-15/month | 30 min |
+| ChatGPT/Claude | Blog drafting | $20/month | N/A |
+
+AUTOMATION WORKFLOWS (Set up once, agent monitors):
+
+1. NEW EMAIL SUBSCRIBER → DRIP SEQUENCE
+   Trigger: User signs up on site
+   Action: Resend/Loops sends:
+   - Day 0: Welcome + "What's your state?" (tag them)
+   - Day 3: "Here's your state's grade" (personalized by state tag)
+   - Day 7: "3 bills that moved this week" (if any in their state)
+   - Day 14: "Upgrade for instant alerts" (soft pitch)
+   - Day 30: "Your [State] deadline reminder" (if applicable)
+   Agent task: Check weekly that sequence is sending, fix bounces
+
+2. NEW BILL ALERT → SOCIAL POST
+   Trigger: Pipeline classifies a bill as homeschool-relevant
+   Action: Agent drafts 1 social post (Facebook + Pinterest)
+   Template: "🚨 New bill in [State]: [Bill Title] would [change]. Status: [Introduced/Amended]. Track it: [link]"
+   Agent task: Review and post manually (don't auto-post — needs human check for accuracy)
+
+3. NEW BLOG POST → CROSS-POST
+   Trigger: Blog published
+   Action: Buffer auto-posts to Facebook page, Twitter/X, LinkedIn
+   Agent task: Write custom Pinterest pin for it, add to Tailwind queue
+
+4. FRIDAY REPORT → EMAIL TO YOU
+   Trigger: Every Friday 5pm
+   Action: Agent compiles 1-page summary
+   Template: See PART 5 below
+
+================================================================================
+PART 5: THE FRIDAY REPORT (Agent sends this to you every week)
+================================================================================
+
+WEEK [X] SUMMARY — Homeschool Compass Growth
+
+ORGANIC:
+□ Facebook Group answers this week: [X]
+□ New group members (your group): [X]
+□ Pinterest pins created: [X]
+□ Pinterest impressions: [X]
+□ Blog posts published: [X]
+□ Blog page views: [X]
+
+PAID:
+□ Ad spend: $[X]
+□ Impressions: [X]
+□ Clicks: [X]
+□ CTR: [X]%
+□ Leads: [X]
+□ Cost per lead: $[X]
+
+CONVERSIONS:
+□ Free signups: [X]
+□ Email subscribers: [X] (total: [X])
+□ Paid conversions: [X]
+□ Revenue: $[X]
+□ Refunds/chargebacks: [X]
+
+TOP PERFORMERS:
+□ Best ad creative: [describe]
+□ Best blog post: [title] — [X] views
+□ Best Pinterest pin: [describe] — [X] impressions
+□ Most responsive FB group: [name]
+
+ISSUES / NEEDS YOUR INPUT:
+□ [List anything that needs your decision]
+
+NEXT WEEK PLAN:
+□ [Agent lists what they'll do]
+
+================================================================================
+PART 6: DECISION TREES (Agent handles these without asking you)
+================================================================================
+
+IF ad account gets flagged/restricted →
+   STOP all campaigns → Screenshot error → Email YOU immediately → Do not try to fix
+
+IF someone asks for legal advice in a group →
+   Reply: "I'm not an attorney, but here's what the statute says..." → Include disclaimer → Screenshot
+
+IF a group admin removes agent's post →
+   STOP posting in that group → Note in /group-log.txt → Find replacement group
+
+IF ad CTR drops below 1% for 3 days →
+   Pause creative → Screenshot → Note in /reports/ → Try new creative next week
+
+IF email open rate drops below 20% →
+   Check subject lines → Try TEMPLATE G (re-engagement) → Note in /reports/
+
+IF website traffic drops 30% week-over-week →
+   Check if site is down → Check Vercel dashboard → Email YOU if down → Otherwise note in report
+
+IF someone leaves a negative review/comment →
+   Reply politely: "Thanks for the feedback. Can you email [your email] so we can make this right?" → Screenshot → Email YOU
+
+TEMPLATE G: Re-engagement Email (for low open rates)
+--------------------------------------------------------------------------------
+Subject: Did we lose you?
+
+Hi [Name],
+
+I noticed you haven't opened our emails lately. No worries — inboxes are overwhelming.
+
+If homeschool regulation tracking isn't a priority right now, I get it. But if you still want to stay on top of [State] requirements, here's a quick link to update your preferences:
+
+[Update preferences link]
+
+Or, if you'd rather unsubscribe, that's totally fine too: [Unsubscribe link]
+
+Either way, thanks for giving us a try.
+
+[Your name]
+
+================================================================================
+PART 7: QUICK-START CHECKLIST (Agent does these in order, Day 1)
+================================================================================
+
+□ Create /homeschool-compass-agent/ folder on computer
+□ Create subfolders: /engagement-log/, /reports/, /testimonials/, /ab-tests/, /content-calendar/
+□ Get login credentials from YOU for:
+  - Facebook Business Manager
+  - Website admin (if needed for blog posts)
+  - Email platform (Resend/Loops)
+  - Canva
+  - Tailwind
+  - Analytics (Vercel/Plausible)
+□ Install Facebook Pixel on site (YOU or developer does this, agent verifies)
+□ Join 3 Facebook groups today
+□ Answer 5 questions today
+□ Set up Canva brand kit (colors: #10B981 green, #EF4444 red, #3B82F6 blue, #1E293B slate)
+□ Create first Pinterest board
+□ Schedule first 5 pins in Tailwind
+□ Send YOU first Friday report (even if mostly empty)
+
+================================================================================
+PART 8: BUDGET SUMMARY
+================================================================================
+
+MONTHLY COSTS (Agent manages):
+- Canva Pro: $13
+- Tailwind: $15
+- Email platform: $0-20 (Resend free to 3K, Loops free to 1K)
+- Buffer/Repurpose: $6-15
+- AI writing tool: $20
+- Ad spend: $300-1,000 (YOU decide, agent executes)
+TOTAL: ~$354-1,083/month
+
+YOUR TIME COMMITMENT:
+- Week 1: 2 hours (setup, credential handoff, tool approvals)
+- Week 2-12: 15 min/week (read Friday report, answer 1-2 questions)
+- Month 2+: 15 min/week (maintenance mode)
+
+================================================================================
+END OF PLAYBOOK
+================================================================================

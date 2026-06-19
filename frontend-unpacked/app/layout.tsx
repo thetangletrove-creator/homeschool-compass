@@ -10,9 +10,10 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Homeschool Compass — Know Before the Laws Change',
+  title: 'Tangle Trove — Homeschool Regulation Tracker',
   description:
-    'Track homeschool legislation across all 50 states. Get instant alerts when bills affecting your family are introduced, amended, or signed into law. Protect your ESA funding.',
+    'Track homeschool legislation across all 50 states. Get instant alerts when bills affecting your family are introduced, amended, or signed into law.',
+  generator: 'v0.app',
   icons: {
     icon: [
       {
