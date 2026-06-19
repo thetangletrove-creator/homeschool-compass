@@ -5,7 +5,7 @@ export function LogoMark({ className }: { className?: string }) {
     <svg
       viewBox="0 0 32 32"
       fill="none"
-      className={cn("text-navy", className)}
+      className={cn("text-navy dark:text-foreground", className)}
       aria-hidden="true"
     >
       {/* Shield body */}
@@ -14,7 +14,7 @@ export function LogoMark({ className }: { className?: string }) {
         fill="currentColor"
       />
       {/* Compass rose — cardinal points inside shield */}
-      {/* North point */}
+      {/* North point (always action blue) */}
       <path
         d="M16 8.5L18.5 14H13.5L16 8.5z"
         fill="var(--action)"
@@ -22,20 +22,20 @@ export function LogoMark({ className }: { className?: string }) {
       {/* South point */}
       <path
         d="M16 23.5L13.5 18H18.5L16 23.5z"
-        fill="var(--cream)"
+        fill="var(--logo-compass)"
       />
       {/* East point */}
       <path
         d="M23.5 16L18 13.5V18.5L23.5 16z"
-        fill="var(--cream)"
+        fill="var(--logo-compass)"
       />
       {/* West point */}
       <path
         d="M8.5 16L14 13.5V18.5L8.5 16z"
-        fill="var(--cream)"
+        fill="var(--logo-compass)"
       />
       {/* Center dot */}
-      <circle cx="16" cy="16" r="1.5" fill="var(--cream)" />
+      <circle cx="16" cy="16" r="1.5" fill="var(--logo-center)" />
     </svg>
   )
 }

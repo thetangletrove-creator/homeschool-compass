@@ -6,6 +6,7 @@ import { useState } from "react"
 import { Menu } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Logo } from "./logo"
+import { ThemeToggle } from "./theme-toggle"
 import { buttonVariants } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { NavAuth } from "./nav-auth"
@@ -51,7 +52,8 @@ export function SiteNav() {
           })}
         </nav>
 
-        <div className="hidden items-center md:flex">
+        <div className="hidden items-center gap-0.5 md:flex">
+          <ThemeToggle />
           <NavAuth />
         </div>
 
@@ -78,6 +80,7 @@ export function SiteNav() {
                 </Link>
               ))}
               <div className="mt-4 flex flex-col gap-2 px-3">
+                <ThemeToggle className="self-start" />
                 <Link
                   href="/pricing"
                   onClick={() => setOpen(false)}
