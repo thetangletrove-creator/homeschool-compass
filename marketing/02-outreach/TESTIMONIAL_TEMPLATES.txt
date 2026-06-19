@@ -1,0 +1,123 @@
+================================================================================
+TESTIMONIAL COLLECTION TEMPLATES
+Agent: Request 1 testimonial/week from active users. Track in /testimonials/
+================================================================================
+
+TEMPLATE A: Email Request (to active free user)
+--------------------------------------------------------------------------------
+Subject: Quick favor — would you share your experience?
+
+Hi [First Name],
+
+I noticed you've been using Homeschool Compass for [time period] and visiting the [State] guide regularly. I'm trying to spread the word to more homeschool families who need help tracking their state requirements.
+
+Would you be willing to share a quick sentence about your experience? Something like:
+
+"Homeschool Compass helped me [specific outcome — e.g., 'file my PSA on time,' 'understand NY's quarterly report requirements,' 'stay on top of a new bill in my state']."
+
+No pressure at all — just thought I'd ask!
+
+If you do share, I'll feature it on our site with your first name and state only (unless you prefer anonymous).
+
+Thanks,
+[Your name]
+
+---
+
+TEMPLATE B: Email Request (to paid user)
+--------------------------------------------------------------------------------
+Subject: How has Homeschool Compass helped you?
+
+Hi [First Name],
+
+You've been a Homeschool Compass subscriber for [time period]. I'm so glad you're finding it useful.
+
+I'm collecting stories from subscribers to help other homeschool families understand the value. Would you be willing to answer one quick question?
+
+"What specific problem did Homeschool Compass solve for you?"
+
+Your answer can be as short as one sentence. For example:
+→ "I got an alert about a new bill 2 weeks before it passed, and I had time to contact my legislator."
+→ "The checklist made my portfolio review stress-free for the first time."
+→ "I didn't know my state had an ESA program until I saw it on the site."
+
+If you're willing, I'll feature your testimonial on our site (first name and state only, or anonymous if you prefer).
+
+As a thank you, I'd love to extend your subscription by 1 month free.
+
+Thanks for being part of this!
+[Your name]
+
+---
+
+TEMPLATE C: In-App Request (on dashboard, after 30 days)
+--------------------------------------------------------------------------------
+Headline: Has Homeschool Compass helped you?
+
+Body: We're trying to help more homeschool families stay compliant. If you've found this useful, would you share a quick sentence?
+
+[Text box: "What has Homeschool Compass helped you with?"]
+
+[Submit button]
+
+[Checkbox: "Feature my testimonial on the site (first name + state only)"]
+[Checkbox: "Keep me anonymous"]
+
+[Dismiss: "Maybe later"]
+
+---
+
+TEMPLATE D: Follow-Up (no response after 1 week)
+--------------------------------------------------------------------------------
+Subject: Re: Quick favor — would you share your experience?
+
+Hi [First Name],
+
+Just following up on my email from last week. No pressure at all — I know you're busy with homeschooling.
+
+If you have 30 seconds to share your experience, I'd really appreciate it. If not, totally fine.
+
+Either way, thanks for using Homeschool Compass!
+
+[Your name]
+
+---
+
+TESTIMONIAL DISPLAY FORMATS (for website)
+--------------------------------------------------------------------------------
+
+Format 1: Short Quote
+"Homeschool Compass helped me file my PSA on time for the first time."
+— Sarah M., California
+
+Format 2: Problem-Solution
+"I didn't know New York required quarterly reports until I got the alert. Saved my standing."
+— Jennifer K., New York
+
+Format 3: Specific Outcome
+"Worth every penny. I check my state page before every filing season."
+— Michael T., Pennsylvania
+
+Format 4: ESA-Specific
+"I found out my state had an ESA program I didn't know about. Applied and got approved."
+— Amanda R., Arizona
+
+---
+
+WHERE TO USE TESTIMONIALS
+--------------------------------------------------------------------------------
+□ Landing page (below pricing section)
+□ Pricing page (next to each tier)
+□ State pages (relevant testimonial for that state)
+□ Ad creative (testimonial-style ads)
+□ Email sequences (social proof in soft-pitch emails)
+□ Facebook Group answers (soft mention: "One of our users said...")
+
+TESTIMONIAL LOG (Agent maintains)
+--------------------------------------------------------------------------------
+Format: /testimonials.txt
+
+[Date] | [Name] | [State] | [Quote] | [Used where?] | [Approved?]
+2026-07-01 | Sarah M. | CA | "Helped me file my PSA on time" | Landing page | Yes
+2026-07-05 | Jennifer K. | NY | "Saved my standing" | State page | Yes
+2026-07-10 | Michael T. | PA | "Worth every penny" | Pricing page | Pending approval

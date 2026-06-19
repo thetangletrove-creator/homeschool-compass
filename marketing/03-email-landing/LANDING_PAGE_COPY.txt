@@ -1,0 +1,213 @@
+================================================================================
+LANDING PAGE REWRITE — Paste-ready copy for implementation
+Replaces: "30,000+ bills analyzed", "2,400+ families", "accuracy guarantee"
+================================================================================
+
+---
+HERO SECTION ---
+
+Headline:
+Know Exactly What Your State Requires — Before the Law Changes
+
+Subheadline:
+Track homeschool legislation across all 50 states. Get alerts when bills affecting your family are introduced, amended, or signed into law.
+
+CTA Primary:
+See Your State's Grade →
+
+CTA Secondary (below primary):
+Free 50-state scorecard. No signup required.
+
+Visual:
+Color-coded US map with state grades (A-F). Interactive: hover shows state name + score.
+
+---
+LIVE ALERT SECTION ---
+
+Headline:
+Active Regulation Alert
+
+Card:
+[State Badge: CA] [Timestamp: June 12, 2026]
+Adds Annual Portfolio Review Requirement
+
+Changes:
+No review required → Annual review by certified teacher
+
+Action Required:
+If enacted, families must submit portfolios by July 2027.
+
+CTA:
+Track This Bill → [LINK to /bill/CA-SB-1234]
+
+Secondary:
+See All Active Alerts → [LINK to /alerts]
+
+Note: Use a REAL alert from your database, not a mockup. If no active alerts, show the most recent one with a "Resolved" badge.
+
+---
+TRUST BAR ---
+
+[Visual: 4 icons with numbers, no vague claims]
+
+50 States Monitored
+Real-Time Legislative Tracking
+HSLDA-Aligned Framework
+ESA Program Directory
+
+[Remove: "30,000+ Bills Analyzed", "2,400+ Families", "Accuracy Guarantee"]
+
+---
+SCORECARD PREVIEW ---
+
+Headline:
+The 2026 Homeschool Freedom Scorecard
+
+Subheadline:
+How does your state rank on regulation burden, testing mandates, and curriculum freedom?
+
+Preview Cards (5 states, color-coded):
+
+[ID] Idaho — A — 96/100
+[TX] Texas — A — 89/100
+[FL] Florida — B — 84/100
+[CA] California — D — 48/100
+[NY] New York — F — 38/100
+
+CTA:
+View Full Scorecard → [LINK to /scorecard]
+
+---
+HOW IT WORKS ---
+
+Headline:
+How Homeschool Compass Works
+
+3-Column Layout:
+
+1. Pick Your State
+   Icon: Map pin
+   Text: Select your state and see your freedom score, grade, and current requirements.
+
+2. See Your Checklist
+   Icon: Checklist
+   Text: Get a personalized compliance checklist with deadlines, filing links, and required subjects.
+
+3. Get Alerts
+   Icon: Bell
+   Text: We monitor legislation 24/7. You get an email the day a bill affects your state.
+
+---
+WHY WE BUILT THIS ---
+
+Headline:
+Why We Built Homeschool Compass
+
+Problem:
+Homeschool families discover regulation changes too late — often after filing deadlines have passed. A single missed notice can jeopardize a family's standing.
+
+Our Approach:
+We monitor legislative data from LegiScan and OpenStates, tracking bills that affect homeschoolers across all 50 states. Each bill is categorized against the HSLDA framework for consistency.
+
+Data Sources:
+• LegiScan — real-time legislative tracking
+• OpenStates — open government data
+• State DOE websites — primary source verification
+• HSLDA framework — standardized categorization
+
+[Remove: "Accuracy Guarantee", "IRS standard" comparison, "Real names, real methodology"]
+
+Add:
+Methodology: How We Score States → [LINK to /methodology]
+
+---
+PRICING SECTION ---
+
+Headline:
+Choose Your Level of Protection
+
+Subheadline:
+Start free with the scorecard. Upgrade when you need real-time alerts and state-specific compliance.
+
+---
+FREE TIER — "Scorecard Access"
+Price: Free Forever
+
+Features:
+✅ Full 50-state scorecard with grades A-F
+✅ State summary pages (freedom score + 4 sub-scores)
+✅ [3] detailed state compliance guides per month
+✅ Bill search (title + status only)
+✅ Weekly regulation digest email
+
+CTA:
+Get Started Free → [LINK to /sign-up]
+
+---
+PAID TIER — "Regulation Tracker"
+Price: $29/year
+
+Badge: "Most Popular"
+
+Features:
+✅ Everything in Scorecard, plus:
+✅ Unlimited state compliance guides
+✅ Instant bill alerts (email, webhook)
+✅ Personalized compliance checklist with deadlines
+✅ ESA program tracking and deadline reminders
+✅ Historical bill archive
+✅ 14-day free trial — no credit card required
+
+CTA:
+Start Free Trial → [LINK to /api/checkout?plan=tracker]
+
+---
+ESA TIER — "Full Protection"
+Price: $99/year
+
+Features:
+✅ Everything in Regulation Tracker, plus:
+✅ Multi-state tracking (up to 3 states)
+✅ SMS alerts for urgent bills (up to 5/month)
+✅ Webhook/API access
+✅ Priority email support (24-hour response)
+✅ Annual deadline reminder + personalized checklist
+
+CTA:
+Start Free Trial → [LINK to /api/checkout?plan=esa]
+
+---
+TRUST SIGNALS (Replace vague numbers with specific, verifiable claims)
+
+[Remove: "Used by 2,400+ homeschool families"]
+[Remove: "Trusted by umbrella schools in 12 states"]
+
+Replace with:
+
+Payment Security:
+🔒 Stripe · Apple Pay · Google Pay
+
+Data Sources:
+📊 LegiScan · OpenStates · State DOE Records
+
+Framework:
+📋 Aligned with HSLDA State Law Categories
+
+[Add when available:]
+⭐ "Homeschool Compass helped me file my PSA on time for the first time." — Sarah M., California
+⭐ "I didn't know NY required quarterly reports until I got the alert. Saved my standing." — Jennifer K., New York
+⭐ "Worth every penny. I check my state page before every filing season." — Michael T., Pennsylvania
+
+---
+FOOTER ---
+
+Homeschool Compass
+Regulatory intelligence for homeschool families.
+
+[LINK: Scorecard] [LINK: Pricing] [LINK: Methodology] [LINK: ESA Guide] [LINK: Sign In]
+
+This is not legal advice. Homeschool Compass provides regulatory tracking, not attorney representation. Consult an attorney for your specific situation.
+
+© 2026 Homeschool Compass. Built with legislative data from LegiScan and OpenStates.
+
+[LINK: Privacy Policy] [LINK: Terms of Service] [LINK: Contact]

@@ -1,9 +1,8 @@
 import type { Metadata } from "next"
-import Link from "next/link"
-import { Calendar, CheckCircle2, DollarSign, ExternalLink } from "lucide-react"
 import { SiteNav } from "@/components/site/site-nav"
 import { SiteFooter } from "@/components/site/site-footer"
 import { states } from "@/lib/data"
+import { EsaFilter } from "@/components/esa/esa-filter"
 
 export const metadata: Metadata = {
   title: "ESA Compliance Guide — Homeschool Compass",
@@ -20,12 +19,12 @@ export default function EsaPage() {
     <div className="flex min-h-screen flex-col">
       <SiteNav />
       <main className="flex-1">
-        <section className="border-b border-border bg-[var(--cream)]">
+        <section className="border-b border-border bg-cream">
           <div className="mx-auto w-full max-w-5xl px-4 py-14 md:px-6 md:py-20">
-            <p className="font-mono text-xs uppercase tracking-[0.05em] text-[var(--meta)]">
+            <p className="font-mono text-xs uppercase tracking-[0.05em] text-meta">
               ESA Compliance Guide
             </p>
-            <h1 className="mt-3 text-pretty text-4xl font-bold tracking-tight text-[var(--navy)] md:text-5xl">
+            <h1 className="mt-3 text-pretty text-4xl font-bold tracking-tight text-navy md:text-5xl">
               Education Savings Accounts, state by state
             </h1>
             <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
@@ -37,260 +36,7 @@ export default function EsaPage() {
         </section>
 
         <section className="mx-auto w-full max-w-5xl px-4 py-14 md:px-6 md:py-16">
-          <h2 className="text-2xl font-semibold tracking-tight text-[var(--navy)]">
-            Active programs
-          </h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {active.map((s) => (
-              <article
-                key={s.code}
-                className="rounded-lg border border-border bg-card p-6"
-              >
-                <div className="flex items-center justify-between gap-3">
-                  <div>
-                    <span className="font-mono text-lg font-bold text-[var(--navy)]">
-                      {s.code}
-                    </span>
-                    <span className="ml-2 text-sm text-muted-foreground">
-                      {s.name}
-                    </span>
-                  </div>
-                  <span className="rounded-full bg-[var(--safe)]/10 px-3 py-1 font-mono text-xs uppercase tracking-wide text-[var(--safe)]">
-                    Active
-                  </span>
-                </div>
-                {(() => {
-                  const programs = s.esaPrograms.length > 0
-                    ? s.esaPrograms
-                    : s.esa.active
-                      ? [{
-                          name: s.esa.name ?? "ESA Program",
-                          max_award: s.esa.maxAward ?? null,
-                          eligibility: s.esa.eligibility ?? null,
-                          deadline: s.esa.deadline ?? null,
-                          documents_required: s.esa.documentation ?? [],
-                          platform: null,
-                          portal_url: null,
-                          application_url: null,
-                          status: "active" as const,
-                          forms: [],
-                          deadlines: [],
-                        }]
-                      : []
-
-                  return programs.map((prog, i) => (
-                    <div key={i}>
-                      <div className="mt-4 flex flex-wrap items-center gap-2">
-                        <h3 className="text-lg font-semibold text-foreground">
-                          {prog.name}
-                        </h3>
-                        {prog.platform && (
-                          <span className="rounded-full bg-navy/10 px-2 py-0.5 text-[10px] font-medium text-navy">
-                            {prog.platform}
-                          </span>
-                        )}
-                      </div>
-
-                      <dl className="mt-4 space-y-3 text-sm">
-                        <div className="flex items-start gap-2">
-                          <DollarSign className="mt-0.5 h-4 w-4 shrink-0 text-[var(--safe)]" />
-                          <div>
-                            <dt className="font-medium text-foreground">
-                              Maximum award
-                            </dt>
-                            <dd className="font-mono text-muted-foreground">
-                              {prog.max_award ?? "—"}
-                            </dd>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[var(--action)]" />
-                          <div>
-                            <dt className="font-medium text-foreground">
-                              Eligibility
-                            </dt>
-                            <dd className="text-muted-foreground">
-                              {prog.eligibility ?? "—"}
-                            </dd>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <Calendar className="mt-0.5 h-4 w-4 shrink-0 text-[var(--amber)]" />
-                          <div>
-                            <dt className="font-medium text-foreground">Deadline</dt>
-                            <dd className="font-mono text-muted-foreground">
-                              {prog.deadline ?? "—"}
-                            </dd>
-                          </div>
-                        </div>
-                      </dl>
-
-                      {prog.documents_required.length > 0 && (
-                        <div className="mt-4 border-t border-border pt-4">
-                          <p className="text-xs font-medium uppercase tracking-[0.05em] text-[var(--meta)]">
-                            Required documentation
-                          </p>
-                          <ul className="mt-2 space-y-1.5">
-                            {prog.documents_required.map((doc) => (
-                              <li
-                                key={doc}
-                                className="flex gap-2 text-sm text-muted-foreground"
-                              >
-                                <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[var(--meta)]" />
-                                {doc}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      {(prog.portal_url || prog.application_url) && (
-                        <div className="mt-3 flex flex-wrap gap-3">
-                          {prog.portal_url && (
-                            <a
-                              href={prog.portal_url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 text-xs font-medium text-[var(--action)] hover:underline"
-                            >
-                              <ExternalLink className="h-3 w-3" />
-                              Visit portal
-                            </a>
-                          )}
-                          {prog.application_url && (
-                            <a
-                              href={prog.application_url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 text-xs font-medium text-[var(--action)] hover:underline"
-                            >
-                              <ExternalLink className="h-3 w-3" />
-                              Apply now
-                            </a>
-                          )}
-                        </div>
-                      )}
-
-                      {i < programs.length - 1 && (
-                        <hr className="my-4 border-border" />
-                      )}
-                    </div>
-                  ))
-                })()}
-
-                <Link
-                  href={`/state/${s.code.toLowerCase()}`}
-                  className="mt-5 inline-block text-sm font-medium text-[var(--action)] hover:underline"
-                >
-                  View {s.name} requirements
-                </Link>
-              </article>
-            ))}
-          </div>
-
-          <h2 className="mt-16 text-2xl font-semibold tracking-tight text-[var(--navy)]">
-            No active program
-          </h2>
-          <p className="mt-2 text-sm text-muted-foreground">
-            These states do not currently offer an ESA program. Track bills that
-            could create one.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-2">
-            {inactive.map((s) => (
-              <Link
-                key={s.code}
-                href={`/state/${s.code.toLowerCase()}`}
-                className="rounded-md border border-border bg-card px-3 py-1.5 font-mono text-sm text-[var(--navy)] transition-colors hover:border-slate-300 hover:bg-[var(--cream)]"
-              >
-                {s.code}
-              </Link>
-            ))}
-          </div>
-
-          {/* ── Alternative Funding (non-ESA) ── */}
-          {altFunding.length > 0 && (
-            <>
-              <h2 className="mt-16 text-2xl font-semibold tracking-tight text-[var(--navy)]">
-                Alternative Funding Programs
-              </h2>
-              <p className="mt-2 text-sm text-muted-foreground">
-                These states don't offer an ESA, but have other funding programs that can help with homeschooling costs.
-              </p>
-              <div className="mt-8 grid gap-6 md:grid-cols-2">
-                {altFunding.map((s) => (
-                  <article
-                    key={s.code}
-                    className="rounded-lg border border-violet-200 bg-violet-50 p-6"
-                  >
-                    <div className="flex items-center justify-between gap-3">
-                      <div>
-                        <span className="font-mono text-lg font-bold text-violet-900">
-                          {s.code}
-                        </span>
-                        <span className="ml-2 text-sm text-violet-700">
-                          {s.name}
-                        </span>
-                      </div>
-                      <span className="rounded-full bg-violet-600/10 px-3 py-1 font-mono text-xs uppercase tracking-wide text-violet-700">
-                        {s.nonEsaPrograms.length} program{s.nonEsaPrograms.length > 1 ? "s" : ""}
-                      </span>
-                    </div>
-                    {s.nonEsaPrograms.map((prog, i) => (
-                      <div key={i} className="mt-4 rounded-xl border border-violet-200 bg-white p-4">
-                        <div className="flex items-start justify-between gap-2">
-                          <p className="text-sm font-bold text-violet-900">{prog.name}</p>
-                          {prog.homeschool_eligible && (
-                            <span className="shrink-0 inline-flex items-center rounded-full bg-violet-100 px-2 py-0.5 text-[10px] font-medium text-violet-700">
-                              Homeschool OK
-                            </span>
-                          )}
-                        </div>
-                        <p className="mt-1 text-xs font-medium text-violet-600 uppercase tracking-wide">
-                          {prog.program_type.replace(/_/g, " ")}
-                        </p>
-                        {prog.amount && (
-                          <p className="mt-2 text-lg font-bold text-violet-800">{prog.amount}</p>
-                        )}
-                        {prog.short_description && (
-                          <p className="mt-1 text-xs text-muted-foreground">{prog.short_description}</p>
-                        )}
-                        {(prog.application_method || prog.application_window) && (
-                          <div className="mt-2 flex flex-wrap gap-2 text-[11px] text-muted-foreground">
-                            {prog.application_method && (
-                              <span className="inline-flex items-center rounded-full bg-violet-100 px-2 py-0.5 font-medium text-violet-600">
-                                {prog.application_method}
-                              </span>
-                            )}
-                            {prog.application_window && (
-                              <span className="inline-flex items-center rounded-full bg-amber-100 px-2 py-0.5 font-medium text-amber-600">
-                                {prog.application_window}
-                              </span>
-                            )}
-                          </div>
-                        )}
-                        {prog.url && (
-                          <a
-                            href={prog.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-violet-600 hover:text-violet-800"
-                          >
-                            Learn more →
-                          </a>
-                        )}
-                      </div>
-                    ))}
-                  </article>
-                ))}
-              </div>
-            </>
-          )}
-
-          <p className="mt-12 text-xs leading-relaxed text-[var(--meta)]">
-            Program details are illustrative. ESA rules change frequently —
-            verify award amounts and deadlines with your state administrator.
-            This is not legal or financial advice.
-          </p>
+          <EsaFilter active={active} inactive={inactive} altFunding={altFunding} />
         </section>
       </main>
       <SiteFooter />

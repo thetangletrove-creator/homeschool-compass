@@ -1,8 +1,9 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, ExternalLink, Plus, Share2, AlertTriangle, ShieldCheck, TrendingUp } from "lucide-react"
+import { ExternalLink, Plus, Share2, AlertTriangle, ShieldCheck, TrendingUp } from "lucide-react"
 import { SiteNav } from "@/components/site/site-nav"
 import { SiteFooter } from "@/components/site/site-footer"
+import { Breadcrumbs } from "@/components/site/breadcrumbs"
 import { StatusTimeline } from "@/components/site/status-timeline"
 import { ImpactBadge, StateBadge } from "@/components/site/badges"
 import { Button } from "@/components/ui/button"
@@ -35,13 +36,12 @@ export default async function BillPage({
     <div className="flex min-h-screen flex-col">
       <SiteNav />
       <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-10 md:px-6 md:py-16">
-        <Link
-          href={state ? `/state/${state.code.toLowerCase()}` : "/dashboard"}
-          className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back to {state ? state.name : "bill feed"}
-        </Link>
+        <Breadcrumbs
+          crumbs={[
+            ...(state ? [{ label: state.name, href: `/state/${state.code.toLowerCase()}` }] : [{ label: "Dashboard", href: "/dashboard" }]),
+            { label: bill.number },
+          ]}
+        />
 
         <div className="mb-4 flex flex-wrap items-center gap-3">
           <StateBadge code={bill.stateCode} />

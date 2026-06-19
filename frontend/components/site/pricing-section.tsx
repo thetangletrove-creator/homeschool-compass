@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { Check, Loader2, BadgeCheck, Bell, TrendingUp, MousePointerClick } from "lucide-react"
+import { Check, Loader2, BadgeCheck, Bell, TrendingUp, MousePointerClick, ShieldCheck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const FREE_FEATURES = [
@@ -59,25 +59,28 @@ export function PricingSection() {
       <div className="mx-auto max-w-[1280px] px-4 md:px-6">
         <div className="max-w-2xl">
           <h2 className="font-heading text-3xl font-semibold tracking-tight md:text-4xl">
-            Choose Your Level of Protection
+            Protect Your Family&rsquo;s ESA Funding
           </h2>
           <p className="mt-3 text-lg leading-relaxed text-cream/70">
-            Start free with the scorecard. Upgrade when you need real-time alerts,
-            bill analysis, and state-specific compliance tools.
+            Less than one dinner out per month to protect thousands in state funding.
+            Start free. Upgrade when you need alerts and compliance tools.
           </p>
         </div>
 
-        {/* Value comparison bar */}
-        <div className="mt-8 flex flex-wrap justify-center gap-4 rounded-lg border border-cream/15 bg-white/[0.03] px-6 py-4">
-          <div className="flex items-center gap-2 text-sm text-cream/70">
-            <Check className="h-4 w-4 text-safe" />
-            HSLDA member?{" "}
-            <span className="text-cream/90">$150/yr for legal defense + free public bill tracker</span>
+        {/* Value comparison bar — reframed as confidence signal */}
+        <div className="mt-8 flex flex-col gap-4 rounded-lg border border-cream/15 bg-white/[0.03] px-6 py-5 sm:flex-row sm:items-center sm:gap-8">
+          <div className="flex items-center gap-2 text-sm">
+            <ShieldCheck className="h-5 w-5 shrink-0 text-amber" />
+            <span className="text-cream/80">
+              HSLDA member? They charge <span className="font-semibold text-cream">$150/yr</span> for legal defense + a basic bill tracker
+            </span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-cream/80">
-            <BadgeCheck className="h-4 w-4 text-amber" />
-            Homeschool Compass:{" "}
-            <span className="font-medium text-cream">$29/yr for dedicated AI-powered bill tracking + compliance</span>
+          <div className="flex items-center gap-2 text-sm">
+            <BadgeCheck className="h-5 w-5 shrink-0 text-safe" />
+            <span className="text-cream/80">
+              Homeschool Compass: <span className="font-semibold text-cream">$29/yr</span> for dedicated AI-powered tracking &mdash;{" "}
+              <span className="text-safe">81% less</span>
+            </span>
           </div>
         </div>
 
@@ -115,7 +118,7 @@ export function PricingSection() {
           <div className="relative flex flex-col rounded-lg border border-safe/40 bg-white/[0.05] p-8 ring-2 ring-safe/30">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full bg-safe px-4 py-1 text-xs font-semibold text-navy shadow-sm">
               <BadgeCheck className="h-3.5 w-3.5" />
-              Most Popular
+              Biggest ROI
             </span>
 
             <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
@@ -125,8 +128,8 @@ export function PricingSection() {
               $29<span className="text-lg font-normal text-cream/60">/year</span>
             </p>
             <p className="mt-1 text-sm text-cream/60">
-              $2.42/month, billed annually —{" "}
-              <span className="text-safe">84% less than HSLDA basic</span>
+              <span className="font-medium text-cream">$2.42/month</span> &mdash; less than one coffee shop visit &mdash;{" "}
+              <span className="text-safe">to protect thousands in ESA funding</span>
             </p>
             <p className="mt-3 leading-relaxed text-cream/70">
               Turn awareness into action. Click any restriction, see every bill

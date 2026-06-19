@@ -1,0 +1,371 @@
+================================================================================
+EMAIL DRIP SEQUENCES
+Pre-written. Boss imports into Resend/Loops/Mailchimp. Agent monitors bounces.
+================================================================================
+
+SEQUENCE 1: Welcome Series (Free Signup → Paid Upgrade)
+Trigger: User signs up on website
+Platform: Resend or Loops (free tier handles 1K-3K subscribers)
+Tags needed: state, signup_date, source
+
+---
+
+EMAIL 1: Welcome (Day 0, immediate)
+Subject: Welcome to Homeschool Compass — here's your state guide
+
+Hi [First Name],
+
+Welcome to Homeschool Compass. I'm glad you're here.
+
+You signed up to track homeschool regulations in [State]. Here's what that means:
+
+→ Your state's freedom score: [X]/100 (Grade [A-F])
+→ Current requirement level: [High/Moderate/Low]
+→ Active bills affecting [State]: [X] (if any)
+
+Your free account includes:
+✅ Full 50-state scorecard
+✅ State summary pages (grade + 4 sub-scores)
+✅ [3] detailed state guides per month
+✅ Weekly regulation digest (Fridays)
+
+VIEW YOUR STATE GUIDE: [LINK to /state/XX]
+
+Questions? Reply to this email — I read every one.
+
+— [Your name]
+Homeschool Compass
+
+P.S. If [State] isn't your homeschool state, update it here: [LINK to preferences]
+
+---
+
+EMAIL 2: Your State's Hidden Requirements (Day 3)
+Subject: The [State] requirement most families miss
+
+Hi [First Name],
+
+Most homeschool families in [State] know about [obvious requirement — e.g., "filing the PSA"].
+
+But here's what catches people off guard:
+
+[Specific lesser-known requirement — e.g., for CA: "You must file in English. Sounds obvious, but bilingual families sometimes file in Spanish and get rejected."]
+
+[For NY: "Your quarterly reports must include 'a brief narrative' of each subject. 'We did math' isn't enough — you need 2-3 sentences per subject per quarter."]
+
+[For PA: "Your portfolio evaluation must be done by a PA-certified teacher OR a non-public school principal. Out-of-state teachers don't count."]
+
+[For TX: "No filing required, but if you ever get questioned, you need proof of a 'bona fide' curriculum. A simple scope-and-sequence document covers you."]
+
+This is exactly why we built Homeschool Compass — to catch the details that slip through the cracks.
+
+VIEW YOUR FULL [STATE] CHECKLIST: [LINK to /state/XX]
+
+— [Your name]
+
+P.S. Upgrade to instant alerts and get notified the day a bill changes in [State]: [LINK to pricing]
+
+---
+
+EMAIL 3: What's Moving in [State] (Day 7, only if bills exist)
+Subject: [X] bills affecting [State] homeschoolers this week
+
+Hi [First Name],
+
+Here's what changed in [State] this week:
+
+[BILL 1]
+Title: [Title]
+Status: [Introduced/Amended/Signed/Vetoed]
+What it means: [1-sentence plain English]
+Action needed: [None/Watch/Contact legislator/Prepare for change]
+Track it: [LINK to /bill/XX]
+
+[BILL 2 — if applicable]
+...
+
+[BILL 3 — if applicable]
+...
+
+No bills this week? Great — nothing to worry about.
+
+Free users get this weekly. Paid subscribers get instant alerts the day a bill moves.
+
+UPGRADE FOR INSTANT ALERTS: [LINK to pricing]
+
+— [Your name]
+
+---
+
+EMAIL 4: Deadline Reminder (Day 14, if applicable)
+Subject: [State] homeschool deadline coming up — [Date]
+
+Hi [First Name],
+
+Heads up: [State] has a homeschool filing deadline on [Date].
+
+What you need to do:
+[1. File X by Date]
+[2. Submit Y to Z office]
+[3. Keep records of A, B, C]
+
+Full checklist with links: [LINK to /state/XX]
+
+If you've already filed, ignore this — you're ahead of the game.
+
+If you haven't, here's your personalized checklist (paid feature):
+[LINK to upgrade — pre-filled with state]
+
+— [Your name]
+
+P.S. This is your [3rd/4th/5th] state guide this month. Free accounts include 3/month. Upgrade for unlimited access.
+
+---
+
+EMAIL 5: Soft Pitch (Day 21)
+Subject: 3 reasons homeschool families upgrade to paid
+
+Hi [First Name],
+
+You've been using Homeschool Compass for 3 weeks. Here's what paid subscribers get that free users don't:
+
+1. INSTANT ALERTS
+Free: Weekly digest on Fridays.
+Paid: Email the day a bill is introduced, amended, or signed. No surprises.
+
+2. UNLIMITED STATE GUIDES
+Free: 3 detailed state guides per month.
+Paid: Unlimited. Research your state, a potential move state, your parents' state — whatever you need.
+
+3. PERSONALIZED COMPLIANCE CHECKLIST
+Free: General requirements for your state.
+Paid: A printable checklist with YOUR deadlines, YOUR filing links, YOUR required subjects. Check them off as you go.
+
+$29/year. Less than a textbook.
+
+UPGRADE NOW: [LINK to checkout with state pre-filled]
+
+— [Your name]
+
+P.S. 14-day free trial. No credit card required. Cancel anytime.
+
+---
+
+EMAIL 6: Last Chance / Re-engagement (Day 30, if not upgraded)
+Subject: Still tracking [State] homeschool laws?
+
+Hi [First Name],
+
+Just checking in — are you still homeschooling in [State]? Laws change, and it's easy to miss something important.
+
+Here's what's free, forever:
+✅ 50-state scorecard
+✅ State summaries
+✅ 3 detailed guides/month
+✅ Weekly digest
+
+And here's what you unlock for $29/year:
+✅ Instant bill alerts
+✅ Unlimited state guides
+✅ Personalized compliance checklist
+✅ ESA tracking (if your state has it)
+
+Either way, I'm glad you're staying informed.
+
+VIEW YOUR STATE: [LINK to /state/XX]
+UPGRADE: [LINK to pricing]
+
+— [Your name]
+
+---
+
+SEQUENCE 2: Re-engagement (Low Open Rate < 20%)
+Trigger: User hasn't opened last 3 emails
+Platform: Same as above
+
+EMAIL 1: "Did we lose you?" (Day 1 of trigger)
+Subject: Did we lose you?
+
+Hi [First Name],
+
+I noticed you haven't opened our emails lately. No worries — inboxes are overwhelming.
+
+If homeschool regulation tracking isn't a priority right now, I get it. But if you still want to stay on top of [State] requirements, here's a quick link to update your preferences:
+
+[UPDATE PREFERENCES LINK]
+
+Or, if you'd rather unsubscribe, that's totally fine too:
+[UNSUBSCRIBE LINK]
+
+Either way, thanks for giving us a try.
+
+— [Your name]
+
+---
+
+EMAIL 2: "One thing you might have missed" (Day 7, if still no opens)
+Subject: The [State] requirement most families miss
+
+Hi [First Name],
+
+I sent this a few weeks ago, but in case you missed it — here's the [State] requirement that catches people off guard:
+
+[Same content as Email 2 in Sequence 1]
+
+If this is useful, great. If not, no hard feelings.
+
+[UPDATE PREFERENCES] | [UNSUBSCRIBE]
+
+— [Your name]
+
+---
+
+EMAIL 3: Final check-in (Day 14, if still no opens)
+Subject: Last check-in from Homeschool Compass
+
+Hi [First Name],
+
+This is my last email to you unless you tell me otherwise.
+
+If you want to keep getting [State] homeschool updates, click here:
+[STAY SUBSCRIBED LINK]
+
+If not, you'll be automatically removed from our list in 7 days.
+
+Either way, best of luck with your homeschool journey.
+
+— [Your name]
+
+---
+
+SEQUENCE 3: Paid User Onboarding
+Trigger: User completes Stripe checkout
+
+EMAIL 1: Welcome, Paid Subscriber (Day 0, immediate)
+Subject: You're all set — here's what happens next
+
+Hi [First Name],
+
+Welcome to Homeschool Compass Premium. Your subscription is active.
+
+Here's what you now have access to:
+
+✅ Instant bill alerts for [State]
+✅ Unlimited state guides
+✅ Personalized compliance checklist
+✅ Historical bill archive
+✅ ESA program tracking (if applicable)
+
+SET UP YOUR ALERTS: [LINK to dashboard/alerts]
+
+Your next steps:
+1. Set your alert preferences (states, impact types, channels)
+2. Download your [State] compliance checklist
+3. Bookmark your dashboard
+
+Questions? Reply to this email.
+
+— [Your name]
+
+P.S. Your subscription renews annually on [Date]. Cancel anytime in your account settings.
+
+---
+
+EMAIL 2: First Alert Test (Day 3, if no alerts triggered yet)
+Subject: Your alert system is working — here's a test
+
+Hi [First Name],
+
+Your bill alert system is active and monitoring [State].
+
+You haven't received any alerts yet because no homeschool-related bills have moved in [State] recently. That's good news.
+
+When something does move, you'll get an email that looks like this:
+
+[Mock alert card: Bill title, status change, 1-sentence summary, action needed, link to bill page]
+
+If you want to test SMS alerts (if included in your plan), reply TEST to this email.
+
+— [Your name]
+
+---
+
+EMAIL 3: Compliance Checklist Reminder (Day 7)
+Subject: Have you downloaded your [State] checklist yet?
+
+Hi [First Name],
+
+Your personalized [State] compliance checklist is ready.
+
+It includes:
+→ Filing deadlines with calendar links
+→ Required subjects list
+→ Record-keeping template
+→ Testing requirements (if applicable)
+→ Teacher qualification summary
+→ ESA info (if applicable)
+
+DOWNLOAD CHECKLIST: [LINK]
+
+Print it. Check it off. Stay compliant.
+
+— [Your name]
+
+---
+
+EMAIL 4: Annual Renewal Reminder (Day 335, 30 days before renewal)
+Subject: Your Homeschool Compass subscription renews in 30 days
+
+Hi [First Name],
+
+Your annual subscription renews on [Date] for $29.
+
+This year, we tracked [X] bills in [State], sent you [Y] alerts, and helped [Z] families stay compliant.
+
+Here's what we have planned for next year:
+→ Expanded to 50 states (currently 34)
+→ SMS alerts for urgent bills
+→ Multi-state tracking for families on the move
+→ Annual compliance review reminders
+
+No action needed — your subscription will auto-renew. If you want to cancel or change plans, do it here:
+[LINK to Customer Portal]
+
+Questions? Reply to this email.
+
+— [Your name]
+
+---
+
+EMAIL 5: Cancellation Win-Back (if user cancels)
+Subject: Sorry to see you go — what could we have done better?
+
+Hi [First Name],
+
+Your Homeschool Compass subscription has been cancelled. You won't be charged again.
+
+Your free account stays active, so you can still:
+✅ Browse the 50-state scorecard
+✅ View 3 state guides per month
+✅ Get the weekly digest
+
+If you have 30 seconds, I'd love to know what we could have done better:
+[1-question survey link]
+
+And if you ever want to come back, your data is saved. Just reactivate here:
+[LINK to reactivate]
+
+Best of luck with your homeschool journey.
+
+— [Your name]
+
+---
+
+TECHNICAL SETUP NOTES FOR BOSS:
+--------------------------------------------------------------------------------
+1. Resend (resend.com): Free to 3,000 contacts/month. Good for MVP.
+2. Loops (loops.so): Free to 1,000 contacts. Better automation UI.
+3. Mailchimp: Free to 500 contacts. More mature but overkill for now.
+4. Tag every subscriber with: signup_date, state, source (landing page, scorecard, etc.), plan (free/paid)
+5. Use dynamic fields: [State], [First Name], [X]/100 score, [Grade]
+6. Set up webhook from Stripe → email platform to trigger paid sequences

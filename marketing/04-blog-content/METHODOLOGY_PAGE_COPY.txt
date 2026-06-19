@@ -1,0 +1,209 @@
+================================================================================
+METHODOLOGY PAGE — /methodology
+Paste-ready content. Builds trust. Answers "how do you score states?"
+================================================================================
+
+---
+PAGE TITLE ---
+How We Score Homeschool Freedom — Our Methodology
+
+---
+INTRO ---
+
+Our 50-state scorecard measures homeschool regulation burden on a 0–100 scale. Higher scores mean fewer restrictions. Lower scores mean more requirements.
+
+This methodology is aligned with the HSLDA framework for categorizing state homeschool laws. We score every state across four categories, then weight and combine them into a composite score.
+
+Last reviewed: June 2026
+Next review: January 2027 (or when a state changes its law)
+
+---
+THE FOUR CATEGORIES ---
+
+Category 1: Reporting Burden (Weight: 30%)
+What we measure: Notice, record-keeping, and filing requirements.
+
+Score 25/25: No notice required. No filing. No records required.
+Examples: Idaho, Alaska, Texas
+
+Score 20/25: Minimal notice required (e.g., letter of intent, one-time filing)
+Examples: Missouri, Illinois
+
+Score 15/25: Annual notice required + basic record-keeping
+Examples: Florida, Virginia
+
+Score 10/25: Annual notice + detailed records + periodic reporting
+Examples: Ohio, Washington
+
+Score 5/25: Extensive reporting (quarterly reports, detailed narratives)
+Examples: New York, Pennsylvania
+
+Score 0/25: Supervision by certified teacher or school district
+Examples: [None currently, but some states approach this]
+
+Data sources: State DOE websites, state statutes, HSLDA state law summaries
+
+---
+
+Category 2: Testing Mandate (Weight: 25%)
+What we measure: Standardized testing and assessment obligations.
+
+Score 25/25: No testing required. No assessments.
+Examples: Idaho, Texas, Alaska
+
+Score 20/25: Optional testing or portfolio review
+Examples: California, Colorado
+
+Score 15/25: Testing required in some grades (e.g., 3, 5, 8, 10)
+Examples: Pennsylvania, Ohio
+
+Score 10/25: Testing required in most grades OR annual evaluation by certified teacher
+Examples: New York, Florida
+
+Score 5/25: Testing required every year + must use state-approved test
+Examples: [None currently]
+
+Score 0/25: Testing required every year + results submitted to state
+Examples: [None currently]
+
+Data sources: State DOE testing requirements, state statute text
+
+---
+
+Category 3: Curriculum Freedom (Weight: 25%)
+What we measure: Latitude to choose subjects and materials.
+
+Score 25/25: No required subjects. No curriculum approval. Complete freedom.
+Examples: Idaho, Alaska
+
+Score 20/25: Broad subject list required but no approval needed
+Examples: Texas, California
+
+Score 15/25: Specific subject list required + some format restrictions
+Examples: Florida, Virginia
+
+Score 10/25: Detailed subject list + required hours + curriculum must be "equivalent"
+Examples: Pennsylvania, New York
+
+Score 5/25: Curriculum must be pre-approved by school district or state board
+Examples: [None currently, but some states have review processes]
+
+Score 0/25: Must use state-approved curriculum only
+Examples: [None currently]
+
+Data sources: State DOE curriculum guidelines, state statutes, HSLDA summaries
+
+---
+
+Category 4: Teacher Qualification (Weight: 20%)
+What we measure: Parent credential or education requirements.
+
+Score 25/25: No qualifications required. No degree, no certification, no high school diploma.
+Examples: Idaho, Texas, Alaska
+
+Score 20/25: High school diploma or GED required
+Examples: California, Missouri
+
+Score 15/25: Some college credit or specific coursework required
+Examples: [None currently, but some states have debated this]
+
+Score 10/25: Bachelor's degree required OR annual evaluation by certified teacher
+Examples: [None currently for parents, but some states require evaluators to be certified]
+
+Score 5/25: Teaching certificate required OR supervision by certified teacher
+Examples: [None currently for parents]
+
+Score 0/25: State-certified teacher required for all instruction
+Examples: [None currently]
+
+Data sources: State DOE teacher qualification rules, state statutes
+
+---
+
+HOW WE CALCULATE THE COMPOSITE SCORE ---
+
+Step 1: Score each category 0–25 using the rubric above
+Step 2: Weight and sum:
+  Reporting (30%) + Testing (25%) + Curriculum (25%) + Teacher (20%) = 0–100
+Step 3: Round to nearest whole number
+Step 4: Assign letter grade:
+  A: 90–100
+  B: 80–89
+  C: 70–79
+  D: 60–69
+  F: 0–59
+
+Example: California
+  Reporting: 10/25 × 30% = 12
+  Testing: 15/25 × 25% = 15
+  Curriculum: 10/25 × 25% = 10
+  Teacher: 5/25 × 20% = 4
+  Total: 12 + 15 + 10 + 4 = 41 → rounded to 42 (as shown on scorecard)
+  Grade: D
+
+Example: Idaho
+  Reporting: 25/25 × 30% = 30
+  Testing: 25/25 × 25% = 25
+  Curriculum: 25/25 × 25% = 25
+  Teacher: 25/25 × 20% = 20
+  Total: 30 + 25 + 25 + 20 = 100
+  Grade: A
+
+---
+
+DATA SOURCES & VERIFICATION ---
+
+Primary sources:
+• State Department of Education websites (linked per state)
+• State statute text (linked where available)
+• HSLDA State Law summaries (hslda.org)
+
+Secondary sources:
+• OpenStates legislative data API
+• LegiScan bill tracking API
+• Johns Hopkins Homeschool Hub research
+• State homeschool organization websites
+
+Update frequency:
+• Annual review: Every January, we review all 50 states for law changes
+• Triggered review: When our pipeline detects a signed bill that changes homeschool law, we update that state within 48 hours
+• Emergency review: If a bill is signed with immediate effect, we update within 24 hours
+
+---
+
+LIMITATIONS & CAVEATS ---
+
+1. This scorecard measures regulation burden, not homeschool quality or outcomes.
+2. A low score (D/F) does not mean homeschooling is "bad" in that state — it means there are more requirements to follow.
+3. Some states have local district variations that our state-level score cannot capture.
+4. ESA program rules are tracked separately and do not affect the freedom score.
+5. This is not legal advice. Always consult your state DOE and an attorney for your specific situation.
+
+---
+
+HOW TO REPORT AN ERROR ---
+
+If you believe a state's score is incorrect, email us at [YOUR EMAIL] with:
+• The state name
+• The specific category you believe is wrong
+• The statute or DOE page that supports your correction
+• Your source (statute number, DOE URL, etc.)
+
+We review all corrections within 5 business days and update the scorecard if verified.
+
+---
+
+CTA AT BOTTOM ---
+
+See the full 50-state scorecard → [LINK to /scorecard]
+Get alerts when your state's score changes → [LINK to /sign-up]
+
+---
+
+TECHNICAL NOTES FOR BOSS:
+--------------------------------------------------------------------------------
+1. This page should be linked from every state page ("How we score states →")
+2. Add to footer navigation
+3. Link from landing page "Why We Built This" section
+4. Consider adding an interactive calculator: user adjusts category scores, sees composite change
+5. Update the "Last reviewed" date automatically from the pipeline's last sync timestamp

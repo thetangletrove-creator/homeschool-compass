@@ -1,9 +1,10 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, ArrowUpRight, ArrowDownRight } from "lucide-react"
+import { ArrowUpRight, ArrowDownRight } from "lucide-react"
 import { SiteNav } from "@/components/site/site-nav"
 import { SiteFooter } from "@/components/site/site-footer"
+import { Breadcrumbs } from "@/components/site/breadcrumbs"
 import { StateTabs } from "@/components/state/state-tabs"
 import { GradeBadge } from "@/components/site/badges"
 import { getState, billsForState, states } from "@/lib/data"
@@ -60,13 +61,12 @@ export default async function StatePage({
       <main className="flex-1">
         <section className="border-b border-border bg-cream">
           <div className="mx-auto max-w-[1280px] px-4 py-10 md:px-6">
-            <Link
-              href="/scorecard"
-              className="inline-flex items-center gap-1.5 text-sm text-action hover:underline"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Back to Scorecard
-            </Link>
+            <Breadcrumbs
+              crumbs={[
+                { label: "Scorecard", href: "/scorecard" },
+                { label: state.code },
+              ]}
+            />
 
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4">
               <div className="flex items-center gap-4">

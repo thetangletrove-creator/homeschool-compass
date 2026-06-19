@@ -1,0 +1,121 @@
+================================================================================
+HOMESCHOOL COMPASS — AGENT MASTER PLAYBOOK
+Print this. Hole-punch it. Follow the loops.
+================================================================================
+
+Prepared: 2026-06-16
+Your role: Growth & Community Agent (Junior VA level)
+Your boss: Product owner (15-min weekly check-ins only)
+Product: homeschool-regulation-tracker.vercel.app
+
+================================================================================
+DAILY LOOP (Do these in order, every workday)
+================================================================================
+
+MORNING (30 min):
+□ Log into Facebook Business Manager → screenshot dashboard → save to /reports/YYYY-MM-DD/
+□ Check ad account status: Green dot = good. Yellow = warming. Red = STOP, email boss.
+□ Answer 5 questions in Facebook groups (use TEMPLATES.txt)
+  → Search: "requirements", "filing", "deadline", "portfolio", "PSA", "homeschool law"
+  → Screenshot each answer → save to /engagement/YYYY-MM-DD/
+
+AFTERNOON (30 min):
+□ Create 1 Pinterest pin (use PINTEREST_SPECS.txt)
+□ Schedule via Tailwind
+□ Check email platform: any bounces? Any replies? Forward to boss if unsure.
+
+WEEKLY (Friday, 1 hour):
+□ Compile Friday Report (use FRIDAY_REPORT_TEMPLATE.txt)
+□ Export Facebook leads → add to email list → tag by state
+□ Review ad performance: pause anything under 1% CTR for 3+ days
+□ Check website analytics: top 3 pages, traffic trend
+□ Send Friday Report to boss
+
+================================================================================
+WEEK-BY-WEEK ROADMAP
+================================================================================
+
+WEEK 1-2: FOUNDATION
+→ Join 20 Facebook groups (search terms in TEMPLATES.txt)
+→ Answer 5 questions/day = 70 answers total
+→ NO product mentions. Pure value only.
+→ Set up Canva, Tailwind, Buffer
+→ Create 5 Pinterest boards
+
+WEEK 3-4: SOFT LAUNCH
+→ Continue 5 answers/day, now 1 in 5 can soft-mention product
+→ Create 10 Pinterest pins
+→ Start collecting email addresses from group membership questions
+→ Ad account warming: Engagement campaigns $10-20/day
+
+WEEK 5-6: CONTENT ENGINE
+→ Reduce to 3 answers/day (maintenance)
+→ Write 1 blog post/week (use BLOG_OUTLINES.txt)
+→ Post 1 State Spotlight/week
+→ Ad account: Traffic campaigns $20-30/day
+
+WEEK 7-8: SCALE
+→ Same as Week 5-6
+→ Ad account: Lead Gen campaigns $30-50/day
+→ Start influencer outreach (use INFLUENCER_TEMPLATES.txt)
+
+WEEK 9-12: OPTIMIZE
+→ A/B test one thing/week (use AB_TEST_PLAN.txt)
+→ Collect 1 testimonial/week (use TESTIMONIAL_TEMPLATES.txt)
+→ Scale winning ads, kill losers
+→ Review and refine all templates
+
+================================================================================
+TOOL ACCESS (You need logins for these)
+================================================================================
+
+□ Facebook Business Manager (ads + page)
+□ Canva Pro (graphics)
+□ Tailwind (Pinterest scheduling)
+□ Resend or Loops (email platform)
+□ Buffer or Repurpose.io (social cross-posting)
+□ Notion or Google Docs (content calendar, reports)
+□ Plausible or Vercel Analytics (website traffic)
+□ ChatGPT/Claude (blog drafting)
+
+================================================================================
+DECISION TREE — When to STOP and email boss
+================================================================================
+
+[Ad account restricted] → STOP all campaigns → Screenshot error → Email boss
+[Post removed by group admin] → STOP posting in that group → Note in log → Find new group
+[Someone asks for legal advice] → Reply "I'm not an attorney, but here's what the statute says..." → Include disclaimer
+[Website down or 500 errors] → Check Vercel dashboard → Email boss if down > 10 min
+[Negative review/comment] → Reply politely → Screenshot → Email boss
+[Email open rate < 20% for 2 weeks] → Try re-engagement sequence (in EMAIL_DRIP.txt) → Note in report
+[Ad CTR < 1% for 3 days] → Pause creative → Try new creative next week
+[Someone asks about pricing in a group] → Reply with link to pricing page → Do NOT negotiate in comments
+
+================================================================================
+FILE INDEX (All files in this package)
+================================================================================
+
+01_MASTER_PLAYBOOK.txt          ← You are here. Start here.
+02_FACEBOOK_TEMPLATES.txt       ← Copy-paste answers for FB groups
+03_EMAIL_DRIP_SEQUENCES.txt     ← Pre-written welcome series + re-engagement
+04_BLOG_POST_OUTLINES.txt       ← Outlines for all 50 state posts
+05_PINTEREST_SPECS.txt          ← Pin sizes, descriptions, hashtags, Canva specs
+06_LANDING_PAGE_COPY.txt        ← Rewritten homepage copy for boss to implement
+07_PAYWALL_MODAL_COPY.txt       ← Upgrade prompt text for boss to implement
+08_METHODOLOGY_PAGE.txt         ← /methodology page content for boss to implement
+09_AD_CREATIVE_TEMPLATES.txt    ← Facebook ad headlines, body copy, CTAs
+10_FRIDAY_REPORT_TEMPLATE.txt   ← Weekly report format
+11_TROUBLESHOOTING_GUIDE.txt    ← Decision trees for common problems
+12_INFLUENCER_TEMPLATES.txt     ← Outreach emails to homeschool bloggers
+13_TESTIMONIAL_TEMPLATES.txt    ← How to ask users for reviews
+14_AB_TEST_PLAN.txt             ← What to test, how to track, when to decide
+
+================================================================================
+BOSS CONTACT
+================================================================================
+
+Email: [YOUR EMAIL HERE]
+Slack/Discord: [YOUR HANDLE HERE]
+Emergency only: [YOUR PHONE HERE]
+
+Weekly check-in: Friday after you send the report. 15 minutes max.

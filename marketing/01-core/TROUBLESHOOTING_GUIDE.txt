@@ -1,0 +1,356 @@
+================================================================================
+TROUBLESHOOTING GUIDE — Decision Trees for Common Problems
+Agent: When something breaks, find it here. If not here, email boss.
+================================================================================
+
+---
+PROBLEM 1: Facebook Ad Account Restricted ---
+
+Symptoms:
+□ Ad account shows "Restricted" in Business Manager
+□ Ads not delivering
+□ Error message: "Your account has been restricted from advertising"
+
+Immediate Actions:
+1. STOP all campaigns immediately
+2. Screenshot the error message
+3. Check Facebook Account Quality page: business.facebook.com/accountquality
+4. Note the restriction reason (policy violation, payment issue, unusual activity)
+
+If "Policy Violation":
+→ Review rejected ads. Identify which policy was violated.
+→ Common for homeschool ads: "Personal Attributes" (don't say "Are you a homeschool parent?" — say "For homeschool families")
+→ Edit the ad to comply. Submit for review.
+→ If rejected again, STOP and email boss.
+
+If "Payment Issue":
+→ Check payment method in Business Manager
+→ Verify card has funds, isn't expired
+→ Try different payment method
+→ If still failing, email boss
+
+If "Unusual Activity":
+→ This is often triggered by rapid budget increases
+→ Reduce daily budget to $10/day
+→ Wait 24-48 hours
+→ If not resolved, email boss
+
+If "Identity Verification":
+→ Facebook needs to verify your identity
+→ Upload ID documents as requested
+→ Wait 24-72 hours for review
+→ Email boss with status update
+
+NEVER:
+× Create a new ad account to bypass restriction
+× Use someone else's account
+× Appeal without understanding the violation
+
+---
+
+PROBLEM 2: Post Removed by Facebook Group Admin ---
+
+Symptoms:
+□ Your answer/comment is gone
+□ Admin messaged you
+□ You can't post in that group anymore
+
+Immediate Actions:
+1. STOP posting in that group immediately
+2. Screenshot the group rules (if you haven't already)
+3. Check if your post violated rules (self-promotion, affiliate links, etc.)
+4. Note the group name in /group-log.txt with status: "REMOVED — [Date] — [Reason]"
+5. Find a replacement group to join
+
+If you were banned:
+→ Do NOT try to rejoin with a different account
+→ Do NOT argue with the admin publicly
+→ Move on. There are hundreds of groups.
+
+Prevention:
+→ Always read group rules before posting
+→ Never post links unless explicitly allowed
+→ Use soft mentions, not hard sells
+→ Be helpful first, promotional second
+
+---
+
+PROBLEM 3: Website Down or 500 Errors ---
+
+Symptoms:
+□ Can't load website
+□ Error page showing
+□ Users reporting issues
+
+Immediate Actions:
+1. Check Vercel dashboard: vercel.com/dashboard
+   → Look for deployment errors
+   → Check if latest deployment failed
+2. Check if it's just you:
+   → Open site in incognito window
+   → Try from mobile data (not WiFi)
+   → Use downforeveryoneorjustme.com
+3. If down for everyone:
+   → Email boss IMMEDIATELY
+   → Screenshot error
+   → Note time of failure
+4. If down for just you:
+   → Clear browser cache
+   → Try different browser
+   → Check your internet connection
+
+If site is slow (not down):
+→ Check Vercel analytics for response times
+→ Note in Friday report
+→ Usually resolves itself (Vercel edge caching)
+
+---
+
+PROBLEM 4: Email Bounce Rate > 5% ---
+
+Symptoms:
+□ High bounce rate in email platform
+□ Emails not delivering
+□ Subscribers not receiving digest
+
+Immediate Actions:
+1. Check bounce reasons in email platform
+   → Hard bounces (invalid email): Remove immediately
+   → Soft bounces (full inbox, server down): Retry 3x, then remove
+2. Check if domain is blacklisted:
+   → mxtoolbox.com/blacklists.aspx
+   → Enter your sending domain
+3. If blacklisted:
+   → Email boss immediately
+   → Stop sending until resolved
+4. If not blacklisted:
+   → Clean list: remove hard bounces
+   → Add double opt-in for new subscribers
+   → Note in Friday report
+
+Prevention:
+→ Use verified domain (SPF, DKIM, DMARC records)
+→ Don't buy email lists
+→ Remove inactive subscribers after 6 months
+→ Keep content relevant (high engagement = low bounces)
+
+---
+
+PROBLEM 5: Ad CTR < 1% for 3+ Days ---
+
+Symptoms:
+□ Low click-through rate
+□ High cost per click
+□ Ads delivering but no engagement
+
+Immediate Actions:
+1. Pause the underperforming creative
+2. Check if audience is too broad or too narrow
+3. Try new headline (see AD_CREATIVE_TEMPLATES.txt)
+4. Try new image (see AD_CREATIVE_TEMPLATES.txt)
+5. If still < 1% after new creative, pause the campaign
+6. Note in Friday report
+
+Common Causes:
+→ Ad fatigue (same creative shown too long) — refresh every 2 weeks
+→ Wrong audience — test new interests
+→ Weak headline — test problem-focused vs. score-focused
+→ Boring image — test state grade card vs. checklist preview
+
+---
+
+PROBLEM 6: No Paid Conversions After 4 Weeks ---
+
+Symptoms:
+□ Free signups growing
+□ Email list growing
+□ But zero paid conversions
+
+Immediate Actions:
+1. Check if paywall is working:
+   → Visit /state/CA as a free user, click 4 times
+   → Does paywall modal appear?
+   → Does "Start Trial" button work?
+   → Does checkout flow complete?
+2. Check if Stripe is working:
+   → Test purchase with test card
+   → Check webhook logs in Stripe dashboard
+   → Verify subscription created in database
+3. Check email sequence:
+   → Are trial reminder emails sending?
+   → Are they landing in spam?
+   → Is the CTA link working?
+4. If all technical checks pass:
+   → This is normal for Week 4
+   → Continue nurturing
+   → Note in Friday report
+   → Don't panic
+
+If still zero at Week 8:
+→ Email boss for strategic review
+→ Consider: pricing too high? Value prop unclear? Audience wrong?
+
+---
+
+PROBLEM 7: Negative Review or Comment ---
+
+Symptoms:
+□ Someone left a bad review on Facebook/Google
+□ Negative comment on ad or post
+□ Complaint in email
+
+Immediate Actions:
+1. Reply publicly (if on social):
+   → "Thanks for the feedback. We'd love to make this right. Can you email [YOUR EMAIL] so we can help?"
+   → Never argue, never delete (unless spam/abuse)
+2. Reply privately (if via email):
+   → Acknowledge the issue
+   → Offer solution or refund
+   → Ask what would make it right
+3. Screenshot the interaction
+4. Email boss with details
+5. If it's a valid complaint, fix the issue
+
+NEVER:
+× Argue with the customer publicly
+× Delete negative reviews (unless abusive)
+× Ignore complaints
+× Offer refunds without boss approval (if > $29)
+
+---
+
+PROBLEM 8: Someone Asks for Legal Advice ---
+
+Symptoms:
+□ "Can I sue my school district?"
+□ "Is this legal?"
+□ "What are my rights?"
+
+Immediate Actions:
+1. Reply: "I'm not an attorney, but here's what the statute says..."
+2. Cite the specific statute or DOE page
+3. Add: "For legal advice specific to your situation, please consult an attorney."
+4. Never give opinions on legality
+5. Never recommend specific attorneys
+6. If complex, suggest they contact HSLDA (hslda.org)
+
+Template:
+"Hi [Name], I'm not an attorney, so I can't give legal advice. But here's what [State] statute [Number] says about [Topic]: [Quote or summary]. For your specific situation, I'd recommend consulting an attorney or contacting HSLDA at hslda.org. They specialize in homeschool legal issues."
+
+---
+
+PROBLEM 9: Influencer Doesn't Respond ---
+
+Symptoms:
+□ Sent outreach email, no reply after 1 week
+□ Sent follow-up, still no reply
+
+Immediate Actions:
+1. Wait 1 week, then send follow-up (see INFLUENCER_TEMPLATES.txt)
+2. If no reply after 2 weeks, move on
+3. Don't send more than 2 follow-ups
+4. Note in /influencer-log.txt: "No response — [Date]"
+5. Find 2 new influencers to replace the non-responder
+
+Common Reasons:
+→ Email went to spam
+→ They're not interested
+→ They're too busy
+→ Your offer wasn't compelling enough
+
+Fix for next time:
+→ Personalize the email more
+→ Offer higher commission or exclusive discount code
+→ Mention specific content of theirs you enjoyed
+→ Offer to write the guest post for them
+
+---
+
+PROBLEM 10: Pinterest Pin Gets Zero Impressions ---
+
+Symptoms:
+□ Pin published 7 days ago
+□ 0 impressions, 0 clicks
+
+Immediate Actions:
+1. Check if Rich Pins are enabled
+2. Check if pin is in a relevant board
+3. Check if description has keywords
+4. Check if image is the right size (1000x1500)
+5. Try repinning to a different board
+6. Try a different image for the same content
+7. If still 0 after 14 days, delete and recreate
+
+Common Causes:
+→ Image too small or wrong ratio
+→ Description missing keywords
+→ Board has no followers
+→ Account too new (Pinterest throttles new accounts for 30 days)
+→ Content violates Pinterest policies (unlikely for homeschool)
+
+---
+
+PROBLEM 11: Can't Log Into Tool ---
+
+Symptoms:
+□ Forgot password
+□ Account locked
+□ 2FA not working
+
+Immediate Actions:
+1. Try password reset
+2. Check if account is under different email
+3. If still locked, email boss with:
+   → Tool name
+   → Email address used
+   → Screenshot of error
+4. Don't create duplicate accounts
+
+---
+
+PROBLEM 12: Agent Runs Out of Groups to Join ---
+
+Symptoms:
+□ Joined 50+ groups
+□ Running out of new groups in search
+□ Same questions appearing repeatedly
+
+Immediate Actions:
+1. Start creating your own content in your own group
+2. Shift focus to Pinterest and blog (evergreen content)
+3. Reduce FB group answers to 3/day (maintenance)
+4. Increase influencer outreach
+5. Start guest posting on homeschool blogs
+6. Consider starting a podcast or YouTube channel (long-term)
+
+---
+
+ESCALATION MATRIX (When to email boss immediately)
+--------------------------------------------------------------------------------
+
+EMAIL IMMEDIATELY:
+→ Ad account restricted or banned
+→ Website down for > 10 minutes
+→ Payment system broken (Stripe checkout fails)
+→ Domain blacklisted
+→ Legal threat or cease-and-desist
+→ Data breach or security incident
+→ Major bug affecting all users
+→ Negative press or viral complaint
+
+EMAIL BY END OF DAY:
+→ Ad CTR < 0.5% for 5 days
+→ Email bounce rate > 10%
+→ No conversions after 8 weeks
+→ Influencer partnership opportunity
+→ Feature request that requires development
+→ User asking for refund > $50
+
+NOTE IN FRIDAY REPORT:
+→ Minor ad performance issues
+→ Pinterest pin underperforming
+→ Blog post not ranking
+→ Group admin removed post
+→ Minor user complaint
+→ Tool login issues
+→ Everything else

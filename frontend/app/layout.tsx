@@ -10,10 +10,9 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Homeschool Compass — Homeschool Regulation Tracker',
+  title: 'Homeschool Compass — Know Before the Laws Change',
   description:
-    'Track homeschool legislation across all 50 states. Get instant alerts when bills affecting your family are introduced, amended, or signed into law.',
-  generator: 'v0.app',
+    'Track homeschool legislation across all 50 states. Get instant alerts when bills affecting your family are introduced, amended, or signed into law. Protect your ESA funding.',
   icons: {
     icon: [
       {
@@ -34,8 +33,10 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light',
-  themeColor: '#FDFCF8',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#FDFCF8' },
+    { media: '(prefers-color-scheme: dark)', color: '#18181b' },
+  ],
 }
 
 export default function RootLayout({
@@ -47,7 +48,26 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${jetbrainsMono.variable} bg-background`}
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+                  if (mq.matches) document.documentElement.classList.add('dark');
+                  mq.addEventListener('change', function(e) {
+                    if (e.matches) document.documentElement.classList.add('dark');
+                    else document.documentElement.classList.remove('dark');
+                  });
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

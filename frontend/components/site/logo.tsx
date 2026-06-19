@@ -8,19 +8,34 @@ export function LogoMark({ className }: { className?: string }) {
       className={cn("text-navy", className)}
       aria-hidden="true"
     >
-      {/* Shield silhouette */}
+      {/* Shield body */}
       <path
-        d="M16 2 L28 6 V15 C28 23 22.5 28 16 30.5 C9.5 28 4 23 4 15 V6 Z"
+        d="M16 1.5L4 6.5V15c0 9 6.5 14.5 12 16.5 5.5-2 12-7.5 12-16.5V6.5L16 1.5z"
         fill="currentColor"
       />
-      {/* Checkmark cut-out */}
+      {/* Compass rose — cardinal points inside shield */}
+      {/* North point */}
       <path
-        d="M11 16.2 L14.5 19.8 L21.5 11.5"
-        stroke="var(--cream)"
-        strokeWidth="2.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M16 8.5L18.5 14H13.5L16 8.5z"
+        fill="var(--action)"
       />
+      {/* South point */}
+      <path
+        d="M16 23.5L13.5 18H18.5L16 23.5z"
+        fill="var(--cream)"
+      />
+      {/* East point */}
+      <path
+        d="M23.5 16L18 13.5V18.5L23.5 16z"
+        fill="var(--cream)"
+      />
+      {/* West point */}
+      <path
+        d="M8.5 16L14 13.5V18.5L8.5 16z"
+        fill="var(--cream)"
+      />
+      {/* Center dot */}
+      <circle cx="16" cy="16" r="1.5" fill="var(--cream)" />
     </svg>
   )
 }
@@ -34,7 +49,7 @@ export function Logo({ className }: { className?: string }) {
           Homeschool Compass
         </span>
         <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-meta">
-          Regulation Tracker
+          ESA Compliance
         </span>
       </div>
     </div>

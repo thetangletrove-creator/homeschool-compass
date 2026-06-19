@@ -9,7 +9,6 @@ const COLUMNS = [
       { label: "Scorecard", href: "/scorecard" },
       { label: "Alerts", href: "/dashboard" },
       { label: "ESA Guide", href: "/esa" },
-      { label: "API Docs", href: "#" },
     ],
   },
   {
@@ -24,9 +23,9 @@ const COLUMNS = [
   {
     title: "Legal",
     links: [
-      { label: "Privacy", href: "#" },
-      { label: "Terms", href: "#" },
-      { label: "Disclaimer", href: "#" },
+      { label: "Privacy", href: "/privacy" },
+      { label: "Terms", href: "/terms" },
+      { label: "Disclaimer", href: "/disclaimer" },
     ],
   },
 ]
