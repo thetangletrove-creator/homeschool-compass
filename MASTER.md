@@ -98,6 +98,7 @@
 |----------|------|--------|
 | Pipeline first pass | Jun 16 | 3,845 bills ingested before quota exhaustion |
 | Product pivot → Apple flagship | Jun 18 | SwiftUI + StoreKit IAP, website becomes funnel |
+| Design critique + 7 improvements deployed | Jun 19 | Impeccable init, hero reframe, breadcrumbs, ESA filter, state picker, dark mode, tabs bug fix, DESIGN.md |
 | Provider portal + ZK encryption | Jun 17-19 | Encrypted invoices are the differentiator |
 | ESA data via research agent | Jun 18 | 20 states from research, 31 non-ESA get placeholder compliance |
 | Test before routes | Jun 20 | 48 contract/integration tests define API shapes before handlers exist |

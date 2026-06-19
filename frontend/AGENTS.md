@@ -6,7 +6,7 @@
 > **Deploy:** `https://homeschool-regulation-tracker.vercel.app/`
 > **GitHub:** `thetangletrove-creator/homeschool-compass`
 > **Pipeline:** Parked (LegiScan quota exhausted, timer stopped)
-> **Last commit:** `38041db` — `Phase B4 — ESA portal directory enrichment` (2026-06-19)
+> **Last commit:** `d04b172` — `Design critique + 7 improvements deployed (Impeccable init, hero reframe, breadcrumbs, ESA filter, state picker, dark mode, tabs bug fix)` (2026-06-19)
 > **File index:** `ARCHITECTURE.md#key-implementation-files` — full table mapping every file to its role
 
 ## ✅ Done
@@ -39,6 +39,7 @@
 - **Product pivot:** Apple-native (SwiftUI/StoreKit IAP) flagship + website as funnel. Legacy pricing: Free / $29.99 Packet / $99.99 Binder Plus
 - **Web packet ($29 one-time):** Stripe product + checkout + `/download/[state]` post-purchase page live on Vercel
 - **Compliance pack redesign:** 2-column layout, bill triage queue, live confidence bars, legal disclaimer
+- **Design Phase — Impeccable critique + 7 improvements deployed (2026-06-19):** PRODUCT.md (brand positioning), hero reframe (fear-driven), pricing value reframe, "Why We Built This" layout diversity, breadcrumbs, ESA filter/sort, state picker, dark mode, tooltips, copy refinement, app preview, footer hardening, compass+shield logo mark, DESIGN.md (token extraction). `generator: 'v0.app'` removed. ✅
 
 ## ▶️ You (Jack)
 
