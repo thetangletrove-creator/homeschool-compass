@@ -1,6 +1,6 @@
 # Homeschool Compass — Master Checklist
 
-> **Last updated:** 2026-06-19 (session: design + esa_programs recovery)
+> **Last updated:** 2026-06-19 (session: P1 critique + P0.2 prep)
 > **Source of truth:** This file. I check items off live as we complete them.
 > **Stack:** Next.js 16 / React 19 / Tailwind 4 / Drizzle ORM / Neon / Stripe
 > **Deploy:** `https://homeschool-regulation-tracker.vercel.app/`
@@ -28,30 +28,30 @@
 *Every frontend surface gets designed. One at a time, committed per phase.*
 
 ### Setup
-- [ ] Run `context.mjs` from project root (impeccable setup)
-- [ ] Read PRODUCT.md + DESIGN.md (foundation docs exist from Jun 19 critique)
-- [ ] Read register (product — this is app UI)
+- [x] Run `context.mjs` from project root (impeccable setup) ✅
+- [x] Read PRODUCT.md + DESIGN.md (foundation docs exist from Jun 19 critique) ✅
+- [x] Read register (product — this is app UI) ✅
 
-### Frontend Surfaces — Critique + Build
-| # | Surface | Status | Impeccable Command |
-|---|---------|--------|-------------------|
-| 1 | `/` (Home) | ✅ existing | critique → craft |
-| 2 | `/scorecard` | ✅ existing | critique → colorize |
-| 3 | `/state/[code]` + StateTabs | ✅ existing | critique → layout |
-| 4 | `/esa` (ESA Guide) | ✅ existing | critique → typeset |
-| 5 | `/funding-directory` | ✅ existing (B6) | critique → polish |
-| 6 | `/compliance-kit` | ✅ existing | critique → layout |
-| 7 | `/download/[state]` | ✅ existing | critique → polish |
-| 8 | `/dashboard` | ✅ existing | critique → layout |
-| 9 | `/pricing` | ✅ **fixed this session** | rewrite: $29/$99 pivot |
-| 10 | `/dashboard/esa-compliance` | ✅ existing | critique → on hold |
-| 11 | `/about` | ✅ existing | critique → polish |
-| 12 | `/methodology` | ✅ existing | critique → polish |
+### Frontend Surfaces — Critique Results
+| # | Surface | Critique | Issues Found | Status |
+|---|---------|----------|-------------|--------|
+| 1 | `/` (Home) | ✅ reviewed | Clean — hero reframe, fear-driven messaging, scorecard map all land well. Existing improvements from last session hold. | ✅ Good |
+| 2 | `/scorecard` | ✅ reviewed | P1: State cards may not show numerical score (need to verify deployed build); P2: Filter buttons small | 🟡 Minor |
+| 3 | `/state/[code]` + StateTabs | ⚠️ **ESA tab empty on live** | **P1: ESA Program tab renders empty on live site** — data wiring issue (data.ts has REAL_ESA_PROGRAMS, investigates why tab shows no content). P2: Overview tab redundant (metrics already visible above tabs). | ❌ Fix needed |
+| 4 | `/esa` (ESA Guide) | ✅ reviewed | Clean — card-based layout, good IA, strong brand fit. Minor: ESA acronym could be defined on first use. | ✅ Good |
+| 5 | `/funding-directory` | ⚠️ 404 on live | Route exists in code (`app/funding-directory/page.tsx`) but returns 404 — may need Vercel redeploy. Page implementation is solid with filters, search, card grid. | ❌ Fix needed |
+| 6 | `/compliance-kit` | ✅ reviewed | P2: CTA prominence understated, key info below fold, missing social proof/authority indicators. | 🟡 Minor |
+| 7 | `/download/[state]` | ℹ️ Not yet reviewed in this session | — | 🔲 |
+| 8 | `/dashboard` | ℹ️ Not yet reviewed in this session | — | 🔲 |
+| 9 | `/pricing` | ✅ **fixed last session** | Rewrite: Free / $29.99 Packet / $99.99 Binder Plus. No trial, no subscriptions. | ✅ Done |
+| 10 | `/dashboard/esa-compliance` | ℹ️ Not yet reviewed | — | 🔲 On hold |
+| 11 | `/about` | ✅ reviewed | Strong — accuracy guarantee, team bios, data sources, legal disclaimers. Good brand fit. | ✅ Good |
+| 12 | `/methodology` | ✅ reviewed | Excellent — detailed scoring rubrics, HSLDA alignment, transparent formula. Best trust signal on the site. | ✅ Good |
 
-- [ ] Run design critique across all 12 surfaces
+- [x] Run design critique across surfaces 1-6, 11-12 ✅
+- [ ] Review surfaces 7, 8, 10
 - [ ] Compile findings → priority-ordered fix list (P1/P2/P3)
 - [ ] Execute top-priority fixes per phase commit
-|- [x] Verify with `tsc --noEmit` (0 errors, 54 tests pass ✅)
 
 ---
 
@@ -140,7 +140,7 @@
 | esa_programs null platforms | **0** | ✅ |
 | Avg impact confidence | **0.831** | ✅ |
 | Pipeline timer | **Inactive** | ⏸ Quota exhaustion |
-| Git HEAD | **bdb4610** | Clean |
+| Git HEAD | **681b09f** | Clean |
 
 ---
 
