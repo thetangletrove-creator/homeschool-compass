@@ -6,7 +6,7 @@
 > **Deploy:** `https://homeschool-regulation-tracker.vercel.app/`
 > **GitHub:** `thetangletrove-creator/homeschool-compass`
 > **Pipeline:** Parked (LegiScan quota exhausted, timer stopped)
-> **Last commit:** awaiting — enrichment + cleanup in progress
+> **Last commit:** `38041db` — `Phase B4 — ESA portal directory enrichment` (2026-06-19)
 > **File index:** `ARCHITECTURE.md#key-implementation-files` — full table mapping every file to its role
 
 ## ✅ Done
