@@ -33,8 +33,10 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light',
-  themeColor: '#FDFCF8',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#FDFCF8' },
+    { media: '(prefers-color-scheme: dark)', color: '#18181b' },
+  ],
 }
 
 export default function RootLayout({
@@ -46,7 +48,26 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${jetbrainsMono.variable} bg-background`}
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+                  if (mq.matches) document.documentElement.classList.add('dark');
+                  mq.addEventListener('change', function(e) {
+                    if (e.matches) document.documentElement.classList.add('dark');
+                    else document.documentElement.classList.remove('dark');
+                  });
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

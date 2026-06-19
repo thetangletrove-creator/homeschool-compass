@@ -88,15 +88,14 @@ export function AboutPreview() {
           </div>
         </div>
 
-        {/* Accuracy Guarantee callout */}
+        {/* Accuracy Guarantee callout — toned down, factual */}
         <div className="mt-6 rounded-lg border border-safe/30 bg-safe/[0.06] px-5 py-4">
           <p className="text-sm leading-relaxed font-semibold text-navy">
-            ⭐ Our Accuracy Guarantee
+            ⭐ Missed a bill? We&apos;ll make it right.
           </p>
           <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-            If we miss a bill that affects your state, your next year is free.
-            We hold our compliance tracking to the same standard we&apos;d want for
-            our own families.
+            If our tracking misses a bill that affects your state, your next year&apos;s
+            subscription is free. We stand behind our data.
           </p>
         </div>
 
@@ -109,18 +108,18 @@ export function AboutPreview() {
           </Link>
         </div>
 
-        <div className="mt-8 flex flex-col items-start gap-4 rounded-lg border border-navy/10 bg-navy/[0.03] p-6 sm:flex-row sm:items-center">
+        <div className="mt-8 flex flex-col items-start gap-4 rounded-lg border border-navy/10 bg-navy/[0.03] p-6 sm:flex-row sm:items-start">
           <ShieldCheck className="h-8 w-8 shrink-0 text-safe" aria-hidden="true" />
           <p className="text-sm leading-relaxed text-foreground">
-            Built by policy analysts and engineers. Real names, real methodology,
-            and documented data sources — because anonymous tools have no place in
-            legal compliance.
+            We&apos;re a small team of policy analysts and engineers who believe homeschool
+            families deserve clear, timely compliance information. Every source is documented
+            with a clear audit trail.
           </p>
           <Link
             href="/about"
             className={buttonVariants({ variant: "ghost", className: "shrink-0 text-action hover:bg-cream" })}
           >
-            Meet the team
+            About us
             <ArrowRight className="ml-1.5 h-4 w-4" />
           </Link>
         </div>
