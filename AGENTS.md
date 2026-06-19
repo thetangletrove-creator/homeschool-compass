@@ -6,7 +6,7 @@
 > **Deploy:** `https://homeschool-regulation-tracker.vercel.app/`
 > **GitHub:** `thetangletrove-creator/homeschool-compass`
 > **Pipeline:** Parked (LegiScan quota exhausted, timer stopped)
-> **Last commit:** `d04b172` — `Design critique + 7 improvements deployed (Impeccable init, hero reframe, breadcrumbs, ESA filter, state picker, dark mode, tabs bug fix)` (2026-06-19)
+> **Last commit:** `29b6589` — `Logo: replace shield+compass hybrid with pure compass mark` (2026-06-19)
 > **File index:** `ARCHITECTURE.md#key-implementation-files` — full table mapping every file to its role
 
 ## ✅ Done
