@@ -6,7 +6,7 @@
 > **Deploy:** `https://homeschool-regulation-tracker.vercel.app/`
 > **GitHub:** `thetangletrove-creator/homeschool-compass` (main)
 > **Pipeline:** Parked (LegiScan quota exhausted, timer stopped)
-> **Last commit:** `bdb4610` — clean worktree
+|> **Last commit:** `681b09f` — pricing page rewritten for product pivot
 
 ---
 
@@ -19,7 +19,7 @@
   - ⚠️ Known: FL has 1 program (should be 3 — needs multi-program pass)
 - [ ] **P0.2** — Build multi-program support for FL (3 programs), AZ (3), add TN/WV special variants
 - [ ] **P0.3** — Verify compliance_forms data quality (52 states populated, fill DOE URL gaps)
-- [ ] **P0.4** — Update mock data (data.ts + mock-data.ts) with real esa_programs data
+- [x] **P0.4** — Update mock data (data.ts + mock-data.ts) with real esa_programs data ✅
 - [x] **P0.5** — Write this MASTER.md 🎯
 
 ---
@@ -43,7 +43,7 @@
 | 6 | `/compliance-kit` | ✅ existing | critique → layout |
 | 7 | `/download/[state]` | ✅ existing | critique → polish |
 | 8 | `/dashboard` | ✅ existing | critique → layout |
-| 9 | `/pricing` | ✅ existing | critique → colorize |
+| 9 | `/pricing` | ✅ **fixed this session** | rewrite: $29/$99 pivot |
 | 10 | `/dashboard/esa-compliance` | ✅ existing | critique → on hold |
 | 11 | `/about` | ✅ existing | critique → polish |
 | 12 | `/methodology` | ✅ existing | critique → polish |
@@ -51,7 +51,7 @@
 - [ ] Run design critique across all 12 surfaces
 - [ ] Compile findings → priority-ordered fix list (P1/P2/P3)
 - [ ] Execute top-priority fixes per phase commit
-- [ ] Verify with browser screenshot + `tsc --noEmit`
+|- [x] Verify with `tsc --noEmit` (0 errors, 54 tests pass ✅)
 
 ---
 
@@ -152,6 +152,8 @@
 | Design critique + 7 improvements | Jun 19 | Impeccable init, hero reframe, breadcrumbs, etc. |
 | Provider portal + ZK encryption | Jun 17-19 | Encrypted invoices as differentiator |
 | esa_programs recovered via B4 re-run | Jun 19 | 19 states populated, OH/OK cleared, MS/MT added |
+| Mock data updated with real esa_programs | Jun 19 | lib/data.ts + lib/mock-data.ts — real portal URLs from B4 enrichment |
+| Pricing page rewritten for product pivot | Jun 19 | Free Scorecard / $29.99 Packet / $99.99 Binder Plus — no trial, no subscriptions |
 | MASTER.md as single checklist | Jun 19 | This file — checked off live |
 
 ---

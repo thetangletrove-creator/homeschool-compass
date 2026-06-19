@@ -7,7 +7,7 @@
 > **GitHub:** `thetangletrove-creator/homeschool-compass`
 > **Pipeline:** Parked (LegiScan quota exhausted, timer stopped)
 > **esa_programs:** 19 states populated ✅ (B4 re-enriched 2026-06-19 — real portal URLs, platforms, deadlines)
-> **Last commit:** `616b046` — `P0 — mock data updated with real esa_programs from B4 enrichment`
+> **Last commit:** `681b09f` — pricing page rewritten for product pivot
 > **File index:** `ARCHITECTURE.md#key-implementation-files` — full table mapping every file to its role
 
 ## ✅ Done
@@ -40,9 +40,11 @@
 - **Web packet ($29 one-time):** Stripe product + checkout + `/download/[state]` post-purchase page live on Vercel
 - **Compliance pack redesign:** 2-column layout, bill triage queue, live confidence bars, legal disclaimer
 - **Phase B5 — Non-ESA programs schema + populate:** Added `non_esa_programs JSONB` + `non_esa_verified_at` columns to `states`. Populated 31 programs across 24 states (19 homeschool-eligible). Includes EFTC (11 new states), refundable tax credits (MN, OK), voucher/scholarship states (WI, PA, NE, OH), AK allotment, DE pending. **Committed to git (`b8ceac3`), pushed to main. NOT yet rendered in frontend.** ✅
-|- **Phase C1 — iPad App Backend:** API routes under `/api/app/` (`GET /states`, `GET /states/[code]`, `GET /bills/[state]`), static data bundles (`public/data/`), export script (`scripts/export-app-data.py`), rollback script (`scripts/rollback-c1-app-backend.sh`). Committed `3ceec53` + `bdb4610`. ✅
-|- **Design Phase — Impeccable critique + 7 improvements deployed (2026-06-19):** PRODUCT.md (brand positioning), hero reframe (fear-driven), pricing value reframe, "Why We Built This" layout diversity, breadcrumbs, ESA filter/sort, state picker, dark mode (system), tooltips, copy refinement, app preview, footer hardening, DESIGN.md (token extraction). `generator: 'v0.app'` removed. ✅
+- **Phase C1 — iPad App Backend:** API routes under `/api/app/` (`GET /states`, `GET /states/[code]`, `GET /bills/[state]`), static data bundles (`public/data/`), export script (`scripts/export-app-data.py`), rollback script (`scripts/rollback-c1-app-backend.sh`). Committed `3ceec53` + `bdb4610`. ✅
+- **Design Phase — Impeccable critique + 7 improvements deployed (2026-06-19):** PRODUCT.md (brand positioning), hero reframe (fear-driven), pricing value reframe, "Why We Built This" layout diversity, breadcrumbs, ESA filter/sort, state picker, dark mode (system), tooltips, copy refinement, app preview, footer hardening, DESIGN.md (token extraction). `generator: 'v0.app'` removed. ✅
 - **Logo redesign + dark mode toggle (2026-06-19):** Replaced shield+compass hybrid with pure compass mark (thin ring, 4 points, open center, adaptive dark/light). Enhanced dark mode from system-preference only to user toggle (localStorage persistence + Moon/Sun icons in SiteNav). Brand-informed dark palette — deep navy-based (oklch 0.125 0.025 262) instead of generic gray. Smooth CSS transition on toggle. Logo direction: compass is the concept, not literal execution — shield removed. ✅
+- **P0.4 — Mock data updated with real esa_programs (2026-06-19):** lib/data.ts + lib/mock-data.ts now use REAL_ESA_PROGRAMS constant — 19 states with real portal URLs, application URLs, platforms (ClassWallet/Odyssey/Theodore/ScholaVia), deadlines, max awards, eligibility, documents required. Commit `616b046`. ✅
+- **P1 — Pricing page rewritten for product pivot (2026-06-19):** Free (Scorecard) / State Packet $29 (one-time, links to /compliance-kit) / Binder Plus $99/yr (coming soon). Removed 14-day free trial, subscription checkout code, annual billing. Commit `681b09f`. 0 TS errors, 54 tests pass. ✅
 
 ## ▶️ You (Jack)
 
@@ -79,7 +81,7 @@
 | Last pipeline run | 2026-06-18 06:28 UTC (FAILED: connection closed — **FIXED**) |
 | ZK encryption | ✅ Active (RSA-OAEP+AES-256-GCM) |
 | Timer status | Inactive (stopped 2026-06-18) |
-| Git HEAD | `bdb4610` — clean worktree, B5 + C1 commits pushed |
+| Git HEAD | `681b09f` — pricing page rewritten for product pivot |
 
 ## Strategic Position
 
