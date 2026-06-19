@@ -16,3 +16,8 @@ node_modules
 .DS_Store
 # Pipeline environment
 pipeline/.env
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.pyc
