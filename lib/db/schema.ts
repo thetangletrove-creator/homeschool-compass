@@ -365,27 +365,6 @@ export const invoiceLineItems = pgTable("invoice_line_items", {
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
 })
 
-// ── App Magic Links (iPad activation) ──────────────────────────────────────
-// Tokens that connect a web purchase to the iPad app activation.
-// Generated after a user buys via the website, emailed to them,
-// and validated when they open the link in the app.
-export const appMagicLinks = pgTable("app_magic_links", {
-  id: uuid("id").primaryKey().defaultRandom(),
-  token: text("token").notNull().unique(),
-  email: text("email").notNull(),
-  stateCode: text("state_code").notNull().default("*"),
-  purchaseType: text("purchase_type").notNull(), // compliance_kit | binder_plus | annual
-  stripeSessionId: text("stripe_session_id"),
-  stripeCustomerId: text("stripe_customer_id"),
-  used: boolean("used").notNull().default(false),
-  usedAt: timestamp("used_at", { withTimezone: true }),
-  userId: text("user_id"),
-  expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
-  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
-})
-
-export type AppMagicLink = typeof appMagicLinks.$inferSelect
-
 export type Provider = typeof providers.$inferSelect
 export type InvoiceMagicLink = typeof invoiceMagicLinks.$inferSelect
 export type ProviderInvoice = typeof providerInvoices.$inferSelect
