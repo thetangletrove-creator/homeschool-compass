@@ -462,6 +462,53 @@ def render(c_code):
   </div>
 </section>""")
 
+    # ── NON-ESA PROGRAMS CARD ──
+    non_esa_raw = state.get("non_esa_programs") or []
+    if isinstance(non_esa_raw, str):
+        try: non_esa_raw = json.loads(non_esa_raw)
+        except: non_esa_raw = []
+    non_esa_progs = [p for p in non_esa_raw if isinstance(p, dict)]
+    if non_esa_progs:
+        ne_cards = ""
+        type_labels = {
+            "allotment": "Allotment", "deduction": "Tax Deduction",
+            "refundable_tax_credit": "Refundable Tax Credit",
+            "non_refundable_tax_credit": "Non-Refundable Tax Credit",
+            "voucher": "Voucher", "scholarship": "Scholarship",
+            "tuitioning": "Tuitioning", "efct": "EFTC",
+            "pending": "Pending", "other": "Other"
+        }
+        for p in non_esa_progs:
+            ptype = type_labels.get(p.get("program_type", ""), p.get("program_type", ""))
+            eligible = p.get("homeschool_eligible", False)
+            ne_cards += f"""<div class="non-esa-card">
+  <div class="ne-header">
+    <div class="ne-name">{h(p.get("name", ""))}</div>
+    {f'<span class="tag green" style="font-size:10px">Homeschool OK</span>' if eligible else ''}
+  </div>
+  <div class="ne-meta">
+    <span class="ne-type">{ptype}</span>
+    {f'<span class="ne-amount">{h(p.get("amount", ""))}</span>' if p.get("amount") else ''}
+  </div>
+  {f'<p class="ne-desc">{h(p["short_description"])}</p>' if p.get("short_description") else ''}
+  <div class="ne-details">
+    {f'<span class="micro">{h(p["application_method"])}</span>' if p.get("application_method") else ''}
+    {f'<span class="micro">{h(p["application_window"])}</span>' if p.get("application_window") else ''}
+    {f'<span class="micro">{h(p["income_cap"])}</span>' if p.get("income_cap") else ''}
+  </div>
+  {f'<a class="ne-link" href="{h(p["url"])}" target="_blank" rel="noopener">Program info →</a>' if p.get("url") else ''}
+</div>"""
+
+        parts.append(f"""<section class="card pad">
+  <div class="section-title">
+    <div><h2>Alternative funding programs</h2><p>{h(state["name"])} offers {len(non_esa_progs)} non-ESA program{"s" if len(non_esa_progs) != 1 else ""} to support homeschooling costs.</p></div>
+    <span class="tag blue">Funding</span>
+  </div>
+  <div class="non-esa-grid">
+    {ne_cards}
+  </div>
+</section>""")
+
     # ── CONFIDENCE + DATA QUALITY ──
     conf_bar_impact = min(avg_impact_conf * 100, 100)
     conf_bar_esa = min(avg_esa_conf * 100, 100)
@@ -595,6 +642,20 @@ h1{font-size:52px;line-height:.98;letter-spacing:-.055em;margin:22px 0 16px;max-
 /* FOOTER */
 .footer{margin-top:22px;text-align:center;color:#667085;font-size:12px;padding:20px}
 
+/* NON-ESA CARDS */
+.non-esa-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.non-esa-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px}
+.ne-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.ne-name{font-weight:900;font-size:14px;color:var(--violet,#6f49b6)}
+.ne-meta{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0}
+.ne-type{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#6f49b6;background:#f3edff;border-radius:999px;padding:4px 8px}
+.ne-amount{font-size:17px;font-weight:950;color:var(--blue);letter-spacing:-.02em}
+.ne-desc{font-size:13px;color:#475467;margin:6px 0}
+.ne-details{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.ne-link{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:var(--blue2,#245a8f);text-decoration:none}
+.ne-link:hover{text-decoration:underline}
+@media(max-width:620px){.non-esa-grid{grid-template-columns:1fr}}
+
 /* RESPONSIVE */
 @media(max-width:980px){
   .hero-grid,.main,.split{grid-template-columns:1fr}.rail{position:static}
@@ -652,6 +713,17 @@ if __name__ == "__main__":
 
     if len(sys.argv) > 1 and sys.argv[1] == "--all-esa":
         states = q("SELECT code FROM states WHERE esa_active=true ORDER BY code")
+        for s in states:
+            code = s["code"]
+            html = render(code)
+            path = f"/tmp/hc-pack-{code.lower()}.html"
+            with open(path, "w") as f:
+                f.write(html)
+            print(f"Generated {path}")
+        sys.exit(0)
+
+    if len(sys.argv) > 1 and sys.argv[1] in ("--all", "--all-states"):
+        states = q("SELECT code FROM states ORDER BY code")
         for s in states:
             code = s["code"]
             html = render(code)

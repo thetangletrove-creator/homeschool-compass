@@ -4,6 +4,7 @@ import { useRef } from "react"
 import { Printer, ShieldAlert, ArrowUpRight, ArrowDownRight, Minus, CheckCircle, AlertTriangle, Clock } from "lucide-react"
 import type { InferSelectModel } from "drizzle-orm"
 import { states, bills } from "@/lib/db/schema"
+import type { NonEsaProgram } from "@/lib/db/schema"
 
 type StateData = InferSelectModel<typeof states>
 type BillData = InferSelectModel<typeof bills>
@@ -209,6 +210,75 @@ export function KitDownloadClient({
             ) : null}
           </div>
         </div>
+
+        {/* ── NON-ESA FUNDING PROGRAMS ── (if applicable) */}
+        {state.nonEsaPrograms && (state.nonEsaPrograms as NonEsaProgram[])?.length > 0 && (
+          <div className="mt-6 rounded-2xl border border-violet-200 bg-violet-50 p-6 print:border print:p-4">
+            <div className="flex items-start justify-between">
+              <div>
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-violet-600 px-3 py-1 text-xs font-medium text-white">
+                  <CheckCircle className="h-3 w-3" />
+                  Alternative Funding Available
+                </div>
+                <h2 className="mt-3 font-heading text-xl font-bold text-violet-900">
+                  Non-ESA Programs in {stateName}
+                </h2>
+                <p className="mt-1 text-sm text-violet-700">
+                  {(state.nonEsaPrograms as NonEsaProgram[]).length} program{(state.nonEsaPrograms as NonEsaProgram[]).length > 1 ? "s" : ""} available — this state doesn't offer an ESA, but these alternatives can help fund homeschooling.
+                </p>
+              </div>
+            </div>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              {(state.nonEsaPrograms as NonEsaProgram[]).map((prog, i) => (
+                <div key={i} className="rounded-xl border border-violet-200 bg-white p-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <p className="text-sm font-bold text-violet-900">{prog.name}</p>
+                      <p className="text-xs font-medium text-violet-600 uppercase tracking-wide">
+                        {prog.program_type.replace(/_/g, " ")}
+                      </p>
+                    </div>
+                    {prog.homeschool_eligible && (
+                      <span className="shrink-0 inline-flex items-center rounded-full bg-violet-100 px-2 py-0.5 text-[10px] font-medium text-violet-700">
+                        Homeschool OK
+                      </span>
+                    )}
+                  </div>
+                  {prog.amount && (
+                    <p className="mt-2 text-lg font-bold text-violet-800">{prog.amount}</p>
+                  )}
+                  {prog.short_description && (
+                    <p className="mt-1 text-xs text-muted-foreground">{prog.short_description}</p>
+                  )}
+                  {(prog.application_method || prog.application_window) && (
+                    <div className="mt-2 flex flex-wrap gap-2 text-[11px] text-muted-foreground">
+                      {prog.application_method && (
+                        <span className="inline-flex items-center rounded-full bg-violet-100 px-2 py-0.5 font-medium text-violet-600">
+                          {prog.application_method}
+                        </span>
+                      )}
+                      {prog.application_window && (
+                        <span className="inline-flex items-center rounded-full bg-amber-100 px-2 py-0.5 font-medium text-amber-600">
+                          {prog.application_window}
+                        </span>
+                      )}
+                    </div>
+                  )}
+                  {prog.url && (
+                    <a
+                      href={prog.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-violet-600 hover:text-violet-800"
+                    >
+                      Learn more →
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* ── BILL TRIAGE ── */}
         <div className="mt-6 space-y-4">
