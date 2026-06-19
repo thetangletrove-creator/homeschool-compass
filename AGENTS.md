@@ -6,7 +6,7 @@
 > **Deploy:** `https://homeschool-regulation-tracker.vercel.app/`
 > **GitHub:** `thetangletrove-creator/homeschool-compass`
 > **Pipeline:** Parked (LegiScan quota exhausted, timer stopped)
-> **Last commit:** `bdb4610` — `Phase B5b — iPad app backend: API routes + magic link activation + compliance PDF` + `rollback scripts` (2026-06-19 — B5 + C1 committed and pushed)
+> **Last commit:** `d04b172` — `Design critique + 7 improvements deployed (Impeccable init, hero reframe, breadcrumbs, ESA filter, state picker, dark mode, tabs bug fix)` (2026-06-19)
 > **File index:** `ARCHITECTURE.md#key-implementation-files` — full table mapping every file to its role
 
 ## ✅ Done
@@ -39,7 +39,8 @@
 - **Web packet ($29 one-time):** Stripe product + checkout + `/download/[state]` post-purchase page live on Vercel
 - **Compliance pack redesign:** 2-column layout, bill triage queue, live confidence bars, legal disclaimer
 - **Phase B5 — Non-ESA programs schema + populate:** Added `non_esa_programs JSONB` + `non_esa_verified_at` columns to `states`. Populated 31 programs across 24 states (19 homeschool-eligible). Includes EFTC (11 new states), refundable tax credits (MN, OK), voucher/scholarship states (WI, PA, NE, OH), AK allotment, DE pending. **Committed to git (`b8ceac3`), pushed to main. NOT yet rendered in frontend.** ✅
-- **Phase C1 — iPad App Backend:** API routes under `/api/app/` (`GET /states`, `GET /states/[code]`, `GET /bills/[state]`), static data bundles (`public/data/`), export script (`scripts/export-app-data.py`), rollback script (`scripts/rollback-c1-app-backend.sh`). Committed `3ceec53` + `bdb4610`. ✅
+|- **Phase C1 — iPad App Backend:** API routes under `/api/app/` (`GET /states`, `GET /states/[code]`, `GET /bills/[state]`), static data bundles (`public/data/`), export script (`scripts/export-app-data.py`), rollback script (`scripts/rollback-c1-app-backend.sh`). Committed `3ceec53` + `bdb4610`. ✅
+|- **Design Phase — Impeccable critique + 7 improvements deployed (2026-06-19):** PRODUCT.md (brand positioning), hero reframe (fear-driven), pricing value reframe, "Why We Built This" layout diversity, breadcrumbs, ESA filter/sort, state picker, dark mode, tooltips, copy refinement, app preview, footer hardening, compass+shield logo mark, DESIGN.md (token extraction). `generator: 'v0.app'` removed. ✅
 
 ## ▶️ You (Jack)
 
