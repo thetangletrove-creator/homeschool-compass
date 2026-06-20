@@ -4,7 +4,7 @@ import { AlertCard } from "@/components/site/alert-card"
 import { GradeMap } from "@/components/home/grade-map"
 import { StatePicker } from "@/components/home/state-picker"
 import { getBill } from "@/lib/data"
-import { ShieldCheck, BellRing, ArrowRight } from "lucide-react"
+import { ShieldCheck, BellRing, ArrowRight, Lock } from "lucide-react"
 
 export function Hero() {
   const featured = getBill("ca-sb-1234")!
@@ -51,6 +51,14 @@ export function Hero() {
 
           {/* Trust micro-copy — three quick assurances */}
           <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted-foreground">
+            <span className="flex items-center gap-1.5">
+              <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-safe/15">
+                <Lock className="h-2.5 w-2.5 text-safe" />
+              </span>
+              <Link href="/for-parents" className="underline-offset-4 hover:underline hover:text-navy">
+                Zero-knowledge by design
+              </Link>
+            </span>
             <span className="flex items-center gap-1.5">
               <BellRing className="h-4 w-4 text-safe" />
               Alerts before deadlines

@@ -1,4 +1,5 @@
-import { Map, Bell, CheckCircle, FileText, DollarSign } from "lucide-react"
+import Link from "next/link"
+import { Lock, Map, Bell, CheckCircle, FileText, DollarSign } from "lucide-react"
 
 const SIGNALS = [
   { label: "50 States Monitored", Icon: Map },
@@ -22,9 +23,19 @@ export function TrustBar() {
         ))}
       </div>
       <div className="mx-auto max-w-[1280px] px-4 pb-4 md:px-6">
-        <p className="text-center text-xs text-muted-foreground/60">
-          Data sourced from LegiScan, OpenStates, and state DOE records
-        </p>
+        <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
+          <p className="text-xs text-muted-foreground/60">
+            Data sourced from LegiScan, OpenStates, and state DOE records
+          </p>
+          <Link
+            href="/for-parents"
+            className="inline-flex items-center gap-1.5 rounded-full border border-safe/20 bg-safe/[0.06] px-3 py-1 text-xs font-medium text-safe transition-colors hover:bg-safe/[0.12]"
+          >
+            <Lock className="h-3 w-3" />
+            Your data never leaves your device
+            <span className="ml-0.5 underline-offset-2 hover:underline">Learn more →</span>
+          </Link>
+        </div>
       </div>
     </section>
   )

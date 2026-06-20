@@ -14,9 +14,9 @@ const COLUMNS = [
   {
     title: "Resources",
     links: [
+      { label: "For Parents", href: "/for-parents" },
       { label: "Methodology", href: "/methodology" },
       { label: "Scorecard (Free →)", href: "/scorecard" },
-      { label: "Accuracy Guarantee", href: "/about" },
       { label: "Data Sources", href: "/methodology" },
     ],
   },

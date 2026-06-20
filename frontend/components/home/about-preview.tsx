@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, ShieldCheck, AlertTriangle, ArrowDownToLine, Database } from "lucide-react"
+import { ArrowRight, ShieldCheck, AlertTriangle, ArrowDownToLine, Database, Lock } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 
 export function AboutPreview() {
@@ -115,13 +115,22 @@ export function AboutPreview() {
             families deserve clear, timely compliance information. Every source is documented
             with a clear audit trail.
           </p>
-          <Link
-            href="/about"
-            className={buttonVariants({ variant: "ghost", className: "shrink-0 text-action hover:bg-cream" })}
-          >
-            About us
-            <ArrowRight className="ml-1.5 h-4 w-4" />
-          </Link>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <Link
+              href="/for-parents"
+              className="inline-flex items-center gap-1.5 rounded-full border border-safe/20 bg-safe/[0.06] px-3 py-1.5 text-xs font-medium text-safe hover:bg-safe/[0.12]"
+            >
+              <Lock className="h-3 w-3" />
+              Your data stays private — see how
+            </Link>
+            <Link
+              href="/about"
+              className={buttonVariants({ variant: "ghost", className: "shrink-0 text-action hover:bg-cream" })}
+            >
+              About us
+              <ArrowRight className="ml-1.5 h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

@@ -18,6 +18,7 @@ const NAV_LINKS = [
   { href: "/compliance-kit", label: "Compliance Kit" },
   { href: "/esa", label: "ESA Guide" },
   { href: "/funding-directory", label: "Funding" },
+  { href: "/for-parents", label: "For Parents" },
   { href: "/about", label: "About" },
 ]
 
