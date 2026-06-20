@@ -11,7 +11,7 @@ export function Hero() {
 
   return (
     <section className="bg-background">
-      <div className="mx-auto grid max-w-[1280px] items-start gap-12 px-4 py-16 md:px-6 md:py-24 lg:grid-cols-5">
+      <div className="mx-auto grid max-w-[1280px] items-start gap-12 px-4 py-12 md:px-6 md:py-20 lg:grid-cols-5">
         <div className="lg:col-span-3">
           {/* Live alert — moved above eyebrow, more urgent */}
           <div className="mb-6 flex items-center gap-2">

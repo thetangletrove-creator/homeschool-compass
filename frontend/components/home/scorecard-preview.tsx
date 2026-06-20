@@ -44,7 +44,7 @@ export function ScorecardPreview() {
     .filter(Boolean) as typeof states
 
   return (
-    <section className="bg-background py-20 md:py-24">
+    <section className="bg-background py-16 md:py-20">
       <div className="mx-auto max-w-[1280px] px-4 md:px-6">
         <div className="max-w-2xl">
           <h2 className="font-heading text-3xl font-semibold tracking-tight text-navy md:text-4xl">
@@ -56,7 +56,7 @@ export function ScorecardPreview() {
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
+        <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
           {featured.map((state) => {
             const bg = gradeColor(state.grade)
             return (
@@ -114,7 +114,7 @@ export function ScorecardPreview() {
           </Link>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <Link
             href="/scorecard"
             className={buttonVariants({ className: "h-11 rounded-md bg-navy px-6 text-sm font-medium text-primary-foreground hover:bg-navy/90" })}

@@ -37,7 +37,7 @@ export function PricingSection() {
   const router = useRouter()
 
   return (
-    <section className="bg-navy py-20 text-cream md:py-24">
+    <section className="bg-navy py-16 text-cream md:py-20">
       <div className="mx-auto max-w-[1280px] px-4 md:px-6">
         <div className="max-w-2xl">
           <h2 className="font-heading text-3xl font-semibold tracking-tight md:text-4xl">
@@ -50,7 +50,7 @@ export function PricingSection() {
         </div>
 
         {/* Value comparison bar — reframed as confidence signal */}
-        <div className="mt-8 flex flex-col gap-4 rounded-lg border border-cream/15 bg-white/[0.03] px-6 py-5 sm:flex-row sm:items-center sm:gap-8">
+        <div className="mt-6 flex flex-col gap-4 rounded-lg border border-cream/15 bg-white/[0.03] px-6 py-5 sm:flex-row sm:items-center sm:gap-8">
           <div className="flex items-center gap-2 text-sm">
             <ShieldCheck className="h-5 w-5 shrink-0 text-amber" />
             <span className="text-cream/80">
@@ -66,7 +66,7 @@ export function PricingSection() {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+        <div className="mt-8 grid gap-6 lg:grid-cols-3">
           {/* Free */}
           <div className="flex flex-col rounded-lg border border-cream/15 bg-white/[0.03] p-8">
             <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
@@ -213,7 +213,7 @@ export function PricingSection() {
         </div>
 
         {/* Trust signals footer */}
-        <div className="mt-10 space-y-3 border-t border-cream/15 pt-8 text-sm text-cream/60">
+        <div className="mt-8 space-y-3 border-t border-cream/15 pt-6 text-sm text-cream/60">
           <div className="flex flex-col items-start gap-2 md:flex-row md:items-center md:gap-8">
             <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
               Payments
@@ -241,7 +241,7 @@ export function PricingSection() {
         </div>
 
         {/* FAQ micro-copy */}
-        <div className="mt-8 grid gap-4 border-t border-cream/10 pt-8 text-sm text-cream/60 md:grid-cols-3">
+        <div className="mt-6 grid gap-4 border-t border-cream/10 pt-6 text-sm text-cream/60 md:grid-cols-3">
           <div>
             <p className="font-medium text-cream/80">How does the State Packet work?</p>
             <p className="mt-1">Pick your state, pay $29 once, and instantly download a print-ready compliance pack. No ongoing commitment.</p>
@@ -256,7 +256,7 @@ export function PricingSection() {
           </div>
         </div>
 
-        <p className="mt-8 text-sm text-cream/50">
+        <p className="mt-6 text-sm text-cream/50">
           This is not legal advice. Homeschool Compass provides regulatory tracking, not
           attorney representation.
         </p>

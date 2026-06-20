@@ -13,8 +13,10 @@ export default function HomePage() {
       <main className="flex-1">
         <Hero />
         <TrustBar />
-        <ScorecardPreview />
-        <AboutPreview />
+        <div className="lg:grid lg:grid-cols-2 lg:items-start">
+          <ScorecardPreview />
+          <AboutPreview />
+        </div>
         <PricingSection />
       </main>
       <SiteFooter />

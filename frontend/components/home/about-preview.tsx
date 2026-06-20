@@ -4,7 +4,7 @@ import { buttonVariants } from "@/components/ui/button"
 
 export function AboutPreview() {
   return (
-    <section className="bg-cream py-20 md:py-24">
+    <section className="bg-cream py-16 md:py-20">
       <div className="mx-auto max-w-[1280px] px-4 md:px-6">
         <h2 className="max-w-2xl font-heading text-3xl font-semibold tracking-tight text-navy md:text-4xl">
           Why We Built This
@@ -16,7 +16,7 @@ export function AboutPreview() {
         </div>
 
         {/* Three blocks, each with a different visual treatment */}
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
+        <div className="mt-6 grid gap-6 md:grid-cols-3">
           {/* The Problem — amber callout card */}
           <div className="relative overflow-hidden rounded-lg border border-amber/20 bg-white p-6 shadow-sm">
             <div className="absolute left-0 top-0 h-full w-1 bg-amber" />
