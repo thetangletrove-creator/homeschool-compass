@@ -23,7 +23,7 @@ function SubBar({ label, value }: { label: string; value: number }) {
         {label}
       </span>
       <div className="flex items-center gap-1.5">
-        <div className="h-1.5 w-12 overflow-hidden rounded-full bg-border">
+        <div className="h-1.5 w-10 overflow-hidden rounded-full bg-border md:w-12">
           <div
             className="h-full rounded-full transition-all group-hover:w-[var(--w)]"
             style={{ width: `${value}%`, backgroundColor: color }}
@@ -56,14 +56,14 @@ export function ScorecardPreview() {
           </p>
         </div>
 
-        <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
+        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5 md:gap-4">
           {featured.map((state) => {
             const bg = gradeColor(state.grade)
             return (
               <Link
                 key={state.code}
                 href={`/state/${state.code}`}
-                className="group flex flex-col rounded-lg border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
+                className="group flex flex-col rounded-lg border border-border bg-card p-3 transition-all hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)] md:p-4"
               >
                 {/* State header */}
                 <div className="flex items-center justify-between">
@@ -87,8 +87,8 @@ export function ScorecardPreview() {
                   <span className="text-[10px] text-meta">/100</span>
                 </div>
 
-                {/* Sub-scores */}
-                <div className="mt-3 space-y-1.5" aria-hidden="true">
+                {/* Sub-scores — hidden on smallest viewports, narrower bars on tablet */}
+                <div className="mt-3 hidden space-y-1 min-[480px]:block md:space-y-1.5" aria-hidden="true">
                   <SubBar label="Reporting" value={state.subscores.reporting} />
                   <SubBar label="Testing" value={state.subscores.testing} />
                   <SubBar label="Curriculum" value={state.subscores.curriculum} />

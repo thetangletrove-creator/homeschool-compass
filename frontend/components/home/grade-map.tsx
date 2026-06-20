@@ -70,7 +70,7 @@ export function GradeMap() {
                   <Link
                     key={code}
                     href={`/state/${code}`}
-                    className="group relative flex h-10 w-10 flex-col items-center justify-center rounded-md border border-border text-xs font-medium transition-all hover:-translate-y-0.5 hover:shadow-sm"
+                    className="group relative flex h-11 w-11 flex-col items-center justify-center rounded-md border border-border text-xs font-medium transition-all hover:-translate-y-0.5 hover:shadow-sm md:h-10 md:w-10"
                     style={{
                       backgroundColor: bgColor + "10",
                       borderColor: bgColor + "30",
@@ -78,13 +78,13 @@ export function GradeMap() {
                     title={`${state.name}: ${state.grade} — ${state.score}/100`}
                   >
                     <span
-                      className="text-sm font-bold leading-none"
+                      className="text-sm font-bold leading-none md:text-sm"
                       style={{ color: bgColor }}
                     >
                       {code}
                     </span>
                     <span
-                      className="text-[9px] leading-none opacity-60"
+                      className="text-[10px] leading-none opacity-60 md:text-[9px]"
                       style={{ color: bgColor }}
                     >
                       {state.score}

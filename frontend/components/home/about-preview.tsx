@@ -18,7 +18,7 @@ export function AboutPreview() {
         {/* Three blocks, each with a different visual treatment */}
         <div className="mt-6 grid gap-6 md:grid-cols-3">
           {/* The Problem — amber callout card */}
-          <div className="relative overflow-hidden rounded-lg border border-amber/20 bg-white p-6 shadow-sm">
+          <div className="relative overflow-hidden rounded-lg border border-amber/20 bg-white p-5 shadow-sm md:p-6">
             <div className="absolute left-0 top-0 h-full w-1 bg-amber" />
             <div className="flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-amber/10">
@@ -34,7 +34,7 @@ export function AboutPreview() {
           </div>
 
           {/* Our Approach — numbered flow */}
-          <div className="rounded-lg border border-border bg-white p-6 shadow-sm">
+          <div className="rounded-lg border border-border bg-white p-5 shadow-sm md:p-6">
             <div className="flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-navy">
                 <ArrowDownToLine className="h-4 w-4 text-cream" />
@@ -63,7 +63,7 @@ export function AboutPreview() {
           </div>
 
           {/* Data Sources — badge layout */}
-          <div className="rounded-lg border border-border bg-white p-6 shadow-sm">
+          <div className="rounded-lg border border-border bg-white p-5 shadow-sm md:p-6">
             <div className="flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-safe/20">
                 <Database className="h-4 w-4 text-safe" />

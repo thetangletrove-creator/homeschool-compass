@@ -10,3 +10,4 @@ legiscan_cache.db
 
 # OS files
 .DS_Store
+.vercel

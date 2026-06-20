@@ -11,7 +11,7 @@ export function Hero() {
 
   return (
     <section className="bg-background">
-      <div className="mx-auto grid max-w-[1280px] items-start gap-12 px-4 py-12 md:px-6 md:py-20 lg:grid-cols-5">
+      <div className="mx-auto grid max-w-[1280px] items-start gap-6 px-4 py-8 md:px-6 md:py-20 lg:grid-cols-5 lg:gap-12">
         <div className="lg:col-span-3">
           {/* Live alert — moved above eyebrow, more urgent */}
           <div className="mb-6 flex items-center gap-2">
@@ -50,7 +50,7 @@ export function Hero() {
           </div>
 
           {/* Trust micro-copy — three quick assurances */}
-          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted-foreground">
+          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground md:mt-8 md:gap-x-8 md:gap-y-3">
             <span className="flex items-center gap-1.5">
               <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-safe/15">
                 <Lock className="h-2.5 w-2.5 text-safe" />
@@ -74,7 +74,7 @@ export function Hero() {
           </div>
 
           {/* Start-here guidance + State picker */}
-          <div className="mt-8 rounded-lg border border-amber/20 bg-amber/[0.04] p-4">
+          <div className="mt-6 rounded-lg border border-amber/20 bg-amber/[0.04] p-3 md:mt-8 md:p-4">
             <p className="mb-3 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.05em] text-amber">
               <ArrowRight className="h-3.5 w-3.5" />
               Start here

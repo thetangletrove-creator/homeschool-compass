@@ -50,7 +50,7 @@ export function PricingSection() {
         </div>
 
         {/* Value comparison bar — reframed as confidence signal */}
-        <div className="mt-6 flex flex-col gap-4 rounded-lg border border-cream/15 bg-white/[0.03] px-6 py-5 sm:flex-row sm:items-center sm:gap-8">
+        <div className="mt-6 flex flex-col gap-3 rounded-lg border border-cream/15 bg-white/[0.03] px-4 py-4 sm:flex-row sm:items-center sm:gap-8 md:px-6 md:py-5">
           <div className="flex items-center gap-2 text-sm">
             <ShieldCheck className="h-5 w-5 shrink-0 text-amber" />
             <span className="text-cream/80">
@@ -68,7 +68,7 @@ export function PricingSection() {
 
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
           {/* Free */}
-          <div className="flex flex-col rounded-lg border border-cream/15 bg-white/[0.03] p-8">
+          <div className="flex flex-col rounded-lg border border-cream/15 bg-white/[0.03] p-5 md:p-8">
             <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
               Scorecard Access
             </span>
@@ -97,7 +97,7 @@ export function PricingSection() {
           </div>
 
           {/* State Packet — Most Popular */}
-          <div className="relative flex flex-col rounded-lg border border-safe/40 bg-white/[0.05] p-8 ring-2 ring-safe/30">
+          <div className="relative flex flex-col rounded-lg border border-safe/40 bg-white/[0.05] p-5 ring-2 ring-safe/30 md:p-8">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full bg-safe px-4 py-1 text-xs font-semibold text-navy shadow-sm">
               <BadgeCheck className="h-3.5 w-3.5" />
               Best Value
@@ -165,7 +165,7 @@ export function PricingSection() {
           </div>
 
           {/* Binder Plus */}
-          <div className="flex flex-col rounded-lg border border-cream/15 bg-white/[0.03] p-8">
+          <div className="flex flex-col rounded-lg border border-cream/15 bg-white/[0.03] p-5 md:p-8">
             <span className="text-xs font-medium uppercase tracking-[0.05em] text-cream/50">
               Binder Plus
             </span>
